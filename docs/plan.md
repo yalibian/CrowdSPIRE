@@ -1,37 +1,4 @@
-# CrowdSpire: Crowdsourced based StarSpire
-
-
-
-## KEY POINTS
-start with simple prototype that uses semantic interaction to drive CW:
-	drag 2 docs together
-	query CW data from Tianyi
-	display nodes & links, highlight entities in text
-	semantic interaction to steer crowd slices in context
-
-visualize crowd results in context
-Expert + CW + ML 
-Expert + CW:
-start by replacing starspire ML with CW
-semantic interaction CW micro-task ideas:
-label cluster
-extract keywords for cluster
-make initial clusters
-find docs relevant to a cluster
-find connections between clusters
-connecting documents
-rating similarities
-
-Study how crowd workers might help Experts?
-have an expert do crescent using space to think
-we watch and see if we can be helpful, if so how?  micro tasks can we do?
-we be CW, see how we could help an expert while they work
-ask expert how he wants our help as he works
-expert could use Analyst Workspace
-discover more micro-tasks
-
-
-## Plan
+# Plan
 	* Create a react based StarSpire like visualization
 
 
