@@ -61,9 +61,11 @@ function workspace(error, docs) {
     var node = svg.selectAll(".node")
         .data(docs.nodes)
         .enter().append("g")
-        .attr("class", "node");
-    // .call(force.drag);
-
+        .attr("class", "node")
+        .call(d3.drag()
+            .on("start", dragStarted)
+            .on("drag", dragged)
+            .on("end", dragEnded));
 
     // label
     node.append("text")
@@ -74,30 +76,44 @@ function workspace(error, docs) {
         });
 
     // circle
-    node.append("circle")
-        .attr("r", 6)
-        .attr("cx", -8)
-        .attr("cy", -8)
+    node.append("rect")
+        .attr("width", 10)
+        .attr("height", 10)
+        .attr("x", -4)
+        .attr("y", -4)
         .attr("fill", function (d) {
             return 'steelblue';
         });
 
     // ticked
     function ticked() {
-        // node.attr("cx", function (d) {
-        //         d.x = Math.max(radius, Math.min(WIDTH - radius, d.x));
-        //         return d.x;
-        //     })
-        //     .attr("cy", function (d) {
-        //         d.y = Math.max(radius, Math.min(HEIGHT - radius, d.y));
-        //         return d.y;
-        //     });
 
         node.attr("transform", function (d) {
             return "translate(" + d.x + "," + d.y + ")";
         });
     }
+}
 
+
+function dragStarted(d) {
+    if (!d3.event.active) {
+        simulation.alphaTarget(0.3).restart();
+    }
+    d.fx = d.x;
+    d.fy = d.y;
+}
+
+function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+}
+
+function dragEnded(d) {
+    if (!d3.event.active){
+        simulation.alphaTarget(0);
+    }
+    d.fx = null;
+    d.fy = null;
 }
 
 
