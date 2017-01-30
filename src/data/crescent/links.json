@@ -1,0 +1,8541 @@
+[
+  {
+    "source": "se5",
+    "target": "se4",
+    "similarity": 0.4148588698945536,
+    "entities": [
+      "Arabic",
+      "703-659-2317",
+      "804-774-8920"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "se3",
+    "similarity": 0.19406128504608686,
+    "entities": [
+      "703-659-2317",
+      "804-774-8920"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "se1",
+    "similarity": 0.07464356242477645,
+    "entities": [
+      "Arabic"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "fbi25",
+    "similarity": 0.06970036092846212,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "fbi24",
+    "similarity": 0.10473929630556883,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "fbi23",
+    "similarity": 0.03124453481074782,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "fbi22",
+    "similarity": 0.04531023268288642,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "fbi21",
+    "similarity": 0.10480012772808393,
+    "entities": [
+      "26 April, 2003"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "fbi20",
+    "similarity": 0.1409229308538576,
+    "entities": [
+      "26 April, 2003"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "fbi11",
+    "similarity": 0.06806282577242367,
+    "entities": [
+      "804-774-8920"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "fbi1",
+    "similarity": 0.0732145506050451,
+    "entities": [
+      "703-659-2317"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "cia11",
+    "similarity": 0.042395582401083785,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "se5",
+    "target": "cia10",
+    "similarity": 0.044998395504954734,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "se5",
+    "similarity": 0.4148588698945536,
+    "entities": [
+      "Arabic",
+      "703-659-2317",
+      "804-774-8920"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "se4",
+    "similarity": 0.4148588698945536,
+    "entities": [
+      "Arabic",
+      "703-659-2317",
+      "804-774-8920"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "se3",
+    "similarity": 0.37435241761328253,
+    "entities": [
+      "804-759-6302",
+      "703-659-2317",
+      "804-774-8920",
+      "718-352-8479",
+      "01 1207670734"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "se2",
+    "similarity": 0.08335231080688124,
+    "entities": [
+      "718-352-8479"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "se1",
+    "similarity": 0.048425550228089295,
+    "entities": [
+      "Arabic"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "fbi18",
+    "similarity": 0.030383404423051187,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "fbi17",
+    "similarity": 0.17984296957948762,
+    "entities": [
+      "804-759-6302",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "fbi16",
+    "similarity": 0.05433432540663256,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "fbi11",
+    "similarity": 0.04415624979622033,
+    "entities": [
+      "804-774-8920"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "fbi1",
+    "similarity": 0.04749846848915606,
+    "entities": [
+      "703-659-2317"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "cia8",
+    "similarity": 0.08133234409058733,
+    "entities": [
+      "24 April, 2003"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "cia7",
+    "similarity": 0.035287655511296444,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "cia6",
+    "similarity": 0.021593628590920143,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "se4",
+    "target": "cia4",
+    "similarity": 0.04662513928690649,
+    "entities": [
+      "804-759-6302"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "se5",
+    "similarity": 0.19406128504608686,
+    "entities": [
+      "703-659-2317",
+      "804-774-8920"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "se4",
+    "similarity": 0.37435241761328253,
+    "entities": [
+      "804-759-6302",
+      "703-659-2317",
+      "804-774-8920",
+      "718-352-8479",
+      "01 1207670734"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "se3",
+    "similarity": 0.37435241761328253,
+    "entities": [
+      "804-759-6302",
+      "703-659-2317",
+      "804-774-8920",
+      "718-352-8479",
+      "01 1207670734"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "se2",
+    "similarity": 0.19871308357305484,
+    "entities": [
+      "Queens",
+      "New York City",
+      "718-352-8479"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi7",
+    "similarity": 0.034243884772865454,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi6",
+    "similarity": 0.057635729883211105,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi24",
+    "similarity": 0.1002029744817938,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi22",
+    "similarity": 0.026513194987809886,
+    "entities": [
+      "New York City"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi21",
+    "similarity": 0.041093233589535164,
+    "entities": [
+      "Amsterdam"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi20",
+    "similarity": 0.20720110856625504,
+    "entities": [
+      "Richmond",
+      "Virginia",
+      "Charlottesville"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi2",
+    "similarity": 0.08243267552940879,
+    "entities": [
+      "Virginia",
+      "Amsterdam"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi19",
+    "similarity": 0.1328794740136477,
+    "entities": [
+      "Mukhtar Galab",
+      "Virginia",
+      "Charlottesville"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi17",
+    "similarity": 0.20866866389972408,
+    "entities": [
+      "Richmond",
+      "Virginia",
+      "804-759-6302"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi15",
+    "similarity": 0.23333791128691006,
+    "entities": [
+      "Mukhtar Galab",
+      "Mukhtar Galab",
+      "Virginia",
+      "Charlottesville"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi14",
+    "similarity": 0.025915859293562642,
+    "entities": [
+      "New York City"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi13",
+    "similarity": 0.22538589883003482,
+    "entities": [
+      "Bagwant Dhaliwal",
+      "Queens",
+      "New York City"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi11",
+    "similarity": 0.20021119044556224,
+    "entities": [
+      "Mukhtar Galab",
+      "Virginia",
+      "Charlottesville",
+      "804-774-8920"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi10",
+    "similarity": 0.04987810508617264,
+    "entities": [
+      "Queens",
+      "New York City"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "fbi1",
+    "similarity": 0.07665256224384051,
+    "entities": [
+      "Virginia",
+      "703-659-2317"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "cia8",
+    "similarity": 0.03684542200614745,
+    "entities": [
+      "Amsterdam"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "cia7",
+    "similarity": 0.04985292755644928,
+    "entities": [
+      "The Netherlands"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "cia4",
+    "similarity": 0.19058033756254053,
+    "entities": [
+      "Clark Webster",
+      "Richmond",
+      "Virginia",
+      "804-759-6302"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "cia11",
+    "similarity": 0.04592977666489034,
+    "entities": [
+      "Bagwant Dhaliwal"
+    ]
+  },
+  {
+    "source": "se3",
+    "target": "cia10",
+    "similarity": 0.11378900881901549,
+    "entities": [
+      "Hans Pakes",
+      "The Netherlands"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "se4",
+    "similarity": 0.08335231080688124,
+    "entities": [
+      "718-352-8479"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "se3",
+    "similarity": 0.19871308357305484,
+    "entities": [
+      "Queens",
+      "New York City",
+      "718-352-8479"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "se2",
+    "similarity": 0.19871308357305484,
+    "entities": [
+      "Queens",
+      "New York City",
+      "718-352-8479"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "fbi25",
+    "similarity": 0.22112038550964375,
+    "entities": [
+      "Hani al Hallak",
+      "North Bergen"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "fbi22",
+    "similarity": 0.027807054576814278,
+    "entities": [
+      "New York City"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "fbi18",
+    "similarity": 0.020571483162350426,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "fbi16",
+    "similarity": 0.2080428700969491,
+    "entities": [
+      "Hani al Hallak",
+      "Hani al Hallak",
+      "North Bergen"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "fbi15",
+    "similarity": 0.03422916563447769,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "fbi14",
+    "similarity": 0.050175645980580955,
+    "entities": [
+      "New York City",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "fbi13",
+    "similarity": 0.46433959742392156,
+    "entities": [
+      "Queens",
+      "New York City",
+      "Myrtle Ave",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "fbi10",
+    "similarity": 0.1619502604310779,
+    "entities": [
+      "Queens",
+      "New York City",
+      "Myrtle Ave"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "cia6",
+    "similarity": 0.014620249949184377,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "se2",
+    "target": "cia5",
+    "similarity": 0.03635114769049541,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "se1",
+    "target": "se5",
+    "similarity": 0.07464356242477645,
+    "entities": [
+      "Arabic"
+    ]
+  },
+  {
+    "source": "se1",
+    "target": "se4",
+    "similarity": 0.048425550228089295,
+    "entities": [
+      "Arabic"
+    ]
+  },
+  {
+    "source": "se1",
+    "target": "fbi8",
+    "similarity": 0.13648169067313484,
+    "entities": [
+      "Jamal Kalifa",
+      "Texas",
+      "Houston"
+    ]
+  },
+  {
+    "source": "se1",
+    "target": "fbi5",
+    "similarity": 0.1007724375100608,
+    "entities": [
+      "Texas",
+      "Houston",
+      "10 April, 2003"
+    ]
+  },
+  {
+    "source": "se1",
+    "target": "fbi4",
+    "similarity": 0.023199498290169148,
+    "entities": [
+      "10 April, 2003"
+    ]
+  },
+  {
+    "source": "se1",
+    "target": "fbi3",
+    "similarity": 0.02041219359903379,
+    "entities": [
+      "6 April, 2003"
+    ]
+  },
+  {
+    "source": "se1",
+    "target": "fbi20",
+    "similarity": 0.0336697595427783,
+    "entities": [
+      "10 April, 2003"
+    ]
+  },
+  {
+    "source": "se1",
+    "target": "fbi19",
+    "similarity": 0.03823163262072662,
+    "entities": [
+      "Georgia"
+    ]
+  },
+  {
+    "source": "se1",
+    "target": "fbi17",
+    "similarity": 0.06276747243783708,
+    "entities": [
+      "Sprint"
+    ]
+  },
+  {
+    "source": "se1",
+    "target": "fbi11",
+    "similarity": 0.025920032380965942,
+    "entities": [
+      "Sprint"
+    ]
+  },
+  {
+    "source": "se1",
+    "target": "cia1",
+    "similarity": 0.02622593080705919,
+    "entities": [
+      "30 March, 2003"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi8",
+    "similarity": 0.09102726426725595,
+    "entities": [
+      "Washington",
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi7",
+    "similarity": 0.03234694110933005,
+    "entities": [
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi6",
+    "similarity": 0.07226742432126503,
+    "entities": [
+      "FBI",
+      "Middle Eastern",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi5",
+    "similarity": 0.009815901525930691,
+    "entities": [
+      "FBI",
+      "16 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi4",
+    "similarity": 0.0008666984209889461,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi3",
+    "similarity": 0.0013581904872618541,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi25",
+    "similarity": 0.0013614898324332393,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi24",
+    "similarity": 0.0020459217868700167,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi23",
+    "similarity": 0.0006103141489841084,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi22",
+    "similarity": 0.0008850660209098466,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi21",
+    "similarity": 0.0009354262915995464,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi20",
+    "similarity": 0.0012578516597994364,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi2",
+    "similarity": 0.0008872611972575721,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi19",
+    "similarity": 0.0008479545895942445,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi18",
+    "similarity": 0.0007739447232917197,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi17",
+    "similarity": 0.0018573358645268868,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi16",
+    "similarity": 0.04005638987448367,
+    "entities": [
+      "FBI",
+      "16 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi15",
+    "similarity": 0.0012877769636934363,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi14",
+    "similarity": 0.0017302514068152806,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi13",
+    "similarity": 0.0017424771259036073,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi12",
+    "similarity": 0.0020435611411236997,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi11",
+    "similarity": 0.0007669929006388588,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi10",
+    "similarity": 0.0006750672178175432,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi9",
+    "target": "fbi1",
+    "similarity": 0.0008250471516609557,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "se1",
+    "similarity": 0.13648169067313484,
+    "entities": [
+      "Jamal Kalifa",
+      "Texas",
+      "Houston"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi9",
+    "similarity": 0.09102726426725595,
+    "entities": [
+      "Washington",
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi8",
+    "similarity": 0.09102726426725595,
+    "entities": [
+      "Washington",
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi7",
+    "similarity": 0.05471549371513076,
+    "entities": [
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi6",
+    "similarity": 0.04803627120237443,
+    "entities": [
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi5",
+    "similarity": 0.14484454910251018,
+    "entities": [
+      "Texas",
+      "Houston",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi4",
+    "similarity": 0.0014660376029452821,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi3",
+    "similarity": 0.002297406200436413,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi25",
+    "similarity": 0.002302987108361487,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi24",
+    "similarity": 0.0034607173609639036,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi23",
+    "similarity": 0.0010323585117408029,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi22",
+    "similarity": 0.0014971067632296282,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi21",
+    "similarity": 0.0015822921619077046,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi20",
+    "similarity": 0.002127681079756611,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi2",
+    "similarity": 0.0015008199476464056,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi19",
+    "similarity": 0.0014343320396461778,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi18",
+    "similarity": 0.0013091428800021015,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi17",
+    "similarity": 0.003141720525564484,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi16",
+    "similarity": 0.0023411265655222152,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi15",
+    "similarity": 0.0021783003259969688,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi14",
+    "similarity": 0.002926754639803975,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi13",
+    "similarity": 0.0029474346866028155,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi12",
+    "similarity": 0.0034567242817710453,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi11",
+    "similarity": 0.03754848903021404,
+    "entities": [
+      "INS",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi10",
+    "similarity": 0.0011418896145061676,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "fbi1",
+    "similarity": 0.001395583653143966,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "cia9",
+    "similarity": 0.051895101722346335,
+    "entities": [
+      "Dutch"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "cia8",
+    "similarity": 0.0627984734569729,
+    "entities": [
+      "Dutch"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "cia7",
+    "similarity": 0.06730116942248118,
+    "entities": [
+      "Dutch"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "cia4",
+    "similarity": 0.0893467524195696,
+    "entities": [
+      "INS",
+      "14 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "cia3",
+    "similarity": 0.030051004358704232,
+    "entities": [
+      "Paris"
+    ]
+  },
+  {
+    "source": "fbi8",
+    "target": "cia1",
+    "similarity": 0.027492268111569716,
+    "entities": [
+      "Paris"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "se3",
+    "similarity": 0.034243884772865454,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi9",
+    "similarity": 0.03234694110933005,
+    "entities": [
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi8",
+    "similarity": 0.05471549371513076,
+    "entities": [
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi7",
+    "similarity": 0.05471549371513076,
+    "entities": [
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi6",
+    "similarity": 0.10894302500791558,
+    "entities": [
+      "Virginia",
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi5",
+    "similarity": 0.0008609518927387265,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi4",
+    "similarity": 0.0022000913548302285,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi3",
+    "similarity": 0.003447731156389832,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi25",
+    "similarity": 0.1965950766206878,
+    "entities": [
+      "FBI",
+      "C-4"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi24",
+    "similarity": 0.5046147502374233,
+    "entities": [
+      "Virginia",
+      "Keswick",
+      "FBI",
+      "C-4"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi23",
+    "similarity": 0.001549266561924001,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi22",
+    "similarity": 0.002246717028555171,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi21",
+    "similarity": 0.0023745552632722633,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi20",
+    "similarity": 0.13180481165781785,
+    "entities": [
+      "Virginia",
+      "Keswick",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi2",
+    "similarity": 0.030039454454487337,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi19",
+    "similarity": 0.028708674911425498,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi18",
+    "similarity": 0.0019646385104609564,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi17",
+    "similarity": 0.03379873605634194,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi16",
+    "similarity": 0.0035133425684450554,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi15",
+    "similarity": 0.0637647100177133,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi14",
+    "similarity": 0.00439219810447271,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi13",
+    "similarity": 0.004423232773766463,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi12",
+    "similarity": 0.005187526699913752,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi11",
+    "similarity": 0.03797791176090977,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi10",
+    "similarity": 0.0017136405396411978,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "fbi1",
+    "similarity": 0.027933111931107018,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi7",
+    "target": "cia4",
+    "similarity": 0.03804550169064562,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "se3",
+    "similarity": 0.057635729883211105,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi9",
+    "similarity": 0.07226742432126503,
+    "entities": [
+      "FBI",
+      "Middle Eastern",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi8",
+    "similarity": 0.04803627120237443,
+    "entities": [
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi7",
+    "similarity": 0.10894302500791558,
+    "entities": [
+      "Virginia",
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi6",
+    "similarity": 0.10894302500791558,
+    "entities": [
+      "Virginia",
+      "FBI",
+      "15 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi5",
+    "similarity": 0.021693723201007976,
+    "entities": [
+      "FBI",
+      "13 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi4",
+    "similarity": 0.05543651540946399,
+    "entities": [
+      "FBI",
+      "13 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi3",
+    "similarity": 0.005802860947513568,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi25",
+    "similarity": 0.005816957380544841,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi24",
+    "similarity": 0.1165838383622082,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi23",
+    "similarity": 0.0026075636474194052,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi22",
+    "similarity": 0.0037814394202267663,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi21",
+    "similarity": 0.003996603383479536,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi20",
+    "similarity": 0.07167682339120111,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi2",
+    "similarity": 0.05055927194772474,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi19",
+    "similarity": 0.04831944282825544,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi18",
+    "similarity": 0.0033066743232592296,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi17",
+    "similarity": 0.056886502061847304,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi16",
+    "similarity": 0.005913291222803693,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi15",
+    "similarity": 0.10732209931901027,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi14",
+    "similarity": 0.00739248905963884,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi13",
+    "similarity": 0.007444723373248228,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi12",
+    "similarity": 0.008731103074937605,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi11",
+    "similarity": 0.06392045406935472,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi10",
+    "similarity": 0.0028842207569259844,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "fbi1",
+    "similarity": 0.047014096231701254,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi6",
+    "target": "cia4",
+    "similarity": 0.06403421437893758,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "se1",
+    "similarity": 0.1007724375100608,
+    "entities": [
+      "Texas",
+      "Houston",
+      "10 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi9",
+    "similarity": 0.009815901525930691,
+    "entities": [
+      "FBI",
+      "16 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi8",
+    "similarity": 0.14484454910251018,
+    "entities": [
+      "Texas",
+      "Houston",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi7",
+    "similarity": 0.0008609518927387265,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi6",
+    "similarity": 0.021693723201007976,
+    "entities": [
+      "FBI",
+      "13 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi5",
+    "similarity": 0.021693723201007976,
+    "entities": [
+      "FBI",
+      "13 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi4",
+    "similarity": 0.027253490257080338,
+    "entities": [
+      "FBI",
+      "10 April, 2003",
+      "13 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi3",
+    "similarity": 0.0008362153457705307,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi25",
+    "similarity": 0.0008382466978446189,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi24",
+    "similarity": 0.0012596400950179317,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi23",
+    "similarity": 0.00037576029423551615,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi22",
+    "similarity": 0.0005449204626642224,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi21",
+    "similarity": 0.0005759264456709092,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi20",
+    "similarity": 0.017914251113109677,
+    "entities": [
+      "FBI",
+      "10 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi2",
+    "similarity": 0.0005462719963156922,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi19",
+    "similarity": 0.000522071570214549,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi18",
+    "similarity": 0.0004765049236203997,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi17",
+    "similarity": 0.0011435308719460351,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi16",
+    "similarity": 0.024662054566984087,
+    "entities": [
+      "FBI",
+      "16 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi15",
+    "similarity": 0.0007928629077215858,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi14",
+    "similarity": 0.01594825235292988,
+    "entities": [
+      "American Airlines",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi13",
+    "similarity": 0.00107281425249285,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi12",
+    "similarity": 0.0012581866846034782,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi11",
+    "similarity": 0.0004722248017686282,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi10",
+    "similarity": 0.00041562768423131604,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "fbi1",
+    "similarity": 0.0005079678407953275,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi5",
+    "target": "cia1",
+    "similarity": 0.010006700809184439,
+    "entities": [
+      "American Airlines"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "se1",
+    "similarity": 0.023199498290169148,
+    "entities": [
+      "10 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi9",
+    "similarity": 0.0008666984209889461,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi8",
+    "similarity": 0.0014660376029452821,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi7",
+    "similarity": 0.0022000913548302285,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi6",
+    "similarity": 0.05543651540946399,
+    "entities": [
+      "FBI",
+      "13 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi5",
+    "similarity": 0.027253490257080338,
+    "entities": [
+      "FBI",
+      "10 April, 2003",
+      "13 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi4",
+    "similarity": 0.027253490257080338,
+    "entities": [
+      "FBI",
+      "10 April, 2003",
+      "13 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi3",
+    "similarity": 0.002136879154947656,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi25",
+    "similarity": 0.0021420701071652084,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi24",
+    "similarity": 0.0032189060813035395,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi23",
+    "similarity": 0.0009602243537745532,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi22",
+    "similarity": 0.0013924991734020928,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi21",
+    "similarity": 0.0014717323985524863,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi20",
+    "similarity": 0.045778387079022397,
+    "entities": [
+      "FBI",
+      "10 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi2",
+    "similarity": 0.0013959529058666352,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi19",
+    "similarity": 0.0013341107185186709,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi18",
+    "similarity": 0.4548954411436736,
+    "entities": [
+      "Denver",
+      "Colorado",
+      "Camp George West Military Reservation",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi17",
+    "similarity": 0.002922198564831355,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi16",
+    "similarity": 0.002177544639693368,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi15",
+    "similarity": 0.0020260955850795524,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi14",
+    "similarity": 0.0027222530261542003,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi13",
+    "similarity": 0.0027414880926040913,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi12",
+    "similarity": 0.0032151920111971512,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi11",
+    "similarity": 0.0012067314244500586,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi10",
+    "similarity": 0.0010621021715819905,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "fbi1",
+    "similarity": 0.0012980698044701656,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi4",
+    "target": "cia3",
+    "similarity": 0.13975622766918175,
+    "entities": [
+      "Denver",
+      "Colorado"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "se1",
+    "similarity": 0.02041219359903379,
+    "entities": [
+      "6 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi9",
+    "similarity": 0.0013581904872618541,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi8",
+    "similarity": 0.002297406200436413,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi7",
+    "similarity": 0.003447731156389832,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi6",
+    "similarity": 0.005802860947513568,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi5",
+    "similarity": 0.0008362153457705307,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi4",
+    "similarity": 0.002136879154947656,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi3",
+    "similarity": 0.002136879154947656,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi25",
+    "similarity": 0.0033568069032363823,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi24",
+    "similarity": 0.005044300893068731,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi23",
+    "similarity": 0.0015047536159644081,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi22",
+    "similarity": 0.0021821651972974334,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi21",
+    "similarity": 0.012122034667587305,
+    "entities": [
+      "US",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi20",
+    "similarity": 0.0031012828992750727,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi2",
+    "similarity": 0.01149787117269275,
+    "entities": [
+      "US",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi19",
+    "similarity": 0.054048632644281426,
+    "entities": [
+      "Los Angeles",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi18",
+    "similarity": 0.0019081912534197416,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi17",
+    "similarity": 0.0045793348603490845,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi16",
+    "similarity": 0.003412398527096538,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi15",
+    "similarity": 0.0031750649168119176,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi14",
+    "similarity": 0.004266003115389992,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi13",
+    "similarity": 0.004296146108202048,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi12",
+    "similarity": 0.0050384806278353355,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi11",
+    "similarity": 0.0018910512603655934,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi10",
+    "similarity": 0.001664404862185869,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "fbi1",
+    "similarity": 0.002034186306952692,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "cia6",
+    "similarity": 0.005771796733420485,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "cia4",
+    "similarity": 0.008498283137627625,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "cia3",
+    "similarity": 0.006671768590524871,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "fbi3",
+    "target": "cia11",
+    "similarity": 0.00868984185108726,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "se5",
+    "similarity": 0.06970036092846212,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "se2",
+    "similarity": 0.22112038550964375,
+    "entities": [
+      "Hani al Hallak",
+      "North Bergen"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi9",
+    "similarity": 0.0013614898324332393,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi8",
+    "similarity": 0.002302987108361487,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi7",
+    "similarity": 0.1965950766206878,
+    "entities": [
+      "FBI",
+      "C-4"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi6",
+    "similarity": 0.005816957380544841,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi5",
+    "similarity": 0.0008382466978446189,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi4",
+    "similarity": 0.0021420701071652084,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi3",
+    "similarity": 0.0033568069032363823,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi25",
+    "similarity": 0.0033568069032363823,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi24",
+    "similarity": 0.2109071186487295,
+    "entities": [
+      "FBI",
+      "C-4",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi23",
+    "similarity": 0.02076770032859181,
+    "entities": [
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi22",
+    "similarity": 0.11166246341709013,
+    "entities": [
+      "Canada",
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi21",
+    "similarity": 0.0023119330186449592,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi20",
+    "similarity": 0.003108816601546432,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi2",
+    "similarity": 0.0021928916008920464,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi19",
+    "similarity": 0.0020957441880773194,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi18",
+    "similarity": 0.001912826672130958,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi17",
+    "similarity": 0.004590459077829145,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi16",
+    "similarity": 0.44157301008383576,
+    "entities": [
+      "Hani al Hallak",
+      "Hani al Hallak",
+      "New Jersey",
+      "North Bergen",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi15",
+    "similarity": 0.00318277785192696,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi14",
+    "similarity": 0.00427636618074193,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi13",
+    "similarity": 0.004306582397552181,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi12",
+    "similarity": 0.0050507202119632446,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi11",
+    "similarity": 0.0018956450422417336,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi10",
+    "similarity": 0.0016684480698189558,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "fbi1",
+    "similarity": 0.0020391277955233216,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "cia6",
+    "similarity": 0.0379854797543188,
+    "entities": [
+      "New Jersey"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "cia11",
+    "similarity": 0.026132854198294378,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi25",
+    "target": "cia10",
+    "similarity": 0.027737241530572908,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "se5",
+    "similarity": 0.10473929630556883,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "se3",
+    "similarity": 0.1002029744817938,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi9",
+    "similarity": 0.0020459217868700167,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi8",
+    "similarity": 0.0034607173609639036,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi7",
+    "similarity": 0.5046147502374233,
+    "entities": [
+      "Virginia",
+      "Keswick",
+      "FBI",
+      "C-4"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi6",
+    "similarity": 0.1165838383622082,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi5",
+    "similarity": 0.0012596400950179317,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi4",
+    "similarity": 0.0032189060813035395,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi3",
+    "similarity": 0.005044300893068731,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi25",
+    "similarity": 0.2109071186487295,
+    "entities": [
+      "FBI",
+      "C-4",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi24",
+    "similarity": 0.2109071186487295,
+    "entities": [
+      "FBI",
+      "C-4",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi23",
+    "similarity": 0.031207791313077656,
+    "entities": [
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi22",
+    "similarity": 0.04525694795840251,
+    "entities": [
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi21",
+    "similarity": 0.0034741604527273053,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi20",
+    "similarity": 0.42462827775995093,
+    "entities": [
+      "Virginia",
+      "Keswick",
+      "FBI",
+      "Budget Storage Units"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi2",
+    "similarity": 0.08460487638601177,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi19",
+    "similarity": 0.08085679105016237,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi18",
+    "similarity": 0.0028744201166927886,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi17",
+    "similarity": 0.09200227956420709,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi16",
+    "similarity": 0.00514029553111128,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi15",
+    "similarity": 0.18180275042817667,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi14",
+    "similarity": 0.006426130059434763,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi13",
+    "similarity": 0.006471536212911793,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi12",
+    "similarity": 0.007589758127368936,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi11",
+    "similarity": 0.10828072160500665,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi10",
+    "similarity": 0.002507190413756696,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "fbi1",
+    "similarity": 0.07867245011351764,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "cia4",
+    "similarity": 0.11132710147639606,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "cia11",
+    "similarity": 0.03927005144198148,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi24",
+    "target": "cia10",
+    "similarity": 0.04168097726712742,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "se5",
+    "similarity": 0.03124453481074782,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi9",
+    "similarity": 0.0006103141489841084,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi8",
+    "similarity": 0.0010323585117408029,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi7",
+    "similarity": 0.001549266561924001,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi6",
+    "similarity": 0.0026075636474194052,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi5",
+    "similarity": 0.00037576029423551615,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi4",
+    "similarity": 0.0009602243537745532,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi3",
+    "similarity": 0.0015047536159644081,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi25",
+    "similarity": 0.02076770032859181,
+    "entities": [
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi24",
+    "similarity": 0.031207791313077656,
+    "entities": [
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi23",
+    "similarity": 0.031207791313077656,
+    "entities": [
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi22",
+    "similarity": 0.013500494425599151,
+    "entities": [
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi21",
+    "similarity": 0.0010363686890417874,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi20",
+    "similarity": 0.001393587167029773,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi2",
+    "similarity": 0.0009830060712395768,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi19",
+    "similarity": 0.0009394578645871153,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi18",
+    "similarity": 0.0008574615503880045,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi17",
+    "similarity": 0.0020577620624053004,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi16",
+    "similarity": 0.001533389552196167,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi15",
+    "similarity": 0.0014267417279442089,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi14",
+    "similarity": 0.0019169638466410735,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi13",
+    "similarity": 0.0019305088502163917,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi12",
+    "similarity": 0.0022640830173605683,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi11",
+    "similarity": 0.0008497595524926099,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi10",
+    "similarity": 0.0007479141155508157,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "fbi1",
+    "similarity": 0.0009140784716478457,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "cia11",
+    "similarity": 0.011714557311128426,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi23",
+    "target": "cia10",
+    "similarity": 0.012433754962124082,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "se5",
+    "similarity": 0.04531023268288642,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "se3",
+    "similarity": 0.026513194987809886,
+    "entities": [
+      "New York City"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "se2",
+    "similarity": 0.027807054576814278,
+    "entities": [
+      "New York City"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi9",
+    "similarity": 0.0008850660209098466,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi8",
+    "similarity": 0.0014971067632296282,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi7",
+    "similarity": 0.002246717028555171,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi6",
+    "similarity": 0.0037814394202267663,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi5",
+    "similarity": 0.0005449204626642224,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi4",
+    "similarity": 0.0013924991734020928,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi3",
+    "similarity": 0.0021821651972974334,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi25",
+    "similarity": 0.11166246341709013,
+    "entities": [
+      "Canada",
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi24",
+    "similarity": 0.04525694795840251,
+    "entities": [
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi23",
+    "similarity": 0.013500494425599151,
+    "entities": [
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi22",
+    "similarity": 0.013500494425599151,
+    "entities": [
+      "FBI",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi21",
+    "similarity": 0.0015029222464079768,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi20",
+    "similarity": 0.002020953718289404,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi2",
+    "similarity": 0.0014255367886365149,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi19",
+    "similarity": 0.0013623840040520347,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi18",
+    "similarity": 0.0012434745020221709,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi17",
+    "similarity": 0.0029841275736173724,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi16",
+    "similarity": 0.00222369248972193,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi15",
+    "similarity": 0.002069033834656355,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi14",
+    "similarity": 0.02375731308513445,
+    "entities": [
+      "New York City",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi13",
+    "similarity": 0.045050770625647746,
+    "entities": [
+      "New York City",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi12",
+    "similarity": 0.003283330315248934,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi11",
+    "similarity": 0.001232305210532403,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi10",
+    "similarity": 0.05788619184069224,
+    "entities": [
+      "Mark Davis",
+      "New York City",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "fbi1",
+    "similarity": 0.0013255792890388628,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "cia8",
+    "similarity": 0.05023525241482465,
+    "entities": [
+      "Saudi"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "cia6",
+    "similarity": 0.01598805769334181,
+    "entities": [
+      "Afghanistan"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "cia4",
+    "similarity": 0.07204758718403426,
+    "entities": [
+      "Afghanistan",
+      "Sudan"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "cia11",
+    "similarity": 0.04105936321264043,
+    "entities": [
+      "Afghanistan",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi22",
+    "target": "cia10",
+    "similarity": 0.04358014114642169,
+    "entities": [
+      "Afghanistan",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "se5",
+    "similarity": 0.10480012772808393,
+    "entities": [
+      "26 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "se3",
+    "similarity": 0.041093233589535164,
+    "entities": [
+      "Amsterdam"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi9",
+    "similarity": 0.0009354262915995464,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi8",
+    "similarity": 0.0015822921619077046,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi7",
+    "similarity": 0.0023745552632722633,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi6",
+    "similarity": 0.003996603383479536,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi5",
+    "similarity": 0.0005759264456709092,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi4",
+    "similarity": 0.0014717323985524863,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi3",
+    "similarity": 0.012122034667587305,
+    "entities": [
+      "US",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi25",
+    "similarity": 0.0023119330186449592,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi24",
+    "similarity": 0.0034741604527273053,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi23",
+    "similarity": 0.0010363686890417874,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi22",
+    "similarity": 0.0015029222464079768,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi21",
+    "similarity": 0.0015029222464079768,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi20",
+    "similarity": 0.06181790591260323,
+    "entities": [
+      "FBI",
+      "26 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi2",
+    "similarity": 0.05408854263595897,
+    "entities": [
+      "US",
+      "Amsterdam",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi19",
+    "similarity": 0.03330774429610487,
+    "entities": [
+      "FBI",
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi18",
+    "similarity": 0.0304006290655912,
+    "entities": [
+      "FBI",
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi17",
+    "similarity": 0.0031539244800961436,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi16",
+    "similarity": 0.002350220627812609,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi15",
+    "similarity": 0.0021867618928099455,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi14",
+    "similarity": 0.0029381235633790825,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi13",
+    "similarity": 0.0029588839414323403,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi12",
+    "similarity": 0.00347015186249312,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi11",
+    "similarity": 0.0013024233966434711,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi10",
+    "similarity": 0.001146325263324136,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "fbi1",
+    "similarity": 0.0014010047717028917,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "cia9",
+    "similarity": 0.05209668727290118,
+    "entities": [
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "cia8",
+    "similarity": 0.03152120647539588,
+    "entities": [
+      "Amsterdam"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "cia6",
+    "similarity": 0.011925625598574028,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "cia4",
+    "similarity": 0.017559063080511757,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "cia3",
+    "similarity": 0.013785137967562085,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "cia11",
+    "similarity": 0.017954859675987207,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "fbi21",
+    "target": "cia10",
+    "similarity": 0.22256460472077802,
+    "entities": [
+      "Holland Queen"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "se5",
+    "similarity": 0.1409229308538576,
+    "entities": [
+      "26 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "se3",
+    "similarity": 0.20720110856625504,
+    "entities": [
+      "Richmond",
+      "Virginia",
+      "Charlottesville"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "se1",
+    "similarity": 0.0336697595427783,
+    "entities": [
+      "10 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi9",
+    "similarity": 0.0012578516597994364,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi8",
+    "similarity": 0.002127681079756611,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi7",
+    "similarity": 0.13180481165781785,
+    "entities": [
+      "Virginia",
+      "Keswick",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi6",
+    "similarity": 0.07167682339120111,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi5",
+    "similarity": 0.017914251113109677,
+    "entities": [
+      "FBI",
+      "10 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi4",
+    "similarity": 0.045778387079022397,
+    "entities": [
+      "FBI",
+      "10 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi3",
+    "similarity": 0.0031012828992750727,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi25",
+    "similarity": 0.003108816601546432,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi24",
+    "similarity": 0.42462827775995093,
+    "entities": [
+      "Virginia",
+      "Keswick",
+      "FBI",
+      "Budget Storage Units"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi23",
+    "similarity": 0.001393587167029773,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi22",
+    "similarity": 0.002020953718289404,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi21",
+    "similarity": 0.06181790591260323,
+    "entities": [
+      "FBI",
+      "26 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi20",
+    "similarity": 0.06181790591260323,
+    "entities": [
+      "FBI",
+      "26 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi2",
+    "similarity": 0.05201586144311013,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi19",
+    "similarity": 0.18982595057688081,
+    "entities": [
+      "Virginia",
+      "Charlottesville",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi18",
+    "similarity": 0.0017672201048673927,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi17",
+    "similarity": 0.150425969531397,
+    "entities": [
+      "Richmond",
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi16",
+    "similarity": 0.0031603012916537926,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi15",
+    "similarity": 0.21816895527173297,
+    "entities": [
+      "Virginia",
+      "Charlottesville",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi14",
+    "similarity": 0.003950844266492291,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi13",
+    "similarity": 0.003978760390110862,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi12",
+    "similarity": 0.004666253577851856,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi11",
+    "similarity": 0.19330847741562981,
+    "entities": [
+      "Virginia",
+      "Charlottesville",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi10",
+    "similarity": 0.001541443882955951,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "fbi1",
+    "similarity": 0.04836855083652503,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi20",
+    "target": "cia4",
+    "similarity": 0.10937280831212567,
+    "entities": [
+      "Richmond",
+      "Virginia"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "se3",
+    "similarity": 0.08243267552940879,
+    "entities": [
+      "Virginia",
+      "Amsterdam"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi9",
+    "similarity": 0.0008872611972575721,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi8",
+    "similarity": 0.0015008199476464056,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi7",
+    "similarity": 0.030039454454487337,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi6",
+    "similarity": 0.05055927194772474,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi5",
+    "similarity": 0.0005462719963156922,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi4",
+    "similarity": 0.0013959529058666352,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi3",
+    "similarity": 0.01149787117269275,
+    "entities": [
+      "US",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi25",
+    "similarity": 0.0021928916008920464,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi24",
+    "similarity": 0.08460487638601177,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi23",
+    "similarity": 0.0009830060712395768,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi22",
+    "similarity": 0.0014255367886365149,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi21",
+    "similarity": 0.05408854263595897,
+    "entities": [
+      "US",
+      "Amsterdam",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi20",
+    "similarity": 0.05201586144311013,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi2",
+    "similarity": 0.05201586144311013,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi19",
+    "similarity": 0.03506541339653388,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi18",
+    "similarity": 0.0012465586175020903,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi17",
+    "similarity": 0.03989891169859782,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi16",
+    "similarity": 0.05087853166595934,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi15",
+    "similarity": 0.18206441152272632,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "Virginia",
+      "Springfield",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi14",
+    "similarity": 0.0027868395981010216,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi13",
+    "similarity": 0.0028065310244084394,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi12",
+    "similarity": 0.0032914737631720564,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi11",
+    "similarity": 0.04695843375232403,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi10",
+    "similarity": 0.001087300982148349,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "fbi1",
+    "similarity": 0.18691860131104013,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "Virginia",
+      "Springfield",
+      "Egypt",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "cia8",
+    "similarity": 0.02989817973636315,
+    "entities": [
+      "Amsterdam"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "cia7",
+    "similarity": 0.16181242687006583,
+    "entities": [
+      "Germany",
+      "Hamburg"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "cia6",
+    "similarity": 0.11032969915281937,
+    "entities": [
+      "US",
+      "Germany",
+      "Hamburg"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "cia4",
+    "similarity": 0.06493451370991472,
+    "entities": [
+      "US",
+      "Virginia"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "cia3",
+    "similarity": 0.01307534129337474,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "fbi2",
+    "target": "cia11",
+    "similarity": 0.031584921540670614,
+    "entities": [
+      "Abdul Ramazi",
+      "US"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "se3",
+    "similarity": 0.1328794740136477,
+    "entities": [
+      "Mukhtar Galab",
+      "Virginia",
+      "Charlottesville"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "se1",
+    "similarity": 0.03823163262072662,
+    "entities": [
+      "Georgia"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi9",
+    "similarity": 0.0008479545895942445,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi8",
+    "similarity": 0.0014343320396461778,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi7",
+    "similarity": 0.028708674911425498,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi6",
+    "similarity": 0.04831944282825544,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi5",
+    "similarity": 0.000522071570214549,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi4",
+    "similarity": 0.0013341107185186709,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi3",
+    "similarity": 0.054048632644281426,
+    "entities": [
+      "Los Angeles",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi25",
+    "similarity": 0.0020957441880773194,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi24",
+    "similarity": 0.08085679105016237,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi23",
+    "similarity": 0.0009394578645871153,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi22",
+    "similarity": 0.0013623840040520347,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi21",
+    "similarity": 0.03330774429610487,
+    "entities": [
+      "FBI",
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi20",
+    "similarity": 0.18982595057688081,
+    "entities": [
+      "Virginia",
+      "Charlottesville",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi2",
+    "similarity": 0.03506541339653388,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi19",
+    "similarity": 0.03506541339653388,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi18",
+    "similarity": 0.027557866583630183,
+    "entities": [
+      "FBI",
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi17",
+    "similarity": 0.11801669315863288,
+    "entities": [
+      "Faysal Goba",
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi16",
+    "similarity": 0.002130451523342382,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi15",
+    "similarity": 0.2187980141851834,
+    "entities": [
+      "Mukhtar Galab",
+      "Mukhtar Galab",
+      "Virginia",
+      "Charlottesville",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi14",
+    "similarity": 0.0026633796620170788,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi13",
+    "similarity": 0.0026821987373521,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi12",
+    "similarity": 0.0031456580008655003,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi11",
+    "similarity": 0.21704558460801857,
+    "entities": [
+      "Mukhtar Galab",
+      "Yasein Mosed",
+      "Virginia",
+      "Charlottesville",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi10",
+    "similarity": 0.0010391324008451714,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "fbi1",
+    "similarity": 0.03260665465146633,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "cia9",
+    "similarity": 0.04722512663202339,
+    "entities": [
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "cia8",
+    "similarity": 0.04812885348460901,
+    "entities": [
+      "23 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi19",
+    "target": "cia4",
+    "similarity": 0.08097413974659694,
+    "entities": [
+      "Faysal Goba",
+      "Virginia"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "se4",
+    "similarity": 0.030383404423051187,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "se2",
+    "similarity": 0.020571483162350426,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi9",
+    "similarity": 0.0007739447232917197,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi8",
+    "similarity": 0.0013091428800021015,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi7",
+    "similarity": 0.0019646385104609564,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi6",
+    "similarity": 0.0033066743232592296,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi5",
+    "similarity": 0.0004765049236203997,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi4",
+    "similarity": 0.4548954411436736,
+    "entities": [
+      "Denver",
+      "Colorado",
+      "Camp George West Military Reservation",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi3",
+    "similarity": 0.0019081912534197416,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi25",
+    "similarity": 0.001912826672130958,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi24",
+    "similarity": 0.0028744201166927886,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi23",
+    "similarity": 0.0008574615503880045,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi22",
+    "similarity": 0.0012434745020221709,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi21",
+    "similarity": 0.0304006290655912,
+    "entities": [
+      "FBI",
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi20",
+    "similarity": 0.0017672201048673927,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi2",
+    "similarity": 0.0012465586175020903,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi19",
+    "similarity": 0.027557866583630183,
+    "entities": [
+      "FBI",
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi18",
+    "similarity": 0.027557866583630183,
+    "entities": [
+      "FBI",
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi17",
+    "similarity": 0.04199135213604738,
+    "entities": [
+      "FBI",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi16",
+    "similarity": 0.031290838636971165,
+    "entities": [
+      "FBI",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi15",
+    "similarity": 0.02490985291927816,
+    "entities": [
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi14",
+    "similarity": 0.0179498431843435,
+    "entities": [
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi13",
+    "similarity": 0.033705253429116476,
+    "entities": [
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi12",
+    "similarity": 0.002871103524795119,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi11",
+    "similarity": 0.0010775875388324206,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi10",
+    "similarity": 0.0009484364473107105,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "fbi1",
+    "similarity": 0.0011591509241330583,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "cia9",
+    "similarity": 0.04310329587475571,
+    "entities": [
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "cia7",
+    "similarity": 0.019059099629825847,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "cia6",
+    "similarity": 0.021529782284813875,
+    "entities": [
+      "20 April, 2003",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "cia5",
+    "similarity": 0.024532673090071618,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi18",
+    "target": "cia3",
+    "similarity": 0.224700707948486,
+    "entities": [
+      "Masood Yaser",
+      "Denver",
+      "Colorado",
+      "Coal Mine Road"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "se4",
+    "similarity": 0.17984296957948762,
+    "entities": [
+      "804-759-6302",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "se3",
+    "similarity": 0.20866866389972408,
+    "entities": [
+      "Richmond",
+      "Virginia",
+      "804-759-6302"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "se1",
+    "similarity": 0.06276747243783708,
+    "entities": [
+      "Sprint"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi9",
+    "similarity": 0.0018573358645268868,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi8",
+    "similarity": 0.003141720525564484,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi7",
+    "similarity": 0.03379873605634194,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi6",
+    "similarity": 0.056886502061847304,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi5",
+    "similarity": 0.0011435308719460351,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi4",
+    "similarity": 0.002922198564831355,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi3",
+    "similarity": 0.0045793348603490845,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi25",
+    "similarity": 0.004590459077829145,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi24",
+    "similarity": 0.09200227956420709,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi23",
+    "similarity": 0.0020577620624053004,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi22",
+    "similarity": 0.0029841275736173724,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi21",
+    "similarity": 0.0031539244800961436,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi20",
+    "similarity": 0.150425969531397,
+    "entities": [
+      "Richmond",
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi2",
+    "similarity": 0.03989891169859782,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi19",
+    "similarity": 0.11801669315863288,
+    "entities": [
+      "Faysal Goba",
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi18",
+    "similarity": 0.04199135213604738,
+    "entities": [
+      "FBI",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi17",
+    "similarity": 0.04199135213604738,
+    "entities": [
+      "FBI",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi16",
+    "similarity": 0.07509269729805254,
+    "entities": [
+      "FBI",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi15",
+    "similarity": 0.08469336679659278,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi14",
+    "similarity": 0.005833791841946291,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi13",
+    "similarity": 0.005875012614834251,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi12",
+    "similarity": 0.00689016074002166,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi11",
+    "similarity": 0.1227008932565582,
+    "entities": [
+      "Virginia",
+      "FBI",
+      "Sprint"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi10",
+    "similarity": 0.002276086360951476,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "fbi1",
+    "similarity": 0.03710123191800517,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "cia7",
+    "similarity": 0.04573860150826792,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "cia6",
+    "similarity": 0.02798889183560133,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi17",
+    "target": "cia4",
+    "similarity": 0.349491946058395,
+    "entities": [
+      "Faysal Goba",
+      "Richmond",
+      "Virginia",
+      "Capitol Ave.",
+      "804-759-6302"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "se4",
+    "similarity": 0.05433432540663256,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "se2",
+    "similarity": 0.2080428700969491,
+    "entities": [
+      "Hani al Hallak",
+      "North Bergen",
+      "Hani al Hallak"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi9",
+    "similarity": 0.04005638987448367,
+    "entities": [
+      "FBI",
+      "16 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi8",
+    "similarity": 0.0023411265655222152,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi7",
+    "similarity": 0.0035133425684450554,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi6",
+    "similarity": 0.005913291222803693,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi5",
+    "similarity": 0.024662054566984087,
+    "entities": [
+      "FBI",
+      "16 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi4",
+    "similarity": 0.002177544639693368,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi3",
+    "similarity": 0.003412398527096538,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi25",
+    "similarity": 0.44157301008383576,
+    "entities": [
+      "Hani al Hallak",
+      "New Jersey",
+      "North Bergen",
+      "FBI",
+      "Hani al Hallak"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi24",
+    "similarity": 0.00514029553111128,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi23",
+    "similarity": 0.001533389552196167,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi22",
+    "similarity": 0.00222369248972193,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi21",
+    "similarity": 0.002350220627812609,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi20",
+    "similarity": 0.0031603012916537926,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi2",
+    "similarity": 0.05087853166595934,
+    "entities": [
+      "Abdul Ramazi",
+      "FBI",
+      "Abdul Ramazi"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi19",
+    "similarity": 0.002130451523342382,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi18",
+    "similarity": 0.031290838636971165,
+    "entities": [
+      "FBI",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi17",
+    "similarity": 0.07509269729805254,
+    "entities": [
+      "FBI",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi16",
+    "similarity": 0.07509269729805254,
+    "entities": [
+      "FBI",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi15",
+    "similarity": 0.35547465973972286,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "FBI",
+      "First Union Bank",
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "1070173749003"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi14",
+    "similarity": 0.004347186501082338,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi13",
+    "similarity": 0.004377903124561133,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi12",
+    "similarity": 0.0051343645043935415,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi11",
+    "similarity": 0.0019270385626909048,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi10",
+    "similarity": 0.0016960790120212474,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "fbi1",
+    "similarity": 0.15046931954830134,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "FBI",
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "1070173749003"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "cia7",
+    "similarity": 0.0340831891918843,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "cia6",
+    "similarity": 0.059471129820916964,
+    "entities": [
+      "New Jersey",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi16",
+    "target": "cia11",
+    "similarity": 0.04540726052073774,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "se3",
+    "similarity": 0.23333791128691006,
+    "entities": [
+      "Mukhtar Galab",
+      "Virginia",
+      "Charlottesville",
+      "Mukhtar Galab"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "se2",
+    "similarity": 0.03422916563447769,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi9",
+    "similarity": 0.0012877769636934363,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi8",
+    "similarity": 0.0021783003259969688,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi7",
+    "similarity": 0.0637647100177133,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi6",
+    "similarity": 0.10732209931901027,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi5",
+    "similarity": 0.0007928629077215858,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi4",
+    "similarity": 0.0020260955850795524,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi3",
+    "similarity": 0.0031750649168119176,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi25",
+    "similarity": 0.00318277785192696,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi24",
+    "similarity": 0.18180275042817667,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi23",
+    "similarity": 0.0014267417279442089,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi22",
+    "similarity": 0.002069033834656355,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi21",
+    "similarity": 0.0021867618928099455,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi20",
+    "similarity": 0.21816895527173297,
+    "entities": [
+      "Virginia",
+      "Charlottesville",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi2",
+    "similarity": 0.18206441152272634,
+    "entities": [
+      "Abdul Ramazi",
+      "Virginia",
+      "Springfield",
+      "FBI",
+      "Abdul Ramazi"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi19",
+    "similarity": 0.2187980141851834,
+    "entities": [
+      "Mukhtar Galab",
+      "Virginia",
+      "Charlottesville",
+      "FBI",
+      "Mukhtar Galab"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi18",
+    "similarity": 0.02490985291927816,
+    "entities": [
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi17",
+    "similarity": 0.08469336679659278,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi16",
+    "similarity": 0.35547465973972286,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "FBI",
+      "First Union Bank",
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "1070173749003"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi15",
+    "similarity": 0.35547465973972286,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "FBI",
+      "First Union Bank",
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "1070173749003"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi14",
+    "similarity": 0.02986698385434227,
+    "entities": [
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi13",
+    "similarity": 0.05608262142657569,
+    "entities": [
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi12",
+    "similarity": 0.004777267508052456,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi11",
+    "similarity": 0.2959646564873282,
+    "entities": [
+      "Mukhtar Galab",
+      "Virginia",
+      "Charlottesville",
+      "FBI",
+      "Mukhtar Galab"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi10",
+    "similarity": 0.0015781160742065151,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "fbi1",
+    "similarity": 0.39107385799381855,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "Virginia",
+      "Springfield",
+      "FBI",
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "1070173749003",
+      "1070173"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "cia6",
+    "similarity": 0.016417697536826238,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "cia5",
+    "similarity": 0.040820242470091785,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "cia4",
+    "similarity": 0.10510993941908649,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "fbi15",
+    "target": "cia11",
+    "similarity": 0.042249168349806465,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "se3",
+    "similarity": 0.025915859293562642,
+    "entities": [
+      "New York City"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "se2",
+    "similarity": 0.050175645980580955,
+    "entities": [
+      "New York City",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi9",
+    "similarity": 0.0017302514068152806,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi8",
+    "similarity": 0.002926754639803975,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi7",
+    "similarity": 0.00439219810447271,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi6",
+    "similarity": 0.00739248905963884,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi5",
+    "similarity": 0.01594825235292988,
+    "entities": [
+      "American Airlines",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi4",
+    "similarity": 0.0027222530261542003,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi3",
+    "similarity": 0.004266003115389992,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi25",
+    "similarity": 0.00427636618074193,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi24",
+    "similarity": 0.006426130059434763,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi23",
+    "similarity": 0.0019169638466410735,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi22",
+    "similarity": 0.02375731308513445,
+    "entities": [
+      "New York City",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi21",
+    "similarity": 0.0029381235633790825,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi20",
+    "similarity": 0.003950844266492291,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi2",
+    "similarity": 0.0027868395981010216,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi19",
+    "similarity": 0.0026633796620170788,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi18",
+    "similarity": 0.0179498431843435,
+    "entities": [
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi17",
+    "similarity": 0.005833791841946291,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi16",
+    "similarity": 0.004347186501082338,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi15",
+    "similarity": 0.02986698385434227,
+    "entities": [
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi14",
+    "similarity": 0.02986698385434227,
+    "entities": [
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi13",
+    "similarity": 0.0817119684456853,
+    "entities": [
+      "New York City",
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi12",
+    "similarity": 0.006418715398382011,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi11",
+    "similarity": 0.0024090833607617146,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi10",
+    "similarity": 0.018120437197120292,
+    "entities": [
+      "New York City",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "fbi1",
+    "similarity": 0.002591428634156455,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "cia6",
+    "similarity": 0.011029372733259957,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "cia5",
+    "similarity": 0.02742294820907782,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi14",
+    "target": "cia1",
+    "similarity": 0.02552489442024108,
+    "entities": [
+      "American Airlines"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "se3",
+    "similarity": 0.22538589883003482,
+    "entities": [
+      "Bagwant Dhaliwal",
+      "Queens",
+      "New York City"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "se2",
+    "similarity": 0.46433959742392156,
+    "entities": [
+      "Queens",
+      "New York City",
+      "Myrtle Ave",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi9",
+    "similarity": 0.0017424771259036073,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi8",
+    "similarity": 0.0029474346866028155,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi7",
+    "similarity": 0.004423232773766463,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi6",
+    "similarity": 0.007444723373248228,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi5",
+    "similarity": 0.00107281425249285,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi4",
+    "similarity": 0.0027414880926040913,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi3",
+    "similarity": 0.004296146108202048,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi25",
+    "similarity": 0.004306582397552181,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi24",
+    "similarity": 0.006471536212911793,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi23",
+    "similarity": 0.0019305088502163917,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi22",
+    "similarity": 0.045050770625647746,
+    "entities": [
+      "New York City",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi21",
+    "similarity": 0.0029588839414323403,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi20",
+    "similarity": 0.003978760390110862,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi2",
+    "similarity": 0.0028065310244084394,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi19",
+    "similarity": 0.0026821987373521,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi18",
+    "similarity": 0.033705253429116476,
+    "entities": [
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi17",
+    "similarity": 0.005875012614834251,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi16",
+    "similarity": 0.004377903124561133,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi15",
+    "similarity": 0.05608262142657569,
+    "entities": [
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi14",
+    "similarity": 0.0817119684456853,
+    "entities": [
+      "New York City",
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi13",
+    "similarity": 0.0817119684456853,
+    "entities": [
+      "New York City",
+      "FBI",
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi12",
+    "similarity": 0.006464069160881169,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi11",
+    "similarity": 0.0024261056133158946,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi10",
+    "similarity": 0.3004895130350125,
+    "entities": [
+      "Queens",
+      "New York City",
+      "Myrtle Ave",
+      "Manhattan",
+      "FBI",
+      "Empire State Vending Services"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "fbi1",
+    "similarity": 0.0026097393133987026,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "cia6",
+    "similarity": 0.022214609536014278,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "cia5",
+    "similarity": 0.05523342999860221,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "fbi13",
+    "target": "cia11",
+    "similarity": 0.07319326891434155,
+    "entities": [
+      "Bagwant Dhaliwal"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi9",
+    "similarity": 0.0020435611411236997,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi8",
+    "similarity": 0.0034567242817710453,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi7",
+    "similarity": 0.005187526699913752,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi6",
+    "similarity": 0.008731103074937605,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi5",
+    "similarity": 0.0012581866846034782,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi4",
+    "similarity": 0.0032151920111971512,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi3",
+    "similarity": 0.0050384806278353355,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi25",
+    "similarity": 0.0050507202119632446,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi24",
+    "similarity": 0.007589758127368936,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi23",
+    "similarity": 0.0022640830173605683,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi22",
+    "similarity": 0.003283330315248934,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi21",
+    "similarity": 0.00347015186249312,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi20",
+    "similarity": 0.004666253577851856,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi2",
+    "similarity": 0.0032914737631720564,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi19",
+    "similarity": 0.0031456580008655003,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi18",
+    "similarity": 0.002871103524795119,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi17",
+    "similarity": 0.00689016074002166,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi16",
+    "similarity": 0.0051343645043935415,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi15",
+    "similarity": 0.004777267508052456,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi14",
+    "similarity": 0.006418715398382011,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi13",
+    "similarity": 0.006464069160881169,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi12",
+    "similarity": 0.006464069160881169,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi11",
+    "similarity": 0.0028453143412504743,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi10",
+    "similarity": 0.37593048980300725,
+    "entities": [
+      "Shiela Watson",
+      "FBI",
+      "New York Stock Exchange"
+    ]
+  },
+  {
+    "source": "fbi12",
+    "target": "fbi1",
+    "similarity": 0.003060678255135649,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "se5",
+    "similarity": 0.06806282577242367,
+    "entities": [
+      "804-774-8920"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "se4",
+    "similarity": 0.04415624979622033,
+    "entities": [
+      "804-774-8920"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "se3",
+    "similarity": 0.20021119044556224,
+    "entities": [
+      "Mukhtar Galab",
+      "Virginia",
+      "Charlottesville",
+      "804-774-8920"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "se1",
+    "similarity": 0.025920032380965942,
+    "entities": [
+      "Sprint"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi9",
+    "similarity": 0.0007669929006388588,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi8",
+    "similarity": 0.03754848903021404,
+    "entities": [
+      "INS",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi7",
+    "similarity": 0.03797791176090977,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi6",
+    "similarity": 0.06392045406935472,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi5",
+    "similarity": 0.0004722248017686282,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi4",
+    "similarity": 0.0012067314244500586,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi3",
+    "similarity": 0.0018910512603655934,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi25",
+    "similarity": 0.0018956450422417336,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi24",
+    "similarity": 0.10828072160500665,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi23",
+    "similarity": 0.0008497595524926099,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi22",
+    "similarity": 0.001232305210532403,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi21",
+    "similarity": 0.0013024233966434711,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi20",
+    "similarity": 0.19330847741562981,
+    "entities": [
+      "Virginia",
+      "Charlottesville",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi2",
+    "similarity": 0.04695843375232403,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi19",
+    "similarity": 0.21704558460801857,
+    "entities": [
+      "Mukhtar Galab",
+      "Yasein Mosed",
+      "Virginia",
+      "Charlottesville",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi18",
+    "similarity": 0.0010775875388324206,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi17",
+    "similarity": 0.1227008932565582,
+    "entities": [
+      "Virginia",
+      "FBI",
+      "Sprint"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi16",
+    "similarity": 0.0019270385626909048,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi15",
+    "similarity": 0.2959646564873282,
+    "entities": [
+      "Mukhtar Galab",
+      "Mukhtar Galab",
+      "Virginia",
+      "Charlottesville",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi14",
+    "similarity": 0.0024090833607617146,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi13",
+    "similarity": 0.0024261056133158946,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi12",
+    "similarity": 0.0028453143412504743,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi11",
+    "similarity": 0.0028453143412504743,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi10",
+    "similarity": 0.0009399172833694268,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "fbi1",
+    "similarity": 0.0436657459309218,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi11",
+    "target": "cia4",
+    "similarity": 0.09411046042051766,
+    "entities": [
+      "Virginia",
+      "INS"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "se3",
+    "similarity": 0.04987810508617264,
+    "entities": [
+      "Queens",
+      "New York City"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "se2",
+    "similarity": 0.1619502604310779,
+    "entities": [
+      "Queens",
+      "New York City",
+      "Myrtle Ave"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi9",
+    "similarity": 0.0006750672178175432,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi8",
+    "similarity": 0.0011418896145061676,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi7",
+    "similarity": 0.0017136405396411978,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi6",
+    "similarity": 0.0028842207569259844,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi5",
+    "similarity": 0.00041562768423131604,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi4",
+    "similarity": 0.0010621021715819905,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi3",
+    "similarity": 0.001664404862185869,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi25",
+    "similarity": 0.0016684480698189558,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi24",
+    "similarity": 0.002507190413756696,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi23",
+    "similarity": 0.0007479141155508157,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi22",
+    "similarity": 0.05788619184069224,
+    "entities": [
+      "Mark Davis",
+      "New York City",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi21",
+    "similarity": 0.001146325263324136,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi20",
+    "similarity": 0.001541443882955951,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi2",
+    "similarity": 0.001087300982148349,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi19",
+    "similarity": 0.0010391324008451714,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi18",
+    "similarity": 0.0009484364473107105,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi17",
+    "similarity": 0.002276086360951476,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi16",
+    "similarity": 0.0016960790120212474,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi15",
+    "similarity": 0.0015781160742065151,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi14",
+    "similarity": 0.018120437197120292,
+    "entities": [
+      "New York City",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi13",
+    "similarity": 0.3004895130350125,
+    "entities": [
+      "Queens",
+      "New York City",
+      "Myrtle Ave",
+      "Manhattan",
+      "FBI",
+      "Empire State Vending Services"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi12",
+    "similarity": 0.37593048980300725,
+    "entities": [
+      "Shiela Watson",
+      "FBI",
+      "New York Stock Exchange"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi11",
+    "similarity": 0.0009399172833694268,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi10",
+    "similarity": 0.0009399172833694268,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi10",
+    "target": "fbi1",
+    "similarity": 0.0010110603068097816,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "se5",
+    "similarity": 0.0732145506050451,
+    "entities": [
+      "703-659-2317"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "se4",
+    "similarity": 0.04749846848915606,
+    "entities": [
+      "703-659-2317"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "se3",
+    "similarity": 0.07665256224384051,
+    "entities": [
+      "Virginia",
+      "703-659-2317"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi9",
+    "similarity": 0.0008250471516609557,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi8",
+    "similarity": 0.001395583653143966,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi7",
+    "similarity": 0.027933111931107018,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi6",
+    "similarity": 0.047014096231701254,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi5",
+    "similarity": 0.0005079678407953275,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi4",
+    "similarity": 0.0012980698044701656,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi3",
+    "similarity": 0.002034186306952692,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi25",
+    "similarity": 0.0020391277955233216,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi24",
+    "similarity": 0.07867245011351764,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi23",
+    "similarity": 0.0009140784716478457,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi22",
+    "similarity": 0.0013255792890388628,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi21",
+    "similarity": 0.0014010047717028917,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi20",
+    "similarity": 0.04836855083652503,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi2",
+    "similarity": 0.18691860131104013,
+    "entities": [
+      "Abdul Ramazi",
+      "Virginia",
+      "Springfield",
+      "Egypt",
+      "FBI",
+      "Abdul Ramazi"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi19",
+    "similarity": 0.03260665465146633,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi18",
+    "similarity": 0.0011591509241330583,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi17",
+    "similarity": 0.03710123191800517,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi16",
+    "similarity": 0.15046931954830134,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "FBI",
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "1070173749003"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi15",
+    "similarity": 0.39107385799381855,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "Virginia",
+      "Springfield",
+      "FBI",
+      "Abdul Ramazi",
+      "Abdul Ramazi",
+      "1070173749003",
+      "1070173"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi14",
+    "similarity": 0.002591428634156455,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi13",
+    "similarity": 0.0026097393133987026,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi12",
+    "similarity": 0.003060678255135649,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi11",
+    "similarity": 0.0436657459309218,
+    "entities": [
+      "Virginia",
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi10",
+    "similarity": 0.0010110603068097816,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "fbi1",
+    "similarity": 0.0010110603068097816,
+    "entities": [
+      "FBI"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "cia4",
+    "similarity": 0.13532958719676527,
+    "entities": [
+      "Virginia",
+      "United Arab Emirates"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "cia11",
+    "similarity": 0.027068007108216996,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi"
+    ]
+  },
+  {
+    "source": "fbi1",
+    "target": "cia1",
+    "similarity": 0.03247652562653673,
+    "entities": [
+      "1 April, 2003"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "fbi8",
+    "similarity": 0.051895101722346335,
+    "entities": [
+      "Dutch"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "fbi21",
+    "similarity": 0.05209668727290118,
+    "entities": [
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "fbi19",
+    "similarity": 0.04722512663202339,
+    "entities": [
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "fbi18",
+    "similarity": 0.04310329587475571,
+    "entities": [
+      "25 April, 2003"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "cia8",
+    "similarity": 0.24824625608066392,
+    "entities": [
+      "Tawfiq al Adel",
+      "Saeed Khallad",
+      "CIA",
+      "Dutch"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "cia7",
+    "similarity": 0.18172454398535784,
+    "entities": [
+      "Tawfiq al Adel",
+      "CIA",
+      "Dutch"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "cia6",
+    "similarity": 0.011260281890251566,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "cia4",
+    "similarity": 0.016579423727583174,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "cia3",
+    "similarity": 0.013016050028379156,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "cia2",
+    "similarity": 0.04873152969696523,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "cia11",
+    "similarity": 0.016953138397678827,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "cia10",
+    "similarity": 0.01799395086619885,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia9",
+    "target": "cia1",
+    "similarity": 0.023815559231394293,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "se4",
+    "similarity": 0.08133234409058733,
+    "entities": [
+      "24 April, 2003"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "se3",
+    "similarity": 0.03684542200614745,
+    "entities": [
+      "Amsterdam"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "fbi8",
+    "similarity": 0.0627984734569729,
+    "entities": [
+      "Dutch"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "fbi22",
+    "similarity": 0.05023525241482465,
+    "entities": [
+      "Saudi"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "fbi21",
+    "similarity": 0.03152120647539588,
+    "entities": [
+      "Amsterdam"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "fbi2",
+    "similarity": 0.02989817973636315,
+    "entities": [
+      "Amsterdam"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "fbi19",
+    "similarity": 0.04812885348460901,
+    "entities": [
+      "23 April, 2003"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "cia9",
+    "similarity": 0.24824625608066392,
+    "entities": [
+      "Saeed Khallad",
+      "Tawfiq al Adel",
+      "CIA",
+      "Dutch"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "cia8",
+    "similarity": 0.24824625608066392,
+    "entities": [
+      "Saeed Khallad",
+      "Tawfiq al Adel",
+      "CIA",
+      "Dutch"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "cia7",
+    "similarity": 0.2725688156051407,
+    "entities": [
+      "Tawfiq al Adel",
+      "Haarlem",
+      "CIA",
+      "Dutch"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "cia6",
+    "similarity": 0.006813056434365769,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "cia4",
+    "similarity": 0.010031414009544253,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "cia3",
+    "similarity": 0.007875387513402133,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "cia2",
+    "similarity": 0.029485111047337913,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "cia11",
+    "similarity": 0.01025753082993366,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "cia10",
+    "similarity": 0.010887276528552228,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia8",
+    "target": "cia1",
+    "similarity": 0.014409652497238235,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "se4",
+    "similarity": 0.035287655511296444,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "se3",
+    "similarity": 0.04985292755644928,
+    "entities": [
+      "The Netherlands"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "fbi8",
+    "similarity": 0.06730116942248118,
+    "entities": [
+      "Dutch"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "fbi2",
+    "similarity": 0.16181242687006583,
+    "entities": [
+      "Germany",
+      "Hamburg"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "fbi18",
+    "similarity": 0.019059099629825847,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "fbi17",
+    "similarity": 0.04573860150826792,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "fbi16",
+    "similarity": 0.0340831891918843,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "cia9",
+    "similarity": 0.18172454398535784,
+    "entities": [
+      "Tawfiq al Adel",
+      "CIA",
+      "Dutch"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "cia8",
+    "similarity": 0.2725688156051407,
+    "entities": [
+      "Tawfiq al Adel",
+      "Haarlem",
+      "CIA",
+      "Dutch"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "cia7",
+    "similarity": 0.2725688156051407,
+    "entities": [
+      "Tawfiq al Adel",
+      "Haarlem",
+      "CIA",
+      "Dutch"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "cia6",
+    "similarity": 0.22147401200341757,
+    "entities": [
+      "Germany",
+      "Hamburg",
+      "CIA",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "cia4",
+    "similarity": 0.04767560496102452,
+    "entities": [
+      "CIA",
+      "Al Qaeda"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "cia3",
+    "similarity": 0.008440058493942866,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "cia2",
+    "similarity": 0.03159921483437305,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "cia11",
+    "similarity": 0.01099300320914148,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "cia10",
+    "similarity": 0.09181850454881675,
+    "entities": [
+      "The Netherlands",
+      "CIA",
+      "Al Qaeda"
+    ]
+  },
+  {
+    "source": "cia7",
+    "target": "cia1",
+    "similarity": 0.015442835002990476,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "se4",
+    "similarity": 0.021593628590920143,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "se2",
+    "similarity": 0.014620249949184377,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "fbi3",
+    "similarity": 0.005771796733420485,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "fbi25",
+    "similarity": 0.0379854797543188,
+    "entities": [
+      "New Jersey"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "fbi22",
+    "similarity": 0.01598805769334181,
+    "entities": [
+      "Afghanistan"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "fbi21",
+    "similarity": 0.011925625598574028,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "fbi2",
+    "similarity": 0.11032969915281937,
+    "entities": [
+      "US",
+      "Germany",
+      "Hamburg"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "fbi18",
+    "similarity": 0.021529782284813875,
+    "entities": [
+      "20 April, 2003",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "fbi17",
+    "similarity": 0.02798889183560133,
+    "entities": [
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "fbi16",
+    "similarity": 0.059471129820916964,
+    "entities": [
+      "New Jersey",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "fbi15",
+    "similarity": 0.016417697536826238,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "fbi14",
+    "similarity": 0.011029372733259957,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "fbi13",
+    "similarity": 0.022214609536014278,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "cia9",
+    "similarity": 0.011260281890251566,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "cia8",
+    "similarity": 0.006813056434365769,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "cia7",
+    "similarity": 0.22147401200341757,
+    "entities": [
+      "Germany",
+      "Hamburg",
+      "CIA",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "cia6",
+    "similarity": 0.22147401200341757,
+    "entities": [
+      "Germany",
+      "Hamburg",
+      "CIA",
+      "22 April, 2003"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "cia5",
+    "similarity": 0.01743548628301702,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "cia4",
+    "similarity": 0.031533528240615546,
+    "entities": [
+      "Afghanistan",
+      "US",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "cia3",
+    "similarity": 0.013270627342972243,
+    "entities": [
+      "US",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "cia2",
+    "similarity": 0.019336555489772093,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "cia11",
+    "similarity": 0.09389519630315835,
+    "entities": [
+      "Afghanistan",
+      "US",
+      "CIA",
+      "Taliban"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "cia10",
+    "similarity": 0.02301798064869406,
+    "entities": [
+      "Afghanistan",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia6",
+    "target": "cia1",
+    "similarity": 0.009449957460015628,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia5",
+    "target": "se2",
+    "similarity": 0.03635114769049541,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia5",
+    "target": "fbi18",
+    "similarity": 0.024532673090071618,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia5",
+    "target": "fbi15",
+    "similarity": 0.040820242470091785,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia5",
+    "target": "fbi14",
+    "similarity": 0.02742294820907782,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia5",
+    "target": "fbi13",
+    "similarity": 0.05523342999860221,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia5",
+    "target": "cia6",
+    "similarity": 0.01743548628301702,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia5",
+    "target": "cia5",
+    "similarity": 0.01743548628301702,
+    "entities": [
+      "20 April, 2003"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "se4",
+    "similarity": 0.04662513928690649,
+    "entities": [
+      "804-759-6302"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "se3",
+    "similarity": 0.19058033756254053,
+    "entities": [
+      "Clark Webster",
+      "Richmond",
+      "Virginia",
+      "804-759-6302"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi8",
+    "similarity": 0.0893467524195696,
+    "entities": [
+      "INS",
+      "14 April, 2003"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi7",
+    "similarity": 0.03804550169064562,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi6",
+    "similarity": 0.06403421437893758,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi3",
+    "similarity": 0.008498283137627625,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi24",
+    "similarity": 0.11132710147639606,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi22",
+    "similarity": 0.07204758718403426,
+    "entities": [
+      "Afghanistan",
+      "Sudan"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi21",
+    "similarity": 0.017559063080511757,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi20",
+    "similarity": 0.10937280831212567,
+    "entities": [
+      "Richmond",
+      "Virginia"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi2",
+    "similarity": 0.06493451370991472,
+    "entities": [
+      "US",
+      "Virginia"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi19",
+    "similarity": 0.08097413974659694,
+    "entities": [
+      "Faysal Goba",
+      "Virginia"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi17",
+    "similarity": 0.349491946058395,
+    "entities": [
+      "Faysal Goba",
+      "Richmond",
+      "Virginia",
+      "Capitol Ave.",
+      "804-759-6302"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi15",
+    "similarity": 0.10510993941908649,
+    "entities": [
+      "Virginia"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi11",
+    "similarity": 0.09411046042051766,
+    "entities": [
+      "Virginia",
+      "INS"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "fbi1",
+    "similarity": 0.13532958719676527,
+    "entities": [
+      "Virginia",
+      "United Arab Emirates"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "cia9",
+    "similarity": 0.016579423727583174,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "cia8",
+    "similarity": 0.010031414009544253,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "cia7",
+    "similarity": 0.04767560496102452,
+    "entities": [
+      "CIA",
+      "Al Qaeda"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "cia6",
+    "similarity": 0.031533528240615546,
+    "entities": [
+      "Afghanistan",
+      "US",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "cia3",
+    "similarity": 0.019539417928823497,
+    "entities": [
+      "US",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "cia2",
+    "similarity": 0.09370257377547365,
+    "entities": [
+      "Guantanamo",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "cia11",
+    "similarity": 0.04747592232953644,
+    "entities": [
+      "Afghanistan",
+      "US",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "cia10",
+    "similarity": 0.06999893123853532,
+    "entities": [
+      "Afghanistan",
+      "CIA",
+      "Al Qaeda"
+    ]
+  },
+  {
+    "source": "cia4",
+    "target": "cia1",
+    "similarity": 0.013913936654896162,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "fbi8",
+    "similarity": 0.030051004358704232,
+    "entities": [
+      "Paris"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "fbi4",
+    "similarity": 0.13975622766918175,
+    "entities": [
+      "Denver",
+      "Colorado"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "fbi3",
+    "similarity": 0.006671768590524871,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "fbi21",
+    "similarity": 0.013785137967562085,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "fbi2",
+    "similarity": 0.01307534129337474,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "fbi18",
+    "similarity": 0.224700707948486,
+    "entities": [
+      "Masood Yaser",
+      "Denver",
+      "Colorado",
+      "Coal Mine Road"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "cia9",
+    "similarity": 0.013016050028379156,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "cia8",
+    "similarity": 0.007875387513402133,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "cia7",
+    "similarity": 0.008440058493942866,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "cia6",
+    "similarity": 0.013270627342972243,
+    "entities": [
+      "US",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "cia4",
+    "similarity": 0.019539417928823497,
+    "entities": [
+      "US",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "cia3",
+    "similarity": 0.019539417928823497,
+    "entities": [
+      "US",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "cia2",
+    "similarity": 0.022351622817657568,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "cia11",
+    "similarity": 0.019979853449690412,
+    "entities": [
+      "US",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "cia10",
+    "similarity": 0.008253260368836446,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia3",
+    "target": "cia1",
+    "similarity": 0.0296826281226348,
+    "entities": [
+      "Paris",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia2",
+    "target": "cia9",
+    "similarity": 0.04873152969696523,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia2",
+    "target": "cia8",
+    "similarity": 0.029485111047337913,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia2",
+    "target": "cia7",
+    "similarity": 0.03159921483437305,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia2",
+    "target": "cia6",
+    "similarity": 0.019336555489772093,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia2",
+    "target": "cia4",
+    "similarity": 0.09370257377547365,
+    "entities": [
+      "Guantanamo",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia2",
+    "target": "cia3",
+    "similarity": 0.022351622817657568,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia2",
+    "target": "cia2",
+    "similarity": 0.022351622817657568,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia2",
+    "target": "cia11",
+    "similarity": 0.029112530622906,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia2",
+    "target": "cia10",
+    "similarity": 0.10169711180896578,
+    "entities": [
+      "Abu al Masri",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia2",
+    "target": "cia1",
+    "similarity": 0.04089692310425111,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "se5",
+    "similarity": 0.042395582401083785,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "se3",
+    "similarity": 0.04592977666489034,
+    "entities": [
+      "Bagwant Dhaliwal"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "fbi3",
+    "similarity": 0.00868984185108726,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "fbi25",
+    "similarity": 0.026132854198294378,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "fbi24",
+    "similarity": 0.03927005144198148,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "fbi23",
+    "similarity": 0.011714557311128426,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "fbi22",
+    "similarity": 0.04105936321264043,
+    "entities": [
+      "Afghanistan",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "fbi21",
+    "similarity": 0.017954859675987207,
+    "entities": [
+      "US"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "fbi2",
+    "similarity": 0.031584921540670614,
+    "entities": [
+      "Abdul Ramazi",
+      "US"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "fbi16",
+    "similarity": 0.04540726052073774,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "fbi15",
+    "similarity": 0.042249168349806465,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "fbi13",
+    "similarity": 0.07319326891434155,
+    "entities": [
+      "Bagwant Dhaliwal"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "fbi1",
+    "similarity": 0.027068007108216996,
+    "entities": [
+      "Abdul Ramazi",
+      "Abdul Ramazi"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "cia9",
+    "similarity": 0.016953138397678827,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "cia8",
+    "similarity": 0.01025753082993366,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "cia7",
+    "similarity": 0.01099300320914148,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "cia6",
+    "similarity": 0.09389519630315835,
+    "entities": [
+      "Afghanistan",
+      "US",
+      "CIA",
+      "Taliban"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "cia4",
+    "similarity": 0.04747592232953644,
+    "entities": [
+      "Afghanistan",
+      "US",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "cia3",
+    "similarity": 0.019979853449690412,
+    "entities": [
+      "US",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "cia2",
+    "similarity": 0.029112530622906,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "cia11",
+    "similarity": 0.029112530622906,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "cia10",
+    "similarity": 0.05152648413852213,
+    "entities": [
+      "Afghanistan",
+      "CIA",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia11",
+    "target": "cia1",
+    "similarity": 0.01422756892174422,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "se5",
+    "similarity": 0.044998395504954734,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "se3",
+    "similarity": 0.11378900881901549,
+    "entities": [
+      "Hans Pakes",
+      "The Netherlands"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "fbi25",
+    "similarity": 0.027737241530572908,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "fbi24",
+    "similarity": 0.04168097726712742,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "fbi23",
+    "similarity": 0.012433754962124082,
+    "entities": [
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "fbi22",
+    "similarity": 0.04358014114642169,
+    "entities": [
+      "Afghanistan",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "fbi21",
+    "similarity": 0.22256460472077802,
+    "entities": [
+      "Holland Queen"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "cia9",
+    "similarity": 0.01799395086619885,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "cia8",
+    "similarity": 0.010887276528552228,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "cia7",
+    "similarity": 0.09181850454881675,
+    "entities": [
+      "The Netherlands",
+      "CIA",
+      "Al Qaeda"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "cia6",
+    "similarity": 0.02301798064869406,
+    "entities": [
+      "Afghanistan",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "cia4",
+    "similarity": 0.06999893123853532,
+    "entities": [
+      "Afghanistan",
+      "CIA",
+      "Al Qaeda"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "cia3",
+    "similarity": 0.008253260368836446,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "cia2",
+    "similarity": 0.10169711180896578,
+    "entities": [
+      "Abu al Masri",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "cia11",
+    "similarity": 0.05152648413852213,
+    "entities": [
+      "Afghanistan",
+      "CIA",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "cia10",
+    "similarity": 0.05152648413852213,
+    "entities": [
+      "Afghanistan",
+      "CIA",
+      "27 April, 2003"
+    ]
+  },
+  {
+    "source": "cia10",
+    "target": "cia1",
+    "similarity": 0.015101049146061087,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "se1",
+    "similarity": 0.02622593080705919,
+    "entities": [
+      "30 March, 2003"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "fbi8",
+    "similarity": 0.027492268111569716,
+    "entities": [
+      "Paris"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "fbi5",
+    "similarity": 0.010006700809184439,
+    "entities": [
+      "American Airlines"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "fbi14",
+    "similarity": 0.02552489442024108,
+    "entities": [
+      "American Airlines"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "fbi1",
+    "similarity": 0.03247652562653673,
+    "entities": [
+      "1 April, 2003"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "cia9",
+    "similarity": 0.023815559231394293,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "cia8",
+    "similarity": 0.014409652497238235,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "cia7",
+    "similarity": 0.015442835002990476,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "cia6",
+    "similarity": 0.009449957460015628,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "cia4",
+    "similarity": 0.013913936654896162,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "cia3",
+    "similarity": 0.0296826281226348,
+    "entities": [
+      "Paris",
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "cia2",
+    "similarity": 0.04089692310425111,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "cia11",
+    "similarity": 0.01422756892174422,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "cia10",
+    "similarity": 0.015101049146061087,
+    "entities": [
+      "CIA"
+    ]
+  },
+  {
+    "source": "cia1",
+    "target": "cia1",
+    "similarity": 0.015101049146061087,
+    "entities": [
+      "CIA"
+    ]
+  }
+]

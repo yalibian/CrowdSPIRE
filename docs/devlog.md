@@ -10,6 +10,20 @@
     * Overview: 
         Menu bar at the header bar: file, edit, mode ...
         
+        
+    * Visual Mapping
+        - Different visual elements for different data element: 
+        - Documents can be shown as minimized rectangles, as well as full detail windows(big rectangles)
+        - Circle for Searching key words. 
+        - Calcuate the document similarity: based on cosine similarity. 
+           
+    * visualize Document
+        https://d3plus.org/examples/utilities/a39f0c3fc52804ee859a/
+        https://www.w3.org/TR/SVGTiny12/text.html#TextInAnArea
+        https://jsbin.com/zenomoziso/1/edit?html,js,output
+        http://jsfiddle.net/meetamit/e38bLdjk/1/
+        http://stackoverflow.com/questions/25783454/make-a-d3-div-resizable-by-drag
+        
     * need a control panel: to help do the search work 
     * Load files from several kinds of file types:
         JSON file 
