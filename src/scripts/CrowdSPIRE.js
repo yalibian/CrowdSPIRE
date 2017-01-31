@@ -53,26 +53,6 @@ function workspace(error, docs) {
             return link.similarity;
         });
 
-
-    // links between nodes
-    // var link = svg.selectAll(".link")
-    //     .data(docs.links)
-    //     .enter().append("g")
-    //     .attr("class", "link");
-    //
-    // link.append('line')
-    //     .attr('stroke', 'gray')
-    //     .attr('stroke-width', 1)
-    //     .attr('opacity', 0);
-
-    // link.append('text')
-    //     .text(function(d){
-    //         return d.entities[0];
-    //     })
-    //     .attr('font-size',  "6px")
-    //     .attr('fill', 'black')
-    //     .attr('opacity', 0);
-
     var linkG = svg.append('g');
     var link = null;
 
@@ -194,7 +174,13 @@ function workspace(error, docs) {
         link = linkG.selectAll(".link")
             .data(docs.links.filter(linkFilter))
             .enter().append("g")
-            .attr("class", "link");
+            .attr("class", "link")
+            .attr("source", function (d){
+                return d.source.id;
+            })
+            .attr("target", function (d) {
+                return d.target.id;
+            });
 
         link.append('line')
             .attr('stroke', 'gray')
@@ -207,14 +193,10 @@ function workspace(error, docs) {
             })
             .attr('font-size', "5px")
             .attr('fill', 'black');
-
-
-
-
     }
 
     function linkFilter(d) {
-        return (d.source.id == selectedDoc) || (d.target.id == selectedDoc);
+        return ((d.source.id == selectedDoc) || (d.target.id == selectedDoc)) && (d.source.id != d.target.id);
     }
 
     function unfixNodes() {
