@@ -53,6 +53,7 @@ function workspace(error, docs) {
             return link.similarity;
         });
 
+
     // links between nodes
     // var link = svg.selectAll(".link")
     //     .data(docs.links)
@@ -72,6 +73,7 @@ function workspace(error, docs) {
     //     .attr('fill', 'black')
     //     .attr('opacity', 0);
 
+    var linkG = svg.append('g');
     var link = null;
 
     var node = svg.selectAll(".node")
@@ -189,7 +191,7 @@ function workspace(error, docs) {
         console.log(selectedDoc);
         console.log(docs.links.filter(linkFilter));
 
-        link = svg.selectAll(".link")
+        link = linkG.selectAll(".link")
             .data(docs.links.filter(linkFilter))
             .enter().append("g")
             .attr("class", "link");
