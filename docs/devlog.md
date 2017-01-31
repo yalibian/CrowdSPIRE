@@ -25,6 +25,9 @@
         - Highlighting: 
         
         
+       rug如果卡的厉害，我可以尝试每次修改highlight的时候，重新插入一些lines 和 labels
+       
+        
     * visualize Document
         https://d3plus.org/examples/utilities/a39f0c3fc52804ee859a/
         https://www.w3.org/TR/SVGTiny12/text.html#TextInAnArea
