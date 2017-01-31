@@ -17,6 +17,14 @@
         - Circle for Searching key words. 
         - Calcuate the document similarity: based on cosine similarity. 
            
+    * Interaction: Change the value of entities
+        - Document movement: exploratory interaction
+            - dragging: stop others. 
+            - double-clicking: 
+            - clicking the node: show links between this node and related nodes.
+        - Highlighting: 
+        
+        
     * visualize Document
         https://d3plus.org/examples/utilities/a39f0c3fc52804ee859a/
         https://www.w3.org/TR/SVGTiny12/text.html#TextInAnArea

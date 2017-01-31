@@ -38,6 +38,8 @@ q.await(workspace);
 // draw the workspace with docs
 function workspace(error, docs) {
 
+    var selectedDoc = null;
+
     if (error) {
         throw error;
     }
@@ -55,13 +57,40 @@ function workspace(error, docs) {
     // links between nodes
     var link = svg.selectAll(".link")
         .data(docs.links)
-        .enter().append("line")
+        .enter().append("g")
         .attr("class", "link");
+
+
+    // label
+    // text x="20" y="20" font-family="sans-serif" font-size="20px" fill="red"
+    // link.append("text")
+    //     .text(function(d) {
+    //         return d.entities[0];
+    //     })
+
+    // line
+    // link.append("line")
+    //     .attr('x1', function(d){
+    //         return d.x1;
+    //     })
+    //      .attr('y1', function(d){
+    //         return d.y1;
+    //     })
+    //      .attr('x2', function(d){
+    //         return d.x2;
+    //     })
+    //      .attr('y2', function(d){
+    //         return d.y2;
+    //     })
+    //     .attr('stroke', 'gray')
+    //     .attr('stroke-width', 2);
 
     var node = svg.selectAll(".node")
         .data(docs.nodes)
         .enter().append("g")
         .attr("class", "node")
+        .on("mousedown", function() { d3.event.preventDefault(); })
+        .on('click', clicked)
         .call(d3.drag()
             .on("start", dragStarted)
             .on("drag", dragged)
@@ -75,7 +104,7 @@ function workspace(error, docs) {
             return d.id
         });
 
-    // circle
+    // rectangle
     node.append("rect")
         .attr("width", 10)
         .attr("height", 10)
@@ -85,35 +114,81 @@ function workspace(error, docs) {
             return 'steelblue';
         });
 
+    svg.on('mousedown', unhighlight);
+
     // ticked
     function ticked() {
+
+        // link
+        //     .attr("x1", function(d) { return d.source.x; })
+        //     .attr("y1", function(d) { return d.source.y; })
+        //     .attr("x2", function(d) { return d.target.x; })
+        //     .attr("y2", function(d) { return d.target.y; });
+        //
+        // link.selectAll('line')
+        //     .attr('x1', function (d) {
+        //         return d.source.x;
+        //     })
+        //     .attr('y1', function (d){
+        //         return d.source.y;
+        //     })
+        //     .attr('x2', function (d) {
+        //         return d.target.x;
+        //     })
+        //     .attr('y2', function (d) {
+        //         return d.target.y;
+        //     });
 
         node.attr("transform", function (d) {
             return "translate(" + d.x + "," + d.y + ")";
         });
     }
-}
 
 
-function dragStarted(d) {
-    if (!d3.event.active) {
-        simulation.alphaTarget(0.3).restart();
+    function clicked(d){
+
+        if(selectedDoc != d.id){
+            unhighlight(selectedDoc);
+        }
+
+        d.fx = d.x;
+        d.fy = d.y;
+        selectedDoc = d.id;
     }
-    d.fx = d.x;
-    d.fy = d.y;
-}
 
-function dragged(d) {
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
-}
 
-function dragEnded(d) {
-    if (!d3.event.active){
-        simulation.alphaTarget(0);
+    function dragStarted(d) {
+        if (!d3.event.active) {
+            simulation.alphaTarget(0.3).restart();
+        }
+
+        if(selectedDoc != d.id){
+            unhighlight(selectedDoc);
+        }
+
+        d.fx = d.x;
+        d.fy = d.y;
+        selectedDoc = d.id;
     }
-    d.fx = null;
-    d.fy = null;
+
+    function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+    }
+
+    function dragEnded(d) {
+        if (!d3.event.active) {
+            simulation.alphaTarget(0);
+        }
+    }
+
+    function unhighlight() {
+        console.log(docs.nodes);
+        docs.nodes.forEach(function(d){
+            d.fx = null;
+            d.fy = null;
+        });
+    }
 }
 
 
