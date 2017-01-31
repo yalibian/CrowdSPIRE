@@ -143,6 +143,8 @@ function workspace(error, docs) {
 
     function clicked(d) {
 
+        console.log(selectedDoc);
+        console.log(d.id);
         if (selectedDoc != d.id) {
             unfixNodes(selectedDoc);
 
@@ -194,7 +196,8 @@ function workspace(error, docs) {
 
         link.append('line')
             .attr('stroke', 'gray')
-            .attr('stroke-width', 1);
+            .attr('stroke-width', 1)
+            .attr('opacity', 0.2);
 
         link.append('text')
             .text(function (d) {
@@ -202,6 +205,9 @@ function workspace(error, docs) {
             })
             .attr('font-size', "5px")
             .attr('fill', 'black');
+
+
+
 
     }
 
