@@ -23,6 +23,9 @@
         !!! Test the collession between two nodes, when one is bigger...
            
            
+    * Interaction:
+        - Level of Visual Details:
+            resize of doc-rectangle: ("cursor", "nesw-resize"): like the brushing...
            
     * Interaction: Change the value of entities
         - Document movement: exploratory interaction

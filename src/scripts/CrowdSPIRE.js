@@ -9,6 +9,8 @@ const WIDTH = parseInt(svg.style("width"), 10);
 const HEIGHT = parseInt(svg.style("height"), 10);
 const DocSide = 40;
 const IconSide = 10;
+const DocR = 6;
+const IconR = 3;
 const entityColor = {
     "Person": "#d9b8f1",
     "Location": "#BDC03F",
@@ -61,6 +63,7 @@ function workspace(error, docs) {
         .data(docs.nodes)
         .enter().append("g")
         .attr("class", "node")
+        .attr("cursor", "move")
         .on("mousedown", function () {
             d3.event.preventDefault();
         })
@@ -95,6 +98,12 @@ function workspace(error, docs) {
         })
         .attr("fill", function (d) {
             return 'steelblue';
+        })
+        .attr('rx', function (d) {
+            return IconR;
+        })
+        .attr('ry', function (d) {
+            return IconR;
         });
 
     svg.on('mousedown', unfixNodes);
@@ -250,6 +259,18 @@ function workspace(error, docs) {
                     return -DocSide / 2.0;
                 }
                 return -IconSide / 2.0;
+            })
+            .attr('rx', function (d) {
+                if(d.visualDetailLevel == 'Document'){
+                    return DocR;
+                }
+                return IconR;
+            })
+            .attr('ry', function (d) {
+                if(d.visualDetailLevel == 'Document'){
+                    return DocR;
+                }
+                return IconR;
             });
     }
 
