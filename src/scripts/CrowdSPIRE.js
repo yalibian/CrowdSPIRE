@@ -7,6 +7,8 @@
 const svg = d3.select('#vis');
 const WIDTH = parseInt(svg.style("width"), 10);
 const HEIGHT = parseInt(svg.style("height"), 10);
+const DocSide = 40;
+const IconSide = 10;
 const entityColor = {
     "Person": "#d9b8f1",
     "Location": "#BDC03F",
@@ -18,7 +20,6 @@ const entityColor = {
     "Date": "#67E1D8"
 };
 
-const radius = 10;
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function (d) {
@@ -80,10 +81,18 @@ function workspace(error, docs) {
 
     // rectangle
     node.append("rect")
-        .attr("width", 10)
-        .attr("height", 10)
-        .attr("x", -5)
-        .attr("y", -5)
+        .attr("width", function (d) {
+            return IconSide;
+        })
+        .attr("height", function () {
+            return IconSide;
+        })
+        .attr("x", function () {
+            return -IconSide / 2.0;
+        })
+        .attr("y", function () {
+            return -IconSide / 2.0
+        })
         .attr("fill", function (d) {
             return 'steelblue';
         });
@@ -93,9 +102,25 @@ function workspace(error, docs) {
     // ticked
     function ticked() {
 
+        node.attr("transform", function (d) {
+            // border constriction
+            var side;
+            if (d.visualDetailLevel == 'Document') {
+                side = DocSide / 2.0;
+            } else {
+                side = IconSide / 2.0;
+            }
+
+            d.x = Math.max(side, Math.min(WIDTH - side, d.x));
+            d.y = Math.max(side, Math.min(HEIGHT - side, d.y));
+
+            return "translate(" + d.x + "," + d.y + ")";
+        });
+
+
         if (clickedDoc != null) {
-            // console.log(clickedDoc);
-            // console.log('In ticked changing text');
+
+            console.log('In ticked changing text');
 
             link.selectAll('text')
                 .attr('x', function (d) {
@@ -136,12 +161,9 @@ function workspace(error, docs) {
                 .attr('y2', function (d) {
                     return d.target.y;
                 });
-
         }
 
-        node.attr("transform", function (d) {
-            return "translate(" + d.x + "," + d.y + ")";
-        });
+
     }
 
 
@@ -161,7 +183,7 @@ function workspace(error, docs) {
     function doubleClicked(d) {
 
         console.log(d.visualDetailLevel);
-        if(d.visualDetailLevel != 'Document'){
+        if (d.visualDetailLevel != 'Document') {
             d.visualDetailLevel = "Document";
             updateRectangles();
         }
@@ -205,30 +227,29 @@ function workspace(error, docs) {
         // update node rectangle
         console.log("In updateRectangles");
         node.selectAll("rect")
-            .attr("width", function(d){
-                if(d.visualDetailLevel == 'Document'){
-                    return 20;
+            .attr("width", function (d) {
+                if (d.visualDetailLevel == 'Document') {
+                    return DocSide;
                 }
-                return 10;
+                return IconSide;
             })
             .attr("height", function (d) {
-                if(d.visualDetailLevel == 'Document'){
-                    return 20;
+                if (d.visualDetailLevel == 'Document') {
+                    return DocSide;
                 }
-                return 10;
+                return IconSide;
             })
             .attr("x", function (d) {
-                if(d.visualDetailLevel == 'Document'){
-
-                    return -10;
+                if (d.visualDetailLevel == 'Document') {
+                    return -DocSide / 2.0;
                 }
-                return -5;
+                return -IconSide / 2.0;
             })
             .attr("y", function (d) {
-                if(d.visualDetailLevel == 'Document') {
-                    return -10;
+                if (d.visualDetailLevel == 'Document') {
+                    return -DocSide / 2.0;
                 }
-                return -5;
+                return -IconSide / 2.0;
             });
     }
 
@@ -274,8 +295,10 @@ function workspace(error, docs) {
 
     function unfixNodes() {
         docs.nodes.forEach(function (d) {
-            d.fx = null;
-            d.fy = null;
+            if (d.visualDetailLevel != 'Document') {
+                d.fx = null;
+                d.fy = null;
+            }
         });
 
         clickedDoc = null;

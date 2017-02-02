@@ -17,6 +17,13 @@
         - Circle for Searching key words. 
         - Calcuate the document similarity: based on cosine similarity. 
            
+           
+           Using circle to represent search.
+           
+        !!! Test the collession between two nodes, when one is bigger...
+           
+           
+           
     * Interaction: Change the value of entities
         - Document movement: exploratory interaction
             - dragging: stop others. 
