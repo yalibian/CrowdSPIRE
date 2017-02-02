@@ -87,7 +87,7 @@ function workspace(error, docs) {
             return 'steelblue';
         });
 
-    // svg.on('mousedown', unfixNodes);
+    svg.on('mousedown', unfixNodes);
 
     // ticked
     function ticked() {
