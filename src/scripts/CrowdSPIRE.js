@@ -102,7 +102,17 @@ function workspace(error, docs) {
                     return (d.source.y + d.target.y) / 2;
                 })
                 .attr('transform', function (d, i) {
-                    var angle = Math.atan2(d.target.y - d.source.y, d.target.x - d.source.x) * 180 / Math.PI;
+
+                    var dx = 0, dy = 0;
+                    if (d.target.x > d.source.x){
+                        dx = d.target.x - d.source.x;
+                        dy = d.target.y - d.source.y;
+                    } else {
+                        dx = d.source.x - d.target.x;
+                        dy = d.source.y - d.target.y;
+                    }
+                    // var angle = Math.atan2(d.target.y - d.source.y, d.target.x - d.source.x) * 180 / Math.PI;
+                    var angle = Math.atan2(dy, dx) * 180 / Math.PI;
                     //
                     var bbox = this.getBBox();
                     console.log(bbox);
@@ -110,9 +120,9 @@ function workspace(error, docs) {
                     var ry = bbox.y + bbox.height / 2;
                     console.log(rx, ry);
 
-                    if(angle > 180){
-                        angle = 360 - angle;
-                    }
+                    // if(angle > 180){
+                    //     angle = 360 - angle;
+                    // }
 
                     // return 'rotate(' + (360 - angleDeg) + ' ' + rx + ' ' + ry + ')';
                     return 'rotate(' + angle + ' ' + rx + ' ' + ry + ')';
