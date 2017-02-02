@@ -87,7 +87,7 @@ function workspace(error, docs) {
             return 'steelblue';
         });
 
-    svg.on('mousedown', unfixNodes);
+    // svg.on('mousedown', unfixNodes);
 
     // ticked
     function ticked() {
@@ -100,10 +100,24 @@ function workspace(error, docs) {
                 })
                 .attr('y', function (d) {
                     return (d.source.y + d.target.y) / 2;
+                })
+                .attr('transform', function (d, i) {
+                    var angle = Math.atan2(d.target.y - d.source.y, d.target.x - d.source.x) * 180 / Math.PI;
+                    //
+                    var bbox = this.getBBox();
+                    console.log(bbox);
+                    var rx = bbox.x + bbox.width / 2;
+                    var ry = bbox.y + bbox.height / 2;
+                    console.log(rx, ry);
+
+                    if(angle > 180){
+                        angle = 360 - angle;
+                    }
+
+                    // return 'rotate(' + (360 - angleDeg) + ' ' + rx + ' ' + ry + ')';
+                    return 'rotate(' + angle + ' ' + rx + ' ' + ry + ')';
                 });
-                // .attr('transform', function (d) {
-                //     return "translate(" +  (d.source.x + d.target.x) / 2 + "," + (d.source.y + d.target.y) / 2 + ")";
-                // });
+
 
             link.selectAll('line')
                 .attr('x1', function (d) {
@@ -173,7 +187,7 @@ function workspace(error, docs) {
             .data(docs.links.filter(linkFilter))
             .enter().append("g")
             .attr("class", "link")
-            .attr("source", function (d){
+            .attr("source", function (d) {
                 return d.source.id;
             })
             .attr("target", function (d) {
@@ -181,29 +195,33 @@ function workspace(error, docs) {
             });
 
         link.append('line')
-            .attr('stroke', 'gray')
+            .attr('stroke', '#ccc')
             .attr('stroke-width', 1)
             .attr('opacity', 0.2);
 
         entity = link.append('text')
-            .attr('font-size', "5px")
-            .attr('fill', 'black')
+            .attr('font-size', "10px")
+            .attr("text-anchor", "middle")
             .text(function (d) {
                 var str = '';
-                for (var i in d.entities){
-                    if(i == 0){
+                for (var i in d.entities) {
+                    if (i == 0) {
                         str += d.entities[i];
                     } else {
                         str = str + ', ' + d.entities[i];
                     }
                 }
                 return str;
-            });
+            })
+            .attr('stroke', '#aaa');
 
     }
 
     function linkFilter(d) {
-        return ((d.source.id == selectedDoc) || (d.target.id == selectedDoc)) && (d.source.id != d.target.id);
+        if (((d.source.id == selectedDoc) || (d.target.id == selectedDoc)) && (d.source.id != d.target.id)) {
+
+        }
+        return ((d.source.id == selectedDoc) || (d.target.id == selectedDoc)) && (d.source.id != d.target.id) && (d.similarity > 0.01);
     }
 
     function unfixNodes() {

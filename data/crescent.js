@@ -106,7 +106,6 @@ for (var i in docs) {
     newDocs.push(newDoc);
 }
 
-
 // Before the count, we insert alias into docs.
 // Calculate mass, value of entities in each documents
 for (i in newDocs) {
@@ -190,10 +189,12 @@ fs.writeFile('./nodes.json', JSON.stringify(newDocs, null, 2), 'utf-8');
 // write relationships into links
 var links = [];
 
-for (i in newDocs) {
+for (var i = 0; i< newDocs.length; i++) {
     var doc1 = newDocs[i];
-    for (j in newDocs) {
+    for (j = i + 1; j < newDocs.length; j ++) {
         var doc2 = newDocs[j];
+        console.log(j);
+        console.log(newDocs[0]);
         // entities
         if (i != j) {
             var len1 = 0;
