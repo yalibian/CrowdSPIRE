@@ -38,7 +38,7 @@ q.await(workspace);
 // draw the workspace with docs
 function workspace(error, docs) {
 
-    var selectedDoc = null;
+    var clickedDoc = null;
 
     if (error) {
         throw error;
@@ -64,6 +64,7 @@ function workspace(error, docs) {
             d3.event.preventDefault();
         })
         .on('click', clicked)
+        .on('dblclick', doubleClicked)
         .call(d3.drag()
             .on("start", dragStarted)
             .on("drag", dragged)
@@ -81,8 +82,8 @@ function workspace(error, docs) {
     node.append("rect")
         .attr("width", 10)
         .attr("height", 10)
-        .attr("x", -4)
-        .attr("y", -4)
+        .attr("x", -5)
+        .attr("y", -5)
         .attr("fill", function (d) {
             return 'steelblue';
         });
@@ -92,7 +93,9 @@ function workspace(error, docs) {
     // ticked
     function ticked() {
 
-        if (selectedDoc != null) {
+        if (clickedDoc != null) {
+            // console.log(clickedDoc);
+            // console.log('In ticked changing text');
 
             link.selectAll('text')
                 .attr('x', function (d) {
@@ -104,27 +107,18 @@ function workspace(error, docs) {
                 .attr('transform', function (d, i) {
 
                     var dx = 0, dy = 0;
-                    if (d.target.x > d.source.x){
+                    if (d.target.x > d.source.x) {
                         dx = d.target.x - d.source.x;
                         dy = d.target.y - d.source.y;
                     } else {
                         dx = d.source.x - d.target.x;
                         dy = d.source.y - d.target.y;
                     }
-                    // var angle = Math.atan2(d.target.y - d.source.y, d.target.x - d.source.x) * 180 / Math.PI;
+
                     var angle = Math.atan2(dy, dx) * 180 / Math.PI;
-                    //
                     var bbox = this.getBBox();
-                    console.log(bbox);
                     var rx = bbox.x + bbox.width / 2;
                     var ry = bbox.y + bbox.height / 2;
-                    console.log(rx, ry);
-
-                    // if(angle > 180){
-                    //     angle = 360 - angle;
-                    // }
-
-                    // return 'rotate(' + (360 - angleDeg) + ' ' + rx + ' ' + ry + ')';
                     return 'rotate(' + angle + ' ' + rx + ' ' + ry + ')';
                 });
 
@@ -153,13 +147,30 @@ function workspace(error, docs) {
 
     function clicked(d) {
 
-        if (selectedDoc != d.id) {
-            unfixNodes(selectedDoc);
+        if (clickedDoc != d.id) {
+            unfixNodes();
 
             d.fx = d.x;
             d.fy = d.y;
-            selectedDoc = d.id;
+            clickedDoc = d.id;
 
+            updateLinks();
+        }
+    }
+
+    function doubleClicked(d) {
+
+        console.log(d.visualDetailLevel);
+        if(d.visualDetailLevel != 'Document'){
+            d.visualDetailLevel = "Document";
+            updateRectangles();
+        }
+        if (clickedDoc != d.id) {
+            unfixNodes();
+
+            d.fx = d.x;
+            d.fy = d.y;
+            clickedDoc = d.id;
             updateLinks();
         }
     }
@@ -170,11 +181,11 @@ function workspace(error, docs) {
             simulation.alphaTarget(0.3).restart();
         }
 
-        if (selectedDoc != d.id) {
-            unfixNodes(selectedDoc);
+        if (clickedDoc != d.id) {
+            unfixNodes();
             d.fx = d.x;
             d.fy = d.y;
-            selectedDoc = d.id;
+            clickedDoc = d.id;
             updateLinks();
         }
     }
@@ -190,8 +201,38 @@ function workspace(error, docs) {
         }
     }
 
-    function updateLinks() {
+    function updateRectangles() {
+        // update node rectangle
+        console.log("In updateRectangles");
+        node.selectAll("rect")
+            .attr("width", function(d){
+                if(d.visualDetailLevel == 'Document'){
+                    return 20;
+                }
+                return 10;
+            })
+            .attr("height", function (d) {
+                if(d.visualDetailLevel == 'Document'){
+                    return 20;
+                }
+                return 10;
+            })
+            .attr("x", function (d) {
+                if(d.visualDetailLevel == 'Document'){
 
+                    return -10;
+                }
+                return -5;
+            })
+            .attr("y", function (d) {
+                if(d.visualDetailLevel == 'Document') {
+                    return -10;
+                }
+                return -5;
+            });
+    }
+
+    function updateLinks() {
 
         link = linkG.selectAll(".link")
             .data(docs.links.filter(linkFilter))
@@ -228,10 +269,7 @@ function workspace(error, docs) {
     }
 
     function linkFilter(d) {
-        if (((d.source.id == selectedDoc) || (d.target.id == selectedDoc)) && (d.source.id != d.target.id)) {
-
-        }
-        return ((d.source.id == selectedDoc) || (d.target.id == selectedDoc)) && (d.source.id != d.target.id) && (d.similarity > 0.01);
+        return ((d.source.id == clickedDoc) || (d.target.id == clickedDoc)) && (d.source.id != d.target.id) && (d.similarity > 0.01);
     }
 
     function unfixNodes() {
@@ -240,7 +278,7 @@ function workspace(error, docs) {
             d.fy = null;
         });
 
-        selectedDoc = null;
+        clickedDoc = null;
         if (link != null) {
             link.remove();
         }
