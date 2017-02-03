@@ -3,7 +3,6 @@
  * More function will be added sooner.
  */
 
-
 const svg = d3.select('#vis');
 const WIDTH = parseInt(svg.style("width"), 10);
 const HEIGHT = parseInt(svg.style("height"), 10);
@@ -23,12 +22,10 @@ const entityColor = {
     "Date": "#67E1D8"
 };
 
-
 var forceCollide = d3.forceCollide()
     .radius(function(d){return d.radius;})
     .iterations(2)
     .strength(0.95);
-
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function (d) {
@@ -37,7 +34,6 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody().strength(-360))
     .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
     .force("collide",forceCollide);
-
 
 var q = d3.queue();
 q.defer(d3.json, 'data/crescent.json');
@@ -173,11 +169,9 @@ function workspace(error, docs) {
         svg.selectAll('.resizingRect')
             .attr('x', function (d) {
                 return d.x + d.width/2 - ResizingRectSide;
-                // return d.x - DocSide + d.width + ResizingRectSide;
             })
             .attr('y', function (d) {
                 return d.y + d.height/2 - ResizingRectSide;
-                // return d.y - DocSide + d.height + ResizingRectSide;
             });
 
         if (clickedDoc != null) {
@@ -370,6 +364,7 @@ function workspace(error, docs) {
         d.fx = d.fx + (d3.event.dx)/2;
         d.fy = d.fy + (d3.event.dy)/2;
         console.log(d.x, d.y);
+        forceCollide.initialize(simulation.nodes());
     }
 
     function updateLinks() {
