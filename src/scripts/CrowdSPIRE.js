@@ -68,12 +68,12 @@ function workspace(error, docs) {
         .on("mousedown", function () {
             d3.event.preventDefault();
         })
-        .on('click', clicked)
-        .on('dblclick', doubleClicked)
+        .on('click', docClicked)
+        .on('dblclick', docDoubleClicked)
         .call(d3.drag()
-            .on("start", dragStarted)
-            .on("drag", dragged)
-            .on("end", dragEnded));
+            .on("start", docDragStarted)
+            .on("drag", docDragged)
+            .on("end", docDragEnded));
 
     // label
     node.append("text")
@@ -128,12 +128,30 @@ function workspace(error, docs) {
             return "translate(" + d.x + "," + d.y + ")";
         });
 
+        // update node rectangle
+        node.selectAll(".Document")
+            .attr("width", function (d) {
+                return d.width;
+                // if (d.visualDetailLevel == 'Document') {
+                //     return DocSide;
+                // }
+                // return IconSide;
+            })
+            .attr("height", function (d) {
+                return d.height;
+                // if (d.visualDetailLevel == 'Document') {
+                //     return DocSide;
+                // }
+                // return IconSide;
+            });
+
+
         svg.selectAll('.resizingRect')
             .attr('x', function (d) {
-                return d.x + ResizingRectSide;
+                return d.x - DocSide + d.width + ResizingRectSide;
             })
             .attr('y', function (d) {
-                return d.y + ResizingRectSide;
+                return d.y - DocSide + d.height + ResizingRectSide;
             });
 
 
@@ -184,7 +202,7 @@ function workspace(error, docs) {
     }
 
 
-    function clicked(d) {
+    function docClicked(d) {
 
         if (clickedDoc != d.id) {
             unfixNodes();
@@ -197,11 +215,11 @@ function workspace(error, docs) {
         }
     }
 
-    function doubleClicked(d) {
+    function docDoubleClicked(d) {
 
         if (d.visualDetailLevel != 'Document') {
             d.visualDetailLevel = "Document";
-            updateRectangles();
+            updateRectangles(d);
         }
         if (clickedDoc != d.id) {
             unfixNodes();
@@ -214,7 +232,7 @@ function workspace(error, docs) {
     }
 
 
-    function dragStarted(d) {
+    function docDragStarted(d) {
         if (!d3.event.active) {
             simulation.alphaTarget(0.3).restart();
         }
@@ -228,28 +246,32 @@ function workspace(error, docs) {
         }
     }
 
-    function dragged(d) {
+    function docDragged(d) {
         d.fx = d3.event.x;
         d.fy = d3.event.y;
     }
 
-    function dragEnded(d) {
+    function docDragEnded(d) {
         if (!d3.event.active) {
             simulation.alphaTarget(0);
         }
     }
 
-    function updateRectangles() {
+    function updateRectangles(d) {
+        console.log(d.id);
         // update node rectangle
+        console.log('In updateRectangle')
         node.selectAll(".Icon")
             .attr("width", function (d) {
                 if (d.visualDetailLevel == 'Document') {
+                    d.width = DocSide;
                     return DocSide;
                 }
                 return IconSide;
             })
             .attr("height", function (d) {
                 if (d.visualDetailLevel == 'Document') {
+                    d.height = DocSide;
                     return DocSide;
                 }
                 return IconSide;
@@ -278,7 +300,13 @@ function workspace(error, docs) {
                 }
                 return IconR;
             })
-            .attr('class', 'Document Icon');
+            .attr('class', function (d) {
+                if (d.visualDetailLevel == 'Document'){
+                    return 'Document';
+                } else{
+                    return 'Icon';
+                };
+            });
 
 
         svg.selectAll('resizingRect')
@@ -299,25 +327,32 @@ function workspace(error, docs) {
 
             })
             .attr("x", function (d) {
-                return d.x + ResizingRectSide;
+                return d.x + d.width - ResizingRectSide;
             })
             .attr("y", function (d) {
-                return d.y + ResizingRectSide;
+                return d.y + d.height - ResizingRectSide;
             })
             .style("fill", '#999')
-            .attr("cursor", "nwse-resize");
-        // .call(d3.drag()
-        //     .on('start', function () {
-        //         console.log("start")
-        //     })
-        //     .on('drag', function () {
-        //         console.log('drag')
-        //     })
-        //     .on('end', function () {
-        //         console.log('end');
-        //     }));
+            .attr("cursor", "nwse-resize")
+            .call(d3.drag()
+                .on('start', function () {
+                    if (!d3.event.active) {
+                        simulation.alphaTarget(0.3).restart();
+                    }
+                })
+                .on('drag', resizingRect)
+                .on('end', function () {
+                    if (!d3.event.active) {
+                        simulation.alphaTarget(0);
+                    }
+                }));
 
         // resizingRect.exit().remove();
+    }
+
+    function resizingRect(d) {
+        d.width = Math.max(DocSide, d.width + d3.event.dx);
+        d.height = Math.max(DocSide, d.height + d3.event.dy);
     }
 
     function updateLinks() {
