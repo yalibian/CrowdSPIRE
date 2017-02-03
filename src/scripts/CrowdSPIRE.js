@@ -9,6 +9,7 @@ const WIDTH = parseInt(svg.style("width"), 10);
 const HEIGHT = parseInt(svg.style("height"), 10);
 const DocSide = 40;
 const IconSide = 10;
+const ResizingRectSide = 10;
 const DocR = 6;
 const IconR = 3;
 const entityColor = {
@@ -104,7 +105,8 @@ function workspace(error, docs) {
         })
         .attr('ry', function (d) {
             return IconR;
-        });
+        })
+        .attr('class', 'Icon');
 
     svg.on('mousedown', unfixNodes);
 
@@ -126,10 +128,16 @@ function workspace(error, docs) {
             return "translate(" + d.x + "," + d.y + ")";
         });
 
+        svg.selectAll('.resizingRect')
+            .attr('x', function (d) {
+                return d.x + ResizingRectSide;
+            })
+            .attr('y', function (d) {
+                return d.y + ResizingRectSide;
+            });
+
 
         if (clickedDoc != null) {
-
-            console.log('In ticked changing text');
 
             link.selectAll('text')
                 .attr('x', function (d) {
@@ -191,7 +199,6 @@ function workspace(error, docs) {
 
     function doubleClicked(d) {
 
-        console.log(d.visualDetailLevel);
         if (d.visualDetailLevel != 'Document') {
             d.visualDetailLevel = "Document";
             updateRectangles();
@@ -234,8 +241,7 @@ function workspace(error, docs) {
 
     function updateRectangles() {
         // update node rectangle
-        console.log("In updateRectangles");
-        node.selectAll("rect")
+        node.selectAll(".Icon")
             .attr("width", function (d) {
                 if (d.visualDetailLevel == 'Document') {
                     return DocSide;
@@ -261,17 +267,57 @@ function workspace(error, docs) {
                 return -IconSide / 2.0;
             })
             .attr('rx', function (d) {
-                if(d.visualDetailLevel == 'Document'){
+                if (d.visualDetailLevel == 'Document') {
                     return DocR;
                 }
                 return IconR;
             })
             .attr('ry', function (d) {
-                if(d.visualDetailLevel == 'Document'){
+                if (d.visualDetailLevel == 'Document') {
                     return DocR;
                 }
                 return IconR;
-            });
+            })
+            .attr('class', 'Document Icon');
+
+
+        svg.selectAll('resizingRect')
+            .data(docs.nodes.filter(function (d) {
+                return d.visualDetailLevel == 'Document';
+            }))
+            .enter()
+            .append("rect")
+            .attr('class', 'resizingRect')
+            .attr("width", function (d) {
+                return ResizingRectSide;
+            })
+            .attr("height", function () {
+                return ResizingRectSide;
+            })
+            .attr("width", function () {
+                return ResizingRectSide;
+
+            })
+            .attr("x", function (d) {
+                return d.x + ResizingRectSide;
+            })
+            .attr("y", function (d) {
+                return d.y + ResizingRectSide;
+            })
+            .style("fill", '#999')
+            .attr("cursor", "nwse-resize");
+        // .call(d3.drag()
+        //     .on('start', function () {
+        //         console.log("start")
+        //     })
+        //     .on('drag', function () {
+        //         console.log('drag')
+        //     })
+        //     .on('end', function () {
+        //         console.log('end');
+        //     }));
+
+        // resizingRect.exit().remove();
     }
 
     function updateLinks() {
