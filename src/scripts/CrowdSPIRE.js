@@ -24,15 +24,19 @@ const entityColor = {
 };
 
 
+var forceCollide = d3.forceCollide()
+    .radius(function(d){return d.radius;})
+    .iterations(2)
+    .strength(0.95);
+
+
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function (d) {
         return d.id;
     }))
     .force("charge", d3.forceManyBody().strength(-360))
     .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
-    .on('end', function () {
-        // placed = true;
-    });
+    .force("collide",forceCollide);
 
 
 var q = d3.queue();
@@ -86,16 +90,19 @@ function workspace(error, docs) {
     // rectangle
     node.append("rect")
         .attr("width", function (d) {
+            d.radius = IconSide/Math.sqrt(2.00);
+            d.width = IconSide;
             return IconSide;
         })
-        .attr("height", function () {
+        .attr("height", function (d) {
+            d.height = IconSide;
             return IconSide;
         })
-        .attr("x", function () {
-            return -IconSide / 2.0;
+        .attr("x", function (d) {
+            return d.width;
         })
-        .attr("y", function () {
-            return -IconSide / 2.0
+        .attr("y", function (d) {
+            return d.height;
         })
         .attr("fill", function (d) {
             return 'steelblue';
@@ -113,8 +120,24 @@ function workspace(error, docs) {
     // ticked
     function ticked() {
 
-        node.attr("transform", function (d) {
+        // node.data(docs.nodes).attr("transform", function (d) {
             // border constriction
+            // var side;
+            // if (d.visualDetailLevel == 'Document') {
+            //     side = DocSide / 2.0;
+            // } else {
+            //     side = IconSide / 2.0;
+            // }
+            //
+            // d.x = Math.max(side, Math.min(WIDTH - d.width, d.x));
+            // d.y = Math.max(side, Math.min(HEIGHT - d.height, d.y));
+            //
+            // return "translate(" + d.x + "," + d.y + ")";
+            // }
+        // );
+
+        node.attr("transform", function (d) {
+       //     border constriction
             var side;
             if (d.visualDetailLevel == 'Document') {
                 side = DocSide / 2.0;
@@ -122,8 +145,8 @@ function workspace(error, docs) {
                 side = IconSide / 2.0;
             }
 
-            d.x = Math.max(side, Math.min(WIDTH - side, d.x));
-            d.y = Math.max(side, Math.min(HEIGHT - side, d.y));
+            d.x = Math.max(side, Math.min(WIDTH - d.width, d.x));
+            d.y = Math.max(side, Math.min(HEIGHT - d.height, d.y));
 
             return "translate(" + d.x + "," + d.y + ")";
         });
@@ -132,28 +155,30 @@ function workspace(error, docs) {
         node.selectAll(".Document")
             .attr("width", function (d) {
                 return d.width;
-                // if (d.visualDetailLevel == 'Document') {
-                //     return DocSide;
-                // }
-                // return IconSide;
             })
             .attr("height", function (d) {
                 return d.height;
-                // if (d.visualDetailLevel == 'Document') {
-                //     return DocSide;
-                // }
-                // return IconSide;
+            });
+
+        // rectangle
+        node.selectAll("rect")
+            .attr("x", function (d) {
+                return - d.width/2;
+            })
+            .attr("y", function (d) {
+                return - d.height/2;
             });
 
 
         svg.selectAll('.resizingRect')
             .attr('x', function (d) {
-                return d.x - DocSide + d.width + ResizingRectSide;
+                return d.x + d.width/2 - ResizingRectSide;
+                // return d.x - DocSide + d.width + ResizingRectSide;
             })
             .attr('y', function (d) {
-                return d.y - DocSide + d.height + ResizingRectSide;
+                return d.y + d.height/2 - ResizingRectSide;
+                // return d.y - DocSide + d.height + ResizingRectSide;
             });
-
 
         if (clickedDoc != null) {
 
@@ -182,7 +207,6 @@ function workspace(error, docs) {
                     return 'rotate(' + angle + ' ' + rx + ' ' + ry + ')';
                 });
 
-
             link.selectAll('line')
                 .attr('x1', function (d) {
                     return d.source.x;
@@ -197,8 +221,6 @@ function workspace(error, docs) {
                     return d.target.y;
                 });
         }
-
-
     }
 
 
@@ -231,7 +253,6 @@ function workspace(error, docs) {
         }
     }
 
-
     function docDragStarted(d) {
         if (!d3.event.active) {
             simulation.alphaTarget(0.3).restart();
@@ -255,38 +276,29 @@ function workspace(error, docs) {
         if (!d3.event.active) {
             simulation.alphaTarget(0);
         }
+        forceCollide.initialize(simulation.nodes());
     }
 
     function updateRectangles(d) {
-        console.log(d.id);
-        // update node rectangle
-        console.log('In updateRectangle')
         node.selectAll(".Icon")
             .attr("width", function (d) {
                 if (d.visualDetailLevel == 'Document') {
+                    d.radius = DocSide/Math.sqrt(2.00);
                     d.width = DocSide;
-                    return DocSide;
                 }
-                return IconSide;
+                return d.width;
             })
             .attr("height", function (d) {
                 if (d.visualDetailLevel == 'Document') {
                     d.height = DocSide;
-                    return DocSide;
                 }
-                return IconSide;
+                return d.height;
             })
             .attr("x", function (d) {
-                if (d.visualDetailLevel == 'Document') {
-                    return -DocSide / 2.0;
-                }
-                return -IconSide / 2.0;
+                return -d.width/2;
             })
             .attr("y", function (d) {
-                if (d.visualDetailLevel == 'Document') {
-                    return -DocSide / 2.0;
-                }
-                return -IconSide / 2.0;
+                return -d.height;
             })
             .attr('rx', function (d) {
                 if (d.visualDetailLevel == 'Document') {
@@ -305,7 +317,7 @@ function workspace(error, docs) {
                     return 'Document';
                 } else{
                     return 'Icon';
-                };
+                }
             });
 
 
@@ -319,18 +331,14 @@ function workspace(error, docs) {
             .attr("width", function (d) {
                 return ResizingRectSide;
             })
-            .attr("height", function () {
+            .attr("height", function (d) {
                 return ResizingRectSide;
-            })
-            .attr("width", function () {
-                return ResizingRectSide;
-
             })
             .attr("x", function (d) {
-                return d.x + d.width - ResizingRectSide;
+                return d.x + d.width/2 - ResizingRectSide;
             })
             .attr("y", function (d) {
-                return d.y + d.height - ResizingRectSide;
+                return d.y + d.height/2 - ResizingRectSide;
             })
             .style("fill", '#999')
             .attr("cursor", "nwse-resize")
@@ -351,8 +359,17 @@ function workspace(error, docs) {
     }
 
     function resizingRect(d) {
+
+        var width0 = d.width;
+        var height0 = d.height;
+
         d.width = Math.max(DocSide, d.width + d3.event.dx);
         d.height = Math.max(DocSide, d.height + d3.event.dy);
+        d.radius = Math.sqrt(d.width*d.width + d.height*d.height)/2.00;
+
+        d.fx = d.fx + (d3.event.dx)/2;
+        d.fy = d.fy + (d3.event.dy)/2;
+        console.log(d.x, d.y);
     }
 
     function updateLinks() {

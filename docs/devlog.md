@@ -53,4 +53,3 @@
     * INIT SEARCH FUNCTION
         When clicking search at menu bar, or typing "Command + f", pop out a dialog for searching, which could link which nodes, or other terms.
         
-
