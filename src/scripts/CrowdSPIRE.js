@@ -8,6 +8,7 @@ const WIDTH = parseInt(svg.style("width"), 10);
 const HEIGHT = parseInt(svg.style("height"), 10);
 const DocWidth = 200;
 const DocHeight = 250;
+const DocRadius = Math.sqrt(DocWidth * DocWidth + DocHeight * DocHeight) / 2.00;
 const DocSide = 40;
 const IconSide = 10;
 const ResizingRectSide = 10;
@@ -25,7 +26,9 @@ const entityColor = {
 };
 
 var forceCollide = d3.forceCollide()
-    .radius(function(d){return d.radius;})
+    .radius(function (d) {
+        return d.radius;
+    })
     .iterations(2)
     .strength(0.95);
 
@@ -35,7 +38,7 @@ var simulation = d3.forceSimulation()
     }))
     .force("charge", d3.forceManyBody().strength(-360))
     .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
-    .force("collide",forceCollide);
+    .force("collide", forceCollide);
 
 var q = d3.queue();
 q.defer(d3.json, 'data/crescent.json');
@@ -88,7 +91,7 @@ function workspace(error, docs) {
     // rectangle
     node.append("rect")
         .attr("width", function (d) {
-            d.radius = IconSide/Math.sqrt(2.00);
+            d.radius = IconSide / Math.sqrt(2.00);
             d.width = IconSide;
             return IconSide;
         })
@@ -128,8 +131,8 @@ function workspace(error, docs) {
                 side = IconSide / 2.0;
             }
 
-            d.x = Math.max(d.width/2, Math.min(WIDTH - d.width/2, d.x));
-            d.y = Math.max(d.height/2, Math.min(HEIGHT - d.height/2, d.y));
+            d.x = Math.max(d.width / 2, Math.min(WIDTH - d.width / 2, d.x));
+            d.y = Math.max(d.height / 2, Math.min(HEIGHT - d.height / 2, d.y));
 
             return "translate(" + d.x + "," + d.y + ")";
         });
@@ -146,19 +149,19 @@ function workspace(error, docs) {
         // rectangle
         node.selectAll("rect")
             .attr("x", function (d) {
-                return - d.width/2;
+                return -d.width / 2;
             })
             .attr("y", function (d) {
-                return - d.height/2;
+                return -d.height / 2;
             });
 
 
         svg.selectAll('.resizingRect')
             .attr('x', function (d) {
-                return d.x + d.width/2 - ResizingRectSide;
+                return d.x + d.width / 2 - ResizingRectSide;
             })
             .attr('y', function (d) {
-                return d.y + d.height/2 - ResizingRectSide;
+                return d.y + d.height / 2 - ResizingRectSide;
             });
 
         if (clickedDoc != null) {
@@ -260,45 +263,33 @@ function workspace(error, docs) {
         forceCollide.initialize(simulation.nodes());
     }
 
-    function updateRectangles(d) {
-        node.selectAll(".Icon")
+    function updateRectangles(selectedDoc) {
+
+        // Improve efficiency using node.filter (May be better)
+        node.filter(function (d) {
+            return d.id == selectedDoc.id;
+        }).select('rect')
             .attr("width", function (d) {
-                if (d.visualDetailLevel == 'Document') {
-                    d.width = DocWidth;
-                }
-                return d.width;
+                return d.width = DocWidth;
             })
             .attr("height", function (d) {
-                if (d.visualDetailLevel == 'Document') {
-                    d.height = DocHeight;
-                    d.radius = Math.sqrt(d.width*d.width + d.height*d.height)/2.00;
-                }
-                return d.height;
+                d.radius = DocRadius;
+                return d.height = DocHeight;
             })
             .attr("x", function (d) {
-                return -d.width/2;
+                return -d.width / 2;
             })
             .attr("y", function (d) {
                 return -d.height;
             })
             .attr('rx', function (d) {
-                if (d.visualDetailLevel == 'Document') {
-                    return DocR;
-                }
-                return IconR;
+                return DocR;
             })
             .attr('ry', function (d) {
-                if (d.visualDetailLevel == 'Document') {
-                    return DocR;
-                }
-                return IconR;
+                return DocR;
             })
             .attr('class', function (d) {
-                if (d.visualDetailLevel == 'Document'){
-                    return 'Document';
-                } else{
-                    return 'Icon';
-                }
+                return 'Document';
             });
 
 
@@ -318,10 +309,10 @@ function workspace(error, docs) {
                 return ResizingRectSide;
             })
             .attr("x", function (d) {
-                return d.x + d.width/2 - ResizingRectSide;
+                return d.x + d.width / 2 - ResizingRectSide;
             })
             .attr("y", function (d) {
-                return d.y + d.height/2 - ResizingRectSide;
+                return d.y + d.height / 2 - ResizingRectSide;
             })
             .call(d3.drag()
                 .on('start', function () {
@@ -342,10 +333,10 @@ function workspace(error, docs) {
 
         d.width = Math.max(DocWidth, d.width + d3.event.dx);
         d.height = Math.max(DocHeight, d.height + d3.event.dy);
-        d.radius = Math.sqrt(d.width*d.width + d.height*d.height)/2.00;
+        d.radius = Math.sqrt(d.width * d.width + d.height * d.height) / 2.00;
 
-        d.fx = d.fx + (d3.event.dx)/2;
-        d.fy = d.fy + (d3.event.dy)/2;
+        d.fx = d.fx + (d3.event.dx) / 2;
+        d.fy = d.fy + (d3.event.dy) / 2;
         forceCollide.initialize(simulation.nodes());
     }
 
@@ -363,9 +354,9 @@ function workspace(error, docs) {
             });
 
         link.append('line')
-            // .attr('stroke', '#ccc')
-            // .attr('stroke-width', 1)
-            // .attr('opacity', 0.6);
+        // .attr('stroke', '#ccc')
+        // .attr('stroke-width', 1)
+        // .attr('opacity', 0.6);
 
         entity = link.append('text')
             .attr('font-size', "10px")
