@@ -6,6 +6,8 @@
 const svg = d3.select('#vis');
 const WIDTH = parseInt(svg.style("width"), 10);
 const HEIGHT = parseInt(svg.style("height"), 10);
+const DocWidth = 200;
+const DocHeight = 250;
 const DocSide = 40;
 const IconSide = 10;
 const ResizingRectSide = 10;
@@ -116,33 +118,18 @@ function workspace(error, docs) {
     // ticked
     function ticked() {
 
-        // node.data(docs.nodes).attr("transform", function (d) {
-            // border constriction
-            // var side;
-            // if (d.visualDetailLevel == 'Document') {
-            //     side = DocSide / 2.0;
-            // } else {
-            //     side = IconSide / 2.0;
-            // }
-            //
-            // d.x = Math.max(side, Math.min(WIDTH - d.width, d.x));
-            // d.y = Math.max(side, Math.min(HEIGHT - d.height, d.y));
-            //
-            // return "translate(" + d.x + "," + d.y + ")";
-            // }
-        // );
-
         node.attr("transform", function (d) {
-       //     border constriction
+            // border constriction
             var side;
             if (d.visualDetailLevel == 'Document') {
+
                 side = DocSide / 2.0;
             } else {
                 side = IconSide / 2.0;
             }
 
-            d.x = Math.max(side, Math.min(WIDTH - d.width, d.x));
-            d.y = Math.max(side, Math.min(HEIGHT - d.height, d.y));
+            d.x = Math.max(d.width/2, Math.min(WIDTH - d.width/2, d.x));
+            d.y = Math.max(d.height/2, Math.min(HEIGHT - d.height/2, d.y));
 
             return "translate(" + d.x + "," + d.y + ")";
         });
@@ -277,14 +264,14 @@ function workspace(error, docs) {
         node.selectAll(".Icon")
             .attr("width", function (d) {
                 if (d.visualDetailLevel == 'Document') {
-                    d.radius = DocSide/Math.sqrt(2.00);
-                    d.width = DocSide;
+                    d.width = DocWidth;
                 }
                 return d.width;
             })
             .attr("height", function (d) {
                 if (d.visualDetailLevel == 'Document') {
-                    d.height = DocSide;
+                    d.height = DocHeight;
+                    d.radius = Math.sqrt(d.width*d.width + d.height*d.height)/2.00;
                 }
                 return d.height;
             })
@@ -315,6 +302,8 @@ function workspace(error, docs) {
             });
 
 
+        forceCollide.initialize(simulation.nodes());
+
         svg.selectAll('resizingRect')
             .data(docs.nodes.filter(function (d) {
                 return d.visualDetailLevel == 'Document';
@@ -334,8 +323,6 @@ function workspace(error, docs) {
             .attr("y", function (d) {
                 return d.y + d.height/2 - ResizingRectSide;
             })
-            .style("fill", '#999')
-            .attr("cursor", "nwse-resize")
             .call(d3.drag()
                 .on('start', function () {
                     if (!d3.event.active) {
@@ -349,21 +336,16 @@ function workspace(error, docs) {
                     }
                 }));
 
-        // resizingRect.exit().remove();
     }
 
     function resizingRect(d) {
 
-        var width0 = d.width;
-        var height0 = d.height;
-
-        d.width = Math.max(DocSide, d.width + d3.event.dx);
-        d.height = Math.max(DocSide, d.height + d3.event.dy);
+        d.width = Math.max(DocWidth, d.width + d3.event.dx);
+        d.height = Math.max(DocHeight, d.height + d3.event.dy);
         d.radius = Math.sqrt(d.width*d.width + d.height*d.height)/2.00;
 
         d.fx = d.fx + (d3.event.dx)/2;
         d.fy = d.fy + (d3.event.dy)/2;
-        console.log(d.x, d.y);
         forceCollide.initialize(simulation.nodes());
     }
 
@@ -381,9 +363,9 @@ function workspace(error, docs) {
             });
 
         link.append('line')
-            .attr('stroke', '#ccc')
-            .attr('stroke-width', 1)
-            .attr('opacity', 0.2);
+            // .attr('stroke', '#ccc')
+            // .attr('stroke-width', 1)
+            // .attr('opacity', 0.6);
 
         entity = link.append('text')
             .attr('font-size', "10px")
