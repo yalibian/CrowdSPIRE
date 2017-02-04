@@ -1,10 +1,10 @@
-.Icon {
+.IconRect {
     fill: steelblue;
 }
 
-.Document {
-    fill: while;
-    stroke-width:3;
+.DocRect {
+    fill: steelblue;
+    stroke-width:1;
     stroke:rgb(0,0,0)
 }
 

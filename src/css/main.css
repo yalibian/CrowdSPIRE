@@ -358,11 +358,11 @@ button:active {
 }
 
 .node {
-    shape-rendering: crispEdges;
+    /*shape-rendering: crispEdges;*/
 }
 
 .node:hover {
-    fill-opacity: .5;
+    /*fill-opacity: .5;*/
 }
 
 .node text {

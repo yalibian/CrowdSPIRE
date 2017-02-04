@@ -114,7 +114,7 @@ function workspace(error, docs) {
         .attr('ry', function (d) {
             return IconR;
         })
-        .attr('class', 'Icon');
+        .attr('class', 'IconRect');
 
     svg.on('mousedown', unfixNodes);
 
@@ -138,7 +138,7 @@ function workspace(error, docs) {
         });
 
         // update node rectangle
-        node.selectAll(".Document")
+        node.selectAll(".DocRect")
             .attr("width", function (d) {
                 return d.width;
             })
@@ -266,9 +266,11 @@ function workspace(error, docs) {
     function updateRectangles(selectedDoc) {
 
         // Improve efficiency using node.filter (May be better)
-        node.filter(function (d) {
+        var docNode = node.filter(function (d) {
             return d.id == selectedDoc.id;
-        }).select('rect')
+        });
+
+        docNode.select('rect')
             .attr("width", function (d) {
                 return d.width = DocWidth;
             })
@@ -289,11 +291,84 @@ function workspace(error, docs) {
                 return DocR;
             })
             .attr('class', function (d) {
-                return 'Document';
+                return 'DocRect';
             });
 
 
+        //Add document content into docNode(Document Level Node)
+        var docContent = docNode.append("foreignObject")
+            .attr("width", function (d) {
+                return d.width;
+            })
+            .attr("height", function (d) {
+                return d.height;
+            })
+            .attr("x", function (d) {
+                return -d.width / 2;
+            })
+            .attr("y", function (d) {
+                return -d.height / 2 + 20;
+            })
+            .append("xhtml:body")
+            .style("margin",0)
+            .style("padding",0)
+            .append("div")
+            .style("max-height", function (d) {
+                return d.height - 40 + 'px';
+            })
+            .style("height", function (d) {
+                return d.height - 40 + 'px';
+            })
+            .attr("class","doc");
+
+        docContent.append('p')
+            .attr('class', 'doc-title')
+            .text(function(d) { console.log(d.id);return d.id;});
+
+        docContent.append('div')
+            // .attr("class","doc-content")
+            // .attr('max-height', function (d) {
+            //     return d.height - 60 + 'px';
+            // })
+            // .style('overflow', 'auto')
+            .html('<div class="panel-body doc-content">Report Date dafljdfal asdfljs  asdf lsadflj adsf asdfl asdfk asdfkj asdf  asdfkjlfdsa asdfkljads  saf asdfkljgfajl fsd jgfsd aldsfdasjl gf dsfjla kladsfj<em class="highlight Date">24 April, 2003</em>. Phone calls on <em class="highlight Date">22 April, 2003</em> from <em class="highlight Phone">703-659-2317</em> to the following numbers: <em class="highlight Phone">804-759-6302</em>; <em class="highlight Phone">804-774-8920</em>; <em class="highlight Phone">718-352-8479</em>; and <em class="highlight Phone">01 1207670734</em>. The same brief voice message was given in <em class="highlight Misc">Arabic</em> in each call. A translation of this message reads: "I will be in my office on <em class="highlight Date">April 30</em> at 9:00AM. Try to be on time".</div>');
+
+
         forceCollide.initialize(simulation.nodes());
+
+        console.log(selectedDoc);
+
+        //TODO: the ResizingRect could be merged into the docNode.
+        /*
+        docNode.append('rect')
+            .attr('class', 'resizingRect')
+            .attr("width", function () {
+                return ResizingRectSide;
+            })
+            .attr("height", function () {
+                return ResizingRectSide;
+            })
+            .attr("x", function () {
+                var d = selectedDoc;
+                return d.x + d.width / 2 - ResizingRectSide;
+            })
+            .attr("y", function () {
+                var d = selectedDoc;
+                return d.y + d.height / 2 - ResizingRectSide;
+            })
+            .call(d3.drag()
+                .on('start', function () {
+                    if (!d3.event.active) {
+                        simulation.alphaTarget(0.3).restart();
+                    }
+                })
+                .on('drag', resizingRect)
+                .on('end', function () {
+                    if (!d3.event.active) {
+                        simulation.alphaTarget(0);
+                    }
+                }));
+                */
 
         svg.selectAll('resizingRect')
             .data(docs.nodes.filter(function (d) {
