@@ -71,8 +71,9 @@ h3.panel-heading{
 .doc {
 	font-family: arial,helvetica,'sans-serif';
 	font-size: 12px;
-	padding: 6px;
-	background-color: rgba(255,255,255,.3)
+	padding: 2px;
+    fill: white;
+	/*background-color: rgba(255,255,255,.3)*/
 }
 
 
@@ -82,8 +83,8 @@ h3.panel-heading{
 
 p.doc-content {
 	margin-top: 8px;
-	height: 100px;
-	overflow: auto;
+	/*height: 100px;*/
+	overflow: scroll;
 }
 
 
