@@ -73,12 +73,12 @@ function workspace(error, docs) {
         .on("mousedown", function () {
             d3.event.preventDefault();
         })
-        .on('click', docClicked)
-        .on('dblclick', docDoubleClicked)
+        .on('click', nodeClicked)
+        .on('dblclick', nodeDoubleClicked)
         .call(d3.drag()
-            .on("start", docDragStarted)
-            .on("drag", docDragged)
-            .on("end", docDragEnded));
+            .on("start", nodeDragStarted)
+            .on("drag", nodeDragged)
+            .on("end", nodeDragEnded));
 
     // label
     node.append("text")
@@ -121,46 +121,19 @@ function workspace(error, docs) {
     // ticked
     function ticked() {
 
+        // Not change the width and height of each node.
         node.attr("transform", function (d) {
+
             // border constriction
-            var side;
-            if (d.visualDetailLevel == 'Document') {
-
-                side = DocSide / 2.0;
-            } else {
-                side = IconSide / 2.0;
-            }
-
             d.x = Math.max(d.width / 2, Math.min(WIDTH - d.width / 2, d.x));
             d.y = Math.max(d.height / 2, Math.min(HEIGHT - d.height / 2, d.y));
 
+            // Update the group position: which include the basic rectangle and Foreign object. (Drag Object too...)
             return "translate(" + d.x + "," + d.y + ")";
         });
 
-        node.selectAll('.doc')
-            .attr("width", function (d) {
-                return d.width;
-            })
-            .attr("height", function (d) {
-                return d.height - 40;
-            })
-            .attr("x", function (d) {
-                return -d.width / 2;
-            })
-            .attr("y", function (d) {
-                return -d.height / 2 + 20;
-            });
 
-        // update node rectangle
-        node.selectAll(".DocRect")
-            .attr("width", function (d) {
-                return d.width;
-            })
-            .attr("height", function (d) {
-                return d.height;
-            });
-
-        // rectangle
+        // rectangle: keep ICON rectangle at the center of Node Group
         node.selectAll("rect")
             .attr("x", function (d) {
                 return -d.width / 2;
@@ -170,16 +143,10 @@ function workspace(error, docs) {
             });
 
 
-        svg.selectAll('.resizingRect')
-            .attr('x', function (d) {
-                return d.x + d.width / 2 - ResizingRectSide;
-            })
-            .attr('y', function (d) {
-                return d.y + d.height / 2 - ResizingRectSide;
-            });
-
+        // When a node is selected(highlighted), related nodes/links should highlighted to.
         if (clickedDoc != null) {
 
+            // Show labels on each related link
             link.selectAll('text')
                 .attr('x', function (d) {
                     return (d.source.x + d.target.x) / 2;
@@ -205,6 +172,7 @@ function workspace(error, docs) {
                     return 'rotate(' + angle + ' ' + rx + ' ' + ry + ')';
                 });
 
+            // Show line between each related link
             link.selectAll('line')
                 .attr('x1', function (d) {
                     return d.source.x;
@@ -222,7 +190,7 @@ function workspace(error, docs) {
     }
 
 
-    function docClicked(d) {
+    function nodeClicked(d) {
 
         if (clickedDoc != d.id) {
             unfixNodes();
@@ -235,7 +203,7 @@ function workspace(error, docs) {
         }
     }
 
-    function docDoubleClicked(d) {
+    function nodeDoubleClicked(d) {
 
         if (d.visualDetailLevel != 'Document') {
             d.visualDetailLevel = "Document";
@@ -251,7 +219,7 @@ function workspace(error, docs) {
         }
     }
 
-    function docDragStarted(d) {
+    function nodeDragStarted(d) {
         if (!d3.event.active) {
             simulation.alphaTarget(0.3).restart();
         }
@@ -265,34 +233,51 @@ function workspace(error, docs) {
         }
     }
 
-    function docDragged(d) {
+    // During node drag.
+    function nodeDragged(d) {
         d.fx = d3.event.x;
         d.fy = d3.event.y;
     }
 
-    function docDragEnded(d) {
+    // the end of node drag.
+    function nodeDragEnded(d) {
         if (!d3.event.active) {
             simulation.alphaTarget(0);
         }
         forceCollide.initialize(simulation.nodes());
     }
 
+
+    // Icon-Level Node -> Document-Level Node:
+    //      When a Icon-Level node double clicked, enlarge the size of background rectangle, and add foreign object to show contents of this node.
+
+    // Document-Level Node -> Icon-Level Node:
+    //      When the close button is clicked on this Document-Level Node, smaller the size of background rectangle, and delete the foreign object.
+
+    // Delete Node:
+    //      When the delete button is clicked on Document-Level Node, the background rectangle and foreign object of this node group would be deleted from the screen.
     function updateRectangles(selectedDoc) {
 
         // Improve efficiency using node.filter (May be better)
-        var docNode = node.filter(function (d) {
+        var docLevelNode = node.filter(function (d) {
             return d.id == selectedDoc.id;
         });
 
-        docNode.select('rect')
+        docLevelNode.select('rect')
             .attr("width", function (d) {
-                return d.width = DocWidth;
+                // Changes based on d. text: each document have different length of Text
+                // Using Golden Ratio give the document level node a good looking rectangle.
+                var c = 90;
+                var a = 69;
+                var goldenRatio = 1.618;
+                return d.width = (a + Math.sqrt(a*a+4*goldenRatio*c*d.text.length))/(2*goldenRatio);
             })
             .attr("height", function (d) {
-                d.radius = DocRadius;
-                return d.height = DocHeight;
+                return d.height = 1.61803398875 * d.width;
             })
             .attr("x", function (d) {
+                // Radius is used for collision detection.
+                d.radius = Math.sqrt(d.width*d.width + d.height*d.height)/2;
                 return -d.width / 2;
             })
             .attr("y", function (d) {
@@ -308,9 +293,8 @@ function workspace(error, docs) {
                 return 'DocRect';
             });
 
-
         //Add document content into docNode(Document Level Node)
-        var docContent = docNode.append("foreignObject")
+        var docContent = docLevelNode.append("foreignObject")
             .attr("class", "doc")
             .attr("width", function (d) {
                 return d.width;
@@ -352,85 +336,8 @@ function workspace(error, docs) {
 
 
         forceCollide.initialize(simulation.nodes());
-
-        console.log(selectedDoc);
-
-        //TODO: the ResizingRect could be merged into the docNode.
-        /*
-         docNode.append('rect')
-         .attr('class', 'resizingRect')
-         .attr("width", function () {
-         return ResizingRectSide;
-         })
-         .attr("height", function () {
-         return ResizingRectSide;
-         })
-         .attr("x", function () {
-         var d = selectedDoc;
-         return d.x + d.width / 2 - ResizingRectSide;
-         })
-         .attr("y", function () {
-         var d = selectedDoc;
-         return d.y + d.height / 2 - ResizingRectSide;
-         })
-         .call(d3.drag()
-         .on('start', function () {
-         if (!d3.event.active) {
-         simulation.alphaTarget(0.3).restart();
-         }
-         })
-         .on('drag', resizingRect)
-         .on('end', function () {
-         if (!d3.event.active) {
-         simulation.alphaTarget(0);
-         }
-         }));
-         */
-
-        svg.selectAll('resizingRect')
-            .data(docs.nodes.filter(function (d) {
-                return d.visualDetailLevel == 'Document';
-            }))
-            .enter()
-            .append("rect")
-            .attr('class', 'resizingRect')
-            .attr("width", function (d) {
-                return ResizingRectSide;
-            })
-            .attr("height", function (d) {
-                return ResizingRectSide;
-            })
-            .attr("x", function (d) {
-                return d.x + d.width / 2 - ResizingRectSide;
-            })
-            .attr("y", function (d) {
-                return d.y + d.height / 2 - ResizingRectSide;
-            })
-            .call(d3.drag()
-                .on('start', function () {
-                    if (!d3.event.active) {
-                        simulation.alphaTarget(0.3).restart();
-                    }
-                })
-                .on('drag', resizingRect)
-                .on('end', function () {
-                    if (!d3.event.active) {
-                        simulation.alphaTarget(0);
-                    }
-                }));
-
     }
 
-    function resizingRect(d) {
-
-        d.width = Math.max(DocWidth, d.width + d3.event.dx);
-        d.height = Math.max(DocHeight, d.height + d3.event.dy);
-        d.radius = Math.sqrt(d.width * d.width + d.height * d.height) / 2.00;
-
-        d.fx = d.fx + (d3.event.dx) / 2;
-        d.fy = d.fy + (d3.event.dy) / 2;
-        forceCollide.initialize(simulation.nodes());
-    }
 
     function updateLinks() {
 
@@ -486,5 +393,4 @@ function workspace(error, docs) {
         }
     }
 }
-
 
