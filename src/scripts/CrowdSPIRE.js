@@ -69,7 +69,6 @@ function workspace(error, docs) {
         .data(docs.nodes)
         .enter().append("g")
         .attr("class", "node")
-        .attr("cursor", "move")
         .on("mousedown", function () {
             d3.event.preventDefault();
         })
@@ -207,7 +206,7 @@ function workspace(error, docs) {
 
         if (d.visualDetailLevel != 'Document') {
             d.visualDetailLevel = "Document";
-            updateRectangles(d);
+            maximizeNode(d);
         }
         if (clickedDoc != d.id) {
             unfixNodes();
@@ -248,15 +247,25 @@ function workspace(error, docs) {
     }
 
 
-    // Icon-Level Node -> Document-Level Node:
-    //      When a Icon-Level node double clicked, enlarge the size of background rectangle, and add foreign object to show contents of this node.
 
     // Document-Level Node -> Icon-Level Node:
     //      When the close button is clicked on this Document-Level Node, smaller the size of background rectangle, and delete the foreign object.
+    function minusNode(d) {
+        console.log("Minus Node in Document Level");
+        
+    }
 
-    // Delete Node:
+    // Delete Node from Screen:
     //      When the delete button is clicked on Document-Level Node, the background rectangle and foreign object of this node group would be deleted from the screen.
-    function updateRectangles(selectedDoc) {
+    function closeNode(d) {
+        console.log("Close Node From Screen");
+
+    }
+
+
+    // Icon-Level Node -> Document-Level Node:
+    //      When a Icon-Level node double clicked, enlarge the size of background rectangle, and add foreign object to show contents of this node.
+    function maximizeNode(selectedDoc) {
 
         // Improve efficiency using node.filter (May be better)
         var docLevelNode = node.filter(function (d) {
@@ -264,20 +273,21 @@ function workspace(error, docs) {
         });
 
         docLevelNode.select('rect')
+            .attr("cursor", "move")
             .attr("width", function (d) {
                 // Changes based on d. text: each document have different length of Text
                 // Using Golden Ratio give the document level node a good looking rectangle.
                 var c = 90;
                 var a = 69;
                 var goldenRatio = 1.618;
-                return d.width = (a + Math.sqrt(a*a+4*goldenRatio*c*d.text.length))/(2*goldenRatio);
+                return d.width = (a + Math.sqrt(a * a + 4 * goldenRatio * c * d.text.length)) / (2 * goldenRatio);
             })
             .attr("height", function (d) {
                 return d.height = 1.61803398875 * d.width;
             })
             .attr("x", function (d) {
                 // Radius is used for collision detection.
-                d.radius = Math.sqrt(d.width*d.width + d.height*d.height)/2;
+                d.radius = Math.sqrt(d.width * d.width + d.height * d.height) / 2;
                 return -d.width / 2;
             })
             .attr("y", function (d) {
@@ -293,14 +303,50 @@ function workspace(error, docs) {
                 return 'DocRect';
             });
 
+        // Add close/delete button
+        docLevelNode.append('image')
+            .attr("xlink:href", function (d) {
+                return './img/close.png';
+            })
+            .attr("width", "16px")
+            .attr("height", "16px")
+            .attr('class', 'CloseNode')
+            .attr('x', function (d) {
+                return d.width / 2 - 25;
+            })
+            .attr('y', function (d) {
+                return -d.height / 2 + 2;
+            })
+            .on('click', closeNode);
+
+        // Add minimize button
+        docLevelNode.append('image')
+            .attr("xlink:href", function (d) {
+                return './img/minus.png';
+            })
+            .attr("width", "16px")
+            .attr("height", "16px")
+            .attr('class', 'MinusNode')
+            .attr('x', function (d) {
+                return d.width / 2 - 45;
+            })
+            .attr('y', function (d) {
+                return -d.height / 2 + 2;
+            })
+            .on('click', minusNode);
+
+
         //Add document content into docNode(Document Level Node)
         var docContent = docLevelNode.append("foreignObject")
             .attr("class", "doc")
+            .on('click', function () {
+                console.log("In foreignObject");
+            })
             .attr("width", function (d) {
                 return d.width;
             })
             .attr("height", function (d) {
-                return d.height -40;
+                return d.height - 40;
             })
             .attr("x", function (d) {
                 return -d.width / 2;
