@@ -250,9 +250,45 @@ function workspace(error, docs) {
 
     // Document-Level Node -> Icon-Level Node:
     //      When the close button is clicked on this Document-Level Node, smaller the size of background rectangle, and delete the foreign object.
-    function minusNode(d) {
-        console.log("Minus Node in Document Level");
-        
+    //  Details: remove text, buttons from Node, change class.
+    function minimizeNode(d) {
+        var selectedNode = node.filter(function (dd) {
+            return dd.id == d.id;
+        });
+
+
+        selectedNode.select('rect')
+            .attr("width", function (d) {
+                return d.width = IconSide;
+            })
+            .attr("height", function (d) {
+                return d.height = IconSide;
+            })
+            .attr("x", function (d) {
+                // Radius is used for collision detection.
+                return -d.width / 2;
+            })
+            .attr("y", function (d) {
+                return -d.height/2;
+            })
+            .attr('rx', function (d) {
+                return IconR;
+            })
+            .attr('ry', function (d) {
+                return IconR;
+            })
+            .attr('class', function (d) {
+                return 'IconRect';
+            });
+
+        d.visualDetailLevel = 'Icon';
+        selectedNode.selectAll('foreignObject').remove();
+        selectedNode.selectAll('image').remove();
+        d.radius = Math.sqrt(d.width*d.width + d.height*d.height)/2;
+        d.fx = null;
+        d.fy = null;
+
+        forceCollide.initialize(simulation.nodes());
     }
 
     // Delete Node from Screen:
@@ -273,7 +309,6 @@ function workspace(error, docs) {
         });
 
         docLevelNode.select('rect')
-            .attr("cursor", "move")
             .attr("width", function (d) {
                 // Changes based on d. text: each document have different length of Text
                 // Using Golden Ratio give the document level node a good looking rectangle.
@@ -291,7 +326,7 @@ function workspace(error, docs) {
                 return -d.width / 2;
             })
             .attr("y", function (d) {
-                return -d.height;
+                return -d.height/2;
             })
             .attr('rx', function (d) {
                 return DocR;
@@ -326,14 +361,14 @@ function workspace(error, docs) {
             })
             .attr("width", "16px")
             .attr("height", "16px")
-            .attr('class', 'MinusNode')
+            .attr('class', 'MinimizeNode')
             .attr('x', function (d) {
                 return d.width / 2 - 45;
             })
             .attr('y', function (d) {
                 return -d.height / 2 + 2;
             })
-            .on('click', minusNode);
+            .on('click', minimizeNode);
 
 
         //Add document content into docNode(Document Level Node)
@@ -379,7 +414,6 @@ function workspace(error, docs) {
             .text(function (d) {
                 return d.text;
             });
-
 
         forceCollide.initialize(simulation.nodes());
     }
