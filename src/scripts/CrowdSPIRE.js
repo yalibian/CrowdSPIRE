@@ -252,6 +252,9 @@ function workspace(error, docs) {
     //      When the close button is clicked on this Document-Level Node, smaller the size of background rectangle, and delete the foreign object.
     //  Details: remove text, buttons from Node, change class.
     function minimizeNode(d) {
+
+        d3.event.preventDefault();
+
         var selectedNode = node.filter(function (dd) {
             return dd.id == d.id;
         });
@@ -287,6 +290,14 @@ function workspace(error, docs) {
         d.radius = Math.sqrt(d.width*d.width + d.height*d.height)/2;
         d.fx = null;
         d.fy = null;
+
+        // simulation.alpha(1).restart();
+
+        // unfixNodes();
+
+        if (!d3.event.active) {
+            simulation.alpha(0.3).restart();
+        }
 
         forceCollide.initialize(simulation.nodes());
     }
@@ -415,6 +426,10 @@ function workspace(error, docs) {
                 return d.text;
             });
 
+        if (!d3.event.active) {
+            simulation.alpha(0.3).restart();
+        }
+
         forceCollide.initialize(simulation.nodes());
     }
 
@@ -432,7 +447,7 @@ function workspace(error, docs) {
                 return d.target.id;
             });
 
-        link.append('line')
+        link.append('line');
         // .attr('stroke', '#ccc')
         // .attr('stroke-width', 1)
         // .attr('opacity', 0.6);
@@ -460,6 +475,12 @@ function workspace(error, docs) {
     }
 
     function unfixNodes() {
+
+
+        if (!d3.event.active) {
+            simulation.alpha(0.3).restart();
+        }
+
         docs.nodes.forEach(function (d) {
             if (d.visualDetailLevel != 'Document') {
                 d.fx = null;
