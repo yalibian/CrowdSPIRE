@@ -221,6 +221,8 @@ function workspace(error, docs) {
 
         if (d.visualDetailLevel != 'Document') {
             d.visualDetailLevel = "Document";
+            d.fx = d.x;
+            d.fy = d.y;
             maximizeNode(d);
         }
         if (clickedDoc != d.id) {
@@ -366,10 +368,12 @@ function workspace(error, docs) {
     //      When a Icon-Level node double clicked, enlarge the size of background rectangle, and add foreign object to show contents of this node.
     function maximizeNode(selectedDoc) {
 
+
         // Improve efficiency using node.filter (May be better)
         var docLevelNode = node.filter(function (d) {
             return d.id == selectedDoc.id;
         });
+
 
         docLevelNode.select('rect')
             .attr("width", function (d) {
@@ -384,11 +388,13 @@ function workspace(error, docs) {
                 return d.height = 1.61803398875 * d.width;
             })
             .attr("x", function (d) {
+                // d.fx = d.x;
                 // Radius is used for collision detection.
                 d.radius = Math.sqrt(d.width * d.width + d.height * d.height) / 2;
                 return -d.width / 2;
             })
             .attr("y", function (d) {
+                // d.fy = f.y;
                 return -d.height/2;
             })
             .attr('rx', function (d) {
