@@ -25,6 +25,22 @@ const entityColor = {
     "Date": "#67E1D8"
 };
 
+
+d3.selection.prototype.moveToFront = function() {
+    return this.each(function(){
+        this.parentNode.appendChild(this);
+    });
+};
+
+d3.selection.prototype.moveToBack = function() {
+    return this.each(function() {
+        var firstChild = this.parentNode.firstChild;
+        if (firstChild) {
+            this.parentNode.insertBefore(this, firstChild);
+        }
+    });
+};
+
 var forceCollide = d3.forceCollide()
     .radius(function (d) {
         return d.radius;
@@ -131,7 +147,6 @@ function workspace(error, docs) {
             return "translate(" + d.x + "," + d.y + ")";
         });
 
-
         // rectangle: keep ICON rectangle at the center of Node Group
         node.selectAll("rect")
             .attr("x", function (d) {
@@ -219,6 +234,13 @@ function workspace(error, docs) {
     }
 
     function nodeDragStarted(d) {
+        console.log(d.id);
+        d3.select(this).moveToFront();
+
+        if(d.visualDetailLevel == 'Document'){
+
+        }
+
         if (!d3.event.active) {
             simulation.alphaTarget(0.3).restart();
         }
@@ -253,6 +275,7 @@ function workspace(error, docs) {
     //  Details: remove text, buttons from Node, change class.
     function minimizeNode(d) {
 
+        console.log("In minimizeNode");
         d3.event.preventDefault();
 
         var selectedNode = node.filter(function (dd) {
@@ -296,7 +319,7 @@ function workspace(error, docs) {
         // unfixNodes();
 
         svg.selectAll(".link").remove();
-        selectedNode.remove();
+        // selectedNode.remove();
 
         if (!d3.event.active) {
             simulation.alpha(0.3).restart();
@@ -308,6 +331,7 @@ function workspace(error, docs) {
     // Delete Node from Screen:
     //      When the delete button is clicked on Document-Level Node, the background rectangle and foreign object of this node group would be deleted from the screen.
     function closeNode(d) {
+        console.log("In closeNode");
         // Remove node from docs.nodes and links from crescent.links
         docs.nodes = docs.nodes.filter(function (dd) {
             return d.id != dd.id;
@@ -409,7 +433,6 @@ function workspace(error, docs) {
             })
             .on('click', minimizeNode);
 
-
         //Add document content into docNode(Document Level Node)
         var docContent = docLevelNode.append("foreignObject")
             .attr("class", "doc")
@@ -476,9 +499,6 @@ function workspace(error, docs) {
             });
 
         link.append('line');
-        // .attr('stroke', '#ccc')
-        // .attr('stroke-width', 1)
-        // .attr('opacity', 0.6);
 
         entity = link.append('text')
             .attr('font-size', "10px")
