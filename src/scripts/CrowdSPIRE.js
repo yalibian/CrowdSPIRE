@@ -26,14 +26,30 @@ const entityColor = {
 };
 
 
-d3.selection.prototype.moveToFront = function() {
-    return this.each(function(){
+function rectOverlap(A, B) {
+
+    function valueInRange(value, min, max) {
+        return (value <= max) && (value >= min);
+    }
+
+    var xOverlap = valueInRange(A.x, B.x, B.x + B.width) ||
+        valueInRange(B.x, A.x, A.x + A.width);
+
+    var yOverlap = valueInRange(A.y, B.y, B.y + B.height) ||
+        valueInRange(B.y, A.y, A.y + A.height);
+
+    return xOverlap && yOverlap;
+}
+
+
+d3.selection.prototype.moveToFront = function () {
+    return this.each(function () {
         this.parentNode.appendChild(this);
     });
 };
 
-d3.selection.prototype.moveToBack = function() {
-    return this.each(function() {
+d3.selection.prototype.moveToBack = function () {
+    return this.each(function () {
         var firstChild = this.parentNode.firstChild;
         if (firstChild) {
             this.parentNode.insertBefore(this, firstChild);
@@ -239,7 +255,7 @@ function workspace(error, docs) {
         console.log(d.id);
         d3.select(this).moveToFront();
 
-        if(d.visualDetailLevel == 'Document'){
+        if (d.visualDetailLevel == 'Document') {
 
         }
 
@@ -260,16 +276,80 @@ function workspace(error, docs) {
     function nodeDragged(d) {
         d.fx = d3.event.x;
         d.fy = d3.event.y;
+
+
+        // var overlappedNodes = node.filter(function (dd) {
+        //     if(dd.visualDetailLevel != 'Document'){
+        //         return false;
+        //     } else {
+        //         if (dd.id == d.id){
+        //             return false;
+        //         } else {
+        //             var rectB = {x: dd.x-dd.width/2, y: dd.y - dd.height/2, width: dd.width, height: dd.height};
+        //             return rectOverlap(rectA, rectB);
+        //         }
+        //     }
+        // });
+        if (d.visualDetailLevel == 'Document') {
+
+            var rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
+            node.selectAll('rect')
+                .style('stroke', 'yellow')
+                .style('stroke-width', function (dd) {
+                    if (dd.visualDetailLevel != 'Document' || dd.id == d.id) {
+                        return 0;
+                        // return '';
+                    } else {
+                        var rectB = {
+                            x: dd.x - dd.width / 2,
+                            y: dd.y - dd.height / 2,
+                            width: dd.width,
+                            height: dd.height
+                        };
+                        if (rectOverlap(rectA, rectB)) {
+                            return 2;
+                            // return '1px solid black';
+                        } else {
+                            return 0;
+                            // return '';
+                        }
+                    }
+                })
+
+        }
     }
 
     // the end of node drag.
     function nodeDragEnded(d) {
+
+        if (d.visualDetailLevel == 'Document') {
+
+            var rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
+            node.selectAll('rect')
+                .attr('border', function (dd) {
+                    if (dd.visualDetailLevel != 'Document' || dd.id == d.id) {
+                        return '';
+                    } else {
+                        var rectB = {
+                            x: dd.x - dd.width / 2,
+                            y: dd.y - dd.height / 2,
+                            width: dd.width,
+                            height: dd.height
+                        };
+                        if (rectOverlap(rectA, rectB)) {
+                            return '1px solid black';
+                        } else {
+                            return '';
+                        }
+                    }
+                });
+        }
+
         if (!d3.event.active) {
             simulation.alphaTarget(0);
         }
         forceCollide.initialize(simulation.nodes());
     }
-
 
 
     // Document-Level Node -> Icon-Level Node:
@@ -297,7 +377,7 @@ function workspace(error, docs) {
                 return -d.width / 2;
             })
             .attr("y", function (d) {
-                return -d.height/2;
+                return -d.height / 2;
             })
             .attr('rx', function (d) {
                 return IconR;
@@ -312,7 +392,7 @@ function workspace(error, docs) {
         d.visualDetailLevel = 'Icon';
         selectedNode.selectAll('foreignObject').remove();
         selectedNode.selectAll('image').remove();
-        d.radius = Math.sqrt(d.width*d.width + d.height*d.height)/2;
+        d.radius = Math.sqrt(d.width * d.width + d.height * d.height) / 2;
         d.fx = null;
         d.fy = null;
 
@@ -395,7 +475,7 @@ function workspace(error, docs) {
             })
             .attr("y", function (d) {
                 // d.fy = f.y;
-                return -d.height/2;
+                return -d.height / 2;
             })
             .attr('rx', function (d) {
                 return DocR;
