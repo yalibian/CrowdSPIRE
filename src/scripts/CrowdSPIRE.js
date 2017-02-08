@@ -295,6 +295,9 @@ function workspace(error, docs) {
 
         // unfixNodes();
 
+        svg.selectAll(".link").remove();
+        selectedNode.remove();
+
         if (!d3.event.active) {
             simulation.alpha(0.3).restart();
         }
@@ -305,7 +308,32 @@ function workspace(error, docs) {
     // Delete Node from Screen:
     //      When the delete button is clicked on Document-Level Node, the background rectangle and foreign object of this node group would be deleted from the screen.
     function closeNode(d) {
-        console.log("Close Node From Screen");
+        // Remove node from docs.nodes and links from crescent.links
+        docs.nodes = docs.nodes.filter(function (dd) {
+            return d.id != dd.id;
+        });
+
+        console.log(docs.links);
+        docs.links = docs.links.filter(function (dd) {
+            return d.id != dd.target.id && d.id != dd.source.id;
+        });
+
+        var selectedNode = node.filter(function (dd) {
+            return dd.id == d.id;
+        });
+
+        console.log(docs.links);
+
+        // Update notes and links again
+
+        // unfixNodes();
+        svg.selectAll(".link").remove();
+        selectedNode.remove();
+
+        // Update and restart the simulation.
+        simulation.nodes(docs.nodes);
+        simulation.force("link").links(docs.links);
+        simulation.alpha(0.3).restart();
 
     }
 
@@ -481,12 +509,15 @@ function workspace(error, docs) {
             simulation.alpha(0.3).restart();
         }
 
+        // svg.selectAll(".link").remove();
+
         docs.nodes.forEach(function (d) {
             if (d.visualDetailLevel != 'Document') {
                 d.fx = null;
                 d.fy = null;
             }
         });
+
 
         clickedDoc = null;
         if (link != null) {
