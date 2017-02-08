@@ -224,7 +224,6 @@ function workspace(error, docs) {
 
         if (clickedDoc != d.id) {
             unfixNodes();
-
             d.fx = d.x;
             d.fy = d.y;
             clickedDoc = d.id;
@@ -277,20 +276,10 @@ function workspace(error, docs) {
         d.fx = d3.event.x;
         d.fy = d3.event.y;
 
-
-        // var overlappedNodes = node.filter(function (dd) {
-        //     if(dd.visualDetailLevel != 'Document'){
-        //         return false;
-        //     } else {
-        //         if (dd.id == d.id){
-        //             return false;
-        //         } else {
-        //             var rectB = {x: dd.x-dd.width/2, y: dd.y - dd.height/2, width: dd.width, height: dd.height};
-        //             return rectOverlap(rectA, rectB);
-        //         }
-        //     }
-        // });
         if (d.visualDetailLevel == 'Document') {
+
+            // flag to record if this node has overlap with other document level node
+            var hasOverlap = false;
 
             var rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
             node.selectAll('rect')
@@ -298,7 +287,6 @@ function workspace(error, docs) {
                 .style('stroke-width', function (dd) {
                     if (dd.visualDetailLevel != 'Document' || dd.id == d.id) {
                         return 0;
-                        // return '';
                     } else {
                         var rectB = {
                             x: dd.x - dd.width / 2,
@@ -307,15 +295,24 @@ function workspace(error, docs) {
                             height: dd.height
                         };
                         if (rectOverlap(rectA, rectB)) {
-                            return 2;
-                            // return '1px solid black';
+                            hasOverlap = true;
+                            return 4;
                         } else {
                             return 0;
-                            // return '';
                         }
                     }
-                })
+                });
 
+                d3.select(this)
+                    .select('rect')
+                    .style('stroke', 'yellow')
+                    .style('stroke-width', function () {
+                        if(hasOverlap){
+                            return 4;
+                        } else {
+                            return 0;
+                        }
+                    });
         }
     }
 
