@@ -77,7 +77,10 @@ q.defer(d3.json, 'data/crescent.json');
 q.await(workspace);
 
 // draw the workspace with docs
-function workspace(error, docs) {
+function workspace(error, data) {
+
+    var model = Model(data);
+    var docs = model.docs();
 
     var clickedDoc = null;
 
