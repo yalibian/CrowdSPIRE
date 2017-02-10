@@ -15,9 +15,13 @@ var Model;
         modelType,
         entityWeightVector;
 
+    // init entityWeightVector;
+
     Model = function (x) {
 
         docs = x;
+        initModel();
+
         // real function used to update Mass and Spring K
         function model(docs) {
 
@@ -69,6 +73,12 @@ var Model;
 
         return model;
     };
+
+
+    // If the docs is loaded, init the model: entityWeightVector
+    function initModel() {
+
+    }
 
 })();
 
