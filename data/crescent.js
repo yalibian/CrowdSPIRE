@@ -184,7 +184,7 @@ for (i in newDocs) {
 }
 
 // write docs into nodes
-fs.writeFile('./nodes.json', JSON.stringify(newDocs, null, 2), 'utf-8');
+// fs.writeFile('./nodes.json', JSON.stringify(newDocs, null, 2), 'utf-8');
 
 // write relationships into links
 var links = [];
@@ -233,5 +233,7 @@ for (var i = 0; i< newDocs.length; i++) {
     }
 }
 
-fs.writeFile('./links.json', JSON.stringify(links, null, 2), 'utf-8');
+
+
+// fs.writeFile('./links.json', JSON.stringify(links, null, 2), 'utf-8');
 console.log(links);
