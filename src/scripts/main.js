@@ -46,11 +46,14 @@ var q = d3.queue();
 q.defer(d3.json, 'data/crescent.json');
 q.await(workspace);
 
+
+// Main controller and view
 // draw the workspace with docs
 function workspace(error, data) {
 
     var model = Model(data);
-    var docs = model.docs();
+    var documents = model.documents();
+    var edges = model.edges();
 
     var clickedDoc = null;
 
@@ -58,11 +61,11 @@ function workspace(error, data) {
         throw error;
     }
 
-    simulation.nodes(docs.nodes)
+    simulation.nodes(documents)
         .on("tick", ticked);
 
     simulation.force("link")
-        .links(docs.links)
+        .links(edges)
         .strength(function (link) {
             return link.similarity;
         });
@@ -71,7 +74,7 @@ function workspace(error, data) {
     var link = null;
 
     var node = svg.selectAll(".node")
-        .data(docs.nodes)
+        .data(documents)
         .enter().append("g")
         .attr("class", "node")
         .on("mousedown", function () {
@@ -224,7 +227,6 @@ function workspace(error, data) {
     }
 
     function nodeDragStarted(d) {
-        console.log(d.id);
         d3.select(this).moveToFront();
 
         if (d.visualDetailLevel == 'Document') {
@@ -327,7 +329,6 @@ function workspace(error, data) {
     //  Details: remove text, buttons from Node, change class.
     function minimizeNode(d) {
 
-        console.log("In minimizeNode");
         d3.event.preventDefault();
 
         var selectedNode = node.filter(function (dd) {
@@ -383,14 +384,12 @@ function workspace(error, data) {
     // Delete Node from Screen:
     //      When the delete button is clicked on Document-Level Node, the background rectangle and foreign object of this node group would be deleted from the screen.
     function closeNode(d) {
-        console.log("In closeNode");
         // Remove node from docs.nodes and links from crescent.links
-        docs.nodes = docs.nodes.filter(function (dd) {
+        documents = documents.filter(function (dd) {
             return d.id != dd.id;
         });
 
-        console.log(docs.links);
-        docs.links = docs.links.filter(function (dd) {
+        edges = edges.filter(function (dd) {
             return d.id != dd.target.id && d.id != dd.source.id;
         });
 
@@ -398,7 +397,6 @@ function workspace(error, data) {
             return dd.id == d.id;
         });
 
-        console.log(docs.links);
 
         // Update notes and links again
 
@@ -407,8 +405,8 @@ function workspace(error, data) {
         selectedNode.remove();
 
         // Update and restart the simulation.
-        simulation.nodes(docs.nodes);
-        simulation.force("link").links(docs.links);
+        simulation.nodes(documents);
+        simulation.force("link").links(edges);
         simulation.alpha(0.3).restart();
 
     }
@@ -544,7 +542,7 @@ function workspace(error, data) {
     function updateLinks() {
 
         link = linkG.selectAll(".link")
-            .data(docs.links.filter(linkFilter))
+            .data(edges.filter(linkFilter))
             .enter().append("g")
             .attr("class", "link")
             .attr("source", function (d) {
@@ -587,7 +585,7 @@ function workspace(error, data) {
 
         // svg.selectAll(".link").remove();
 
-        docs.nodes.forEach(function (d) {
+        documents.forEach(function (d) {
             if (d.visualDetailLevel != 'Document') {
                 d.fx = null;
                 d.fy = null;

@@ -14,9 +14,12 @@ var Model;
 
 (function () {
 
-    var docs,
+    var data,
+        documents,
+        edges,
         modelType,
-        entityWeightVector; // dictionary
+        entities,
+        searches;
 
     // entities
     // searches
@@ -26,18 +29,23 @@ var Model;
 
     Model = function (x) {
 
-        docs = x;
+        data = x;
+        documents = data.documents;
+        edges = data.edges;
+        entities = data.entities;
         initModel();
+        var model = {};
 
         // real function used to update Mass and Spring K
-        function model(docs) {
-
-        }
-
-        model.docs = function (X) {
+        model.data = function (x) {
             if (!arguments.length) {
-                return docs;
+                return data;
             }
+            data = x;
+            documents = data.documents;
+            edges = data.edges;
+            entities = data.entities;
+
             return model;
         };
 
@@ -50,11 +58,27 @@ var Model;
             return model;
         };
 
-        model.entityWeightVector = function (x) {
+        model.entities = function (x) {
             if (!arguments.length) {
-                return entityWeightVector;
+                return entities;
             }
-            entityWeightVector = x;
+            entities = x;
+            return model;
+        };
+
+        model.documents = function (x) {
+            if (!arguments.length) {
+                return documents;
+            }
+            documents = x;
+            return model;
+        };
+
+        model.edges = function (x) {
+            if (!arguments.length) {
+                return edges;
+            }
+            edges = x;
             return model;
         };
 
@@ -75,8 +99,7 @@ var Model;
 
             // Update model
 
-        }
-
+        };
 
         // TODO
         model.documentMovement = function (x) {

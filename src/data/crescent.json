@@ -1,5 +1,5 @@
 {
-  "nodes": [
+  "documents": [
     {
       "id": "se5",
       "text": "Report Date 27 April, 2003. Intercept of cell phone 804-774-8920. In a very brief call from this number to phone number 703-659-2317 on 26 April, 2003, the caller speaks in Arabic. A translation reads: \"We are now prepared to take the crescent to victory\".",
@@ -7,36 +7,26 @@
         {
           "name": "Arabic",
           "value": 0.5229919556072395,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
           "name": "703-659-2317",
           "value": 0.4654555411168834,
-          "type": "Phone",
-          "alias": [],
           "count": 1
         },
         {
           "name": "804-774-8920",
           "value": 0.4654555411168834,
-          "type": "Phone",
-          "alias": [],
           "count": 1
         },
         {
           "name": "27 April, 2003",
           "value": 0.3535323835297989,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "26 April, 2003",
           "value": 0.5229919556072395,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -56,8 +46,6 @@
         {
           "name": "804-759-6302",
           "value": 0.2585864117316019,
-          "type": "Phone",
-          "alias": [],
           "count": 1
         },
         {
@@ -77,36 +65,26 @@
         {
           "name": "718-352-8479",
           "value": 0.29055108644846644,
-          "type": "Phone",
-          "alias": [],
           "count": 1
         },
         {
           "name": "01 1207670734",
           "value": 0.33560276512715137,
-          "type": "Phone",
-          "alias": [],
           "count": 1
         },
         {
           "name": "22 April, 2003",
           "value": 0.21353473305291698,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "24 April, 2003",
           "value": 0.33560276512715137,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "April 30",
           "value": 0.4126191185227009,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -119,88 +97,56 @@
         {
           "name": "Hans Pakes",
           "value": 0.16780138256357569,
-          "type": "Person",
-          "alias": [
-            "Pakes"
-          ],
           "count": 1
         },
         {
           "name": "Bagwant Dhaliwal",
           "value": 0.14527554322423322,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Clark Webster",
           "value": 0.16780138256357569,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Mukhtar Galab",
           "value": 0.11689634190390041,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "The Netherlands",
           "value": 0.14527554322423322,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Richmond",
           "value": 0.12929320586580095,
-          "type": "Location",
-          "alias": [
-            "Richmond VA"
-          ],
           "count": 1
         },
         {
           "name": "Virginia",
           "value": 0.1365183796573675,
-          "type": "Location",
-          "alias": [
-            "VA",
-            "Va",
-            "VA."
-          ],
           "count": 2
         },
         {
           "name": "Amsterdam",
           "value": 0.12929320586580095,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Queens",
           "value": 0.12929320586580095,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "New York City",
           "value": 0.10676736652645849,
-          "type": "Location",
-          "alias": [
-            "NYC"
-          ],
           "count": 1
         },
         {
           "name": "Charlottesville",
           "value": 0.11689634190390041,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -241,8 +187,6 @@
         {
           "name": "21 April, 2003",
           "value": 0.20630955926135044,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -255,10 +199,6 @@
         {
           "name": "Hani al Hallak",
           "value": 0.2115707005076743,
-          "type": "Person",
-          "alias": [
-            "al Hallak"
-          ],
           "count": 1
         },
         {
@@ -280,15 +220,11 @@
         {
           "name": "Myrtle Ave",
           "value": 0.4754472323702178,
-          "type": "Location",
-          "alias": [],
           "count": 2
         },
         {
           "name": "North Bergen",
           "value": 0.2377236161851089,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -301,22 +237,16 @@
         {
           "name": "732-455-6392",
           "value": 0.33759746060948254,
-          "type": "Phone",
-          "alias": [],
           "count": 1
         },
         {
           "name": "20 April, 2003",
           "value": 0.1606965379680904,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "April 25, 2003",
           "value": 0.33759746060948254,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -329,68 +259,46 @@
         {
           "name": "Jamal Kalifa",
           "value": 0.16780138256357569,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Ralph Goode",
           "value": 0.20630955926135044,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Georgia",
           "value": 0.16780138256357569,
-          "type": "Location",
-          "alias": [
-            "GA"
-          ],
           "count": 1
         },
         {
           "name": "Texas",
           "value": 0.14527554322423322,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Houston",
           "value": 0.14527554322423322,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Columbus",
           "value": 0.6189286777840513,
-          "type": "Location",
-          "alias": [],
           "count": 3
         },
         {
           "name": "Little York Rd.",
           "value": 0.20630955926135044,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "St. Mary's Road",
           "value": 0.20630955926135044,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Sprint",
           "value": 0.14527554322423322,
-          "type": "Organization",
-          "alias": [
-            "Sprint PCS"
-          ],
           "count": 1
         },
         {
@@ -403,36 +311,26 @@
         {
           "name": "706-437-6673",
           "value": 0.4126191185227009,
-          "type": "Phone",
-          "alias": [],
           "count": 2
         },
         {
           "name": "713-556-9213",
           "value": 0.20630955926135044,
-          "type": "Phone",
-          "alias": [],
           "count": 1
         },
         {
           "name": "30 March, 2003",
           "value": 0.16780138256357569,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "10 April, 2003",
           "value": 0.12929320586580095,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "6 April, 2003",
           "value": 0.16780138256357569,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -445,64 +343,46 @@
         {
           "name": "Washington",
           "value": 0.43148926944919463,
-          "type": "Location",
-          "alias": [],
           "count": 2
         },
         {
           "name": "Seattle",
           "value": 1.3262757381086814,
-          "type": "Location",
-          "alias": [],
           "count": 5
         },
         {
           "name": "Howell St.",
           "value": 0.2652551476217363,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Alder St",
           "value": 0.2652551476217363,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "FBI",
           "value": 0.035335445845436214,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "US Post Office",
           "value": 0.2652551476217363,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Middle Eastern",
           "value": 0.21574463472459732,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
           "name": "16 April, 2003",
           "value": 0.18678284128829986,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "15 April, 2003",
           "value": 0.16623412182745836,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -522,15 +402,11 @@
         {
           "name": "Abul Hassan Salman",
           "value": 0.23209825416901925,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Paris",
           "value": 0.16343498612726237,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -557,15 +433,11 @@
         {
           "name": "France",
           "value": 0.23209825416901925,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "INS",
           "value": 0.16343498612726237,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -578,38 +450,26 @@
         {
           "name": "Bush Intercontinental Airport",
           "value": 0.23209825416901925,
-          "type": "Organization",
-          "alias": [
-            "Bush Intercontinental"
-          ],
           "count": 1
         },
         {
           "name": "Continental Airlines",
           "value": 0.23209825416901925,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Reagan National Airport",
           "value": 0.23209825416901925,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Dutch",
           "value": 0.14545485659902607,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
           "name": "14 April, 2003",
           "value": 0.18877655538402266,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
@@ -640,8 +500,6 @@
         {
           "name": "Keswick",
           "value": 0.32686997225452474,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -654,15 +512,11 @@
         {
           "name": "The Powhatan Company",
           "value": 0.4641965083380385,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "C-4",
           "value": 0.6537399445090495,
-          "type": "Misc",
-          "alias": [],
           "count": 2
         },
         {
@@ -675,8 +529,6 @@
         {
           "name": "11 April, 2003",
           "value": 0.4641965083380385,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -689,10 +541,6 @@
         {
           "name": "Clark Adams",
           "value": 0.3094643388920257,
-          "type": "Person",
-          "alias": [
-            "Adams"
-          ],
           "count": 1
         },
         {
@@ -709,15 +557,11 @@
         {
           "name": "Lee Highway",
           "value": 0.3094643388920257,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Merrifield",
           "value": 0.3094643388920257,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -730,15 +574,11 @@
         {
           "name": "Pentagon",
           "value": 0.3094643388920257,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Home Depot",
           "value": 0.3094643388920257,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -751,8 +591,6 @@
         {
           "name": "13 April, 2003",
           "value": 0.21791331483634982,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
@@ -772,29 +610,21 @@
         {
           "name": "Vincent Cortez",
           "value": 0.07948486542485164,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Arnaldo Gueterrez",
           "value": 0.07948486542485164,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Ben Hassine",
           "value": 0.07948486542485164,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Ahmed Yassin",
           "value": 0.07948486542485164,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
@@ -814,43 +644,31 @@
         {
           "name": "El Paso",
           "value": 0.5863534842164696,
-          "type": "Location",
-          "alias": [],
           "count": 6
         },
         {
           "name": "Hudspeth County",
           "value": 0.09772558070274495,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Rio Grande",
           "value": 0.09772558070274495,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "McNary",
           "value": 0.1954511614054899,
-          "type": "Location",
-          "alias": [],
           "count": 2
         },
         {
           "name": "McRae Blvd",
           "value": 0.1954511614054899,
-          "type": "Location",
-          "alias": [],
           "count": 2
         },
         {
           "name": "American Airlines",
           "value": 0.06881473100095258,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -863,15 +681,11 @@
         {
           "name": "Border Patrol",
           "value": 0.1954511614054899,
-          "type": "Organization",
-          "alias": [],
           "count": 2
         },
         {
           "name": "University of Texas",
           "value": 0.09772558070274495,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -905,15 +719,11 @@
         {
           "name": "Mexicans",
           "value": 0.09772558070274495,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Spanish",
           "value": 0.09772558070274495,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
@@ -947,33 +757,21 @@
         {
           "name": "Wallace Wilson",
           "value": 0.2652551476217363,
-          "type": "Person",
-          "alias": [
-            "Wilson"
-          ],
           "count": 1
         },
         {
           "name": "Denver",
           "value": 0.3735656825765997,
-          "type": "Location",
-          "alias": [],
           "count": 2
         },
         {
           "name": "Colorado",
           "value": 0.5603485238648995,
-          "type": "Location",
-          "alias": [],
           "count": 3
         },
         {
           "name": "Camp George West Military Reservation",
           "value": 0.21574463472459732,
-          "type": "Location",
-          "alias": [
-            "Camp George West"
-          ],
           "count": 1
         },
         {
@@ -986,31 +784,21 @@
         {
           "name": "Apex Paper Products Company",
           "value": 0.2652551476217363,
-          "type": "Organization",
-          "alias": [
-            "Apex"
-          ],
           "count": 1
         },
         {
           "name": "Aryan Nations",
           "value": 0.2652551476217363,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Army CID",
           "value": 0.2652551476217363,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Social Security",
           "value": 0.2652551476217363,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
@@ -1037,98 +825,66 @@
         {
           "name": "Karm Bensaid",
           "value": 0.13753970617423364,
-          "type": "Person",
-          "alias": [
-            "Bensaid"
-          ],
           "count": 1
         },
         {
           "name": "US",
           "value": 0.06546895991292573,
-          "type": "Location",
-          "alias": [
-            "USA"
-          ],
           "count": 1
         },
         {
           "name": "Los Angeles",
           "value": 0.22373517675143426,
-          "type": "Location",
-          "alias": [
-            "LA"
-          ],
           "count": 2
         },
         {
           "name": "Culver City",
           "value": 0.5501588246969346,
-          "type": "Location",
-          "alias": [],
           "count": 4
         },
         {
           "name": "California",
           "value": 0.5501588246969346,
-          "type": "Location",
-          "alias": [],
           "count": 4
         },
         {
           "name": "San Gabriel",
           "value": 0.13753970617423364,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Greenlawn Ave.",
           "value": 0.13753970617423364,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Imperial Highway",
           "value": 0.13753970617423364,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "City Park",
           "value": 0.13753970617423364,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "El Segundo",
           "value": 0.13753970617423364,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "LAX",
           "value": 0.13753970617423364,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Sheldon St.",
           "value": 0.13753970617423364,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Hubbard St.",
           "value": 0.13753970617423364,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -1141,10 +897,6 @@
         {
           "name": "Ryder Truck Rental",
           "value": 0.13753970617423364,
-          "type": "Organization",
-          "alias": [
-            "Ryder"
-          ],
           "count": 1
         },
         {
@@ -1157,15 +909,11 @@
         {
           "name": "8 April, 2003",
           "value": 0.13753970617423364,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "7 April, 2003",
           "value": 0.13753970617423364,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -1187,10 +935,6 @@
         {
           "name": "New Jersey",
           "value": 0.29055108644846644,
-          "type": "Location",
-          "alias": [
-            "NJ"
-          ],
           "count": 1
         },
         {
@@ -1203,8 +947,6 @@
         {
           "name": "Canada",
           "value": 0.33560276512715137,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -1231,8 +973,6 @@
         {
           "name": "April 26, 2003",
           "value": 0.4126191185227009,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -1270,8 +1010,6 @@
         {
           "name": "Budget Storage Units",
           "value": 0.43148926944919463,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -1298,36 +1036,26 @@
         {
           "name": "Carl Louis",
           "value": 0.5305102952434726,
-          "type": "Person",
-          "alias": [],
           "count": 2
         },
         {
           "name": "Abdelhak Kherbane",
           "value": 0.2652551476217363,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Detroit",
           "value": 0.7957654428652088,
-          "type": "Location",
-          "alias": [],
           "count": 3
         },
         {
           "name": "Michigan",
           "value": 0.7957654428652088,
-          "type": "Location",
-          "alias": [],
           "count": 3
         },
         {
           "name": "Van Dyke Avenue",
           "value": 0.2652551476217363,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -1340,15 +1068,11 @@
         {
           "name": "Beth Israel",
           "value": 0.2652551476217363,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Lebanese",
           "value": 0.2652551476217363,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
@@ -1368,36 +1092,26 @@
         {
           "name": "Mark Davis",
           "value": 0.23234037585725867,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Hamid Alwan",
           "value": 0.28565938974648525,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Alwan",
           "value": 0.5713187794929705,
-          "type": "Person",
-          "alias": [],
           "count": 2
         },
         {
           "name": "Afghanistan",
           "value": 0.16185647340540057,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Sudan",
           "value": 0.23234037585725867,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -1426,15 +1140,11 @@
         {
           "name": "Saudi",
           "value": 0.23234037585725867,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Canadian",
           "value": 0.5713187794929705,
-          "type": "Misc",
-          "alias": [],
           "count": 2
         },
         {
@@ -1470,8 +1180,6 @@
         {
           "name": "Boston",
           "value": 0.6189286777840514,
-          "type": "Location",
-          "alias": [],
           "count": 2
         },
         {
@@ -1484,22 +1192,16 @@
         {
           "name": "Coast Guard",
           "value": 0.3094643388920257,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Holland Queen",
           "value": 0.503404147690727,
-          "type": "Misc",
-          "alias": [],
           "count": 2
         },
         {
           "name": "25 April, 2003",
           "value": 0.19393980879870143,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
@@ -1512,15 +1214,11 @@
         {
           "name": "29 April, 1930",
           "value": 0.3094643388920257,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "29 April, 1930hrs",
           "value": 0.3094643388920257,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -1533,10 +1231,6 @@
         {
           "name": "Abdulla Ramzi",
           "value": 0.3094643388920257,
-          "type": "Person",
-          "alias": [
-            "Ramzi"
-          ],
           "count": 1
         },
         {
@@ -1576,8 +1270,6 @@
         {
           "name": "University Drive",
           "value": 0.3094643388920257,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -1618,10 +1310,6 @@
         {
           "name": "Abdul Ramazi",
           "value": 0.0860068697381301,
-          "type": "Person",
-          "alias": [
-            "Ramazi"
-          ],
           "count": 1
         },
         {
@@ -1647,15 +1335,11 @@
         {
           "name": "Germany",
           "value": 0.13762946200190515,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Hamburg",
           "value": 0.13762946200190515,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -1668,50 +1352,36 @@
         {
           "name": "Springfield",
           "value": 0.13762946200190515,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Egypt",
           "value": 0.15896973084970328,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Dulles Airport",
           "value": 0.1954511614054899,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Washington DC",
           "value": 0.1954511614054899,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Cairo",
           "value": 0.1954511614054899,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Wash. DC",
           "value": 0.1954511614054899,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Floyd Ave.",
           "value": 0.1954511614054899,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -1724,29 +1394,21 @@
         {
           "name": "Passport Agency",
           "value": 0.1954511614054899,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "703-734-0104",
           "value": 0.1954511614054899,
-          "type": "Phone",
-          "alias": [],
           "count": 1
         },
         {
           "name": "5 April, 2003",
           "value": 0.1954511614054899,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "12 Feb. 1997",
           "value": 0.1954511614054899,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -1759,10 +1421,6 @@
         {
           "name": "Faysal Goba",
           "value": 0.14527554322423322,
-          "type": "Person",
-          "alias": [
-            "Goba"
-          ],
           "count": 1
         },
         {
@@ -1775,8 +1433,6 @@
         {
           "name": "Yasein Mosed",
           "value": 0.16780138256357569,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
@@ -1818,15 +1474,11 @@
         {
           "name": "Atlanta",
           "value": 0.20630955926135044,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "New Orleans",
           "value": 0.20630955926135044,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -1839,22 +1491,16 @@
         {
           "name": "AMTRAK",
           "value": 0.4126191185227009,
-          "type": "Organization",
-          "alias": [],
           "count": 2
         },
         {
           "name": "Penn Station NYC",
           "value": 0.20630955926135044,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "23 April, 2003",
           "value": 0.16780138256357569,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
@@ -1867,8 +1513,6 @@
         {
           "name": "29 April, 2003",
           "value": 0.20630955926135044,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -1881,8 +1525,6 @@
         {
           "name": "Masood Yaser",
           "value": 0.3775531107680453,
-          "type": "Person",
-          "alias": [],
           "count": 2
         },
         {
@@ -1902,8 +1544,6 @@
         {
           "name": "Coal Mine Road",
           "value": 0.18877655538402266,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -1918,8 +1558,6 @@
         {
           "name": "Colfax Avenue",
           "value": 0.23209825416901925,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -1932,8 +1570,6 @@
         {
           "name": "U-haul",
           "value": 0.4641965083380385,
-          "type": "Organization",
-          "alias": [],
           "count": 2
         },
         {
@@ -1996,8 +1632,6 @@
         {
           "name": "Capitol Ave.",
           "value": 0.3775531107680453,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -2074,8 +1708,6 @@
         {
           "name": "Springfield VA",
           "value": 0.3094643388920257,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -2088,8 +1720,6 @@
         {
           "name": "First Union Bank",
           "value": 0.2517020738453635,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -2109,8 +1739,6 @@
         {
           "name": "1070173749003",
           "value": 0.21791331483634982,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
@@ -2192,8 +1820,6 @@
         {
           "name": "Virginia National Bank",
           "value": 0.24757147111362052,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -2220,8 +1846,6 @@
         {
           "name": "1070173",
           "value": 0.20136165907629083,
-          "type": "Phone",
-          "alias": [],
           "count": 1
         },
         {
@@ -2241,15 +1865,11 @@
         {
           "name": "Omar Clark",
           "value": 0.24757147111362052,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Joseph Nizar",
           "value": 0.24757147111362052,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
@@ -2264,36 +1884,26 @@
         {
           "name": "O'Hare",
           "value": 0.24757147111362052,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Chicago",
           "value": 0.24757147111362052,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Illinois",
           "value": 0.24757147111362052,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Green Bay",
           "value": 0.24757147111362052,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Wisconsin",
           "value": 0.24757147111362052,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -2313,15 +1923,11 @@
         {
           "name": "United Connector",
           "value": 0.24757147111362052,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "United",
           "value": 0.49514294222724103,
-          "type": "Organization",
-          "alias": [],
           "count": 2
         },
         {
@@ -2371,8 +1977,6 @@
         {
           "name": "Manhattan",
           "value": 0.3775531107680453,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -2385,8 +1989,6 @@
         {
           "name": "Empire State Vending Services",
           "value": 0.3775531107680453,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -2406,8 +2008,6 @@
         {
           "name": "Shiela Watson",
           "value": 0.7551062215360906,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
@@ -2420,17 +2020,11 @@
         {
           "name": "New York Stock Exchange",
           "value": 0.7551062215360906,
-          "type": "Organization",
-          "alias": [
-            "NYSE"
-          ],
           "count": 1
         },
         {
           "name": "19 April, 2003",
           "value": 0.928393016676077,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -2475,8 +2069,6 @@
         {
           "name": "2932 University Drive",
           "value": 0.21844541568848871,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -2505,8 +2097,6 @@
         {
           "name": "University of Virginia",
           "value": 0.655336247065466,
-          "type": "Organization",
-          "alias": [],
           "count": 3
         },
         {
@@ -2519,8 +2109,6 @@
         {
           "name": "18 April, 2003",
           "value": 0.21844541568848871,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -2547,8 +2135,6 @@
         {
           "name": "Steven Clark",
           "value": 0.16879873030474127,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
@@ -2584,22 +2170,16 @@
         {
           "name": "Webster Ave.",
           "value": 0.16879873030474127,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Bronx",
           "value": 0.16879873030474127,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "New York",
           "value": 0.33759746060948254,
-          "type": "Location",
-          "alias": [],
           "count": 2
         },
         {
@@ -2628,43 +2208,31 @@
         {
           "name": "City Computer Services Corp.",
           "value": 0.16879873030474127,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Clark & Co",
           "value": 0.16879873030474127,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Office Supplies Co.",
           "value": 0.16879873030474127,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "April 18, 2003",
           "value": 0.16879873030474127,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "2 December, 2001",
           "value": 0.16879873030474127,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "I2 December, 20011",
           "value": 0.16879873030474127,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -2697,8 +2265,6 @@
         {
           "name": "United Arab Emirates",
           "value": 0.15896973084970328,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -2718,8 +2284,6 @@
         {
           "name": "Springfield Mall",
           "value": 0.1954511614054899,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -2732,29 +2296,21 @@
         {
           "name": "Select Gourmet Foods",
           "value": 0.3909023228109798,
-          "type": "Organization",
-          "alias": [],
           "count": 2
         },
         {
           "name": "First Union National Bank",
           "value": 0.1954511614054899,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Pyramid Bank of Cairo",
           "value": 0.1954511614054899,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Central Bank of Dubai",
           "value": 0.1954511614054899,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -2788,8 +2344,6 @@
         {
           "name": "1 April, 2003",
           "value": 0.15896973084970328,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -2802,36 +2356,26 @@
         {
           "name": "Tawfiq al Adel",
           "value": 0.32686997225452474,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Saeed Khallad",
           "value": 0.3775531107680453,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Riduan bin Attash",
           "value": 0.4641965083380385,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Saleh al Ahdal",
           "value": 0.4641965083380385,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "CIA",
           "value": 0.17637337171378276,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -2844,8 +2388,6 @@
         {
           "name": "cesium 137",
           "value": 0.4641965083380385,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
@@ -2872,15 +2414,11 @@
         {
           "name": "Jelte Nijboer",
           "value": 0.21844541568848871,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "al Ahdal",
           "value": 0.21844541568848871,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
@@ -2893,15 +2431,11 @@
         {
           "name": "bin Attash",
           "value": 0.21844541568848871,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Haarlem",
           "value": 0.35534410425227797,
-          "type": "Location",
-          "alias": [],
           "count": 2
         },
         {
@@ -2914,15 +2448,11 @@
         {
           "name": "Lublin",
           "value": 0.21844541568848871,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Poland",
           "value": 0.21844541568848871,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -2935,8 +2465,6 @@
         {
           "name": "Sealink Container Corp.",
           "value": 0.21844541568848871,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -2984,8 +2512,6 @@
         {
           "name": "Saeed Khaliad",
           "value": 0.23209825416901925,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
@@ -3019,8 +2545,6 @@
         {
           "name": "Europe",
           "value": 0.23209825416901925,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -3033,8 +2557,6 @@
         {
           "name": "Al Qaeda",
           "value": 0.16343498612726237,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
@@ -3054,15 +2576,11 @@
         {
           "name": "April 20, 2003",
           "value": 0.23209825416901925,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "April 21, 2003",
           "value": 0.23209825416901925,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -3114,29 +2632,21 @@
         {
           "name": "Bremerhaven",
           "value": 0.16145965507410034,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Trenton Avenue",
           "value": 0.16145965507410034,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Trenton",
           "value": 0.3229193101482007,
-          "type": "Location",
-          "alias": [],
           "count": 2
         },
         {
           "name": "Rhinelander Platz.",
           "value": 0.16145965507410034,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -3149,29 +2659,21 @@
         {
           "name": "Taliban",
           "value": 0.13132282113671143,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Marvel Corporation",
           "value": 0.16145965507410034,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "German Intelligence",
           "value": 0.484378965222301,
-          "type": "Organization",
-          "alias": [],
           "count": 3
         },
         {
           "name": "Stinger",
           "value": 0.484378965222301,
-          "type": "Misc",
-          "alias": [],
           "count": 3
         },
         {
@@ -3198,36 +2700,26 @@
         {
           "name": "Jamil Musawi",
           "value": 0.6189286777840514,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Buenos Aires",
           "value": 0.6189286777840514,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Hezboliah",
           "value": 0.6189286777840514,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "American Diplomatic Mission Headquarters",
           "value": 0.6189286777840514,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Latin American",
           "value": 0.6189286777840514,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
@@ -3263,8 +2755,6 @@
         {
           "name": "Ziad al Shibh",
           "value": 0.35367353016231506,
-          "type": "Person",
-          "alias": [],
           "count": 2
         },
         {
@@ -3286,8 +2776,6 @@
         {
           "name": "Guantanamo",
           "value": 0.1438297564830649,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -3369,8 +2857,6 @@
         {
           "name": "1994",
           "value": 0.17683676508115753,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -3390,24 +2876,16 @@
         {
           "name": "Muhammad Shamzi",
           "value": 0.15473216944601284,
-          "type": "Person",
-          "alias": [
-            "Shamzi"
-          ],
           "count": 1
         },
         {
           "name": "Vincent Lozario",
           "value": 0.15473216944601284,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Khalfan Maulid",
           "value": 0.15473216944601284,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
@@ -3450,50 +2928,36 @@
         {
           "name": "Marshall Avenue",
           "value": 0.15473216944601284,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Minneapolis",
           "value": 0.15473216944601284,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Minnesota",
           "value": 0.15473216944601284,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Laurel Avenue",
           "value": 0.15473216944601284,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Bowling Green",
           "value": 0.15473216944601284,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Kentucky",
           "value": 0.15473216944601284,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Rue St. Sebastien",
           "value": 0.15473216944601284,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -3506,36 +2970,26 @@
         {
           "name": "French",
           "value": 0.3094643388920257,
-          "type": "Misc",
-          "alias": [],
           "count": 2
         },
         {
           "name": "Egyptian",
           "value": 0.15473216944601284,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
           "name": "British",
           "value": 0.3094643388920257,
-          "type": "Misc",
-          "alias": [],
           "count": 2
         },
         {
           "name": "12 April, 2003",
           "value": 0.15473216944601284,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "8 April, 2002",
           "value": 0.15473216944601284,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -3548,17 +3002,11 @@
         {
           "name": "Abu al Masri",
           "value": 0.33560276512715137,
-          "type": "Person",
-          "alias": [
-            "al Hada"
-          ],
           "count": 1
         },
         {
           "name": "Abdul al Hada",
           "value": 0.4126191185227009,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
@@ -3571,8 +3019,6 @@
         {
           "name": "Cuba",
           "value": 0.4126191185227009,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -3585,22 +3031,16 @@
         {
           "name": "9 April, 2003",
           "value": 0.4126191185227009,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "April 2003",
           "value": 0.4126191185227009,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "March of 2003",
           "value": 0.4126191185227009,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -3629,15 +3069,11 @@
         {
           "name": "Sahim Albakri",
           "value": 0.23209825416901925,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Muhammed bin Harazi",
           "value": 0.4641965083380385,
-          "type": "Person",
-          "alias": [],
           "count": 2
         },
         {
@@ -3673,15 +3109,11 @@
         {
           "name": "Pakistani",
           "value": 0.23209825416901925,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Indian",
           "value": 0.23209825416901925,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
@@ -3694,22 +3126,16 @@
         {
           "name": "March, 1993",
           "value": 0.23209825416901925,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "1990 - 1992",
           "value": 0.23209825416901925,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "1987 - 1993",
           "value": 0.23209825416901925,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
@@ -3754,8 +3180,6 @@
         {
           "name": "Kandahar",
           "value": 0.2652551476217363,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -3782,8 +3206,6 @@
         {
           "name": "Yemeni",
           "value": 0.2652551476217363,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
@@ -3796,15 +3218,11 @@
         {
           "name": "January 1996",
           "value": 0.2652551476217363,
-          "type": "Date",
-          "alias": [],
           "count": 1
         },
         {
           "name": "1996",
           "value": 0.5305102952434726,
-          "type": "Date",
-          "alias": [],
           "count": 2
         }
       ],
@@ -3817,22 +3235,16 @@
         {
           "name": "Omar Bakri Qatada",
           "value": 0.16879873030474127,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Qatada",
           "value": 0.5063961909142237,
-          "type": "Person",
-          "alias": [],
           "count": 3
         },
         {
           "name": "Richard Reid",
           "value": 0.16879873030474127,
-          "type": "Person",
-          "alias": [],
           "count": 1
         },
         {
@@ -3845,29 +3257,21 @@
         {
           "name": "St. Mary 's Terrace",
           "value": 0,
-          "type": "Location",
-          "alias": [],
           "count": 0
         },
         {
           "name": "Paddington",
           "value": 0.16879873030474127,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
           "name": "London",
           "value": 0.33759746060948254,
-          "type": "Location",
-          "alias": [],
           "count": 2
         },
         {
           "name": "Miami",
           "value": 0.16879873030474127,
-          "type": "Location",
-          "alias": [],
           "count": 1
         },
         {
@@ -3887,38 +3291,26 @@
         {
           "name": "British Special Branch",
           "value": 0.33759746060948254,
-          "type": "Organization",
-          "alias": [
-            "BSB"
-          ],
           "count": 2
         },
         {
           "name": "M15",
           "value": 0.16879873030474127,
-          "type": "Organization",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Moslem",
           "value": 0.16879873030474127,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Pentaerythritol",
           "value": 0.16879873030474127,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
           "name": "Triacetone Triperoxide",
           "value": 0.16879873030474127,
-          "type": "Misc",
-          "alias": [],
           "count": 1
         },
         {
@@ -3938,17 +3330,1745 @@
         {
           "name": "22 December, 2001",
           "value": 0.16879873030474127,
-          "type": "Date",
-          "alias": [],
           "count": 1
         }
       ],
       "mass": 18
     }
   ],
-  "links":
-
-  [
+  "entities": {
+    "1994": {
+      "name": "1994",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "1996": {
+      "name": "1996",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "1070173": {
+      "name": "1070173",
+      "type": "Phone",
+      "alias": [],
+      "weight": 1
+    },
+    "Arabic": {
+      "name": "Arabic",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "703-659-2317": {
+      "name": "703-659-2317",
+      "type": "Phone",
+      "alias": [],
+      "weight": 1
+    },
+    "804-774-8920": {
+      "name": "804-774-8920",
+      "type": "Phone",
+      "alias": [],
+      "weight": 1
+    },
+    "27 April, 2003": {
+      "name": "27 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "26 April, 2003": {
+      "name": "26 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "804-759-6302": {
+      "name": "804-759-6302",
+      "type": "Phone",
+      "alias": [],
+      "weight": 1
+    },
+    "718-352-8479": {
+      "name": "718-352-8479",
+      "type": "Phone",
+      "alias": [],
+      "weight": 1
+    },
+    "01 1207670734": {
+      "name": "01 1207670734",
+      "type": "Phone",
+      "alias": [],
+      "weight": 1
+    },
+    "22 April, 2003": {
+      "name": "22 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "24 April, 2003": {
+      "name": "24 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "April 30": {
+      "name": "April 30",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Hans Pakes": {
+      "name": "Hans Pakes",
+      "type": "Person",
+      "alias": [
+        "Pakes"
+      ],
+      "weight": 1
+    },
+    "Bagwant Dhaliwal": {
+      "name": "Bagwant Dhaliwal",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Clark Webster": {
+      "name": "Clark Webster",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Mukhtar Galab": {
+      "name": "Mukhtar Galab",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "The Netherlands": {
+      "name": "The Netherlands",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Richmond": {
+      "name": "Richmond",
+      "type": "Location",
+      "alias": [
+        "Richmond VA"
+      ],
+      "weight": 1
+    },
+    "Virginia": {
+      "name": "Virginia",
+      "type": "Location",
+      "alias": [
+        "VA",
+        "Va",
+        "VA."
+      ],
+      "weight": 1
+    },
+    "Amsterdam": {
+      "name": "Amsterdam",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Queens": {
+      "name": "Queens",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "New York City": {
+      "name": "New York City",
+      "type": "Location",
+      "alias": [
+        "NYC"
+      ],
+      "weight": 1
+    },
+    "Charlottesville": {
+      "name": "Charlottesville",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "21 April, 2003": {
+      "name": "21 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Hani al Hallak": {
+      "name": "Hani al Hallak",
+      "type": "Person",
+      "alias": [
+        "al Hallak"
+      ],
+      "weight": 1
+    },
+    "Myrtle Ave": {
+      "name": "Myrtle Ave",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "North Bergen": {
+      "name": "North Bergen",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "732-455-6392": {
+      "name": "732-455-6392",
+      "type": "Phone",
+      "alias": [],
+      "weight": 1
+    },
+    "20 April, 2003": {
+      "name": "20 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "April 25, 2003": {
+      "name": "April 25, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Jamal Kalifa": {
+      "name": "Jamal Kalifa",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Ralph Goode": {
+      "name": "Ralph Goode",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Georgia": {
+      "name": "Georgia",
+      "type": "Location",
+      "alias": [
+        "GA"
+      ],
+      "weight": 1
+    },
+    "Texas": {
+      "name": "Texas",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Houston": {
+      "name": "Houston",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Columbus": {
+      "name": "Columbus",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Little York Rd.": {
+      "name": "Little York Rd.",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "St. Mary's Road": {
+      "name": "St. Mary's Road",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Sprint": {
+      "name": "Sprint",
+      "type": "Organization",
+      "alias": [
+        "Sprint PCS"
+      ],
+      "weight": 1
+    },
+    "706-437-6673": {
+      "name": "706-437-6673",
+      "type": "Phone",
+      "alias": [],
+      "weight": 1
+    },
+    "713-556-9213": {
+      "name": "713-556-9213",
+      "type": "Phone",
+      "alias": [],
+      "weight": 1
+    },
+    "30 March, 2003": {
+      "name": "30 March, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "10 April, 2003": {
+      "name": "10 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "6 April, 2003": {
+      "name": "6 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Washington": {
+      "name": "Washington",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Seattle": {
+      "name": "Seattle",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Howell St.": {
+      "name": "Howell St.",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Alder St": {
+      "name": "Alder St",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "FBI": {
+      "name": "FBI",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "US Post Office": {
+      "name": "US Post Office",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Middle Eastern": {
+      "name": "Middle Eastern",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "16 April, 2003": {
+      "name": "16 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "15 April, 2003": {
+      "name": "15 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Abul Hassan Salman": {
+      "name": "Abul Hassan Salman",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Paris": {
+      "name": "Paris",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "France": {
+      "name": "France",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "INS": {
+      "name": "INS",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Bush Intercontinental Airport": {
+      "name": "Bush Intercontinental Airport",
+      "type": "Organization",
+      "alias": [
+        "Bush Intercontinental"
+      ],
+      "weight": 1
+    },
+    "Continental Airlines": {
+      "name": "Continental Airlines",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Reagan National Airport": {
+      "name": "Reagan National Airport",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Dutch": {
+      "name": "Dutch",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "14 April, 2003": {
+      "name": "14 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Keswick": {
+      "name": "Keswick",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "The Powhatan Company": {
+      "name": "The Powhatan Company",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "C-4": {
+      "name": "C-4",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "11 April, 2003": {
+      "name": "11 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Clark Adams": {
+      "name": "Clark Adams",
+      "type": "Person",
+      "alias": [
+        "Adams"
+      ],
+      "weight": 1
+    },
+    "Lee Highway": {
+      "name": "Lee Highway",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Merrifield": {
+      "name": "Merrifield",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Pentagon": {
+      "name": "Pentagon",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Home Depot": {
+      "name": "Home Depot",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "13 April, 2003": {
+      "name": "13 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Vincent Cortez": {
+      "name": "Vincent Cortez",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Arnaldo Gueterrez": {
+      "name": "Arnaldo Gueterrez",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Ben Hassine": {
+      "name": "Ben Hassine",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Ahmed Yassin": {
+      "name": "Ahmed Yassin",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "El Paso": {
+      "name": "El Paso",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Hudspeth County": {
+      "name": "Hudspeth County",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Rio Grande": {
+      "name": "Rio Grande",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "McNary": {
+      "name": "McNary",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "McRae Blvd": {
+      "name": "McRae Blvd",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "American Airlines": {
+      "name": "American Airlines",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Border Patrol": {
+      "name": "Border Patrol",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "University of Texas": {
+      "name": "University of Texas",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Mexicans": {
+      "name": "Mexicans",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Spanish": {
+      "name": "Spanish",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Wallace Wilson": {
+      "name": "Wallace Wilson",
+      "type": "Person",
+      "alias": [
+        "Wilson"
+      ],
+      "weight": 1
+    },
+    "Denver": {
+      "name": "Denver",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Colorado": {
+      "name": "Colorado",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Camp George West Military Reservation": {
+      "name": "Camp George West Military Reservation",
+      "type": "Location",
+      "alias": [
+        "Camp George West"
+      ],
+      "weight": 1
+    },
+    "Apex Paper Products Company": {
+      "name": "Apex Paper Products Company",
+      "type": "Organization",
+      "alias": [
+        "Apex"
+      ],
+      "weight": 1
+    },
+    "Aryan Nations": {
+      "name": "Aryan Nations",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Army CID": {
+      "name": "Army CID",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Social Security": {
+      "name": "Social Security",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Karm Bensaid": {
+      "name": "Karm Bensaid",
+      "type": "Person",
+      "alias": [
+        "Bensaid"
+      ],
+      "weight": 1
+    },
+    "US": {
+      "name": "US",
+      "type": "Location",
+      "alias": [
+        "USA"
+      ],
+      "weight": 1
+    },
+    "Los Angeles": {
+      "name": "Los Angeles",
+      "type": "Location",
+      "alias": [
+        "LA"
+      ],
+      "weight": 1
+    },
+    "Culver City": {
+      "name": "Culver City",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "California": {
+      "name": "California",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "San Gabriel": {
+      "name": "San Gabriel",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Greenlawn Ave.": {
+      "name": "Greenlawn Ave.",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Imperial Highway": {
+      "name": "Imperial Highway",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "City Park": {
+      "name": "City Park",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "El Segundo": {
+      "name": "El Segundo",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "LAX": {
+      "name": "LAX",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Sheldon St.": {
+      "name": "Sheldon St.",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Hubbard St.": {
+      "name": "Hubbard St.",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Ryder Truck Rental": {
+      "name": "Ryder Truck Rental",
+      "type": "Organization",
+      "alias": [
+        "Ryder"
+      ],
+      "weight": 1
+    },
+    "8 April, 2003": {
+      "name": "8 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "7 April, 2003": {
+      "name": "7 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "New Jersey": {
+      "name": "New Jersey",
+      "type": "Location",
+      "alias": [
+        "NJ"
+      ],
+      "weight": 1
+    },
+    "Canada": {
+      "name": "Canada",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "April 26, 2003": {
+      "name": "April 26, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Budget Storage Units": {
+      "name": "Budget Storage Units",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Carl Louis": {
+      "name": "Carl Louis",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Abdelhak Kherbane": {
+      "name": "Abdelhak Kherbane",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Detroit": {
+      "name": "Detroit",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Michigan": {
+      "name": "Michigan",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Van Dyke Avenue": {
+      "name": "Van Dyke Avenue",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Beth Israel": {
+      "name": "Beth Israel",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Lebanese": {
+      "name": "Lebanese",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Mark Davis": {
+      "name": "Mark Davis",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Hamid Alwan": {
+      "name": "Hamid Alwan",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Alwan": {
+      "name": "Alwan",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Afghanistan": {
+      "name": "Afghanistan",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Sudan": {
+      "name": "Sudan",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Saudi": {
+      "name": "Saudi",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Canadian": {
+      "name": "Canadian",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Boston": {
+      "name": "Boston",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Coast Guard": {
+      "name": "Coast Guard",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Holland Queen": {
+      "name": "Holland Queen",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "25 April, 2003": {
+      "name": "25 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "29 April, 1930": {
+      "name": "29 April, 1930",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "29 April, 1930hrs": {
+      "name": "29 April, 1930hrs",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Abdulla Ramzi": {
+      "name": "Abdulla Ramzi",
+      "type": "Person",
+      "alias": [
+        "Ramzi"
+      ],
+      "weight": 1
+    },
+    "University Drive": {
+      "name": "University Drive",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Abdul Ramazi": {
+      "name": "Abdul Ramazi",
+      "type": "Person",
+      "alias": [
+        "Ramazi"
+      ],
+      "weight": 1
+    },
+    "Germany": {
+      "name": "Germany",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Hamburg": {
+      "name": "Hamburg",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Springfield": {
+      "name": "Springfield",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Egypt": {
+      "name": "Egypt",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Dulles Airport": {
+      "name": "Dulles Airport",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Washington DC": {
+      "name": "Washington DC",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Cairo": {
+      "name": "Cairo",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Wash. DC": {
+      "name": "Wash. DC",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Floyd Ave.": {
+      "name": "Floyd Ave.",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Passport Agency": {
+      "name": "Passport Agency",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "703-734-0104": {
+      "name": "703-734-0104",
+      "type": "Phone",
+      "alias": [],
+      "weight": 1
+    },
+    "5 April, 2003": {
+      "name": "5 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "12 Feb. 1997": {
+      "name": "12 Feb. 1997",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Faysal Goba": {
+      "name": "Faysal Goba",
+      "type": "Person",
+      "alias": [
+        "Goba"
+      ],
+      "weight": 1
+    },
+    "Yasein Mosed": {
+      "name": "Yasein Mosed",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Atlanta": {
+      "name": "Atlanta",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "New Orleans": {
+      "name": "New Orleans",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "AMTRAK": {
+      "name": "AMTRAK",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Penn Station NYC": {
+      "name": "Penn Station NYC",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "23 April, 2003": {
+      "name": "23 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "29 April, 2003": {
+      "name": "29 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Masood Yaser": {
+      "name": "Masood Yaser",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Coal Mine Road": {
+      "name": "Coal Mine Road",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Colfax Avenue": {
+      "name": "Colfax Avenue",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "U-haul": {
+      "name": "U-haul",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Capitol Ave.": {
+      "name": "Capitol Ave.",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Springfield VA": {
+      "name": "Springfield VA",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "First Union Bank": {
+      "name": "First Union Bank",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "1070173749003": {
+      "name": "1070173749003",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Virginia National Bank": {
+      "name": "Virginia National Bank",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Omar Clark": {
+      "name": "Omar Clark",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Joseph Nizar": {
+      "name": "Joseph Nizar",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "O'Hare": {
+      "name": "O'Hare",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Chicago": {
+      "name": "Chicago",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Illinois": {
+      "name": "Illinois",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Green Bay": {
+      "name": "Green Bay",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Wisconsin": {
+      "name": "Wisconsin",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "United Connector": {
+      "name": "United Connector",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "United": {
+      "name": "United",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Manhattan": {
+      "name": "Manhattan",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Empire State Vending Services": {
+      "name": "Empire State Vending Services",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Shiela Watson": {
+      "name": "Shiela Watson",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "New York Stock Exchange": {
+      "name": "New York Stock Exchange",
+      "type": "Organization",
+      "alias": [
+        "NYSE"
+      ],
+      "weight": 1
+    },
+    "19 April, 2003": {
+      "name": "19 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "2932 University Drive": {
+      "name": "2932 University Drive",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "University of Virginia": {
+      "name": "University of Virginia",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "18 April, 2003": {
+      "name": "18 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Steven Clark": {
+      "name": "Steven Clark",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Webster Ave.": {
+      "name": "Webster Ave.",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Bronx": {
+      "name": "Bronx",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "New York": {
+      "name": "New York",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "City Computer Services Corp.": {
+      "name": "City Computer Services Corp.",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Clark & Co": {
+      "name": "Clark & Co",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Office Supplies Co.": {
+      "name": "Office Supplies Co.",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "April 18, 2003": {
+      "name": "April 18, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "2 December, 2001": {
+      "name": "2 December, 2001",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "I2 December, 20011": {
+      "name": "I2 December, 20011",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "United Arab Emirates": {
+      "name": "United Arab Emirates",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Springfield Mall": {
+      "name": "Springfield Mall",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Select Gourmet Foods": {
+      "name": "Select Gourmet Foods",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "First Union National Bank": {
+      "name": "First Union National Bank",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Pyramid Bank of Cairo": {
+      "name": "Pyramid Bank of Cairo",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Central Bank of Dubai": {
+      "name": "Central Bank of Dubai",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "1 April, 2003": {
+      "name": "1 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Tawfiq al Adel": {
+      "name": "Tawfiq al Adel",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Saeed Khallad": {
+      "name": "Saeed Khallad",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Riduan bin Attash": {
+      "name": "Riduan bin Attash",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Saleh al Ahdal": {
+      "name": "Saleh al Ahdal",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "CIA": {
+      "name": "CIA",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "cesium 137": {
+      "name": "cesium 137",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Jelte Nijboer": {
+      "name": "Jelte Nijboer",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "al Ahdal": {
+      "name": "al Ahdal",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "bin Attash": {
+      "name": "bin Attash",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Haarlem": {
+      "name": "Haarlem",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Lublin": {
+      "name": "Lublin",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Poland": {
+      "name": "Poland",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Sealink Container Corp.": {
+      "name": "Sealink Container Corp.",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Saeed Khaliad": {
+      "name": "Saeed Khaliad",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Europe": {
+      "name": "Europe",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Al Qaeda": {
+      "name": "Al Qaeda",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "April 20, 2003": {
+      "name": "April 20, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "April 21, 2003": {
+      "name": "April 21, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Bremerhaven": {
+      "name": "Bremerhaven",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Trenton Avenue": {
+      "name": "Trenton Avenue",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Trenton": {
+      "name": "Trenton",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Rhinelander Platz.": {
+      "name": "Rhinelander Platz.",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Taliban": {
+      "name": "Taliban",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Marvel Corporation": {
+      "name": "Marvel Corporation",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "German Intelligence": {
+      "name": "German Intelligence",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Stinger": {
+      "name": "Stinger",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Jamil Musawi": {
+      "name": "Jamil Musawi",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Buenos Aires": {
+      "name": "Buenos Aires",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Hezboliah": {
+      "name": "Hezboliah",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "American Diplomatic Mission Headquarters": {
+      "name": "American Diplomatic Mission Headquarters",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Latin American": {
+      "name": "Latin American",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Ziad al Shibh": {
+      "name": "Ziad al Shibh",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Guantanamo": {
+      "name": "Guantanamo",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Muhammad Shamzi": {
+      "name": "Muhammad Shamzi",
+      "type": "Person",
+      "alias": [
+        "Shamzi"
+      ],
+      "weight": 1
+    },
+    "Vincent Lozario": {
+      "name": "Vincent Lozario",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Khalfan Maulid": {
+      "name": "Khalfan Maulid",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Marshall Avenue": {
+      "name": "Marshall Avenue",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Minneapolis": {
+      "name": "Minneapolis",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Minnesota": {
+      "name": "Minnesota",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Laurel Avenue": {
+      "name": "Laurel Avenue",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Bowling Green": {
+      "name": "Bowling Green",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Kentucky": {
+      "name": "Kentucky",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Rue St. Sebastien": {
+      "name": "Rue St. Sebastien",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "French": {
+      "name": "French",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Egyptian": {
+      "name": "Egyptian",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "British": {
+      "name": "British",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "12 April, 2003": {
+      "name": "12 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "8 April, 2002": {
+      "name": "8 April, 2002",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Abu al Masri": {
+      "name": "Abu al Masri",
+      "type": "Person",
+      "alias": [
+        "al Hada"
+      ],
+      "weight": 1
+    },
+    "Abdul al Hada": {
+      "name": "Abdul al Hada",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Cuba": {
+      "name": "Cuba",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "9 April, 2003": {
+      "name": "9 April, 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "April 2003": {
+      "name": "April 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "March of 2003": {
+      "name": "March of 2003",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Sahim Albakri": {
+      "name": "Sahim Albakri",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Muhammed bin Harazi": {
+      "name": "Muhammed bin Harazi",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Pakistani": {
+      "name": "Pakistani",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Indian": {
+      "name": "Indian",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "March, 1993": {
+      "name": "March, 1993",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "1990 - 1992": {
+      "name": "1990 - 1992",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "1987 - 1993": {
+      "name": "1987 - 1993",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Kandahar": {
+      "name": "Kandahar",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Yemeni": {
+      "name": "Yemeni",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "January 1996": {
+      "name": "January 1996",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    },
+    "Omar Bakri Qatada": {
+      "name": "Omar Bakri Qatada",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Qatada": {
+      "name": "Qatada",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "Richard Reid": {
+      "name": "Richard Reid",
+      "type": "Person",
+      "alias": [],
+      "weight": 1
+    },
+    "St. Mary 's Terrace": {
+      "name": "St. Mary 's Terrace",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Paddington": {
+      "name": "Paddington",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "London": {
+      "name": "London",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "Miami": {
+      "name": "Miami",
+      "type": "Location",
+      "alias": [],
+      "weight": 1
+    },
+    "British Special Branch": {
+      "name": "British Special Branch",
+      "type": "Organization",
+      "alias": [
+        "BSB"
+      ],
+      "weight": 1
+    },
+    "M15": {
+      "name": "M15",
+      "type": "Organization",
+      "alias": [],
+      "weight": 1
+    },
+    "Moslem": {
+      "name": "Moslem",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Pentaerythritol": {
+      "name": "Pentaerythritol",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "Triacetone Triperoxide": {
+      "name": "Triacetone Triperoxide",
+      "type": "Misc",
+      "alias": [],
+      "weight": 1
+    },
+    "22 December, 2001": {
+      "name": "22 December, 2001",
+      "type": "Date",
+      "alias": [],
+      "weight": 1
+    }
+  },
+  "edges": [
     {
       "source": "se5",
       "target": "se4",
@@ -3957,7 +5077,8 @@
         "Arabic",
         "703-659-2317",
         "804-774-8920"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "se5",
@@ -3966,7 +5087,8 @@
       "entities": [
         "703-659-2317",
         "804-774-8920"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "se5",
@@ -3974,7 +5096,8 @@
       "similarity": 0.07464356242477645,
       "entities": [
         "Arabic"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se5",
@@ -3982,7 +5105,8 @@
       "similarity": 0.06970036092846212,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se5",
@@ -3990,7 +5114,8 @@
       "similarity": 0.10473929630556883,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se5",
@@ -3998,7 +5123,8 @@
       "similarity": 0.03124453481074782,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se5",
@@ -4006,7 +5132,8 @@
       "similarity": 0.04531023268288642,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se5",
@@ -4014,7 +5141,8 @@
       "similarity": 0.10480012772808393,
       "entities": [
         "26 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se5",
@@ -4022,7 +5150,8 @@
       "similarity": 0.1409229308538576,
       "entities": [
         "26 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se5",
@@ -4030,7 +5159,8 @@
       "similarity": 0.06806282577242367,
       "entities": [
         "804-774-8920"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se5",
@@ -4038,7 +5168,8 @@
       "similarity": 0.0732145506050451,
       "entities": [
         "703-659-2317"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se5",
@@ -4046,7 +5177,8 @@
       "similarity": 0.042395582401083785,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se5",
@@ -4054,7 +5186,8 @@
       "similarity": 0.044998395504954734,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se4",
@@ -4066,7 +5199,8 @@
         "804-774-8920",
         "718-352-8479",
         "01 1207670734"
-      ]
+      ],
+      "strength": 5
     },
     {
       "source": "se4",
@@ -4074,7 +5208,8 @@
       "similarity": 0.08335231080688124,
       "entities": [
         "718-352-8479"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se4",
@@ -4082,7 +5217,8 @@
       "similarity": 0.048425550228089295,
       "entities": [
         "Arabic"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se4",
@@ -4090,7 +5226,8 @@
       "similarity": 0.030383404423051187,
       "entities": [
         "22 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se4",
@@ -4099,7 +5236,8 @@
       "entities": [
         "804-759-6302",
         "22 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "se4",
@@ -4107,7 +5245,8 @@
       "similarity": 0.05433432540663256,
       "entities": [
         "22 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se4",
@@ -4115,7 +5254,8 @@
       "similarity": 0.04415624979622033,
       "entities": [
         "804-774-8920"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se4",
@@ -4123,7 +5263,8 @@
       "similarity": 0.04749846848915606,
       "entities": [
         "703-659-2317"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se4",
@@ -4131,7 +5272,8 @@
       "similarity": 0.08133234409058733,
       "entities": [
         "24 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se4",
@@ -4139,7 +5281,8 @@
       "similarity": 0.035287655511296444,
       "entities": [
         "22 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se4",
@@ -4147,7 +5290,8 @@
       "similarity": 0.021593628590920143,
       "entities": [
         "22 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se4",
@@ -4155,7 +5299,8 @@
       "similarity": 0.04662513928690649,
       "entities": [
         "804-759-6302"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se3",
@@ -4165,7 +5310,8 @@
         "Queens",
         "New York City",
         "718-352-8479"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "se3",
@@ -4173,7 +5319,8 @@
       "similarity": 0.034243884772865454,
       "entities": [
         "Virginia"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se3",
@@ -4181,7 +5328,8 @@
       "similarity": 0.057635729883211105,
       "entities": [
         "Virginia"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se3",
@@ -4189,7 +5337,8 @@
       "similarity": 0.1002029744817938,
       "entities": [
         "Virginia"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se3",
@@ -4197,7 +5346,8 @@
       "similarity": 0.026513194987809886,
       "entities": [
         "New York City"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se3",
@@ -4205,7 +5355,8 @@
       "similarity": 0.041093233589535164,
       "entities": [
         "Amsterdam"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se3",
@@ -4215,7 +5366,8 @@
         "Richmond",
         "Virginia",
         "Charlottesville"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "se3",
@@ -4224,7 +5376,8 @@
       "entities": [
         "Virginia",
         "Amsterdam"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "se3",
@@ -4234,7 +5387,8 @@
         "Mukhtar Galab",
         "Virginia",
         "Charlottesville"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "se3",
@@ -4244,7 +5398,8 @@
         "Richmond",
         "Virginia",
         "804-759-6302"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "se3",
@@ -4255,7 +5410,8 @@
         "Mukhtar Galab",
         "Virginia",
         "Charlottesville"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "se3",
@@ -4263,7 +5419,8 @@
       "similarity": 0.025915859293562642,
       "entities": [
         "New York City"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se3",
@@ -4273,7 +5430,8 @@
         "Bagwant Dhaliwal",
         "Queens",
         "New York City"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "se3",
@@ -4284,7 +5442,8 @@
         "Virginia",
         "Charlottesville",
         "804-774-8920"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "se3",
@@ -4293,7 +5452,8 @@
       "entities": [
         "Queens",
         "New York City"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "se3",
@@ -4302,7 +5462,8 @@
       "entities": [
         "Virginia",
         "703-659-2317"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "se3",
@@ -4310,7 +5471,8 @@
       "similarity": 0.03684542200614745,
       "entities": [
         "Amsterdam"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se3",
@@ -4318,7 +5480,8 @@
       "similarity": 0.04985292755644928,
       "entities": [
         "The Netherlands"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se3",
@@ -4329,7 +5492,8 @@
         "Richmond",
         "Virginia",
         "804-759-6302"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "se3",
@@ -4337,7 +5501,8 @@
       "similarity": 0.04592977666489034,
       "entities": [
         "Bagwant Dhaliwal"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se3",
@@ -4346,7 +5511,8 @@
       "entities": [
         "Hans Pakes",
         "The Netherlands"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "se2",
@@ -4355,7 +5521,8 @@
       "entities": [
         "Hani al Hallak",
         "North Bergen"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "se2",
@@ -4363,7 +5530,8 @@
       "similarity": 0.027807054576814278,
       "entities": [
         "New York City"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se2",
@@ -4371,7 +5539,8 @@
       "similarity": 0.020571483162350426,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se2",
@@ -4381,7 +5550,8 @@
         "Hani al Hallak",
         "Hani al Hallak",
         "North Bergen"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "se2",
@@ -4389,7 +5559,8 @@
       "similarity": 0.03422916563447769,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se2",
@@ -4398,7 +5569,8 @@
       "entities": [
         "New York City",
         "20 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "se2",
@@ -4409,7 +5581,8 @@
         "New York City",
         "Myrtle Ave",
         "20 April, 2003"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "se2",
@@ -4419,7 +5592,8 @@
         "Queens",
         "New York City",
         "Myrtle Ave"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "se2",
@@ -4427,7 +5601,8 @@
       "similarity": 0.014620249949184377,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se2",
@@ -4435,7 +5610,8 @@
       "similarity": 0.03635114769049541,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se1",
@@ -4445,7 +5621,8 @@
         "Jamal Kalifa",
         "Texas",
         "Houston"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "se1",
@@ -4455,7 +5632,8 @@
         "Texas",
         "Houston",
         "10 April, 2003"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "se1",
@@ -4463,7 +5641,8 @@
       "similarity": 0.023199498290169148,
       "entities": [
         "10 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se1",
@@ -4471,7 +5650,8 @@
       "similarity": 0.02041219359903379,
       "entities": [
         "6 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se1",
@@ -4479,7 +5659,8 @@
       "similarity": 0.0336697595427783,
       "entities": [
         "10 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se1",
@@ -4487,7 +5668,8 @@
       "similarity": 0.03823163262072662,
       "entities": [
         "Georgia"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se1",
@@ -4495,7 +5677,8 @@
       "similarity": 0.06276747243783708,
       "entities": [
         "Sprint"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se1",
@@ -4503,7 +5686,8 @@
       "similarity": 0.025920032380965942,
       "entities": [
         "Sprint"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "se1",
@@ -4511,7 +5695,8 @@
       "similarity": 0.02622593080705919,
       "entities": [
         "30 March, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4521,7 +5706,8 @@
         "Washington",
         "FBI",
         "15 April, 2003"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi9",
@@ -4530,7 +5716,8 @@
       "entities": [
         "FBI",
         "15 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi9",
@@ -4540,7 +5727,8 @@
         "FBI",
         "Middle Eastern",
         "15 April, 2003"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi9",
@@ -4549,7 +5737,8 @@
       "entities": [
         "FBI",
         "16 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi9",
@@ -4557,7 +5746,8 @@
       "similarity": 0.0008666984209889461,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4565,7 +5755,8 @@
       "similarity": 0.0013581904872618541,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4573,7 +5764,8 @@
       "similarity": 0.0013614898324332393,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4581,7 +5773,8 @@
       "similarity": 0.0020459217868700167,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4589,7 +5782,8 @@
       "similarity": 0.0006103141489841084,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4597,7 +5791,8 @@
       "similarity": 0.0008850660209098466,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4605,7 +5800,8 @@
       "similarity": 0.0009354262915995464,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4613,7 +5809,8 @@
       "similarity": 0.0012578516597994364,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4621,7 +5818,8 @@
       "similarity": 0.0008872611972575721,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4629,7 +5827,8 @@
       "similarity": 0.0008479545895942445,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4637,7 +5836,8 @@
       "similarity": 0.0007739447232917197,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4645,7 +5845,8 @@
       "similarity": 0.0018573358645268868,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4654,7 +5855,8 @@
       "entities": [
         "FBI",
         "16 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi9",
@@ -4662,7 +5864,8 @@
       "similarity": 0.0012877769636934363,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4670,7 +5873,8 @@
       "similarity": 0.0017302514068152806,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4678,7 +5882,8 @@
       "similarity": 0.0017424771259036073,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4686,7 +5891,8 @@
       "similarity": 0.0020435611411236997,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4694,7 +5900,8 @@
       "similarity": 0.0007669929006388588,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4702,7 +5909,8 @@
       "similarity": 0.0006750672178175432,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi9",
@@ -4710,7 +5918,8 @@
       "similarity": 0.0008250471516609557,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4719,7 +5928,8 @@
       "entities": [
         "FBI",
         "15 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi8",
@@ -4728,7 +5938,8 @@
       "entities": [
         "FBI",
         "15 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi8",
@@ -4738,7 +5949,8 @@
         "Texas",
         "Houston",
         "FBI"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi8",
@@ -4746,7 +5958,8 @@
       "similarity": 0.0014660376029452821,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4754,7 +5967,8 @@
       "similarity": 0.002297406200436413,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4762,7 +5976,8 @@
       "similarity": 0.002302987108361487,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4770,7 +5985,8 @@
       "similarity": 0.0034607173609639036,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4778,7 +5994,8 @@
       "similarity": 0.0010323585117408029,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4786,7 +6003,8 @@
       "similarity": 0.0014971067632296282,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4794,7 +6012,8 @@
       "similarity": 0.0015822921619077046,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4802,7 +6021,8 @@
       "similarity": 0.002127681079756611,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4810,7 +6030,8 @@
       "similarity": 0.0015008199476464056,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4818,7 +6039,8 @@
       "similarity": 0.0014343320396461778,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4826,7 +6048,8 @@
       "similarity": 0.0013091428800021015,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4834,7 +6057,8 @@
       "similarity": 0.003141720525564484,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4842,7 +6066,8 @@
       "similarity": 0.0023411265655222152,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4850,7 +6075,8 @@
       "similarity": 0.0021783003259969688,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4858,7 +6084,8 @@
       "similarity": 0.002926754639803975,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4866,7 +6093,8 @@
       "similarity": 0.0029474346866028155,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4874,7 +6102,8 @@
       "similarity": 0.0034567242817710453,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4883,7 +6112,8 @@
       "entities": [
         "INS",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi8",
@@ -4891,7 +6121,8 @@
       "similarity": 0.0011418896145061676,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4899,7 +6130,8 @@
       "similarity": 0.001395583653143966,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4907,7 +6139,8 @@
       "similarity": 0.051895101722346335,
       "entities": [
         "Dutch"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4915,7 +6148,8 @@
       "similarity": 0.0627984734569729,
       "entities": [
         "Dutch"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4923,7 +6157,8 @@
       "similarity": 0.06730116942248118,
       "entities": [
         "Dutch"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4932,7 +6167,8 @@
       "entities": [
         "INS",
         "14 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi8",
@@ -4940,7 +6176,8 @@
       "similarity": 0.030051004358704232,
       "entities": [
         "Paris"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi8",
@@ -4948,7 +6185,8 @@
       "similarity": 0.027492268111569716,
       "entities": [
         "Paris"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -4958,7 +6196,8 @@
         "Virginia",
         "FBI",
         "15 April, 2003"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi7",
@@ -4966,7 +6205,8 @@
       "similarity": 0.0008609518927387265,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -4974,7 +6214,8 @@
       "similarity": 0.0022000913548302285,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -4982,7 +6223,8 @@
       "similarity": 0.003447731156389832,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -4991,7 +6233,8 @@
       "entities": [
         "FBI",
         "C-4"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi7",
@@ -5002,7 +6245,8 @@
         "Keswick",
         "FBI",
         "C-4"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "fbi7",
@@ -5010,7 +6254,8 @@
       "similarity": 0.001549266561924001,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -5018,7 +6263,8 @@
       "similarity": 0.002246717028555171,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -5026,7 +6272,8 @@
       "similarity": 0.0023745552632722633,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -5036,7 +6283,8 @@
         "Virginia",
         "Keswick",
         "FBI"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi7",
@@ -5045,7 +6293,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi7",
@@ -5054,7 +6303,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi7",
@@ -5062,7 +6312,8 @@
       "similarity": 0.0019646385104609564,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -5071,7 +6322,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi7",
@@ -5079,7 +6331,8 @@
       "similarity": 0.0035133425684450554,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -5088,7 +6341,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi7",
@@ -5096,7 +6350,8 @@
       "similarity": 0.00439219810447271,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -5104,7 +6359,8 @@
       "similarity": 0.004423232773766463,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -5112,7 +6368,8 @@
       "similarity": 0.005187526699913752,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -5121,7 +6378,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi7",
@@ -5129,7 +6387,8 @@
       "similarity": 0.0017136405396411978,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi7",
@@ -5138,7 +6397,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi7",
@@ -5146,7 +6406,8 @@
       "similarity": 0.03804550169064562,
       "entities": [
         "Virginia"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5155,7 +6416,8 @@
       "entities": [
         "FBI",
         "13 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi6",
@@ -5164,7 +6426,8 @@
       "entities": [
         "FBI",
         "13 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi6",
@@ -5172,7 +6435,8 @@
       "similarity": 0.005802860947513568,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5180,7 +6444,8 @@
       "similarity": 0.005816957380544841,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5189,7 +6454,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi6",
@@ -5197,7 +6463,8 @@
       "similarity": 0.0026075636474194052,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5205,7 +6472,8 @@
       "similarity": 0.0037814394202267663,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5213,7 +6481,8 @@
       "similarity": 0.003996603383479536,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5222,7 +6491,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi6",
@@ -5231,7 +6501,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi6",
@@ -5240,7 +6511,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi6",
@@ -5248,7 +6520,8 @@
       "similarity": 0.0033066743232592296,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5257,7 +6530,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi6",
@@ -5265,7 +6539,8 @@
       "similarity": 0.005913291222803693,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5274,7 +6549,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi6",
@@ -5282,7 +6558,8 @@
       "similarity": 0.00739248905963884,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5290,7 +6567,8 @@
       "similarity": 0.007444723373248228,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5298,7 +6576,8 @@
       "similarity": 0.008731103074937605,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5307,7 +6586,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi6",
@@ -5315,7 +6595,8 @@
       "similarity": 0.0028842207569259844,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi6",
@@ -5324,7 +6605,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi6",
@@ -5332,7 +6614,8 @@
       "similarity": 0.06403421437893758,
       "entities": [
         "Virginia"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5342,7 +6625,8 @@
         "FBI",
         "10 April, 2003",
         "13 April, 2003"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi5",
@@ -5350,7 +6634,8 @@
       "similarity": 0.0008362153457705307,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5358,7 +6643,8 @@
       "similarity": 0.0008382466978446189,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5366,7 +6652,8 @@
       "similarity": 0.0012596400950179317,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5374,7 +6661,8 @@
       "similarity": 0.00037576029423551615,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5382,7 +6670,8 @@
       "similarity": 0.0005449204626642224,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5390,7 +6679,8 @@
       "similarity": 0.0005759264456709092,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5399,7 +6689,8 @@
       "entities": [
         "FBI",
         "10 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi5",
@@ -5407,7 +6698,8 @@
       "similarity": 0.0005462719963156922,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5415,7 +6707,8 @@
       "similarity": 0.000522071570214549,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5423,7 +6716,8 @@
       "similarity": 0.0004765049236203997,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5431,7 +6725,8 @@
       "similarity": 0.0011435308719460351,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5440,7 +6735,8 @@
       "entities": [
         "FBI",
         "16 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi5",
@@ -5448,7 +6744,8 @@
       "similarity": 0.0007928629077215858,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5457,7 +6754,8 @@
       "entities": [
         "American Airlines",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi5",
@@ -5465,7 +6763,8 @@
       "similarity": 0.00107281425249285,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5473,7 +6772,8 @@
       "similarity": 0.0012581866846034782,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5481,7 +6781,8 @@
       "similarity": 0.0004722248017686282,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5489,7 +6790,8 @@
       "similarity": 0.00041562768423131604,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5497,7 +6799,8 @@
       "similarity": 0.0005079678407953275,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi5",
@@ -5505,7 +6808,8 @@
       "similarity": 0.010006700809184439,
       "entities": [
         "American Airlines"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5513,7 +6817,8 @@
       "similarity": 0.002136879154947656,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5521,7 +6826,8 @@
       "similarity": 0.0021420701071652084,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5529,7 +6835,8 @@
       "similarity": 0.0032189060813035395,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5537,7 +6844,8 @@
       "similarity": 0.0009602243537745532,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5545,7 +6853,8 @@
       "similarity": 0.0013924991734020928,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5553,7 +6862,8 @@
       "similarity": 0.0014717323985524863,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5562,7 +6872,8 @@
       "entities": [
         "FBI",
         "10 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi4",
@@ -5570,7 +6881,8 @@
       "similarity": 0.0013959529058666352,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5578,7 +6890,8 @@
       "similarity": 0.0013341107185186709,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5589,7 +6902,8 @@
         "Colorado",
         "Camp George West Military Reservation",
         "FBI"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "fbi4",
@@ -5597,7 +6911,8 @@
       "similarity": 0.002922198564831355,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5605,7 +6920,8 @@
       "similarity": 0.002177544639693368,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5613,7 +6929,8 @@
       "similarity": 0.0020260955850795524,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5621,7 +6938,8 @@
       "similarity": 0.0027222530261542003,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5629,7 +6947,8 @@
       "similarity": 0.0027414880926040913,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5637,7 +6956,8 @@
       "similarity": 0.0032151920111971512,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5645,7 +6965,8 @@
       "similarity": 0.0012067314244500586,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5653,7 +6974,8 @@
       "similarity": 0.0010621021715819905,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5661,7 +6983,8 @@
       "similarity": 0.0012980698044701656,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi4",
@@ -5670,7 +6993,8 @@
       "entities": [
         "Denver",
         "Colorado"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi3",
@@ -5678,7 +7002,8 @@
       "similarity": 0.0033568069032363823,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5686,7 +7011,8 @@
       "similarity": 0.005044300893068731,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5694,7 +7020,8 @@
       "similarity": 0.0015047536159644081,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5702,7 +7029,8 @@
       "similarity": 0.0021821651972974334,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5711,7 +7039,8 @@
       "entities": [
         "US",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi3",
@@ -5719,7 +7048,8 @@
       "similarity": 0.0031012828992750727,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5728,7 +7058,8 @@
       "entities": [
         "US",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi3",
@@ -5737,7 +7068,8 @@
       "entities": [
         "Los Angeles",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi3",
@@ -5745,7 +7077,8 @@
       "similarity": 0.0019081912534197416,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5753,7 +7086,8 @@
       "similarity": 0.0045793348603490845,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5761,7 +7095,8 @@
       "similarity": 0.003412398527096538,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5769,7 +7104,8 @@
       "similarity": 0.0031750649168119176,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5777,7 +7113,8 @@
       "similarity": 0.004266003115389992,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5785,7 +7122,8 @@
       "similarity": 0.004296146108202048,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5793,7 +7131,8 @@
       "similarity": 0.0050384806278353355,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5801,7 +7140,8 @@
       "similarity": 0.0018910512603655934,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5809,7 +7149,8 @@
       "similarity": 0.001664404862185869,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5817,7 +7158,8 @@
       "similarity": 0.002034186306952692,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5825,7 +7167,8 @@
       "similarity": 0.005771796733420485,
       "entities": [
         "US"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5833,7 +7176,8 @@
       "similarity": 0.008498283137627625,
       "entities": [
         "US"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5841,7 +7185,8 @@
       "similarity": 0.006671768590524871,
       "entities": [
         "US"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi3",
@@ -5849,7 +7194,8 @@
       "similarity": 0.00868984185108726,
       "entities": [
         "US"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5859,7 +7205,8 @@
         "FBI",
         "C-4",
         "27 April, 2003"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi25",
@@ -5868,7 +7215,8 @@
       "entities": [
         "FBI",
         "27 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi25",
@@ -5878,7 +7226,8 @@
         "Canada",
         "FBI",
         "27 April, 2003"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi25",
@@ -5886,7 +7235,8 @@
       "similarity": 0.0023119330186449592,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5894,7 +7244,8 @@
       "similarity": 0.003108816601546432,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5902,7 +7253,8 @@
       "similarity": 0.0021928916008920464,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5910,7 +7262,8 @@
       "similarity": 0.0020957441880773194,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5918,7 +7271,8 @@
       "similarity": 0.001912826672130958,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5926,7 +7280,8 @@
       "similarity": 0.004590459077829145,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5938,7 +7293,8 @@
         "New Jersey",
         "North Bergen",
         "FBI"
-      ]
+      ],
+      "strength": 5
     },
     {
       "source": "fbi25",
@@ -5946,7 +7302,8 @@
       "similarity": 0.00318277785192696,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5954,7 +7311,8 @@
       "similarity": 0.00427636618074193,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5962,7 +7320,8 @@
       "similarity": 0.004306582397552181,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5970,7 +7329,8 @@
       "similarity": 0.0050507202119632446,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5978,7 +7338,8 @@
       "similarity": 0.0018956450422417336,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5986,7 +7347,8 @@
       "similarity": 0.0016684480698189558,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -5994,7 +7356,8 @@
       "similarity": 0.0020391277955233216,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -6002,7 +7365,8 @@
       "similarity": 0.0379854797543188,
       "entities": [
         "New Jersey"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -6010,7 +7374,8 @@
       "similarity": 0.026132854198294378,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi25",
@@ -6018,7 +7383,8 @@
       "similarity": 0.027737241530572908,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi24",
@@ -6027,7 +7393,8 @@
       "entities": [
         "FBI",
         "27 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi24",
@@ -6036,7 +7403,8 @@
       "entities": [
         "FBI",
         "27 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi24",
@@ -6044,7 +7412,8 @@
       "similarity": 0.0034741604527273053,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi24",
@@ -6055,7 +7424,8 @@
         "Keswick",
         "FBI",
         "Budget Storage Units"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "fbi24",
@@ -6064,7 +7434,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi24",
@@ -6073,7 +7444,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi24",
@@ -6081,7 +7453,8 @@
       "similarity": 0.0028744201166927886,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi24",
@@ -6090,7 +7463,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi24",
@@ -6098,7 +7472,8 @@
       "similarity": 0.00514029553111128,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi24",
@@ -6107,7 +7482,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi24",
@@ -6115,7 +7491,8 @@
       "similarity": 0.006426130059434763,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi24",
@@ -6123,7 +7500,8 @@
       "similarity": 0.006471536212911793,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi24",
@@ -6131,7 +7509,8 @@
       "similarity": 0.007589758127368936,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi24",
@@ -6140,7 +7519,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi24",
@@ -6148,7 +7528,8 @@
       "similarity": 0.002507190413756696,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi24",
@@ -6157,7 +7538,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi24",
@@ -6165,7 +7547,8 @@
       "similarity": 0.11132710147639606,
       "entities": [
         "Virginia"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi24",
@@ -6173,7 +7556,8 @@
       "similarity": 0.03927005144198148,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi24",
@@ -6181,7 +7565,8 @@
       "similarity": 0.04168097726712742,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6190,7 +7575,8 @@
       "entities": [
         "FBI",
         "27 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi23",
@@ -6198,7 +7584,8 @@
       "similarity": 0.0010363686890417874,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6206,7 +7593,8 @@
       "similarity": 0.001393587167029773,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6214,7 +7602,8 @@
       "similarity": 0.0009830060712395768,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6222,7 +7611,8 @@
       "similarity": 0.0009394578645871153,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6230,7 +7620,8 @@
       "similarity": 0.0008574615503880045,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6238,7 +7629,8 @@
       "similarity": 0.0020577620624053004,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6246,7 +7638,8 @@
       "similarity": 0.001533389552196167,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6254,7 +7647,8 @@
       "similarity": 0.0014267417279442089,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6262,7 +7656,8 @@
       "similarity": 0.0019169638466410735,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6270,7 +7665,8 @@
       "similarity": 0.0019305088502163917,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6278,7 +7674,8 @@
       "similarity": 0.0022640830173605683,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6286,7 +7683,8 @@
       "similarity": 0.0008497595524926099,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6294,7 +7692,8 @@
       "similarity": 0.0007479141155508157,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6302,7 +7701,8 @@
       "similarity": 0.0009140784716478457,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6310,7 +7710,8 @@
       "similarity": 0.011714557311128426,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi23",
@@ -6318,7 +7719,8 @@
       "similarity": 0.012433754962124082,
       "entities": [
         "27 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6326,7 +7728,8 @@
       "similarity": 0.0015029222464079768,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6334,7 +7737,8 @@
       "similarity": 0.002020953718289404,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6342,7 +7746,8 @@
       "similarity": 0.0014255367886365149,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6350,7 +7755,8 @@
       "similarity": 0.0013623840040520347,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6358,7 +7764,8 @@
       "similarity": 0.0012434745020221709,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6366,7 +7773,8 @@
       "similarity": 0.0029841275736173724,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6374,7 +7782,8 @@
       "similarity": 0.00222369248972193,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6382,7 +7791,8 @@
       "similarity": 0.002069033834656355,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6391,7 +7801,8 @@
       "entities": [
         "New York City",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi22",
@@ -6400,7 +7811,8 @@
       "entities": [
         "New York City",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi22",
@@ -6408,7 +7820,8 @@
       "similarity": 0.003283330315248934,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6416,7 +7829,8 @@
       "similarity": 0.001232305210532403,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6426,7 +7840,8 @@
         "Mark Davis",
         "New York City",
         "FBI"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi22",
@@ -6434,7 +7849,8 @@
       "similarity": 0.0013255792890388628,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6442,7 +7858,8 @@
       "similarity": 0.05023525241482465,
       "entities": [
         "Saudi"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6450,7 +7867,8 @@
       "similarity": 0.01598805769334181,
       "entities": [
         "Afghanistan"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi22",
@@ -6459,7 +7877,8 @@
       "entities": [
         "Afghanistan",
         "Sudan"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi22",
@@ -6468,7 +7887,8 @@
       "entities": [
         "Afghanistan",
         "27 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi22",
@@ -6477,7 +7897,8 @@
       "entities": [
         "Afghanistan",
         "27 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi21",
@@ -6486,7 +7907,8 @@
       "entities": [
         "FBI",
         "26 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi21",
@@ -6496,7 +7918,8 @@
         "US",
         "Amsterdam",
         "FBI"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi21",
@@ -6505,7 +7928,8 @@
       "entities": [
         "FBI",
         "25 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi21",
@@ -6514,7 +7938,8 @@
       "entities": [
         "FBI",
         "25 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi21",
@@ -6522,7 +7947,8 @@
       "similarity": 0.0031539244800961436,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6530,7 +7956,8 @@
       "similarity": 0.002350220627812609,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6538,7 +7965,8 @@
       "similarity": 0.0021867618928099455,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6546,7 +7974,8 @@
       "similarity": 0.0029381235633790825,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6554,7 +7983,8 @@
       "similarity": 0.0029588839414323403,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6562,7 +7992,8 @@
       "similarity": 0.00347015186249312,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6570,7 +8001,8 @@
       "similarity": 0.0013024233966434711,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6578,7 +8010,8 @@
       "similarity": 0.001146325263324136,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6586,7 +8019,8 @@
       "similarity": 0.0014010047717028917,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6594,7 +8028,8 @@
       "similarity": 0.05209668727290118,
       "entities": [
         "25 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6602,7 +8037,8 @@
       "similarity": 0.03152120647539588,
       "entities": [
         "Amsterdam"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6610,7 +8046,8 @@
       "similarity": 0.011925625598574028,
       "entities": [
         "US"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6618,7 +8055,8 @@
       "similarity": 0.017559063080511757,
       "entities": [
         "US"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6626,7 +8064,8 @@
       "similarity": 0.013785137967562085,
       "entities": [
         "US"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6634,7 +8073,8 @@
       "similarity": 0.017954859675987207,
       "entities": [
         "US"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi21",
@@ -6642,7 +8082,8 @@
       "similarity": 0.22256460472077802,
       "entities": [
         "Holland Queen"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi20",
@@ -6651,7 +8092,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi20",
@@ -6661,7 +8103,8 @@
         "Virginia",
         "Charlottesville",
         "FBI"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi20",
@@ -6669,7 +8112,8 @@
       "similarity": 0.0017672201048673927,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi20",
@@ -6679,7 +8123,8 @@
         "Richmond",
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi20",
@@ -6687,7 +8132,8 @@
       "similarity": 0.0031603012916537926,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi20",
@@ -6697,7 +8143,8 @@
         "Virginia",
         "Charlottesville",
         "FBI"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi20",
@@ -6705,7 +8152,8 @@
       "similarity": 0.003950844266492291,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi20",
@@ -6713,7 +8161,8 @@
       "similarity": 0.003978760390110862,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi20",
@@ -6721,7 +8170,8 @@
       "similarity": 0.004666253577851856,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi20",
@@ -6731,7 +8181,8 @@
         "Virginia",
         "Charlottesville",
         "FBI"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi20",
@@ -6739,7 +8190,8 @@
       "similarity": 0.001541443882955951,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi20",
@@ -6748,7 +8200,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi20",
@@ -6757,7 +8210,8 @@
       "entities": [
         "Richmond",
         "Virginia"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi2",
@@ -6766,7 +8220,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi2",
@@ -6774,7 +8229,8 @@
       "similarity": 0.0012465586175020903,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi2",
@@ -6783,7 +8239,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi2",
@@ -6793,7 +8250,8 @@
         "Abdul Ramazi",
         "Abdul Ramazi",
         "FBI"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi2",
@@ -6805,7 +8263,8 @@
         "Virginia",
         "Springfield",
         "FBI"
-      ]
+      ],
+      "strength": 5
     },
     {
       "source": "fbi2",
@@ -6813,7 +8272,8 @@
       "similarity": 0.0027868395981010216,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi2",
@@ -6821,7 +8281,8 @@
       "similarity": 0.0028065310244084394,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi2",
@@ -6829,7 +8290,8 @@
       "similarity": 0.0032914737631720564,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi2",
@@ -6838,7 +8300,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi2",
@@ -6846,7 +8309,8 @@
       "similarity": 0.001087300982148349,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi2",
@@ -6859,7 +8323,8 @@
         "Springfield",
         "Egypt",
         "FBI"
-      ]
+      ],
+      "strength": 6
     },
     {
       "source": "fbi2",
@@ -6867,7 +8332,8 @@
       "similarity": 0.02989817973636315,
       "entities": [
         "Amsterdam"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi2",
@@ -6876,7 +8342,8 @@
       "entities": [
         "Germany",
         "Hamburg"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi2",
@@ -6886,7 +8353,8 @@
         "US",
         "Germany",
         "Hamburg"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi2",
@@ -6895,7 +8363,8 @@
       "entities": [
         "US",
         "Virginia"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi2",
@@ -6903,7 +8372,8 @@
       "similarity": 0.01307534129337474,
       "entities": [
         "US"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi2",
@@ -6912,7 +8382,8 @@
       "entities": [
         "Abdul Ramazi",
         "US"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi19",
@@ -6921,7 +8392,8 @@
       "entities": [
         "FBI",
         "25 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi19",
@@ -6931,7 +8403,8 @@
         "Faysal Goba",
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi19",
@@ -6939,7 +8412,8 @@
       "similarity": 0.002130451523342382,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi19",
@@ -6951,7 +8425,8 @@
         "Virginia",
         "Charlottesville",
         "FBI"
-      ]
+      ],
+      "strength": 5
     },
     {
       "source": "fbi19",
@@ -6959,7 +8434,8 @@
       "similarity": 0.0026633796620170788,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi19",
@@ -6967,7 +8443,8 @@
       "similarity": 0.0026821987373521,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi19",
@@ -6975,7 +8452,8 @@
       "similarity": 0.0031456580008655003,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi19",
@@ -6987,7 +8465,8 @@
         "Virginia",
         "Charlottesville",
         "FBI"
-      ]
+      ],
+      "strength": 5
     },
     {
       "source": "fbi19",
@@ -6995,7 +8474,8 @@
       "similarity": 0.0010391324008451714,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi19",
@@ -7004,7 +8484,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi19",
@@ -7012,7 +8493,8 @@
       "similarity": 0.04722512663202339,
       "entities": [
         "25 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi19",
@@ -7020,7 +8502,8 @@
       "similarity": 0.04812885348460901,
       "entities": [
         "23 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi19",
@@ -7029,7 +8512,8 @@
       "entities": [
         "Faysal Goba",
         "Virginia"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi18",
@@ -7038,7 +8522,8 @@
       "entities": [
         "FBI",
         "22 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi18",
@@ -7047,7 +8532,8 @@
       "entities": [
         "FBI",
         "22 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi18",
@@ -7056,7 +8542,8 @@
       "entities": [
         "FBI",
         "20 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi18",
@@ -7065,7 +8552,8 @@
       "entities": [
         "FBI",
         "20 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi18",
@@ -7074,7 +8562,8 @@
       "entities": [
         "FBI",
         "20 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi18",
@@ -7082,7 +8571,8 @@
       "similarity": 0.002871103524795119,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi18",
@@ -7090,7 +8580,8 @@
       "similarity": 0.0010775875388324206,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi18",
@@ -7098,7 +8589,8 @@
       "similarity": 0.0009484364473107105,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi18",
@@ -7106,7 +8598,8 @@
       "similarity": 0.0011591509241330583,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi18",
@@ -7114,7 +8607,8 @@
       "similarity": 0.04310329587475571,
       "entities": [
         "25 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi18",
@@ -7122,7 +8616,8 @@
       "similarity": 0.019059099629825847,
       "entities": [
         "22 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi18",
@@ -7131,7 +8626,8 @@
       "entities": [
         "20 April, 2003",
         "22 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi18",
@@ -7139,7 +8635,8 @@
       "similarity": 0.024532673090071618,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi18",
@@ -7150,7 +8647,8 @@
         "Denver",
         "Colorado",
         "Coal Mine Road"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "fbi17",
@@ -7159,7 +8657,8 @@
       "entities": [
         "FBI",
         "22 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi17",
@@ -7168,7 +8667,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi17",
@@ -7176,7 +8676,8 @@
       "similarity": 0.005833791841946291,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi17",
@@ -7184,7 +8685,8 @@
       "similarity": 0.005875012614834251,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi17",
@@ -7192,7 +8694,8 @@
       "similarity": 0.00689016074002166,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi17",
@@ -7202,7 +8705,8 @@
         "Virginia",
         "FBI",
         "Sprint"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi17",
@@ -7210,7 +8714,8 @@
       "similarity": 0.002276086360951476,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi17",
@@ -7219,7 +8724,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi17",
@@ -7227,7 +8733,8 @@
       "similarity": 0.04573860150826792,
       "entities": [
         "22 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi17",
@@ -7235,7 +8742,8 @@
       "similarity": 0.02798889183560133,
       "entities": [
         "22 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi17",
@@ -7247,7 +8755,8 @@
         "Virginia",
         "Capitol Ave.",
         "804-759-6302"
-      ]
+      ],
+      "strength": 5
     },
     {
       "source": "fbi16",
@@ -7261,7 +8770,8 @@
         "Abdul Ramazi",
         "Abdul Ramazi",
         "1070173749003"
-      ]
+      ],
+      "strength": 7
     },
     {
       "source": "fbi16",
@@ -7269,7 +8779,8 @@
       "similarity": 0.004347186501082338,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi16",
@@ -7277,7 +8788,8 @@
       "similarity": 0.004377903124561133,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi16",
@@ -7285,7 +8797,8 @@
       "similarity": 0.0051343645043935415,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi16",
@@ -7293,7 +8806,8 @@
       "similarity": 0.0019270385626909048,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi16",
@@ -7301,7 +8815,8 @@
       "similarity": 0.0016960790120212474,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi16",
@@ -7314,7 +8829,8 @@
         "Abdul Ramazi",
         "Abdul Ramazi",
         "1070173749003"
-      ]
+      ],
+      "strength": 6
     },
     {
       "source": "fbi16",
@@ -7322,7 +8838,8 @@
       "similarity": 0.0340831891918843,
       "entities": [
         "22 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi16",
@@ -7331,7 +8848,8 @@
       "entities": [
         "New Jersey",
         "22 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi16",
@@ -7340,7 +8858,8 @@
       "entities": [
         "Abdul Ramazi",
         "Abdul Ramazi"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi15",
@@ -7349,7 +8868,8 @@
       "entities": [
         "FBI",
         "20 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi15",
@@ -7358,7 +8878,8 @@
       "entities": [
         "FBI",
         "20 April, 2003"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi15",
@@ -7366,7 +8887,8 @@
       "similarity": 0.004777267508052456,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi15",
@@ -7378,7 +8900,8 @@
         "Charlottesville",
         "FBI",
         "Mukhtar Galab"
-      ]
+      ],
+      "strength": 5
     },
     {
       "source": "fbi15",
@@ -7386,7 +8909,8 @@
       "similarity": 0.0015781160742065151,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi15",
@@ -7402,7 +8926,8 @@
         "Abdul Ramazi",
         "1070173749003",
         "1070173"
-      ]
+      ],
+      "strength": 9
     },
     {
       "source": "fbi15",
@@ -7410,7 +8935,8 @@
       "similarity": 0.016417697536826238,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi15",
@@ -7418,7 +8944,8 @@
       "similarity": 0.040820242470091785,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi15",
@@ -7426,7 +8953,8 @@
       "similarity": 0.10510993941908649,
       "entities": [
         "Virginia"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi15",
@@ -7435,7 +8963,8 @@
       "entities": [
         "Abdul Ramazi",
         "Abdul Ramazi"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi14",
@@ -7445,7 +8974,8 @@
         "New York City",
         "FBI",
         "20 April, 2003"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi14",
@@ -7453,7 +8983,8 @@
       "similarity": 0.006418715398382011,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi14",
@@ -7461,7 +8992,8 @@
       "similarity": 0.0024090833607617146,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi14",
@@ -7470,7 +9002,8 @@
       "entities": [
         "New York City",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi14",
@@ -7478,7 +9011,8 @@
       "similarity": 0.002591428634156455,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi14",
@@ -7486,7 +9020,8 @@
       "similarity": 0.011029372733259957,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi14",
@@ -7494,7 +9029,8 @@
       "similarity": 0.02742294820907782,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi14",
@@ -7502,7 +9038,8 @@
       "similarity": 0.02552489442024108,
       "entities": [
         "American Airlines"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi13",
@@ -7510,7 +9047,8 @@
       "similarity": 0.006464069160881169,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi13",
@@ -7518,7 +9056,8 @@
       "similarity": 0.0024261056133158946,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi13",
@@ -7531,7 +9070,8 @@
         "Manhattan",
         "FBI",
         "Empire State Vending Services"
-      ]
+      ],
+      "strength": 6
     },
     {
       "source": "fbi13",
@@ -7539,7 +9079,8 @@
       "similarity": 0.0026097393133987026,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi13",
@@ -7547,7 +9088,8 @@
       "similarity": 0.022214609536014278,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi13",
@@ -7555,7 +9097,8 @@
       "similarity": 0.05523342999860221,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi13",
@@ -7563,7 +9106,8 @@
       "similarity": 0.07319326891434155,
       "entities": [
         "Bagwant Dhaliwal"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi12",
@@ -7571,7 +9115,8 @@
       "similarity": 0.0028453143412504743,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi12",
@@ -7581,7 +9126,8 @@
         "Shiela Watson",
         "FBI",
         "New York Stock Exchange"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "fbi12",
@@ -7589,7 +9135,8 @@
       "similarity": 0.003060678255135649,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi11",
@@ -7597,7 +9144,8 @@
       "similarity": 0.0009399172833694268,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi11",
@@ -7606,7 +9154,8 @@
       "entities": [
         "Virginia",
         "FBI"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi11",
@@ -7615,7 +9164,8 @@
       "entities": [
         "Virginia",
         "INS"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi10",
@@ -7623,7 +9173,8 @@
       "similarity": 0.0010110603068097816,
       "entities": [
         "FBI"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "fbi1",
@@ -7632,7 +9183,8 @@
       "entities": [
         "Virginia",
         "United Arab Emirates"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi1",
@@ -7641,7 +9193,8 @@
       "entities": [
         "Abdul Ramazi",
         "Abdul Ramazi"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "fbi1",
@@ -7649,7 +9202,8 @@
       "similarity": 0.03247652562653673,
       "entities": [
         "1 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia9",
@@ -7660,7 +9214,8 @@
         "Saeed Khallad",
         "CIA",
         "Dutch"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "cia9",
@@ -7670,7 +9225,8 @@
         "Tawfiq al Adel",
         "CIA",
         "Dutch"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "cia9",
@@ -7678,7 +9234,8 @@
       "similarity": 0.011260281890251566,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia9",
@@ -7686,7 +9243,8 @@
       "similarity": 0.016579423727583174,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia9",
@@ -7694,7 +9252,8 @@
       "similarity": 0.013016050028379156,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia9",
@@ -7702,7 +9261,8 @@
       "similarity": 0.04873152969696523,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia9",
@@ -7710,7 +9270,8 @@
       "similarity": 0.016953138397678827,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia9",
@@ -7718,7 +9279,8 @@
       "similarity": 0.01799395086619885,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia9",
@@ -7726,7 +9288,8 @@
       "similarity": 0.023815559231394293,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia8",
@@ -7737,7 +9300,8 @@
         "Haarlem",
         "CIA",
         "Dutch"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "cia8",
@@ -7745,7 +9309,8 @@
       "similarity": 0.006813056434365769,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia8",
@@ -7753,7 +9318,8 @@
       "similarity": 0.010031414009544253,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia8",
@@ -7761,7 +9327,8 @@
       "similarity": 0.007875387513402133,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia8",
@@ -7769,7 +9336,8 @@
       "similarity": 0.029485111047337913,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia8",
@@ -7777,7 +9345,8 @@
       "similarity": 0.01025753082993366,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia8",
@@ -7785,7 +9354,8 @@
       "similarity": 0.010887276528552228,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia8",
@@ -7793,7 +9363,8 @@
       "similarity": 0.014409652497238235,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia7",
@@ -7804,7 +9375,8 @@
         "Hamburg",
         "CIA",
         "22 April, 2003"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "cia7",
@@ -7813,7 +9385,8 @@
       "entities": [
         "CIA",
         "Al Qaeda"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "cia7",
@@ -7821,7 +9394,8 @@
       "similarity": 0.008440058493942866,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia7",
@@ -7829,7 +9403,8 @@
       "similarity": 0.03159921483437305,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia7",
@@ -7837,7 +9412,8 @@
       "similarity": 0.01099300320914148,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia7",
@@ -7847,7 +9423,8 @@
         "The Netherlands",
         "CIA",
         "Al Qaeda"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "cia7",
@@ -7855,7 +9432,8 @@
       "similarity": 0.015442835002990476,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia6",
@@ -7863,7 +9441,8 @@
       "similarity": 0.01743548628301702,
       "entities": [
         "20 April, 2003"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia6",
@@ -7873,7 +9452,8 @@
         "Afghanistan",
         "US",
         "CIA"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "cia6",
@@ -7882,7 +9462,8 @@
       "entities": [
         "US",
         "CIA"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "cia6",
@@ -7890,7 +9471,8 @@
       "similarity": 0.019336555489772093,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia6",
@@ -7901,7 +9483,8 @@
         "US",
         "CIA",
         "Taliban"
-      ]
+      ],
+      "strength": 4
     },
     {
       "source": "cia6",
@@ -7910,7 +9493,8 @@
       "entities": [
         "Afghanistan",
         "CIA"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "cia6",
@@ -7918,7 +9502,8 @@
       "similarity": 0.009449957460015628,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia4",
@@ -7927,7 +9512,8 @@
       "entities": [
         "US",
         "CIA"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "cia4",
@@ -7936,7 +9522,8 @@
       "entities": [
         "Guantanamo",
         "CIA"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "cia4",
@@ -7946,7 +9533,8 @@
         "Afghanistan",
         "US",
         "CIA"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "cia4",
@@ -7956,7 +9544,8 @@
         "Afghanistan",
         "CIA",
         "Al Qaeda"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "cia4",
@@ -7964,7 +9553,8 @@
       "similarity": 0.013913936654896162,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia3",
@@ -7972,7 +9562,8 @@
       "similarity": 0.022351622817657568,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia3",
@@ -7981,7 +9572,8 @@
       "entities": [
         "US",
         "CIA"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "cia3",
@@ -7989,7 +9581,8 @@
       "similarity": 0.008253260368836446,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia3",
@@ -7998,7 +9591,8 @@
       "entities": [
         "Paris",
         "CIA"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "cia2",
@@ -8006,7 +9600,8 @@
       "similarity": 0.029112530622906,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia2",
@@ -8015,7 +9610,8 @@
       "entities": [
         "Abu al Masri",
         "CIA"
-      ]
+      ],
+      "strength": 2
     },
     {
       "source": "cia2",
@@ -8023,7 +9619,8 @@
       "similarity": 0.04089692310425111,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia11",
@@ -8033,7 +9630,8 @@
         "Afghanistan",
         "CIA",
         "27 April, 2003"
-      ]
+      ],
+      "strength": 3
     },
     {
       "source": "cia11",
@@ -8041,7 +9639,8 @@
       "similarity": 0.01422756892174422,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     },
     {
       "source": "cia10",
@@ -8049,6 +9648,8 @@
       "similarity": 0.015101049146061087,
       "entities": [
         "CIA"
-      ]
+      ],
+      "strength": 1
     }
-  ]}
+  ]
+}
