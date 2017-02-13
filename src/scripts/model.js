@@ -92,8 +92,26 @@ var Model;
         model.documentOverlapping = function (docId1, docId2) {
             // Find entities
             console.log("in Document Overlapping");
+            console.log(docId1, docId2);
+
+            var doc1 = documents.find(function (d) {
+                return d.id == docId1;
+            });
+
+            var doc2 = documents.find(function (d) {
+                return d.id == docId2;
+            });
 
             // Find shared entities
+            console.log(doc1.entities);
+            console.log(doc2.entities);
+            sharedEntities = doc1.entities.filter(function(e) {
+                return doc2.entities.filter(function (ee) {
+                        return ee.name == e.name;
+                    }).length > 0;
+            });
+
+            console.log(sharedEntities);
 
             // Update entity weights vector
 

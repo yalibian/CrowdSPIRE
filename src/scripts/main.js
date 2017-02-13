@@ -26,7 +26,6 @@ const entityColor = {
 };
 
 
-
 var forceCollide = d3.forceCollide()
     .radius(function (d) {
         return d.radius;
@@ -278,16 +277,17 @@ function workspace(error, data) {
                     }
                 });
 
-                d3.select(this)
-                    .select('rect')
-                    .style('stroke', 'yellow')
-                    .style('stroke-width', function () {
-                        if(hasOverlap){
-                            return 4;
-                        } else {
-                            return 0;
-                        }
-                    });
+            d3.select(this)
+                .select('rect')
+                .style('stroke', 'yellow')
+                .style('stroke-width', function () {
+                    if (hasOverlap) {
+                        return 4;
+                    } else {
+                        return 0;
+                    }
+                });
+
         }
     }
 
@@ -296,6 +296,8 @@ function workspace(error, data) {
 
         if (d.visualDetailLevel == 'Document') {
 
+            var hasOverlap = false;
+            var overlappedDocId = null;
             var rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
             node.selectAll('rect')
                 .attr('border', function (dd) {
@@ -309,12 +311,19 @@ function workspace(error, data) {
                             height: dd.height
                         };
                         if (rectOverlap(rectA, rectB)) {
+                            hasOverlap = true;
+                            overlappedDocId = dd.id;
                             return '1px solid black';
                         } else {
                             return '';
                         }
                     }
                 });
+
+
+            if(hasOverlap){
+                model.documentOverlapping(overlappedDocId, d.id);
+            }
         }
 
         if (!d3.event.active) {
