@@ -18,9 +18,9 @@ data.nodes.forEach(function(d){
     d.entities.forEach(function (e) {
         if(!entities.hasOwnProperty(e.name)){
             var ee = JSON.parse(JSON.stringify(e));
+            ee.weight = ee.value;
             delete ee.count;
             delete ee.value;
-            ee.weight = 1;
 
             delete e.alias;
             delete e.type;
@@ -30,13 +30,21 @@ data.nodes.forEach(function(d){
     });
 });
 
+// console.log(Object.getOwnPropertyNames(entities));
 
+// change strength based on initial tf-idf values
 data.links.forEach(function (l) {
-    l.strength = l.entities.length;
+    l.strength = 0;
+    l.entities.forEach(function (e) {
+        l.strength += entities[e].weight;
+    });
 });
 
 data.nodes.forEach(function (n) {
     n.mass = n.entities.length;
+    n.entities.forEach(function (e) {
+        n.mass += entities[e.name].weight;
+    });
 });
 
 console.log(data.nodes[0]);
