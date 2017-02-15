@@ -37,7 +37,7 @@ var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function (d) {
         return d.id;
     }))
-    .force("charge", d3.forceManyBody().strength(-360))
+    .force("charge", d3.forceManyBody().strength(-2048))
     .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
     .force("collide", forceCollide);
 
@@ -66,7 +66,8 @@ function workspace(error, data) {
     simulation.force("link")
         .links(edges)
         .strength(function (link) {
-            return link.similarity;
+            return link.strength;
+            // return link.similarity;
         });
 
     var linkG = svg.append('g');
@@ -321,7 +322,7 @@ function workspace(error, data) {
                 });
 
 
-            if(hasOverlap){
+            if (hasOverlap) {
                 model.documentOverlapping(overlappedDocId, d.id);
             }
         }
@@ -343,7 +344,6 @@ function workspace(error, data) {
         var selectedNode = node.filter(function (dd) {
             return dd.id == d.id;
         });
-
 
         selectedNode.select('rect')
             .attr("width", function (d) {
@@ -375,6 +375,12 @@ function workspace(error, data) {
         d.radius = Math.sqrt(d.width * d.width + d.height * d.height) / 2;
         d.fx = null;
         d.fy = null;
+
+        node.selectAll('rect')
+            .style('stroke-width', function (d) {
+                console.log(d.id);
+                return 0;
+            });
 
         // simulation.alpha(1).restart();
 
@@ -582,7 +588,8 @@ function workspace(error, data) {
     }
 
     function linkFilter(d) {
-        return ((d.source.id == clickedDoc) || (d.target.id == clickedDoc)) && (d.source.id != d.target.id) && (d.similarity > 0.01);
+        return ((d.source.id == clickedDoc) || (d.target.id == clickedDoc)) && (d.source.id != d.target.id) && (d.strength > 0.05);
+        // return ((d.source.id == clickedDoc) || (d.target.id == clickedDoc)) && (d.source.id != d.target.id) && (d.similarity > 0.01);
     }
 
     function unfixNodes() {

@@ -10,7 +10,6 @@
 
 var fs = require('fs');
 var data = JSON.parse(fs.readFileSync('./crescent/docs.json'));
-// console.log(Object.keys(data));
 
 var entities = {};
 
@@ -19,6 +18,7 @@ data.nodes.forEach(function(d){
         if(!entities.hasOwnProperty(e.name)){
             var ee = JSON.parse(JSON.stringify(e));
             ee.weight = ee.value;
+            ee.weight = 1.0;
             delete ee.count;
             delete ee.value;
 
@@ -30,7 +30,16 @@ data.nodes.forEach(function(d){
     });
 });
 
-// console.log(Object.getOwnPropertyNames(entities));
+
+var entityLength = Object.keys(entities).length;
+
+
+for(var propertyName in entities) {
+    console.log(propertyName);
+    entities[propertyName].weight /= entityLength;
+    console.log(entities[propertyName].weight);
+}
+
 
 // change strength based on initial tf-idf values
 data.links.forEach(function (l) {
@@ -47,9 +56,6 @@ data.nodes.forEach(function (n) {
     });
 });
 
-console.log(data.nodes[0]);
-console.log(data.links[0]);
-console.log(entities);
 
 data.documents = data.nodes;
 delete data.nodes;
