@@ -3,7 +3,7 @@
  */
 
 var fs = require('fs');
-var obj = JSON.parse(fs.readFileSync('crescent3.json'));
+var obj = JSON.parse(fs.readFileSync('crescent.json'));
 
 var docs = obj.documents;
 var aliases = obj.aliases;
