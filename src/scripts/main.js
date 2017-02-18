@@ -333,9 +333,9 @@ function workspace(error, data) {
         // forceCollide.initialize(simulation.nodes());
 
         // Update and restart the simulation.
-        // simulation.nodes(documents);
-        // simulation.force("link").links(edges);
-        // simulation.alpha(0.3).restart();
+        simulation.nodes(documents);
+        simulation.force("link").links(edges);
+        simulation.alpha(0.3).restart();
     }
 
 

@@ -19,7 +19,7 @@ var Model;
         edges,
         modelType,
         entities,
-        K = 0.01, // Constant for update entity weight
+        K = 0.1, // Constant for update entity weight
         searches;
 
     // init entityWeightVector;
@@ -171,13 +171,10 @@ var Model;
         // init edges
         edges.forEach(function (e) {
             console.log(e.strength);
-            console.log(e.source);
 
-            console.log(documents);
             var d1=documents.find(function (d) {
                 return d.id == e.source;
             });
-            console.log(d1);
 
             e.strength = cosineDistance(documents.find(function (d) {
                 return d.id == e.source;

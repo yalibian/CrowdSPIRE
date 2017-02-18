@@ -40,4 +40,33 @@ d3.selection.prototype.moveToBack = function () {
 
 
 
+// Calculate the distance between two documents based on entity weights
+
+// The normalization must also be weighted. For vectors u and v,
+// with weight vector w, the weighted cosine is
+// (sum w[i]*u[i]*v[i]) / sqrt[(sum w[i]*u[i]^2)*(sum w[i]*v[i]^2)].
+function cosineDistance(doc1, doc2, entities) {
+
+    var distance = 0.0;
+    var len1 = 0.0;
+    var len2 = 0.0;
+
+    doc1.entities.forEach(function (e1) {
+
+        len1 += e1.value * e1.value * entities[e1.name].weight;
+        doc2.entities.forEach(function (e2) {
+            len2 += e2.value * e2.value * entities[e2.name].weight;
+            if (e1.name == e2.name) {
+                distance += e1.value * e2.value * entities[e1.name].weight;
+            }
+        });
+
+    });
+
+    len1 = Math.sqrt(len1);
+    len2 = Math.sqrt(len2);
+
+    return distance/(len1 * len2);
+}
+
 
