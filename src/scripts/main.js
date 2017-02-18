@@ -37,7 +37,7 @@ var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function (d) {
         return d.id;
     }))
-    .force("charge", d3.forceManyBody().strength(-512))
+    .force("charge", d3.forceManyBody().strength(-64))
     .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
     .force("collide", forceCollide);
 
@@ -330,7 +330,12 @@ function workspace(error, data) {
         if (!d3.event.active) {
             simulation.alphaTarget(0);
         }
-        forceCollide.initialize(simulation.nodes());
+        // forceCollide.initialize(simulation.nodes());
+
+        // Update and restart the simulation.
+        // simulation.nodes(documents);
+        // simulation.force("link").links(edges);
+        // simulation.alpha(0.3).restart();
     }
 
 

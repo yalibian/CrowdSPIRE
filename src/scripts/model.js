@@ -19,11 +19,8 @@ var Model;
         edges,
         modelType,
         entities,
+        K = 0.01, // Constant for update entity weight
         searches;
-
-    // entities
-    // searches
-
 
     // init entityWeightVector;
 
@@ -92,7 +89,6 @@ var Model;
         model.documentOverlapping = function (docId1, docId2) {
             // Find entities
             console.log("in Document Overlapping");
-            console.log(docId1, docId2);
 
             var doc1 = documents.find(function (d) {
                 return d.id == docId1;
@@ -102,21 +98,31 @@ var Model;
                 return d.id == docId2;
             });
 
-            // Find shared entities
-            console.log(doc1.entities);
-            console.log(doc2.entities);
-            sharedEntities = doc1.entities.filter(function(e) {
+            var sharedEntities = doc1.entities.filter(function (e) {
                 return doc2.entities.filter(function (ee) {
                         return ee.name == e.name;
                     }).length > 0;
+            }).map(function (e) {
+                return e.name;
             });
 
+            var keys = Object.keys(entities);
+            var decK = sharedEntities.length * K / (keys.length - sharedEntities.length);
             console.log(sharedEntities);
+            console.log(decK);
+            for (var i in keys) {
+                var e = entities[keys[i]];
+                if (sharedEntities.indexOf(e.name) >= 0) {
+                    console.log(e.name);
+                    e.weight += K;
+                    console.log(e.weight);
+                } else {
+                    e.weight -= decK;
+                }
+            }
 
-            // Update entity weights vector
-
-            // Update model
-
+            // Update whole mass and strength of spring.
+            updateMode();
         };
 
         // TODO
@@ -152,12 +158,58 @@ var Model;
     // If the docs is loaded, init the model: entityWeightVector
     function initModel() {
 
+        console.log('init models');
+        // init documents mass
+        // update mass
+        documents.forEach(function (d) {
+            d.mass = d.entities.reduce(function (acc, e) {
+                return acc + entities[e.name].weight * e.value;
+            }, 0);
+        });
+
+        console.log(edges);
+        // init edges
+        edges.forEach(function (e) {
+            console.log(e.strength);
+            console.log(e.source);
+
+            console.log(documents);
+            var d1=documents.find(function (d) {
+                return d.id == e.source;
+            });
+            console.log(d1);
+
+            e.strength = cosineDistance(documents.find(function (d) {
+                return d.id == e.source;
+            }), documents.find(function (d) {
+                return d.id == e.target;
+            }), entities);
+            console.log(e.strength);
+            // edges.strength = cosineDistance(e.source, e.target, entities);
+        });
+
     }
 
 
     // When the entities weight updated, update the mass and spring of docs.
     function updateMode() {
 
+        // update mass
+        documents.forEach(function (d) {
+            d.mass = d.entities.reduce(function (acc, e) {
+                return acc + entities[e.name].weight * e.value;
+            }, 0);
+        });
+        // console.log(documents);
+
+        // weighted sum model, to calculate the similarity
+        // update edges
+        edges.forEach(function (e) {
+            console.log(e.strength);
+            e.strength = cosineDistance(e.source, e.target, entities);
+            console.log(e.strength);
+            // edges.strength = cosineDistance(e.source, e.target, entities);
+        });
     }
 
 })();
