@@ -1,15 +1,10 @@
 /**
  * Created by Yali on 2/9/17.
  */
-
-// Updated model for calculating document weight and links, and entity weights.
-
-// a weighting vector is applied to each dimension for creating
-// Every time the weighting vector changed, changing the M and K
+// Crowdsourcing Based Update Model, Yet another way to calculate TF-IDF
+// which not only include the weighted weighted but also related things.
 
 
-// Once the updated weight vector is computed, the model updates the spring strengths and document masses,
-// and the layout iterates until settling again.
 var Model;
 
 (function () {
@@ -19,6 +14,7 @@ var Model;
         edges,
         modelType,
         entities,
+        crowd,
         K = 0.1, // Constant for update entity weight
         searches;
 
@@ -42,6 +38,18 @@ var Model;
             documents = data.documents;
             edges = data.edges;
             entities = data.entities;
+
+            return model;
+        };
+
+
+        // Used for Crowdsourcing update
+        model.crowd = function (x) {
+            if (!arguments.length) {
+                return data;
+            }
+            console.log(x);
+            crowd = x;
 
             return model;
         };
@@ -88,7 +96,6 @@ var Model;
         // where those two documents (as well as others sharing similar entities) are closer together.
         model.documentOverlapping = function (docId1, docId2) {
             // Find entities
-            console.log("in Document Overlapping");
 
             var doc1 = documents.find(function (d) {
                 return d.id == docId1;
@@ -108,14 +115,10 @@ var Model;
 
             var keys = Object.keys(entities);
             var decK = sharedEntities.length * K / (keys.length - sharedEntities.length);
-            console.log(sharedEntities);
-            console.log(decK);
             for (var i in keys) {
                 var e = entities[keys[i]];
                 if (sharedEntities.indexOf(e.name) >= 0) {
-                    console.log(e.name);
                     e.weight += K;
-                    console.log(e.weight);
                 } else {
                     e.weight -= decK;
                 }
@@ -158,7 +161,6 @@ var Model;
     // If the docs is loaded, init the model: entityWeightVector
     function initModel() {
 
-        console.log('init models');
         // init documents mass
         // update mass
         documents.forEach(function (d) {
@@ -167,21 +169,18 @@ var Model;
             }, 0);
         });
 
-        console.log(edges);
         // init edges
         edges.forEach(function (e) {
-            console.log(e.strength);
 
-            var d1=documents.find(function (d) {
+            var d1 = documents.find(function (d) {
                 return d.id == e.source;
             });
 
-            e.strength = cosineDistance(documents.find(function (d) {
+            e.strength = cosineSimilarity(documents.find(function (d) {
                 return d.id == e.source;
             }), documents.find(function (d) {
                 return d.id == e.target;
             }), entities);
-            console.log(e.strength);
             // edges.strength = cosineDistance(e.source, e.target, entities);
         });
 
@@ -191,23 +190,19 @@ var Model;
     // When the entities weight updated, update the mass and spring of docs.
     function updateMode() {
 
-        // update mass
+        // update mass:
         documents.forEach(function (d) {
             d.mass = d.entities.reduce(function (acc, e) {
                 return acc + entities[e.name].weight * e.value;
             }, 0);
         });
-        // console.log(documents);
 
         // weighted sum model, to calculate the similarity
-        // update edges
+        // update edges, based on Crowdsourcing
         edges.forEach(function (e) {
-            console.log(e.strength);
-            e.strength = cosineDistance(e.source, e.target, entities);
-            console.log(e.strength);
+            e.strength = cosineSimilarity(e.source, e.target, entities);
             // edges.strength = cosineDistance(e.source, e.target, entities);
         });
     }
-
 })();
 
