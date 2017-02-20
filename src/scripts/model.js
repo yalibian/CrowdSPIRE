@@ -200,7 +200,8 @@ var Model;
         // weighted sum model, to calculate the similarity
         // update edges, based on Crowdsourcing
         edges.forEach(function (e) {
-            e.strength = cosineSimilarity(e.source, e.target, entities);
+            // e.strength = cosineSimilarity(e.source, e.target, entities);
+            e.strength = softSimilarity(e.source, e.target, entities, crowd);
             // edges.strength = cosineDistance(e.source, e.target, entities);
         });
     }
