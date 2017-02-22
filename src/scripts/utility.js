@@ -86,8 +86,7 @@ function softSimilarity(doc1, doc2, entities, crowd) {
             } else {
                 crowd.links.forEach(function (c) {
                     if((c.target == e1.name && c.source == e2.name) || (c.target == e2.name && c.source == e2.name)){
-                        console.log(e1.name, e2.name);
-                        distance += c.votes/275 * entities[e1.name].weight * entities[e2.name].weight * e1.value * e2.value;
+                        distance += c.votes/275 * entities[e1.name].weight * entities[e2.name].weight * e1.value * e2.value * 125;
                     }
                 })
             }

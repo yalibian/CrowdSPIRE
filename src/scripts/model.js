@@ -15,7 +15,7 @@ var Model;
         modelType,
         entities,
         crowd,
-        K = 0.1, // Constant for update entity weight
+        K = 0.05, // Constant for update entity weight
         searches;
 
     // init entityWeightVector;
@@ -26,6 +26,12 @@ var Model;
         documents = data.documents;
         edges = data.edges;
         entities = data.entities;
+
+        var keys = Object.keys(entities);
+        for (var i in keys) {
+            entities[keys[i]].update = false;
+        }
+
         initModel();
         var model = {};
 
@@ -94,6 +100,7 @@ var Model;
         // those two documents, and increases the weight on the corresponding entities.
         // As a result, a new layout is incrementally generated reflecting the new similarity weighting,
         // where those two documents (as well as others sharing similar entities) are closer together.
+        // Update entity weight based on documents and crowd data
         model.documentOverlapping = function (docId1, docId2) {
             // Find entities
 
@@ -105,22 +112,42 @@ var Model;
                 return d.id == docId2;
             });
 
-            var sharedEntities = doc1.entities.filter(function (e) {
-                return doc2.entities.filter(function (ee) {
-                        return ee.name == e.name;
-                    }).length > 0;
-            }).map(function (e) {
-                return e.name;
+            var count = 0; // count how many entities updated
+            var decK = 0.0; // count how many entities updated
+            doc1.entities.forEach(function (e1) {
+                doc2.entities.forEach(function (e2) {
+                    if (e1.name == e2.name) {
+                        entities[e1.name].weight += K;
+                        decK += K;
+                        count ++;
+                        entities[e1.name].update = true;
+                    } else {
+                        crowd.links.forEach(function (c) {
+                            if((c.target == e1.name && c.source == e2.name) || (c.target == e2.name && c.source == e2.name)){
+                                entities[e1.name].weight += K * c.votes/275;
+                                entities[e1.name].update = true;
+                                entities[e2.name].weight += K * c.votes/275;
+                                entities[e2.name].update = true;
+                                decK += K * c.votes/275 * 2;
+                                count += 2;
+                            }
+                        })
+                    }
+                });
             });
 
             var keys = Object.keys(entities);
-            var decK = sharedEntities.length * K / (keys.length - sharedEntities.length);
+            console.log(keys.length, count, decK);
+            decK = decK / (keys.length - count);
             for (var i in keys) {
                 var e = entities[keys[i]];
-                if (sharedEntities.indexOf(e.name) >= 0) {
-                    e.weight += K;
+                if (e.update) {
+                    e.update = false;
                 } else {
+                    console.log(e, e.weight);
                     e.weight -= decK;
+                    console.log(e.weight);
+                    e.weight = Math.max(0, e.weight);
                 }
             }
 
