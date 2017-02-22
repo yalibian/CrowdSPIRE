@@ -38,6 +38,7 @@ var simulation = d3.forceSimulation()
         return d.id;
     }))
     .force("charge", d3.forceManyBody().strength(-64))
+    // .force("charge", d3.forceManyBody().strength(-12))
     .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
     .force("collide", forceCollide);
 
