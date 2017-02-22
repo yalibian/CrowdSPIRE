@@ -1,15 +1,10 @@
 /**
  * Created by Yali on 2/9/17.
  */
-
-// Updated model for calculating document weight and links, and entity weights.
-
-// a weighting vector is applied to each dimension for creating
-// Every time the weighting vector changed, changing the M and K
+// Crowdsourcing Based Update Model, Yet another way to calculate TF-IDF
+// which not only include the weighted weighted but also related things.
 
 
-// Once the updated weight vector is computed, the model updates the spring strengths and document masses,
-// and the layout iterates until settling again.
 var Model;
 
 (function () {
@@ -19,7 +14,8 @@ var Model;
         edges,
         modelType,
         entities,
-        K = 0.1, // Constant for update entity weight
+        crowd,
+        K = 0.05, // Constant for update entity weight
         searches;
 
     // init entityWeightVector;
@@ -30,6 +26,12 @@ var Model;
         documents = data.documents;
         edges = data.edges;
         entities = data.entities;
+
+        var keys = Object.keys(entities);
+        for (var i in keys) {
+            entities[keys[i]].update = false;
+        }
+
         initModel();
         var model = {};
 
@@ -42,6 +44,18 @@ var Model;
             documents = data.documents;
             edges = data.edges;
             entities = data.entities;
+
+            return model;
+        };
+
+
+        // Used for Crowdsourcing update
+        model.crowd = function (x) {
+            if (!arguments.length) {
+                return data;
+            }
+            console.log(x);
+            crowd = x;
 
             return model;
         };
@@ -86,9 +100,9 @@ var Model;
         // those two documents, and increases the weight on the corresponding entities.
         // As a result, a new layout is incrementally generated reflecting the new similarity weighting,
         // where those two documents (as well as others sharing similar entities) are closer together.
+        // Update entity weight based on documents and crowd data
         model.documentOverlapping = function (docId1, docId2) {
             // Find entities
-            console.log("in Document Overlapping");
 
             var doc1 = documents.find(function (d) {
                 return d.id == docId1;
@@ -98,26 +112,42 @@ var Model;
                 return d.id == docId2;
             });
 
-            var sharedEntities = doc1.entities.filter(function (e) {
-                return doc2.entities.filter(function (ee) {
-                        return ee.name == e.name;
-                    }).length > 0;
-            }).map(function (e) {
-                return e.name;
+            var count = 0; // count how many entities updated
+            var decK = 0.0; // count how many entities updated
+            doc1.entities.forEach(function (e1) {
+                doc2.entities.forEach(function (e2) {
+                    if (e1.name == e2.name) {
+                        entities[e1.name].weight += K;
+                        decK += K;
+                        count ++;
+                        entities[e1.name].update = true;
+                    } else {
+                        crowd.links.forEach(function (c) {
+                            if((c.target == e1.name && c.source == e2.name) || (c.target == e2.name && c.source == e2.name)){
+                                entities[e1.name].weight += K * c.votes/275;
+                                entities[e1.name].update = true;
+                                entities[e2.name].weight += K * c.votes/275;
+                                entities[e2.name].update = true;
+                                decK += K * c.votes/275 * 2;
+                                count += 2;
+                            }
+                        })
+                    }
+                });
             });
 
             var keys = Object.keys(entities);
-            var decK = sharedEntities.length * K / (keys.length - sharedEntities.length);
-            console.log(sharedEntities);
-            console.log(decK);
+            console.log(keys.length, count, decK);
+            decK = decK / (keys.length - count);
             for (var i in keys) {
                 var e = entities[keys[i]];
-                if (sharedEntities.indexOf(e.name) >= 0) {
-                    console.log(e.name);
-                    e.weight += K;
-                    console.log(e.weight);
+                if (e.update) {
+                    e.update = false;
                 } else {
+                    console.log(e, e.weight);
                     e.weight -= decK;
+                    console.log(e.weight);
+                    e.weight = Math.max(0, e.weight);
                 }
             }
 
@@ -158,7 +188,6 @@ var Model;
     // If the docs is loaded, init the model: entityWeightVector
     function initModel() {
 
-        console.log('init models');
         // init documents mass
         // update mass
         documents.forEach(function (d) {
@@ -167,21 +196,18 @@ var Model;
             }, 0);
         });
 
-        console.log(edges);
         // init edges
         edges.forEach(function (e) {
-            console.log(e.strength);
 
-            var d1=documents.find(function (d) {
+            var d1 = documents.find(function (d) {
                 return d.id == e.source;
             });
 
-            e.strength = cosineDistance(documents.find(function (d) {
+            e.strength = cosineSimilarity(documents.find(function (d) {
                 return d.id == e.source;
             }), documents.find(function (d) {
                 return d.id == e.target;
             }), entities);
-            console.log(e.strength);
             // edges.strength = cosineDistance(e.source, e.target, entities);
         });
 
@@ -191,23 +217,20 @@ var Model;
     // When the entities weight updated, update the mass and spring of docs.
     function updateMode() {
 
-        // update mass
+        // update mass:
         documents.forEach(function (d) {
             d.mass = d.entities.reduce(function (acc, e) {
                 return acc + entities[e.name].weight * e.value;
             }, 0);
         });
-        // console.log(documents);
 
         // weighted sum model, to calculate the similarity
-        // update edges
+        // update edges, based on Crowdsourcing
         edges.forEach(function (e) {
-            console.log(e.strength);
-            e.strength = cosineDistance(e.source, e.target, entities);
-            console.log(e.strength);
+            // e.strength = cosineSimilarity(e.source, e.target, entities);
+            e.strength = softSimilarity(e.source, e.target, entities, crowd);
             // edges.strength = cosineDistance(e.source, e.target, entities);
         });
     }
-
 })();
 

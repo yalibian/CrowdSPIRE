@@ -38,19 +38,22 @@ var simulation = d3.forceSimulation()
         return d.id;
     }))
     .force("charge", d3.forceManyBody().strength(-64))
+    // .force("charge", d3.forceManyBody().strength(-12))
     .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
     .force("collide", forceCollide);
 
 var q = d3.queue();
 q.defer(d3.json, 'data/crescent.json');
+q.defer(d3.json, 'data/crescent_crowd.json');
 q.await(workspace);
 
 
 // Main controller and view
 // draw the workspace with docs
-function workspace(error, data) {
+function workspace(error, data, crowd) {
 
-    var model = Model(data);
+    var model = Model(data)
+        .crowd(crowd);
     var documents = model.documents();
     var edges = model.edges();
 
@@ -383,7 +386,6 @@ function workspace(error, data) {
 
         node.selectAll('rect')
             .style('stroke-width', function (d) {
-                console.log(d.id);
                 return 0;
             });
 
@@ -511,7 +513,6 @@ function workspace(error, data) {
         var docContent = docLevelNode.append("foreignObject")
             .attr("class", "doc")
             .on('click', function () {
-                console.log("In foreignObject");
             })
             .attr("width", function (d) {
                 return d.width;
