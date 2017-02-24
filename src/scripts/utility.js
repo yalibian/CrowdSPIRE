@@ -93,9 +93,6 @@ function softSimilarity(doc1, doc2, entities, crowd) {
         });
     });
 
-    len1 = Math.sqrt(len1);
-    len2 = Math.sqrt(len2);
-
     return distance/(len1 * len2);
 }
 

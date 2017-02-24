@@ -15,7 +15,8 @@ var Model;
         modelType,
         entities,
         crowd,
-        K = 0.05, // Constant for update entity weight
+        // K = 0.05, // Constant for update entity weight
+        K = 0.1, // Constant for update entity weight
         searches;
 
     // init entityWeightVector;
@@ -54,7 +55,6 @@ var Model;
             if (!arguments.length) {
                 return data;
             }
-            console.log(x);
             crowd = x;
 
             return model;
@@ -117,6 +117,7 @@ var Model;
             doc1.entities.forEach(function (e1) {
                 doc2.entities.forEach(function (e2) {
                     if (e1.name == e2.name) {
+                        console.log(entities[e1.name].weight);
                         entities[e1.name].weight += K;
                         decK += K;
                         count ++;
@@ -137,17 +138,15 @@ var Model;
             });
 
             var keys = Object.keys(entities);
-            console.log(keys.length, count, decK);
             decK = decK / (keys.length - count);
             for (var i in keys) {
                 var e = entities[keys[i]];
                 if (e.update) {
+                    e.weight = Math.min(1, e.weight);
                     e.update = false;
                 } else {
-                    console.log(e, e.weight);
                     e.weight -= decK;
-                    console.log(e.weight);
-                    e.weight = Math.max(0, e.weight);
+                    e.weight = Math.max(0.00, e.weight);
                 }
             }
 
@@ -229,7 +228,9 @@ var Model;
         edges.forEach(function (e) {
             // e.strength = cosineSimilarity(e.source, e.target, entities);
             e.strength = softSimilarity(e.source, e.target, entities, crowd);
-            // edges.strength = cosineDistance(e.source, e.target, entities);
+            if(isNaN(e.strength)){
+                console.log(e);
+            }
         });
     }
 })();
