@@ -229,9 +229,13 @@ var Model;
             // e.strength = cosineSimilarity(e.source, e.target, entities);
             e.strength = softSimilarity(e.source, e.target, entities, crowd);
             if(isNaN(e.strength)){
+                e.strength = 0.005;
                 console.log(e);
             }
         });
+
+        console.log(edges);
+        console.log(entities);
     }
 })();
 
