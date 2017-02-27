@@ -6,20 +6,11 @@ import * as d3 from "d3";
 
 import React, {PropTypes, Component} from 'react';
 import Model from './model';
-// import closeImage from '../../actions/lists';
-
-
+import './vis.styl';
 
 import minusImage from '../../assets/images/minus.png';
 import closeImage from '../../assets/images/close.png';
 
-// import * as Utility from './utility';
-
-// scaleBand = d3.scaleBand;
-// d3Range = d3.range;
-// select = d3.select;
-// selectAll = d3.selectAll;
-// scaleLinear = d3.scaleLinear;
 
 const visStyle = {
   display: 'flex',

@@ -34,6 +34,16 @@ module.exports = {
         loader: 'style-loader!css-loader!stylus-loader'
       },
       {test: /\.json$/, loader: "json-loader"},
+      // {
+      //   test    : /\.scss$/,
+      //   exclude : null,
+      //   loaders : [
+      //     'style',
+      //     BASE_CSS_LOADER,
+      //     'postcss',
+      //     'sass?sourceMap'
+      //   ]
+      // },
       {
         test: /\.(jpg|jpeg|gif|png|ico|ttf|otf|eot|svg|woff|woff2)(\?[a-z0-9]+)?$/,
         // loader: 'file-loader?name=/src/assets/images/[name].[ext]'

@@ -1,0 +1,13 @@
+.IconRect {
+  fill: #4682b4;
+}
+.DocRect {
+  fill: #4682b4;
+  stroke-width: 1;
+  stroke: #000;
+}
+line {
+  stroke-width: 1;
+  stroke: #808080;
+  opacity: 0.2;
+}
