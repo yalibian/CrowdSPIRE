@@ -33,11 +33,10 @@ module.exports = {
         test: /\.styl$/,
         loader: 'style-loader!css-loader!stylus-loader'
       },
-      // {test: /\.json$/, loader: "json-loader", include: "./actions/crescent.json"},
       {test: /\.json$/, loader: "json-loader"},
-      // {test: /\.json$/, loader: 'json-loader'},
       {
         test: /\.(jpg|jpeg|gif|png|ico|ttf|otf|eot|svg|woff|woff2)(\?[a-z0-9]+)?$/,
+        // loader: 'file-loader?name=/src/assets/images/[name].[ext]'
         loader: 'file-loader?name=[path][name].[ext]'
       }]
   },

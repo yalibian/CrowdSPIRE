@@ -6,6 +6,13 @@ import * as d3 from "d3";
 
 import React, {PropTypes, Component} from 'react';
 import Model from './model';
+// import closeImage from '../../actions/lists';
+
+
+
+import minusImage from '../../assets/images/minus.png';
+import closeImage from '../../assets/images/close.png';
+
 // import * as Utility from './utility';
 
 // scaleBand = d3.scaleBand;
@@ -95,10 +102,8 @@ class Vis extends Component {
   // };
 
   componentDidUpdate() {
-    console.log('In componentDidMount');
     const {data, crowd} = this.props;
     if (data) {
-      console.log('In componentDidMount in IF');
 
       let svg = d3.select(this.refs.vis);
       const WIDTH = parseInt(svg.style("width"), 10);
@@ -119,10 +124,6 @@ class Vis extends Component {
         // .force("charge", d3.forceManyBody().strength(-12))
         .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
         .force("collide", forceCollide);
-
-      console.log("In componentDidMount: Model");
-      console.log(Model);
-
 
       let model = Model(data)
         .crowd(crowd);
@@ -265,7 +266,6 @@ class Vis extends Component {
             });
         }
       }
-
 
       function nodeClicked(d) {
 
@@ -548,8 +548,8 @@ class Vis extends Component {
         // Add close/delete button
         docLevelNode.append('image')
           .attr("xlink:href", function (d) {
-            // return './img/close.png';
-            return '../assets/images/close.png';
+            return closeImage;
+            // return '../assets/images/close.png';
           })
           .attr("width", "16px")
           .attr("height", "16px")
@@ -565,7 +565,8 @@ class Vis extends Component {
         // Add minimize button
         docLevelNode.append('image')
           .attr("xlink:href", function (d) {
-            return './img/minus.png';
+            return minusImage;
+            // return './img/minus.png';
           })
           .attr("width", "16px")
           .attr("height", "16px")
@@ -579,7 +580,7 @@ class Vis extends Component {
           .on('click', minimizeNode);
 
         //Add document content into docNode(Document Level Node)
-        var docContent = docLevelNode.append("foreignObject")
+        let docContent = docLevelNode.append("foreignObject")
           .attr("class", "doc")
           .on('click', function () {
           })
@@ -644,12 +645,12 @@ class Vis extends Component {
 
         link.append('line');
 
-        entity = link.append('text')
+        let entity = link.append('text')
           .attr('font-size', "10px")
           .attr("text-anchor", "middle")
           .text(function (d) {
-            var str = '';
-            for (var i in d.entities) {
+            let str = '';
+            for (let i in d.entities) {
               if (i == 0) {
                 str += d.entities[i];
               } else {
