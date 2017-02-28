@@ -11,7 +11,6 @@ export const urls = {
 
 export const routes = (
   <Route path={urls.index} component={Base}>
-    {/*<IndexRoute component={Header} />*/}
     <IndexRoute component={Workspace} />
   </Route>
 );

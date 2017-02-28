@@ -2,10 +2,12 @@
  * Created by Yali on 2/27/17.
  */
 
-import * as d3 from "d3";
+// import * as d3 from "d3";
+// import * as d3 from "d3";
+import {rectOverlap, d3, Model} from '../../utilities'
 
 import React, {PropTypes, Component} from 'react';
-import Model from './model';
+// import Model from './model';
 import './vis.styl';
 
 import minusImage from '../../assets/images/minus.png';
@@ -17,39 +19,6 @@ const visStyle = {
   minHeight: '180px',
   height: '100%'
 };
-
-function rectOverlap(A, B) {
-    function valueInRange(value, min, max) {
-        return (value <= max) && (value >= min);
-    }
-
-  let xOverlap = valueInRange(A.x, B.x, B.x + B.width) ||
-    valueInRange(B.x, A.x, A.x + A.width);
-
-  let yOverlap = valueInRange(A.y, B.y, B.y + B.height) ||
-    valueInRange(B.y, A.y, A.y + A.height);
-
-  return xOverlap && yOverlap;
-}
-
-
-// Moving an SVG selection to the front/back
-// Thanks to d3-extended (github.com/wbkd/d3-extended)
-d3.selection.prototype.moveToFront = function () {
-  return this.each(function () {
-    this.parentNode.appendChild(this);
-  });
-};
-
-d3.selection.prototype.moveToBack = function () {
-  return this.each(function () {
-    let firstChild = this.parentNode.firstChild;
-    if (firstChild) {
-      this.parentNode.insertBefore(this, firstChild);
-    }
-  });
-};
-
 
 const DocWidth = 250;
 const DocHeight = 300;
@@ -111,7 +80,6 @@ class Vis extends Component {
           return d.id;
         }))
         .force("charge", d3.forceManyBody().strength(-64))
-        // .force("charge", d3.forceManyBody().strength(-12))
         .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
         .force("collide", forceCollide);
 
