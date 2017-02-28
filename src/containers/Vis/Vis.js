@@ -19,36 +19,35 @@ const visStyle = {
 };
 
 function rectOverlap(A, B) {
-
     function valueInRange(value, min, max) {
         return (value <= max) && (value >= min);
     }
 
-    let xOverlap = valueInRange(A.x, B.x, B.x + B.width) ||
-        valueInRange(B.x, A.x, A.x + A.width);
+  let xOverlap = valueInRange(A.x, B.x, B.x + B.width) ||
+    valueInRange(B.x, A.x, A.x + A.width);
 
-    let yOverlap = valueInRange(A.y, B.y, B.y + B.height) ||
-        valueInRange(B.y, A.y, A.y + A.height);
+  let yOverlap = valueInRange(A.y, B.y, B.y + B.height) ||
+    valueInRange(B.y, A.y, A.y + A.height);
 
-    return xOverlap && yOverlap;
+  return xOverlap && yOverlap;
 }
 
 
 // Moving an SVG selection to the front/back
 // Thanks to d3-extended (github.com/wbkd/d3-extended)
 d3.selection.prototype.moveToFront = function () {
-    return this.each(function () {
-        this.parentNode.appendChild(this);
-    });
+  return this.each(function () {
+    this.parentNode.appendChild(this);
+  });
 };
 
 d3.selection.prototype.moveToBack = function () {
-    return this.each(function () {
-        let firstChild = this.parentNode.firstChild;
-        if (firstChild) {
-            this.parentNode.insertBefore(this, firstChild);
-        }
-    });
+  return this.each(function () {
+    let firstChild = this.parentNode.firstChild;
+    if (firstChild) {
+      this.parentNode.insertBefore(this, firstChild);
+    }
+  });
 };
 
 
@@ -494,9 +493,8 @@ class Vis extends Component {
 
 
       // Icon-Level Node -> Document-Level Node:
-      //      When a Icon-Level node double clicked, enlarge the size of background rectangle, and add foreign object to show contents of this node.
+      // When a Icon-Level node double clicked, enlarge the size of background rectangle, and add foreign object to show contents of this node.
       function maximizeNode(selectedDoc) {
-
 
         // Improve efficiency using node.filter (May be better)
         let docLevelNode = node.filter(function (d) {

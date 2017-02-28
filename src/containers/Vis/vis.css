@@ -11,3 +11,20 @@ line {
   stroke: #808080;
   opacity: 0.2;
 }
+.doc {
+  font-family: arial, helvetica, 'sans-serif';
+  font-size: 12px;
+  padding: 2px;
+  fill: #fff;
+}
+.doc p {
+  margin: 0;
+}
+p.doc-content {
+  margin-top: 8px;
+  overflow: scroll;
+}
+.doc-title {
+  font-size: 18px;
+  text-align: center;
+}

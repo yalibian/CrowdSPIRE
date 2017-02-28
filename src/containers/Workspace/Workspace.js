@@ -74,8 +74,6 @@ export default class Workspace extends Component {
     };
 
     return (
-      <div style={{height: '100%'}}>
-        <Header/>
         <div id="main" style={mainStyle}>
           <div id="workspace"
                style={workspaceStyle}>
@@ -84,7 +82,6 @@ export default class Workspace extends Component {
           </div>
           <Controller/>
         </div>
-      </div>
     );
   }
 }

@@ -5,10 +5,18 @@ const propTypes = {
 };
 
 
+const style = {
+  height: '100%',
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column'
+};
+
+
 const BaseContainer = (props) => (
-  <main>
+  <div style={style}>
     {props.children}
-  </main>
+  </div>
 );
 
 BaseContainer.propTypes = propTypes;
