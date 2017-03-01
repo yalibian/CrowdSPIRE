@@ -8,7 +8,7 @@ import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import {Router, browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
-// import injectTapEventPlugin from 'react-tap-event-plugin';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 // import * as injectTapEventPlugin from 'react-tap-event-plugin';
 
 import {routes} from './routes';
@@ -17,7 +17,7 @@ import configureStore from './store/configureStore';
 
 import './assets/temp.styl';
 
-// injectTapEventPlugin();
+injectTapEventPlugin();
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
