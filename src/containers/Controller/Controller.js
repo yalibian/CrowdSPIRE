@@ -2,9 +2,13 @@
  * Created by Yali on 2/27/17.
  */
 
-import React from 'react'
-import {IndexLink, Link} from 'react-router'
+// import React from 'react'
+import React, {Component, PropTypes} from 'react';
+import ControllerTabs from './ControllerTabs'
+// import {IndexLink, Link} from 'react-router'
 // import './Header.scss'
+
+
 
 const controllerStyle = {
   position: 'relative',
@@ -30,7 +34,8 @@ const style1 = {
 
 export const Controller = () => (
   <div id="controller" style={controllerStyle}>
-    <h1 style={style1}>Controller</h1>
+  <h1 style={style1}>Controller</h1>
+    <ControllerTabs/>
   </div>
 );
 

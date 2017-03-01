@@ -6,8 +6,10 @@ export const MOVE_CARD = 'MOVE_CARD';
 export const MOVE_LIST = 'MOVE_LIST';
 export const TOGGLE_DRAGGING = 'TOGGLE_DRAGGING';
 
-import * as data from '!json!./crescent.json';
-import * as crowd from '!json!./crescent_crowd.json';
+// import * as data from '!json!./crescent.json';
+import * as data from './crescent.json';
+// import * as crowd from '!json!./crescent_crowd.json';
+import * as crowd from './crescent_crowd.json';
 
 export function getLists(quantity) {
 

@@ -1,16 +1,22 @@
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
-const config = require('./webpack.config.development');
+"use strict";
 
-/* eslint-disable no-console */
-/* eslint-disable consistent-return */
-new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  hot: true,
-  historyApiFallback: true
-}).listen(3000, 'localhost', (err) => {
-  if (err) {
-    return console.log(err);
-  }
-  console.log('Listening at http://localhost:3000/');
+const Webpack = require("webpack");
+const WebpackDevServer = require('webpack-dev-server');
+const webpackConfig = require("./webpack.config");
+
+const compiler = Webpack(webpackConfig);
+const server = new WebpackDevServer(compiler, {
+    stats: {
+        colors: true
+    },
+    setup: function(app) {
+        app.use(function(req, res, next) {
+            console.log(`Using middleware for ${req.url}`);
+            next();
+        });
+    }
+});
+
+server.listen(8080, "127.0.0.1", function() {
+    console.log("CrowdSPIRE on http://localhost:8080");
 });

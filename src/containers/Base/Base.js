@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const propTypes = {
   children: PropTypes.element.isRequired
@@ -14,9 +15,11 @@ const style = {
 
 
 const BaseContainer = (props) => (
+  <MuiThemeProvider>
   <div style={style}>
     {props.children}
   </div>
+  </MuiThemeProvider>
 );
 
 BaseContainer.propTypes = propTypes;
