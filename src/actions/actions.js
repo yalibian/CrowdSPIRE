@@ -3,9 +3,12 @@
  */
 
 export const GET_DATA = 'GET_DATA';
+
 export const SEARCH_TERMS = 'SEARCH_TERMS';
 export const HIGHLIGHT_TEXT = 'HIGHLIGHT_TEXT';
+export const MOVE_DOCUMENT = 'MOVE_DOCUMENT';
 export const CLUSTER_DOCUMENTS = 'CLUSTER_DOCUMENTS';
+export const OPEN_DOCUMENT = 'OPEN_DOCUMENT';
 export const ANNOTATE_DOCUMENT = 'ANNOTATE_DOCUMENT';
 export const PIN_DOCUMENT = 'PIN_DOCUMENT';
 
@@ -13,7 +16,6 @@ import * as data from './crescent.json';
 import * as crowd from './crescent_crowd.json';
 
 export function getData() {
-    console.log('In getData');
     return (dispatch) => {
         dispatch({type: GET_DATA, data: data, crowd: crowd, isFetching: true});
     };
@@ -30,6 +32,20 @@ export function highlightText(text) {
         dispatch({type: HIGHLIGHT_TEXT, text});
     };
 }
+
+
+export function moveDocument(docs) {
+    return (dispatch) => {
+        dispatch({type: MOVE_DOCUMENT, docs});
+    };
+}
+
+export function openDocument(doc) {
+    return (dispatch) => {
+        dispatch({type: OPEN_DOCUMENT, doc});
+    };
+}
+
 
 export function clusterDocuments(docs) {
     return (dispatch) => {

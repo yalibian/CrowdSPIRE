@@ -39,10 +39,6 @@ export default class Workspace extends Component {
     
     constructor(props) {
         super(props);
-        console.log(props);
-        // this.getLists = this.getLists.bind(this);
-        // this.eachNote = this.eachNote.bind(this);
-        // this.getData = this.getData.bind(this);
         this.searchTerms = this.searchTerms.bind(this);
         this.highlightText = this.highlightText.bind(this);
         this.clusterDocuments = this.clusterDocuments.bind(this);

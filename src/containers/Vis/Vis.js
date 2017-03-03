@@ -5,9 +5,7 @@
 // import * as d3 from "d3";
 // import * as d3 from "d3";
 import {rectOverlap, d3, Model} from '../../utilities'
-
 import React, {PropTypes, Component} from 'react';
-// import Model from './model';
 import './vis.styl';
 
 import minusImage from '../../assets/images/minus.png';
