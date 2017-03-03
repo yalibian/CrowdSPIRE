@@ -30,10 +30,6 @@ const style1 = {
 
 export default class Controller extends Component {
     
-    static propTypes = {
-        searchTerms: PropTypes.func,
-    };
-    
     constructor(props) {
         super(props);
     }
@@ -42,7 +38,8 @@ export default class Controller extends Component {
         return (
             <div id="controller" style={controllerStyle}>
                 <h1 style={style1}>Controller</h1>
-                <ControllerTabs searchTerms={this.props.searchTerms}/>
+                {/*<ControllerTabs searchTerms={this.props.searchTerms}/>*/}
+                <ControllerTabs/>
             </div>
         );
     }

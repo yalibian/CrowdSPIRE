@@ -3,6 +3,7 @@
  */
 
 import React, {Component, PropTypes} from 'react';
+
 import {Tabs, Tab} from 'material-ui/Tabs';
 import SearchTerms from './SearchTerms'
 
@@ -45,10 +46,6 @@ const buttonStyle = {
 
 export default class ControllerTabs extends React.Component {
     
-    static propTypes = {
-        searchTerms: PropTypes.func,
-    };
-    
     constructor(props) {
         super(props);
         
@@ -71,8 +68,8 @@ export default class ControllerTabs extends React.Component {
                 onChange={this.handleChange}
                 style={controllerStyle}>
                 <Tab label="Entity" buttonStyle={buttonStyle} value="a">
-                    <SearchTerms searchTerms={this.props.searchTerms}/>
-                    {/*<SearchTerms />*/}
+                    {/*<SearchTerms searchTerms={this.props.searchTerms}/>*/}
+                    <SearchTerms />
                     <div>
                         <h2 style={styles.headline}>Controllable Tab A</h2>
                         <p>

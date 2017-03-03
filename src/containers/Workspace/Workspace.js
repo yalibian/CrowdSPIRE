@@ -6,9 +6,7 @@ import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-// import * as ListsActions from '../../actions/lists';
 import * as ListsActions from '../../actions/actions';
-// import Header from '../Header/Header'
 import Vis from '../Vis/Vis'
 import Controller from '../Controller/Controller'
 
@@ -116,7 +114,7 @@ export default class Workspace extends Component {
                     <Vis data={data} crowd={crowd}/>
                 </div>
                 {/*<ControllerTabs/>*/}
-                <Controller searchTerms={this.searchTerms}/>
+                <Controller/>
             </div>
         );
     }
