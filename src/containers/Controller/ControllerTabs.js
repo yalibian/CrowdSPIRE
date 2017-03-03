@@ -2,12 +2,9 @@
  * Created by Yali on 2/28/17.
  */
 
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
-// Needed for onTouchTap
-// var injectTapEventPlugin = require("react-tap-event-plugin");
-// injectTapEventPlugin();
-
+import SearchTerms from './SearchTerms'
 
 const styles = {
     headline: {
@@ -33,7 +30,6 @@ const controllerStyle = {
     borderLeft: 'solid 1px #ccc'
 };
 
-
 const style1 = {
     fontWeight: 'normal',
     color: '#CCC',
@@ -47,11 +43,15 @@ const buttonStyle = {
     height: '30px'
 };
 
-
 export default class ControllerTabs extends React.Component {
+    
+    static propTypes = {
+        searchTerms: PropTypes.func,
+    };
     
     constructor(props) {
         super(props);
+        
         this.state = {
             value: 'a',
         };
@@ -66,13 +66,13 @@ export default class ControllerTabs extends React.Component {
     
     render() {
         return (
-            
             <Tabs
                 value={this.state.value}
                 onChange={this.handleChange}
-                style={controllerStyle}
-            >
+                style={controllerStyle}>
                 <Tab label="Entity" buttonStyle={buttonStyle} value="a">
+                    <SearchTerms searchTerms={this.props.searchTerms}/>
+                    {/*<SearchTerms />*/}
                     <div>
                         <h2 style={styles.headline}>Controllable Tab A</h2>
                         <p>

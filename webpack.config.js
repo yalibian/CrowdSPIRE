@@ -35,6 +35,10 @@ module.exports = {
                 include: path.join(__dirname, 'src')
             },
             {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ]
+            },
+            {
                 test: /\.styl$/,
                 use: [{loader: 'style-loader'}, {loader: 'css-loader'}, {loader: 'stylus-loader'}]
             },

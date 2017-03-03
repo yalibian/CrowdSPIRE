@@ -6,7 +6,8 @@ import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import * as ListsActions from '../../actions/lists';
+// import * as ListsActions from '../../actions/lists';
+import * as ListsActions from '../../actions/actions';
 // import Header from '../Header/Header'
 import Vis from '../Vis/Vis'
 import Controller from '../Controller/Controller'
@@ -14,8 +15,8 @@ import Controller from '../Controller/Controller'
 
 function mapStateToProps(state) {
     return {
-        data: state.lists.data,
-        crowd: state.lists.crowd
+        data: state.model.data,
+        crowd: state.model.crowd
     };
 }
 
@@ -26,19 +27,55 @@ function mapDispatchToProps(dispatch) {
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Workspace extends Component {
     static propTypes = {
-        getLists: PropTypes.func.isRequired,
+        // getLists: PropTypes.func.isRequired,
+        getData: PropTypes.func.isRequired,
+        searchTerms: PropTypes.func.isRequired,
+        highlightText: PropTypes.func.isRequired,
+        clusterDocuments: PropTypes.func.isRequired,
+        annotateDocument: PropTypes.func.isRequired,
+        pinDocument: PropTypes.func.isRequired,
+        
         data: React.PropTypes.object,
         crowd: React.PropTypes.object
     };
     
     constructor(props) {
         super(props);
+        console.log(props);
+        // this.getLists = this.getLists.bind(this);
+        // this.eachNote = this.eachNote.bind(this);
+        // this.getData = this.getData.bind(this);
+        this.searchTerms = this.searchTerms.bind(this);
+        this.highlightText = this.highlightText.bind(this);
+        this.clusterDocuments = this.clusterDocuments.bind(this);
+        this.annotateDocument = this.annotateDocument.bind(this);
+        this.pinDocument = this.pinDocument.bind(this);
     }
     
     componentWillMount() {
-        this.props.getLists();
+        this.props.getData();
     }
     
+    searchTerms(keywords){
+        console.log(keywords);
+        this.props.searchTerms(keywords);
+    }
+    
+    highlightText(text){
+        this.props.highlightText(text);
+    }
+    
+    clusterDocuments(docs){
+        this.props.clusterDocuments(docs);
+    }
+    
+    annotateDocument(text, doc){
+        this.props.annotateDocument(text, doc);
+    }
+    
+    pinDocument(doc){
+        this.props.pinDocument(doc);
+    }
     
     render() {
         const {data, crowd} = this.props;
@@ -79,7 +116,7 @@ export default class Workspace extends Component {
                     <Vis data={data} crowd={crowd}/>
                 </div>
                 {/*<ControllerTabs/>*/}
-                <Controller/>
+                <Controller searchTerms={this.searchTerms}/>
             </div>
         );
     }

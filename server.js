@@ -11,7 +11,7 @@ const server = new WebpackDevServer(compiler, {
     },
     setup: function(app) {
         app.use(function(req, res, next) {
-            console.log(`Using middleware for ${req.url}`);
+            // console.log(`Using middleware for ${req.url}`);
             next();
         });
     }

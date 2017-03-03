@@ -1,38 +1,53 @@
-import faker from 'faker';
-
 export const GET_LISTS_START = 'GET_LISTS_START';
 export const GET_LISTS = 'GET_LISTS';
-export const MOVE_CARD = 'MOVE_CARD';
-export const MOVE_LIST = 'MOVE_LIST';
-export const TOGGLE_DRAGGING = 'TOGGLE_DRAGGING';
+export const GET_DATA = 'GET_DATA';
+export const SEARCH_TERMS = 'SEARCH_TERMS';
+export const HIGHLIGHT_TEXT = 'HIGHLIGHT_TEXT';
+export const CLUSTER_DOCUMENTS = 'CLUSTER_DOCUMENTS';
+export const ANNOTATE_DOCUMENT = 'ANNOTATE_DOCUMENT';
+export const PIN_DOCUMENT = 'PIN_DOCUMENT';
 
-// import * as data from '!json!./crescent.json';
 import * as data from './crescent.json';
-// import * as crowd from '!json!./crescent_crowd.json';
 import * as crowd from './crescent_crowd.json';
 
 export function getLists(quantity) {
-
   return (dispatch) =>{
-
     dispatch({type: GET_LISTS, data: data, crowd: crowd, isFetching: true});
   };
 }
 
-export function moveList(lastX, nextX) {
-  return (dispatch) => {
-    dispatch({ type: MOVE_LIST, lastX, nextX });
+export function getData(quantity) {
+  return (dispatch) =>{
+    dispatch({type: GET_DATA, data: data, crowd: crowd, isFetching: true});
   };
 }
 
-export function moveCard(lastX, lastY, nextX, nextY) {
-  return (dispatch) => {
-    dispatch({ type: MOVE_CARD, lastX, lastY, nextX, nextY });
-  };
+export function searchTerms () {
+    return (dispatch) => {
+        dispatch({type: SEARCH_TERMS, data: data, crowd: crowd});
+    };
 }
 
-export function toggleDragging(isDragging) {
-  return (dispatch) => {
-    dispatch({ type: TOGGLE_DRAGGING, isDragging });
-  };
+export function highlightText () {
+    return (dispatch) => {
+        dispatch({type: HIGHLIGHT_TEXT, data: data, crowd: crowd});
+    };
+}
+
+export function clusterDocuments () {
+    return (dispatch) => {
+        dispatch({type: CLUSTER_DOCUMENTS, data: data, crowd: crowd});
+    };
+}
+
+export function annotateDocument () {
+    return (dispatch) => {
+        dispatch({type: ANNOTATE_DOCUMENT, data: data, crowd: crowd});
+    };
+}
+
+export function pinDocument () {
+   return (dispatch) => {
+       dispatch({type: PIN_DOCUMENT, data: data, crowd: crowd});
+   };
 }
