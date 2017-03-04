@@ -12,9 +12,12 @@ import Controller from '../Controller/Controller'
 
 
 function mapStateToProps(state) {
+    console.log(state);
     return {
         data: state.model.data,
-        crowd: state.model.crowd
+        crowd: state.model.crowd,
+        nodes: state.model.nodes,
+        links: state.model.links,
     };
 }
 
@@ -34,7 +37,9 @@ export default class Workspace extends Component {
         pinDocument: PropTypes.func.isRequired,
         
         data: React.PropTypes.object,
-        crowd: React.PropTypes.object
+        crowd: React.PropTypes.object,
+        nodes: React.PropTypes.array,
+        links: React.PropTypes.array,
     };
     
     constructor(props) {
@@ -50,29 +55,31 @@ export default class Workspace extends Component {
         this.props.getData();
     }
     
-    searchTerms(keywords){
+    searchTerms(keywords) {
         console.log(keywords);
         this.props.searchTerms(keywords);
     }
     
-    highlightText(text){
+    highlightText(text) {
         this.props.highlightText(text);
     }
     
-    clusterDocuments(docs){
+    clusterDocuments(docs) {
         this.props.clusterDocuments(docs);
     }
     
-    annotateDocument(text, doc){
+    annotateDocument(text, doc) {
         this.props.annotateDocument(text, doc);
     }
     
-    pinDocument(doc){
+    pinDocument(doc) {
         this.props.pinDocument(doc);
     }
     
     render() {
         const {data, crowd} = this.props;
+        console.log(data);
+        console.log(crowd);
         
         const mainStyle = {
             position: 'relative',

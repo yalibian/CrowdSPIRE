@@ -3,6 +3,8 @@
  */
 
 import rectOverlap from './rectOverlap';
+import cosineSimilarity from './cosineSimilarity';
+import softSimilarity from './softSimilarity';
 import Model from './model';
 import * as d3 from "d3";
 
@@ -23,4 +25,4 @@ d3.selection.prototype.moveToBack = function () {
   });
 };
 
-export {rectOverlap, d3, Model};
+export {rectOverlap, d3, Model, cosineSimilarity, softSimilarity};
