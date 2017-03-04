@@ -7,7 +7,8 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
 import * as ListsActions from '../../actions/actions';
-import Vis from '../Vis/Vis'
+// import Vis from '../Vis/Vis'
+import Visualization from '../Visualization/Visualization'
 import Controller from '../Controller/Controller'
 
 
@@ -110,7 +111,7 @@ export default class Workspace extends Component {
                 <div id="workspace"
                      style={workspaceStyle}>
                     <h1 id="vis-bar" style={visBarStyle}>WorkSpace</h1>
-                    <Vis data={data} crowd={crowd}/>
+                    <Visualization data={data} crowd={crowd}/>
                 </div>
                 {/*<ControllerTabs/>*/}
                 <Controller/>
