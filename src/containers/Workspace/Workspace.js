@@ -12,7 +12,6 @@ import Controller from '../Controller/Controller'
 
 
 function mapStateToProps(state) {
-    console.log(state);
     return {
         data: state.model.data,
         crowd: state.model.crowd,
@@ -56,7 +55,6 @@ export default class Workspace extends Component {
     }
     
     searchTerms(keywords) {
-        console.log(keywords);
         this.props.searchTerms(keywords);
     }
     
@@ -78,8 +76,6 @@ export default class Workspace extends Component {
     
     render() {
         const {data, crowd} = this.props;
-        console.log(data);
-        console.log(crowd);
         
         const mainStyle = {
             position: 'relative',

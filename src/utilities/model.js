@@ -17,9 +17,6 @@ let Model;
 // 余弦值越接近1，就表明夹角越接近0度，也就是两个向量越相似，这就叫"余弦相似性"
     function cosineSimilarity(doc1, doc2, entities) {
     
-        console.log(doc1);
-        console.log(doc1.entities);
-        console.log(doc2.entities);
         let distance = 0.0;
         let len1 = 0.0;
         let len2 = 0.0;
@@ -180,7 +177,6 @@ let Model;
             doc1.entities.forEach(function (e1) {
                 doc2.entities.forEach(function (e2) {
                     if (e1.name == e2.name) {
-                        console.log(entities[e1.name].weight);
                         entities[e1.name].weight += K;
                         decK += K;
                         count++;
@@ -261,28 +257,7 @@ let Model;
         // init edges
         edges.forEach(function (e) {
             
-            let d1 = documents.find(function (d) {
-                if(d.id == e.source){
-                    console.log(d);
-                }
-                return d.id == e.source;
-            });
-            
-            console.log(e);
-            console.log('0-------------')
-            console.log(documents);
-            console.log(documents.find(function (d) {
-                console.log(d.id);
-                console.log(e.source);
-                
-                if(d.id == e.source){
-                    console.log(d, e);
-                    return true;
-                }
-                return false;
-                // return d.id == e.source;
-            }));
-            
+          
             
             e.strength = cosineSimilarity(documents.find(function (d) {
                 return d.id == e.source;
@@ -312,12 +287,9 @@ let Model;
             e.strength = softSimilarity(e.source, e.target, entities, crowd);
             if (isNaN(e.strength)) {
                 e.strength = 0.005;
-                console.log(e);
             }
         });
         
-        console.log(edges);
-        console.log(entities);
     }
 })();
 

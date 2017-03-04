@@ -125,8 +125,6 @@ export default function model(state = initialState, action) {
             // This update function will change anyway, since we need to calculate again and again.
             // Calculate links based on updated nodes
             links = linker(nodes);
-            console.log(nodes);
-            console.log(links);
             
             return state.withMutations((ctx) => {
                 ctx.set('isFetching', false)
