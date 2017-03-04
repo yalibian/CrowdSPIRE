@@ -170,14 +170,17 @@ export default function model(state = initialState, action) {
                 let node = {};
                 node.id = word;
                 node.type = KEYWORD;
-                node.mass = entities[word].weight;
+                console.log(word);
+                if(entities.hasOwnProperty(word)){
+                    node.mass = entities[word].weight;
+                } else{
+                    node.mass = 1;
+                }
                 
                 nodes.push(node);
             });
             
-            // update links.
-            nodeSimilarity(node1, node2);
-            
+            let links = linker(nodes);
             
             return state.withMutations((ctx) => {
                 ctx.set('isFetching', false)
