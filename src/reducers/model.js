@@ -44,8 +44,7 @@ let crowd;
 const KEYWORD_K = 0.5;
 const nodeSimilarity = function (node1, node2) {
     // In nodeSimilarity
-    if (node1.type != KEYWORD && node2.type != KEYWORD) {
-        // find doc1 and doc2
+    if ((node1.type != KEYWORD) && (node2.type != KEYWORD)) {
         const doc1 = documents.find(function (doc) {
             return doc.id == node1.id;
         });
@@ -53,9 +52,7 @@ const nodeSimilarity = function (node1, node2) {
         const doc2 = documents.find(function (doc) {
             return doc.id == node2.id;
         });
-        // return cosineSimilarity(doc1, doc2, entities);
-        return 0;
-        
+        return cosineSimilarity(doc1, doc2, entities);
     } else if (node1.type == KEYWORD && node2.type == KEYWORD) {
         // No example right now.
     } else {
@@ -76,6 +73,51 @@ const nodeSimilarity = function (node1, node2) {
     }
 };
 
+// return shared entities on two nodes
+const sharedEntities = function (node1, node2) {
+    
+    let shared = [];
+    if ((node1.type != KEYWORD) && (node2.type != KEYWORD)) {
+        const doc1 = documents.find(function (doc) {
+            return doc.id == node1.id;
+        });
+        
+        const doc2 = documents.find(function (doc) {
+            return doc.id == node2.id;
+        });
+    
+        doc1.entities.forEach(function(e1) {
+            doc2.entities.forEach(function (e2) {
+                if(e1.name == e2.name){
+                    shared.push(e1.name);
+                }
+            });
+        });
+        
+    } else if (node1.type == KEYWORD && node2.type == KEYWORD) {
+        // No example right now.
+        
+    } else {
+        
+        if (node1.type != DOC) {
+            let temp = node1;
+            node1 = node2;
+            node2 = temp;
+        }
+        const doc = documents.find(function (doc) {
+            return doc.id == node1.id;
+        });
+        
+        const keyword = node2.id;
+        
+        if (doc.entities.indexOf(keyword) > -1) {
+            shared.push(keyword);
+        }
+    }
+    return shared;
+};
+
+
 // Generate links based on input nodes
 const SIMILARITY_THRESHOLD = 0.0;
 const linker = function (nodes) {
@@ -88,6 +130,7 @@ const linker = function (nodes) {
             if (sim > SIMILARITY_THRESHOLD) {
                 let link = {source: nodes[i].id, target: nodes[j].id};
                 link.strength = sim;
+                link.shared = sharedEntities(nodes[i], nodes[j]);
                 links.push(link);
             }
         }
@@ -114,7 +157,8 @@ export default function model(state = initialState, action) {
                 let node = {};
                 node.id = d.id;
                 node.type = ICON;
-                node.entities = d.entities;
+                node.content = d.text;
+                // node.entities = d.entities;
                 node.mass = d.entities.reduce(function (acc, e) {
                     return acc + entities[e.name].weight * e.value;
                 }, 0);
@@ -142,7 +186,6 @@ export default function model(state = initialState, action) {
             
             // Update nodes and links
             // convert documents into nodes
-            console.log(action.keywords);
             const keywords = action.keywords;
             nodes = [];
             documents.forEach(function (d) {
@@ -170,10 +213,9 @@ export default function model(state = initialState, action) {
                 let node = {};
                 node.id = word;
                 node.type = KEYWORD;
-                console.log(word);
-                if(entities.hasOwnProperty(word)){
+                if (entities.hasOwnProperty(word)) {
                     node.mass = entities[word].weight;
-                } else{
+                } else {
                     node.mass = 1;
                 }
                 

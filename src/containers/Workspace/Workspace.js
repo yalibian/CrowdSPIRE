@@ -76,7 +76,7 @@ export default class Workspace extends Component {
     }
     
     render() {
-        const {data, crowd} = this.props;
+        const {data, crowd, nodes, links} = this.props;
         
         const mainStyle = {
             position: 'relative',
@@ -111,7 +111,7 @@ export default class Workspace extends Component {
                 <div id="workspace"
                      style={workspaceStyle}>
                     <h1 id="vis-bar" style={visBarStyle}>WorkSpace</h1>
-                    <Visualization data={data} crowd={crowd}/>
+                    <Visualization data={data} crowd={crowd} nodes={nodes} links={links}/>
                 </div>
                 {/*<ControllerTabs/>*/}
                 <Controller/>
