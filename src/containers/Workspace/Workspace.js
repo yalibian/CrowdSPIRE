@@ -36,8 +36,6 @@ export default class Workspace extends Component {
         annotateDocument: PropTypes.func.isRequired,
         pinDocument: PropTypes.func.isRequired,
         
-        data: React.PropTypes.object,
-        crowd: React.PropTypes.object,
         nodes: React.PropTypes.array,
         links: React.PropTypes.array,
     };
@@ -111,7 +109,7 @@ export default class Workspace extends Component {
                 <div id="workspace"
                      style={workspaceStyle}>
                     <h1 id="vis-bar" style={visBarStyle}>WorkSpace</h1>
-                    <Visualization data={data} crowd={crowd} nodes={nodes} links={links}/>
+                    <Visualization nodes={nodes} links={links}/>
                 </div>
                 {/*<ControllerTabs/>*/}
                 <Controller/>

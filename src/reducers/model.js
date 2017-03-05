@@ -56,15 +56,21 @@ const nodeSimilarity = function (node1, node2) {
     } else if (node1.type == KEYWORD && node2.type == KEYWORD) {
         // No example right now.
     } else {
-        if (node1.type != DOC) {
+        // console.log(node1);
+        // console.log(node2);
+        
+        if (node1.type == KEYWORD) {
             let temp = node1;
             node1 = node2;
             node2 = temp;
         }
+        
         const doc = documents.find(function (doc) {
+            // console.log(doc);
             return doc.id == node1.id;
         });
         
+        // console.log(doc);
         const keyword = node2.id;
         if (doc.entities.indexOf(keyword) > -1) {
             return KEYWORD_K;
@@ -192,7 +198,7 @@ export default function model(state = initialState, action) {
                 
                 if (d.entities.find(function (e) {
                         return keywords.find(function (key) {
-                            key = e.name;
+                            return key == e.name;
                         });
                     })) {
                     
@@ -223,11 +229,13 @@ export default function model(state = initialState, action) {
             });
             
             let links = linker(nodes);
+            console.log(nodes);
+            console.log(links);
             
             return state.withMutations((ctx) => {
                 ctx.set('isFetching', false)
-                    .set('data', action.data)
-                    .set('crowd', action.crowd);
+                    .set('nodes', nodes)
+                    .set('links', links);
             });
         }
         

@@ -41,8 +41,6 @@ const entityColor = {
 class Visualization extends Component {
     
     static propTypes = {
-        data: React.PropTypes.object,
-        crowd: React.PropTypes.object,
         
         nodes: React.PropTypes.array,
         links: React.PropTypes.array,
@@ -59,6 +57,7 @@ class Visualization extends Component {
     
     
     componentDidUpdate() {
+        console.log("In Visualization");
         let {nodes, links} = this.props;
         console.log(nodes);
         console.log(links);
@@ -85,12 +84,6 @@ class Visualization extends Component {
             .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
             .force("collide", forceCollide);
         
-        // let model = Model(data)
-        //     .crowd(crowd);
-        //
-        // let documents = model.documents();
-        // let edges = model.edges();
-        //
         let clickedDoc = null;
         
         // simulation.nodes(documents)
