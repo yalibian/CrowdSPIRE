@@ -160,12 +160,9 @@ class Visualization extends Component {
     // We just need to update the binded data on links and nodes.
     componentDidUpdate() {
         console.log('Update VIS');
-        let {nodes, links}  = this.props;
+        nodes  = this.props.nodes;
+        links  = this.props.links;
         // Update nodes
-        
-        console.log(node);
-        
-        
         console.log('Enter Part');
         node.data(nodes)
             .enter()
@@ -290,12 +287,13 @@ export default Visualization;
 
 function nodeClicked(d) {
     
+    console.log('Node clicked');
+    console.log(d.id);
     if (clickedDoc != d.id) {
         unfixNodes();
         d.fx = d.x;
         d.fy = d.y;
         clickedDoc = d.id;
-        
         updateLinks();
     }
 }
