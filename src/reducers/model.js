@@ -183,7 +183,7 @@ export default function model(state = initialState, action) {
                     let node = {};
                     node.id = d.id;
                     node.type = ICON;
-                    node.entities = d.entities;
+                    node.content = d.text;
                     node.mass = d.entities.reduce(function (acc, e) {
                         return acc + entities[e.name].weight * e.value;
                     }, 0);

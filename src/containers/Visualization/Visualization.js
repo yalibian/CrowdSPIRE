@@ -166,30 +166,31 @@ class Visualization extends Component {
         let {nodes, links}  = this.props;
         // Update nodes
         
+        console.log(node);
         
-        node.data(nodes).enter()
+        
+        console.log('Enter Part');
+        node.data(nodes)
+            .enter()
             .append("g")
             .attr("class", "node")
-        // .on("mousedown", function () {
-        //     d3.event.preventDefault();
-        // })
-        // .on('click', nodeClicked)
-        // .on('dblclick', nodeDoubleClicked)
-        // .call(d3.drag()
-        //     .on("start", nodeDragStarted)
-        //     .on("drag", nodeDragged)
-        //     .on("end", nodeDragEnded));
-        
-        // label
-        node.append("text")
+            .on("mousedown", function () {
+                d3.event.preventDefault();
+            })
+            .on('click', nodeClicked)
+            .on('dblclick', nodeDoubleClicked)
+            .call(d3.drag()
+                .on("start", nodeDragStarted)
+                .on("drag", nodeDragged)
+                .on("end", nodeDragEnded))
+            .append('text')
             .attr("dx", 12)
             .attr("dy", ".35em")
             .text(function (d) {
-                return d.id
-            });
-        
-        // rectangle
-        node.append("rect")
+                console.log(d);
+                return d.id;
+            })
+            .append("rect")
             .attr("width", function (d) {
                 d.radius = IconSide / Math.sqrt(2.00);
                 d.width = IconSide;
@@ -206,6 +207,54 @@ class Visualization extends Component {
                 return d.height;
             })
             .attr("fill", function (d) {
+                console.log(d);
+                if (d.type == 'KEYWORD') {
+                    return 'red';
+                }
+                return 'steelblue';
+            })
+            .attr('rx', function (d) {
+                return IconR;
+            })
+            .attr('ry', function (d) {
+                return IconR;
+            })
+            .attr('class', 'IconRect');
+        //
+        
+        
+        console.log('Update Part');
+        // Update the contents
+        node.data(nodes)
+            .select('text')
+            .text(function (d) {
+                d.x = 0.0;
+                d.y = 0.0;
+                console.log(d.id);
+                return d.id;
+            });
+        
+        node.data(nodes).select('rect')
+            .attr("width", function (d) {
+                d.radius = IconSide / Math.sqrt(2.00);
+                d.width = IconSide;
+                return IconSide;
+            })
+            .attr("height", function (d) {
+                d.height = IconSide;
+                return IconSide;
+            })
+            .attr("x", function (d) {
+                return d.width;
+            })
+            .attr("y", function (d) {
+                return d.height;
+            })
+            .attr("fill", function (d) {
+                console.log(d);
+                if (d.type == 'KEYWORD') {
+                    return 'red';
+                }
                 return 'steelblue';
             })
             .attr('rx', function (d) {
@@ -217,6 +266,7 @@ class Visualization extends Component {
             .attr('class', 'IconRect');
         
         
+        console.log('Remove Part');
         node.data(nodes).exit().remove();
         
         // Update and restart the simulation.
@@ -248,7 +298,6 @@ function nodeClicked(d) {
         updateLinks();
     }
 }
-
 
 function ticked() {
     
@@ -318,7 +367,6 @@ function ticked() {
             });
     }
 }
-
 
 function nodeDoubleClicked(d) {
     
@@ -450,7 +498,6 @@ function nodeDragEnded(d) {
     simulation.alpha(0.3).restart();
 }
 
-
 // Document-Level Node -> Icon-Level Node:
 //      When the close button is clicked on this Document-Level Node, smaller the size of background rectangle, and delete the foreign object.
 //  Details: remove text, buttons from Node, change class.
@@ -541,7 +588,6 @@ function closeNode(d) {
     simulation.alpha(0.3).restart();
     
 }
-
 
 // Icon-Level Node -> Document-Level Node:
 // When a Icon-Level node double clicked, enlarge the size of background rectangle, and add foreign object to show contents of this node.
@@ -669,7 +715,6 @@ function maximizeNode(selectedDoc) {
     forceCollide.initialize(simulation.nodes());
 }
 
-
 function updateLinks() {
     
     link = linkG.selectAll(".link")
@@ -708,7 +753,6 @@ function linkFilter(d) {
     // return ((d.source.id == clickedDoc) || (d.target.id == clickedDoc)) && (d.source.id != d.target.id) && (d.similarity > 0.01);
 }
 
-
 function unfixNodes() {
     
     if (!d3.event.active) {
@@ -722,7 +766,6 @@ function unfixNodes() {
             d.fy = null;
         }
     });
-    
     
     clickedDoc = null;
     if (link != null) {
