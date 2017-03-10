@@ -37,7 +37,17 @@ const entityColor = {
     "Date": "#67E1D8"
 };
 
-
+// VIS info
+let svg;
+let forceCollide = d3.forceCollide()
+            .radius(function (d) {
+                return d.radius;
+            })
+            .iterations(2)
+            .strength(0.95);
+        
+let simulation;
+    
 class Visualization extends Component {
     
     static propTypes = {
@@ -56,28 +66,16 @@ class Visualization extends Component {
     };
     
     
+    // Init the whole force directed graph visualization based on d3.js and (data: nodes, links).
     componentDidMount() {
-        
-        
-        console.log("In Visualization");
+        console.log("Init VIS");
         let {nodes, links} = this.props;
-        console.log(nodes);
-        if (nodes == null) {
-            return;
-        }
-        
-        let svg = d3.select(this.refs.vis);
+        svg = d3.select(this.refs.vis);
         const WIDTH = parseInt(svg.style("width"), 10);
         const HEIGHT = parseInt(svg.style("height"), 10);
         
-        let forceCollide = d3.forceCollide()
-            .radius(function (d) {
-                return d.radius;
-            })
-            .iterations(2)
-            .strength(0.95);
         
-        let simulation = d3.forceSimulation()
+        simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function (d) {
                 return d.id;
             }))
@@ -645,9 +643,21 @@ class Visualization extends Component {
                 link.remove();
             }
         }
+    }
+    
+    
+    // Update the whole VIS when semantic interaction happened
+    // The whole update has beend recored on nodes and links
+    // We just need to update the binded data on links and nodes.
+    componentDidUpdate(){
+        console.log('Update VIS');
+        let {nodes, links}  = this.props;
+        console.log(nodes, links);
         
+        // Update nodes
         
     }
+    
     
     render() {
         return (

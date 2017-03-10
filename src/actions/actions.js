@@ -15,11 +15,6 @@ export const PIN_DOCUMENT = 'PIN_DOCUMENT';
 import * as data from './crescent.json';
 import * as crowd from './crescent_crowd.json';
 
-export function getData() {
-    return (dispatch) => {
-        dispatch({type: GET_DATA, data: data, crowd: crowd, isFetching: true});
-    };
-}
 
 export function searchTerms(keywords) {
     return (dispatch) => {

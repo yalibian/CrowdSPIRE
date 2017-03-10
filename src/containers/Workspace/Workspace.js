@@ -28,8 +28,6 @@ function mapDispatchToProps(dispatch) {
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Workspace extends Component {
     static propTypes = {
-        // getLists: PropTypes.func.isRequired,
-        getData: PropTypes.func.isRequired,
         searchTerms: PropTypes.func.isRequired,
         highlightText: PropTypes.func.isRequired,
         clusterDocuments: PropTypes.func.isRequired,
@@ -48,10 +46,6 @@ export default class Workspace extends Component {
         this.annotateDocument = this.annotateDocument.bind(this);
         this.pinDocument = this.pinDocument.bind(this);
     }
-    
-    // componentWillMount() {
-    //     this.props.getData();
-    // }
     
     searchTerms(keywords) {
         this.props.searchTerms(keywords);
