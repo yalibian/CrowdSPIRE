@@ -21,21 +21,8 @@ import {
 const DOC = "DOCUMENT";
 const ICON = "ICON";
 const KEYWORD = "KEYWORD";
-
-
-const InitialState = Record({
-    isFetching: false,
-    data: null,
-    crowd: null,
-    nodes: null,
-    links: null,
-    isDragging: false
-});
-
-let documents, edges, entities; // real docs
-let nodes, links; // data to render on force directed graph
-let crowd;
-
+import * as data from './crescent.json';
+import * as crowd from './crescent_crowd.json';
 
 // nodeSimilarity: calculate the similarity between two node (in [document, icon, keyword])
 // If two documents, two could call cosineSimilarity/softSimilarity
@@ -56,9 +43,6 @@ const nodeSimilarity = function (node1, node2) {
     } else if (node1.type == KEYWORD && node2.type == KEYWORD) {
         // No example right now.
     } else {
-        // console.log(node1);
-        // console.log(node2);
-        
         if (node1.type == KEYWORD) {
             let temp = node1;
             node1 = node2;
@@ -123,7 +107,6 @@ const sharedEntities = function (node1, node2) {
     return shared;
 };
 
-
 // Generate links based on input nodes
 const SIMILARITY_THRESHOLD = 0.0;
 const linker = function (nodes) {
@@ -144,48 +127,43 @@ const linker = function (nodes) {
     return links;
 };
 
+let documents, edges, entities; // real docs
+documents = data.documents;
+edges = data.edges;
+entities = data.entities;
+let nodes, links; // data to render on force directed graph
+// convert documents into nodes
+nodes = [];
+documents.forEach(function (d) {
+    let node = {};
+    node.id = d.id;
+    node.type = ICON;
+    node.content = d.text;
+    // node.entities = d.entities;
+    node.mass = d.entities.reduce(function (acc, e) {
+        return acc + entities[e.name].weight * e.value;
+    }, 0);
+
+    nodes.push(node);
+});
+
+// This update function will change anyway, since we need to calculate again and again.
+// Calculate links based on updated nodes
+links = linker(nodes);
+//
+const InitialState = Record({
+    isFetching: false,
+    nodes: nodes,
+    links: links
+});
+//
+
 // Transform data into nodes and links, the nodes includes (keywords and docs, links include their links between nodes.)
 const initialState = new InitialState;
 export default function model(state = initialState, action) {
     switch (action.type) {
         
-        case GET_DATA: {
-            // Init Nodes and Links:
-            // Nodes are all documents right now.
-            documents = action.data.documents;
-            edges = action.data.edges;
-            entities = action.data.entities;
-            crowd = action.crowd;
-            
-            // convert documents into nodes
-            nodes = [];
-            documents.forEach(function (d) {
-                let node = {};
-                node.id = d.id;
-                node.type = ICON;
-                node.content = d.text;
-                // node.entities = d.entities;
-                node.mass = d.entities.reduce(function (acc, e) {
-                    return acc + entities[e.name].weight * e.value;
-                }, 0);
-                
-                nodes.push(node);
-            });
-            
-            // This update function will change anyway, since we need to calculate again and again.
-            // Calculate links based on updated nodes
-            links = linker(nodes);
-            
-            return state.withMutations((ctx) => {
-                ctx.set('isFetching', false)
-                    .set('nodes', nodes)
-                    .set('links', links)
-                    .set('data', action.data)
-                    .set('crowd', action.crowd);
-            });
-        }
-        
-        case SEARCH_TERMS: {
+       case SEARCH_TERMS: {
             
             // Add keywords into nodes, update new links
             // Use model to change the backend data

@@ -49,9 +49,9 @@ export default class Workspace extends Component {
         this.pinDocument = this.pinDocument.bind(this);
     }
     
-    componentWillMount() {
-        this.props.getData();
-    }
+    // componentWillMount() {
+    //     this.props.getData();
+    // }
     
     searchTerms(keywords) {
         this.props.searchTerms(keywords);

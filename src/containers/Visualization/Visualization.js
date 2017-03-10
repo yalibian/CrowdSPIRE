@@ -56,11 +56,12 @@ class Visualization extends Component {
     };
     
     
-    componentDidUpdate() {
+    componentDidMount() {
+        
+        
         console.log("In Visualization");
         let {nodes, links} = this.props;
         console.log(nodes);
-        console.log(links);
         if (nodes == null) {
             return;
         }
