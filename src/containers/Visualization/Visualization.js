@@ -152,9 +152,6 @@ class Visualization extends Component {
         
         svg.on('mousedown', unfixNodes);
         
-        // ticked
-        
-        
     }
     
     
@@ -220,7 +217,6 @@ class Visualization extends Component {
                 return IconR;
             })
             .attr('class', 'IconRect');
-        //
         
         
         console.log('Update Part');
@@ -263,7 +259,12 @@ class Visualization extends Component {
             .attr('ry', function (d) {
                 return IconR;
             })
-            .attr('class', 'IconRect');
+            .attr('class', function (d) {
+                if(d.type == 'KEYWORD'){
+                    return 'EntityRect'
+                }
+                return 'IconRect'
+            });
         
         
         console.log('Remove Part');
