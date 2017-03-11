@@ -162,6 +162,7 @@ class Visualization extends Component {
         console.log('Update VIS');
         nodes  = this.props.nodes;
         links  = this.props.links;
+        console.log(links);
         // Update nodes
         console.log('Enter Part');
         node.data(nodes)
