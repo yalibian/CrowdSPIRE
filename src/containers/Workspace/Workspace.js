@@ -14,8 +14,6 @@ import Controller from '../Controller/Controller'
 
 function mapStateToProps(state) {
     return {
-        data: state.model.data,
-        crowd: state.model.crowd,
         nodes: state.model.nodes,
         links: state.model.links,
     };
@@ -68,7 +66,7 @@ export default class Workspace extends Component {
     }
     
     render() {
-        const {data, crowd, nodes, links} = this.props;
+        const {nodes, links} = this.props;
         
         const mainStyle = {
             position: 'relative',

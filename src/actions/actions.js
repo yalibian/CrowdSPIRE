@@ -2,18 +2,14 @@
  * Created by Yali on 3/2/17.
  */
 
-export const GET_DATA = 'GET_DATA';
-
 export const SEARCH_TERMS = 'SEARCH_TERMS';
 export const HIGHLIGHT_TEXT = 'HIGHLIGHT_TEXT';
 export const MOVE_DOCUMENT = 'MOVE_DOCUMENT';
 export const CLUSTER_DOCUMENTS = 'CLUSTER_DOCUMENTS';
 export const OPEN_DOCUMENT = 'OPEN_DOCUMENT';
+export const OVERLAP_DOCUMENTS = 'OVERLAP_DOCUMENTS';
 export const ANNOTATE_DOCUMENT = 'ANNOTATE_DOCUMENT';
 export const PIN_DOCUMENT = 'PIN_DOCUMENT';
-
-import * as data from './crescent.json';
-import * as crowd from './crescent_crowd.json';
 
 
 export function searchTerms(keywords) {
@@ -41,6 +37,11 @@ export function openDocument(doc) {
     };
 }
 
+export function overlapDocuments(docList) {
+    return (dispatch) => {
+        dispatch({type: OVERLAP_DOCUMENTS, docList});
+    };
+}
 
 export function clusterDocuments(docs) {
     return (dispatch) => {

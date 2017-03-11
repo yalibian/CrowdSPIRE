@@ -16,7 +16,7 @@ let Model;
 // (sum w[i]*u[i]*v[i]) / sqrt[(sum w[i]*u[i]^2)*(sum w[i]*v[i]^2)].
 // 余弦值越接近1，就表明夹角越接近0度，也就是两个向量越相似，这就叫"余弦相似性"
     function cosineSimilarity(doc1, doc2, entities) {
-    
+        
         let distance = 0.0;
         let len1 = 0.0;
         let len2 = 0.0;
@@ -257,7 +257,6 @@ let Model;
         // init edges
         edges.forEach(function (e) {
             
-          
             
             e.strength = cosineSimilarity(documents.find(function (d) {
                 return d.id == e.source;

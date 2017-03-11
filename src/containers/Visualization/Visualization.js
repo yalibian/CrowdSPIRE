@@ -160,11 +160,10 @@ class Visualization extends Component {
     // We just need to update the binded data on links and nodes.
     componentDidUpdate() {
         console.log('Update VIS');
-        nodes  = this.props.nodes;
-        links  = this.props.links;
+        nodes = this.props.nodes;
+        links = this.props.links;
         console.log(links);
         // Update nodes
-        console.log('Enter Part');
         node.data(nodes)
             .enter()
             .append("g")
@@ -182,7 +181,6 @@ class Visualization extends Component {
             .attr("dx", 12)
             .attr("dy", ".35em")
             .text(function (d) {
-                console.log(d);
                 return d.id;
             })
             .append("rect")
@@ -202,7 +200,6 @@ class Visualization extends Component {
                 return d.height;
             })
             .attr("fill", function (d) {
-                console.log(d);
                 if (d.type == 'KEYWORD') {
                     return 'red';
                 }
@@ -217,14 +214,12 @@ class Visualization extends Component {
             .attr('class', 'IconRect');
         
         
-        console.log('Update Part');
         // Update the contents
         node.data(nodes)
             .select('text')
             .text(function (d) {
                 d.x = 0.0;
                 d.y = 0.0;
-                console.log(d.id);
                 return d.id;
             });
         
@@ -245,7 +240,6 @@ class Visualization extends Component {
                 return d.height;
             })
             .attr("fill", function (d) {
-                console.log(d);
                 if (d.type == 'KEYWORD') {
                     return 'red';
                 }
@@ -258,14 +252,13 @@ class Visualization extends Component {
                 return IconR;
             })
             .attr('class', function (d) {
-                if(d.type == 'KEYWORD'){
+                if (d.type == 'KEYWORD') {
                     return 'EntityRect'
                 }
                 return 'IconRect'
             });
         
         
-        console.log('Remove Part');
         node.data(nodes).exit().remove();
         
         // Update and restart the simulation.
@@ -288,8 +281,6 @@ export default Visualization;
 
 function nodeClicked(d) {
     
-    console.log('Node clicked');
-    console.log(d.id);
     if (clickedDoc != d.id) {
         unfixNodes();
         d.fx = d.x;

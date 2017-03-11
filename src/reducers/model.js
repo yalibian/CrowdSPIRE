@@ -11,6 +11,7 @@ import {
     HIGHLIGHT_TEXT,
     MOVE_DOCUMENT,
     OPEN_DOCUMENT,
+    OVERLAP_DOCUMENTS,
     CLUSTER_DOCUMENTS,
     ANNOTATE_DOCUMENT,
     PIN_DOCUMENT,
@@ -42,7 +43,7 @@ documents.forEach(function (d) {
     node.mass = d.entities.reduce(function (acc, e) {
         return acc + entities[e.name].weight * e.value;
     }, 0);
-
+    
     nodes.push(node);
 });
 
@@ -62,7 +63,7 @@ const initialState = new InitialState;
 export default function model(state = initialState, action) {
     switch (action.type) {
         
-       case SEARCH_TERMS: {
+        case SEARCH_TERMS: {
             
             // Add keywords into nodes, update new links
             // Use model to change the backend data
@@ -106,8 +107,6 @@ export default function model(state = initialState, action) {
             });
             
             let links = linker(nodes);
-            console.log(nodes);
-            console.log(links);
             
             return state.withMutations((ctx) => {
                 ctx.set('isFetching', false)
@@ -137,6 +136,15 @@ export default function model(state = initialState, action) {
         
         case OPEN_DOCUMENT: {
             // Update links
+            return state.withMutations((ctx) => {
+                ctx.set('isFetching', false)
+                    .set('data', action.data)
+                    .set('crowd', action.crowd);
+            });
+        }
+        
+        case OVERLAP_DOCUMENTS: {
+            // action.docList;
             return state.withMutations((ctx) => {
                 ctx.set('isFetching', false)
                     .set('data', action.data)
@@ -182,7 +190,6 @@ export default function model(state = initialState, action) {
 // If one document and one keyword, we could calculate directly
 function nodeSimilarity(node1, node2) {
     // In nodeSimilarity
-    console.log("In nodeSimilarity");
     if ((node1.type != KEYWORD) && (node2.type != KEYWORD)) {
         const doc1 = documents.find(function (doc) {
             return doc.id == node1.id;
@@ -202,19 +209,15 @@ function nodeSimilarity(node1, node2) {
         }
         
         const doc = documents.find(function (doc) {
-            // console.log(doc);
             return doc.id == node1.id;
         });
         
         
-        // console.log(doc);
         const keyword = node2.id;
-        console.log(keyword);
-        console.log(doc.entities);
         
-        if(doc.entities.find(function (e) {
+        if (doc.entities.find(function (e) {
                 return e.name == keyword;
-            })){
+            })) {
             return KEYWORD_K;
         }
         return 0;
@@ -233,10 +236,10 @@ function sharedEntities(node1, node2) {
         const doc2 = documents.find(function (doc) {
             return doc.id == node2.id;
         });
-    
-        doc1.entities.forEach(function(e1) {
+        
+        doc1.entities.forEach(function (e1) {
             doc2.entities.forEach(function (e2) {
-                if(e1.name == e2.name){
+                if (e1.name == e2.name) {
                     shared.push(e1.name);
                 }
             });
@@ -258,8 +261,6 @@ function sharedEntities(node1, node2) {
         
         const keyword = node2.id;
         
-        console.log(doc.entities);
-        console.log(keyword);
         if (doc.entities.find(function (e) {
                 return e.name == keyword;
             })) {
@@ -271,14 +272,11 @@ function sharedEntities(node1, node2) {
 
 // Generate links based on input nodes
 function linker(nodes) {
-    console.log("In Linker");
     let links = [];
     let len = nodes.length;
-    console.log(nodes);
     for (let i = 0; i < len; i++) {
         for (let j = i + 1; j < len; j++) {
             let sim = nodeSimilarity(nodes[i], nodes[j]);
-            console.log(nodes[i].id, nodes[j].id, sim);
             if (sim > SIMILARITY_THRESHOLD) {
                 let link = {source: nodes[i].id, target: nodes[j].id};
                 link.strength = sim;
@@ -287,7 +285,6 @@ function linker(nodes) {
             }
         }
     }
-    console.log("Out Linker");
     return links;
 }
 
