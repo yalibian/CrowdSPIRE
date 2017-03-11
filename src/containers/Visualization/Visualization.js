@@ -6,11 +6,24 @@
 // import * as d3 from "d3";
 import {rectOverlap, d3, Model} from '../../utilities'
 import React, {PropTypes, Component} from 'react';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as ListsActions from '../../actions/actions';
 import './vis.styl';
-
 import minusImage from '../../assets/images/minus.png';
 import closeImage from '../../assets/images/close.png';
 
+
+function mapStateToProps(state) {
+    return {
+        nodes: state.model.nodes,
+        links: state.model.links
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(ListsActions, dispatch);
+}
 
 const visStyle = {
     display: 'flex',
@@ -59,22 +72,50 @@ let node, link, linkG;
 let WIDTH, HEIGHT;
 let clickedDoc = null;
 
+@connect(mapStateToProps, mapDispatchToProps)
 class Visualization extends Component {
     
     static propTypes = {
+        nodes: PropTypes.array,
+        links: PropTypes.array,
         
-        nodes: React.PropTypes.array,
-        links: React.PropTypes.array,
-        
-        width: PropTypes.number,
-        height: PropTypes.number,
-        margin: PropTypes.shape({
-            top: PropTypes.number,
-            right: PropTypes.number,
-            bottom: PropTypes.number,
-            left: PropTypes.number,
-        }),
+        overlapDocuments: PropTypes.func,
+        highlightText: PropTypes.func.isRequired,
+        clusterDocuments: PropTypes.func.isRequired,
+        annotateDocument: PropTypes.func.isRequired,
+        pinDocument: PropTypes.func.isRequired,
     };
+    
+    constructor(props) {
+        super(props);
+        // this.highlightText = this.highlightText.bind(this);
+        // this.clusterDocuments = this.clusterDocuments.bind(this);
+        // this.overlapDocuments = this.overlapDocuments.bind(this);
+        // this.annotateDocument = this.annotateDocument.bind(this);
+        // this.pinDocument = this.pinDocument.bind(this);
+    }
+    
+    // highlightText(text) {
+    //     this.props.highlightText(text);
+    // }
+    //
+    //
+    // overlapDocuments(docList) {
+    //     this.props.overlapDocuments(docList);
+    // }
+    //
+    // clusterDocuments(docs) {
+    //     this.props.clusterDocuments(docs);
+    // }
+    //
+    // annotateDocument(text, doc) {
+    //     this.props.annotateDocument(text, doc);
+    // }
+    //
+    // pinDocument(doc) {
+    //     this.props.pinDocument(doc);
+    // }
+    //
     
     
     // Init the whole force directed graph visualization based on d3.js and (data: nodes, links).
@@ -82,6 +123,7 @@ class Visualization extends Component {
         console.log("Init VIS");
         nodes = this.props.nodes;
         links = this.props.links;
+        let overlapDocuments = this.props.overlapDocuments;
         svg = d3.select(this.refs.vis);
         WIDTH = parseInt(svg.style("width"), 10);
         HEIGHT = parseInt(svg.style("height"), 10);
@@ -99,7 +141,12 @@ class Visualization extends Component {
         
         linkG = svg.append('g');
         link = null;
-        
+    
+        let onNodeDragEnded = function(d){
+            nodeDragEnded(d, overlapDocuments);
+        };
+    
+    
         node = svg.selectAll(".node")
             .data(nodes)
             .enter().append("g")
@@ -112,7 +159,8 @@ class Visualization extends Component {
             .call(d3.drag()
                 .on("start", nodeDragStarted)
                 .on("drag", nodeDragged)
-                .on("end", nodeDragEnded));
+                .on("end", onNodeDragEnded));
+                // .on("end", nodeDragEnded));
         
         // label
         node.append("text")
@@ -152,6 +200,54 @@ class Visualization extends Component {
         
         svg.on('mousedown', unfixNodes);
         
+        
+        function nodeDragEnded(d) {
+    
+    if (d.visualDetailLevel == 'Document') {
+        
+        let hasOverlap = false;
+        let overlappedDocId = null;
+        let rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
+        node.selectAll('rect')
+            .attr('border', function (dd) {
+                if (dd.visualDetailLevel != 'Document' || dd.id == d.id) {
+                    return '';
+                } else {
+                    let rectB = {
+                        x: dd.x - dd.width / 2,
+                        y: dd.y - dd.height / 2,
+                        width: dd.width,
+                        height: dd.height
+                    };
+                    if (rectOverlap(rectA, rectB)) {
+                        hasOverlap = true;
+                        overlappedDocId = dd.id;
+                        return '1px solid black';
+                    } else {
+                        return '';
+                    }
+                }
+            });
+        
+        
+        if (hasOverlap) {
+            overlapDocuments([overlappedDocId, d.id]);
+            // model.documentOverlapping(overlappedDocId, d.id);
+        }
+    }
+    
+    if (!d3.event.active) {
+        simulation.alphaTarget(0);
+    }
+    // forceCollide.initialize(simulation.nodes());
+    
+    // Update and restart the simulation.
+    simulation.nodes(nodes);
+    simulation.force("link").links(links);
+    simulation.alpha(0.3).restart();
+}
+
+        
     }
     
     
@@ -162,8 +258,14 @@ class Visualization extends Component {
         console.log('Update VIS');
         nodes = this.props.nodes;
         links = this.props.links;
+        let overlapDocuments = this.props.overlapDocuments;
         console.log(links);
         // Update nodes
+        
+        let onNodeDragEnded = function(d){
+            nodeDragEnded(d, this.props.overlapDocuments);
+        };
+        
         node.data(nodes)
             .enter()
             .append("g")
@@ -176,7 +278,8 @@ class Visualization extends Component {
             .call(d3.drag()
                 .on("start", nodeDragStarted)
                 .on("drag", nodeDragged)
-                .on("end", nodeDragEnded))
+                .on("end", onNodeDragEnded))
+            // .on("end", nodeDragEnded))
             .append('text')
             .attr("dx", 12)
             .attr("dy", ".35em")
@@ -275,10 +378,15 @@ class Visualization extends Component {
             <svg ref="vis" style={visStyle}/>
         );
     }
+    
+   
 }
 
 export default Visualization;
 
+
+
+ 
 function nodeClicked(d) {
     
     if (clickedDoc != d.id) {
@@ -444,8 +552,10 @@ function nodeDragged(d) {
 }
 
 // the end of node drag.
-function nodeDragEnded(d) {
+function nodeDragEnded(d, overlapDocuments) {
     
+    console.log('Overlap Documents...');
+    console.log(overlapDocuments);
     if (d.visualDetailLevel == 'Document') {
         
         let hasOverlap = false;
@@ -474,7 +584,8 @@ function nodeDragEnded(d) {
         
         
         if (hasOverlap) {
-            model.documentOverlapping(overlappedDocId, d.id);
+            overlapDocuments([overlappedDocId, d.id]);
+            // model.documentOverlapping(overlappedDocId, d.id);
         }
     }
     
@@ -763,3 +874,4 @@ function unfixNodes() {
         link.remove();
     }
 }
+    
