@@ -111,8 +111,7 @@ export default function model(state = initialState, action) {
             links = linker(nodes);
             
             return state.withMutations((ctx) => {
-                ctx.set('isFetching', false)
-                    .set('nodes', nodes)
+                ctx.set('nodes', nodes)
                     .set('links', links);
             });
         }
@@ -135,7 +134,15 @@ export default function model(state = initialState, action) {
         }
         
         case OPEN_DOCUMENT: {
+            console.log('model: OPEN_DOCUMENT');
+            let docId = action.docId;
+            nodes.forEach(function (n) {
+                if(n.id == docId){
+                    n.type = DOC;
+                }
+            });
             // Update links
+            
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
                     .set('links', links);
@@ -167,18 +174,6 @@ export default function model(state = initialState, action) {
                         count++;
                         entities[e1.name].update = true;
                     }
-                    // else {
-                    //     crowd.links.forEach(function (c) {
-                    //         if ((c.target == e1.name && c.source == e2.name) || (c.target == e2.name && c.source == e2.name)) {
-                    //             entities[e1.name].weight += ENTITY_K * c.votes / 275;
-                    //             entities[e1.name].update = true;
-                    //             entities[e2.name].weight += ENTITY_K * c.votes / 275;
-                    //             entities[e2.name].update = true;
-                    //             decK += ENTITY_K * c.votes / 275 * 2;
-                    //             count += 2;
-                    //         }
-                    //     })
-                    // }
                 });
             });
             

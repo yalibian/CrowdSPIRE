@@ -78,12 +78,13 @@ class Visualization extends Component {
     static propTypes = {
         nodes: PropTypes.array,
         links: PropTypes.array,
-        
+    
+        openDocument: PropTypes.func,
         overlapDocuments: PropTypes.func,
-        highlightText: PropTypes.func.isRequired,
-        clusterDocuments: PropTypes.func.isRequired,
-        annotateDocument: PropTypes.func.isRequired,
-        pinDocument: PropTypes.func.isRequired,
+        highlightText: PropTypes.func,
+        clusterDocuments: PropTypes.func,
+        annotateDocument: PropTypes.func,
+        pinDocument: PropTypes.func,
     };
     
     constructor(props) {
@@ -124,6 +125,7 @@ class Visualization extends Component {
         nodes = this.props.nodes;
         links = this.props.links;
         let overlapDocuments = this.props.overlapDocuments;
+        let openDocument = this.props.openDocument;
         svg = d3.select(this.refs.vis);
         WIDTH = parseInt(svg.style("width"), 10);
         HEIGHT = parseInt(svg.style("height"), 10);
@@ -146,6 +148,9 @@ class Visualization extends Component {
             nodeDragEnded(d, overlapDocuments);
         };
     
+        let onNodeDoubleClicked = function (d) {
+            nodeDoubleClicked(d, openDocument);
+        };
     
         node = svg.selectAll(".node")
             .data(nodes)
@@ -155,7 +160,7 @@ class Visualization extends Component {
                 d3.event.preventDefault();
             })
             .on('click', nodeClicked)
-            .on('dblclick', nodeDoubleClicked)
+            .on('dblclick', onNodeDoubleClicked)
             .call(d3.drag()
                 .on("start", nodeDragStarted)
                 .on("drag", nodeDragged)
@@ -258,10 +263,16 @@ class Visualization extends Component {
         console.log('Update VIS');
         nodes = this.props.nodes;
         links = this.props.links;
+        console.log(nodes);
         let overlapDocuments = this.props.overlapDocuments;
+        let openDocument = this.props.openDocument;
         
         let onNodeDragEnded = function(d){
-            nodeDragEnded(d, this.props.overlapDocuments);
+            nodeDragEnded(d, overlapDocuments);
+        };
+    
+        let onNodeDoubleClicked = function (d) {
+            nodeDoubleClicked(d, openDocument);
         };
         
         node.data(nodes)
@@ -272,7 +283,7 @@ class Visualization extends Component {
                 d3.event.preventDefault();
             })
             .on('click', nodeClicked)
-            .on('dblclick', nodeDoubleClicked)
+            .on('dblclick', onNodeDoubleClicked)
             .call(d3.drag()
                 .on("start", nodeDragStarted)
                 .on("drag", nodeDragged)
@@ -465,9 +476,10 @@ function ticked() {
     }
 }
 
-function nodeDoubleClicked(d) {
+function nodeDoubleClicked(d, openDocument) {
     
     if (d.visualDetailLevel != 'Document') {
+        openDocument(d.id);
         d.visualDetailLevel = "Document";
         d.fx = d.x;
         d.fy = d.y;

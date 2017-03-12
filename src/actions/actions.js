@@ -31,9 +31,9 @@ export function moveDocument(docs) {
     };
 }
 
-export function openDocument(doc) {
+export function openDocument(docId) {
     return (dispatch) => {
-        dispatch({type: OPEN_DOCUMENT, doc});
+        dispatch({type: OPEN_DOCUMENT, docId});
     };
 }
 
