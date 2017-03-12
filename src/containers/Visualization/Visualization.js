@@ -206,51 +206,51 @@ class Visualization extends Component {
         svg.on('mousedown', unfixNodes);
         
         
-        function nodeDragEnded(d) {
-            
-            if (d.visualDetailLevel == 'Document') {
-                
-                let hasOverlap = false;
-                let overlappedDocId = null;
-                let rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
-                node.selectAll('rect')
-                    .attr('border', function (dd) {
-                        if (dd.visualDetailLevel != 'Document' || dd.id == d.id) {
-                            return '';
-                        } else {
-                            let rectB = {
-                                x: dd.x - dd.width / 2,
-                                y: dd.y - dd.height / 2,
-                                width: dd.width,
-                                height: dd.height
-                            };
-                            if (rectOverlap(rectA, rectB)) {
-                                hasOverlap = true;
-                                overlappedDocId = dd.id;
-                                return '1px solid black';
-                            } else {
-                                return '';
-                            }
-                        }
-                    });
-                
-                
-                if (hasOverlap) {
-                    overlapDocuments([overlappedDocId, d.id]);
-                    // model.documentOverlapping(overlappedDocId, d.id);
-                }
-            }
-            
-            if (!d3.event.active) {
-                simulation.alphaTarget(0);
-            }
-            // forceCollide.initialize(simulation.nodes());
-            
-            // Update and restart the simulation.
-            simulation.nodes(nodes);
-            simulation.force("link").links(links);
-            simulation.alpha(0.3).restart();
-        }
+        // function nodeDragEnded(d) {
+        //
+        //     if (d.visualDetailLevel == 'Document') {
+        //
+        //         let hasOverlap = false;
+        //         let overlappedDocId = null;
+        //         let rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
+        //         node.selectAll('rect')
+        //             .attr('border', function (dd) {
+        //                 if (dd.visualDetailLevel != 'Document' || dd.id == d.id) {
+        //                     return '';
+        //                 } else {
+        //                     let rectB = {
+        //                         x: dd.x - dd.width / 2,
+        //                         y: dd.y - dd.height / 2,
+        //                         width: dd.width,
+        //                         height: dd.height
+        //                     };
+        //                     if (rectOverlap(rectA, rectB)) {
+        //                         hasOverlap = true;
+        //                         overlappedDocId = dd.id;
+        //                         return '1px solid black';
+        //                     } else {
+        //                         return '';
+        //                     }
+        //                 }
+        //             });
+        //
+        //
+        //         if (hasOverlap) {
+        //             overlapDocuments([overlappedDocId, d.id]);
+        //             // model.documentOverlapping(overlappedDocId, d.id);
+        //         }
+        //     }
+        //
+        //     if (!d3.event.active) {
+        //         simulation.alphaTarget(0);
+        //     }
+        //     // forceCollide.initialize(simulation.nodes());
+        //
+        //     // Update and restart the simulation.
+        //     simulation.nodes(nodes);
+        //     simulation.force("link").links(links);
+        //     simulation.alpha(0.3).restart();
+        // }
         
         
     }
@@ -275,10 +275,11 @@ class Visualization extends Component {
             nodeDoubleClicked(d, openDocument);
         };
         
-        node.data(nodes)
+        
+        let newAddedNodes = svg.selectAll('.node').data(nodes)
             .enter()
             .append("g")
-            .attr("class", "node")
+            .attr("class", 'node')
             .on("mousedown", function () {
                 d3.event.preventDefault();
             })
@@ -287,15 +288,17 @@ class Visualization extends Component {
             .call(d3.drag()
                 .on("start", nodeDragStarted)
                 .on("drag", nodeDragged)
-                .on("end", onNodeDragEnded))
-            // .on("end", nodeDragEnded))
-            .append('text')
+                .on("end", onNodeDragEnded));
+        
+        newAddedNodes.append('text')
             .attr("dx", 12)
             .attr("dy", ".35em")
             .text(function (d) {
+                console.log(d.id);
                 return d.id;
-            })
-            .append("rect")
+            });
+        
+        newAddedNodes.append("rect")
             .attr("width", function (d) {
                 d.radius = IconSide / Math.sqrt(2.00);
                 d.width = IconSide;
@@ -326,17 +329,19 @@ class Visualization extends Component {
             .attr('class', 'IconRect');
         
         
+        console.log(svg.selectAll('.node'));
         // Update the contents
-        node.data(nodes)
+        svg.selectAll('.node').data(nodes)
             .select('text')
             .text(function (d) {
+                console.log(d.id);
                 d.x = 0.0;
                 d.y = 0.0;
                 return d.id;
             });
         
         // update the contents, when node has type 'DOCUMENT'
-        node.data(nodes).select('rect')
+        svg.selectAll('.node').data(nodes).select('rect')
             .attr("width", function (d) {
                 if (d.type == 'DOCUMENT') {
                     let c = 90;
@@ -359,10 +364,12 @@ class Visualization extends Component {
                 return IconSide;
             })
             .attr("x", function (d) {
-                console.log(d.type);
+                // console.log(d.id);
+                // d.fx = d.width;
                 return d.width;
             })
             .attr("y", function (d) {
+                // d.fy = d.height;
                 return d.height;
             })
             .attr("fill", function (d) {
@@ -385,7 +392,7 @@ class Visualization extends Component {
             });
         
         
-        node.data(nodes).exit().remove();
+        svg.selectAll('.node').data(nodes).exit().remove();
         
         // Update and restart the simulation.
         simulation.nodes(nodes);
@@ -422,7 +429,7 @@ function nodeClicked(d) {
 function ticked() {
     
     // Not change the width and height of each node.
-    node.attr("transform", function (d) {
+    svg.selectAll('.node').attr("transform", function (d) {
         
         // border constriction
         d.x = Math.max(d.width / 2, Math.min(WIDTH - d.width / 2, d.x));
@@ -433,7 +440,7 @@ function ticked() {
     });
     
     // rectangle: keep ICON rectangle at the center of Node Group
-    node.selectAll("rect")
+    svg.selectAll("rect")
         .attr("x", function (d) {
             return -d.width / 2;
         })
