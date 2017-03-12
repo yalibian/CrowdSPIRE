@@ -38,7 +38,7 @@ export function openDocument(doc) {
 }
 
 export function overlapDocuments(docList) {
-    console.log('overlapDocuments in List');
+    
     return (dispatch) => {
         dispatch({type: OVERLAP_DOCUMENTS, docList});
     };

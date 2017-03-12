@@ -259,8 +259,6 @@ class Visualization extends Component {
         nodes = this.props.nodes;
         links = this.props.links;
         let overlapDocuments = this.props.overlapDocuments;
-        console.log(links);
-        // Update nodes
         
         let onNodeDragEnded = function(d){
             nodeDragEnded(d, this.props.overlapDocuments);
@@ -554,8 +552,6 @@ function nodeDragged(d) {
 // the end of node drag.
 function nodeDragEnded(d, overlapDocuments) {
     
-    console.log('Overlap Documents...');
-    console.log(overlapDocuments);
     if (d.visualDetailLevel == 'Document') {
         
         let hasOverlap = false;

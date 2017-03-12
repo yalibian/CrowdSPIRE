@@ -25,6 +25,8 @@ import * as data from './crescent.json';
 import * as crowd from './crescent_crowd.json';
 
 
+const ENTITY_K = 0.1; // Constant for update entity weight
+
 const KEYWORD_K = 0.5;
 const SIMILARITY_THRESHOLD = 0.0;
 let documents, edges, entities; // real docs
@@ -106,7 +108,7 @@ export default function model(state = initialState, action) {
                 nodes.push(node);
             });
             
-            let links = linker(nodes);
+            links = linker(nodes);
             
             return state.withMutations((ctx) => {
                 ctx.set('isFetching', false)
@@ -119,45 +121,126 @@ export default function model(state = initialState, action) {
             
             // update links strength
             return state.withMutations((ctx) => {
-                ctx.set('isFetching', false)
-                    .set('data', action.data)
-                    .set('crowd', action.crowd);
+                ctx.set('nodes', nodes)
+                    .set('links', links);
             });
         }
         
         
         case MOVE_DOCUMENT: {
             return state.withMutations((ctx) => {
-                ctx.set('isFetching', false)
-                    .set('data', action.data)
-                    .set('crowd', action.crowd);
+                ctx.set('nodes', nodes)
+                    .set('links', links);
             });
         }
         
         case OPEN_DOCUMENT: {
             // Update links
             return state.withMutations((ctx) => {
-                ctx.set('isFetching', false)
-                    .set('data', action.data)
-                    .set('crowd', action.crowd);
+                ctx.set('nodes', nodes)
+                    .set('links', links);
             });
         }
         
         case OVERLAP_DOCUMENTS: {
-            // action.docList;
+            console.log("model: OVERLAP_DOCUMENTS");
+            // action.docList: a list of document ids
+            
+            let docId1 = action.docList[0];
+            let docId2 = action.docList[1];
+            let doc1 = documents.find(function (d) {
+                return d.id == docId1;
+            });
+            let doc2 = documents.find(function (d) {
+                return d.id == docId2;
+            });
+            
+            let count = 0; // count how many entities updated
+            let decK = 0.0; // count how many entities updated
+            let sharedEntities = [];
+            doc1.entities.forEach(function (e1) {
+                doc2.entities.forEach(function (e2) {
+                    if (e1.name == e2.name) {
+                        sharedEntities.push(e1.name);
+                        entities[e1.name].weight += ENTITY_K;
+                        decK += ENTITY_K;
+                        count++;
+                        entities[e1.name].update = true;
+                    }
+                    // else {
+                    //     crowd.links.forEach(function (c) {
+                    //         if ((c.target == e1.name && c.source == e2.name) || (c.target == e2.name && c.source == e2.name)) {
+                    //             entities[e1.name].weight += ENTITY_K * c.votes / 275;
+                    //             entities[e1.name].update = true;
+                    //             entities[e2.name].weight += ENTITY_K * c.votes / 275;
+                    //             entities[e2.name].update = true;
+                    //             decK += ENTITY_K * c.votes / 275 * 2;
+                    //             count += 2;
+                    //         }
+                    //     })
+                    // }
+                });
+            });
+            
+            let keys = Object.keys(entities);
+            decK = decK / (keys.length - count);
+            for (let i in keys) {
+                let e = entities[keys[i]];
+                if (e.update) {
+                    e.weight = Math.min(1, e.weight);
+                    e.update = false;
+                } else {
+                    e.weight -= decK;
+                    e.weight = Math.max(0.00, e.weight);
+                }
+            }
+            
+            
+            let filteredDocs = documents.filter(function (d) {
+                let hasSharedEntities = false;
+                d.entities.forEach(function (e) {
+                    // console.log(e.name);
+                    if(sharedEntities.find(function (se) {
+                            return se == e.name
+                        })){
+                        hasSharedEntities = true;
+                    }
+                });
+                return hasSharedEntities;
+            });
+            
+            // console.log(filteredDocs);
+            
+            // Update nodes based on filteredDocs, and current nodes
+            filteredDocs.forEach(function (d) {
+                if (!nodes.find(function (n) {
+                        return n.id == d.id;
+                    })) {
+                    let node = {};
+                    node.id = d.id;
+                    node.type = ICON;
+                    node.content = d.text;
+                    node.mass = d.entities.reduce(function (acc, e) {
+                        return acc + entities[e.name].weight * e.value;
+                    }, 0);
+            
+                    nodes.push(node);
+                }
+            });
+    
+            links = linker(nodes);
+            
             return state.withMutations((ctx) => {
-                ctx.set('isFetching', false)
-                    .set('data', action.data)
-                    .set('crowd', action.crowd);
+                ctx.set('nodes', nodes)
+                    .set('links', links);
             });
         }
         
         case CLUSTER_DOCUMENTS: {
             // change distance between documents
             return state.withMutations((ctx) => {
-                ctx.set('isFetching', false)
-                    .set('data', action.data)
-                    .set('crowd', action.crowd);
+                ctx.set('nodes', nodes)
+                    .set('links', links);
             });
         }
         
@@ -165,9 +248,8 @@ export default function model(state = initialState, action) {
         case ANNOTATE_DOCUMENT: {
             
             return state.withMutations((ctx) => {
-                ctx.set('isFetching', false)
-                    .set('data', action.data)
-                    .set('crowd', action.crowd);
+                ctx.set('nodes', nodes)
+                    .set('links', links);
             });
         }
         
@@ -175,15 +257,16 @@ export default function model(state = initialState, action) {
         case PIN_DOCUMENT: {
             
             return state.withMutations((ctx) => {
-                ctx.set('isFetching', false)
-                    .set('data', action.data)
-                    .set('crowd', action.crowd);
+                ctx.set('nodes', nodes)
+                    .set('links', links);
             });
         }
         default:
             return state;
     }
 }
+
+
 // nodeSimilarity: calculate the similarity between two node (in [document, icon, keyword])
 // If two documents, two could call cosineSimilarity/softSimilarity
 // If two keywords, we could call crowd
@@ -286,5 +369,27 @@ function linker(nodes) {
         }
     }
     return links;
+}
+
+// When the entities weight updated, update the mass and spring of docs.
+function updateMode() {
+    
+    // update mass:
+    documents.forEach(function (d) {
+        d.mass = d.entities.reduce(function (acc, e) {
+            return acc + entities[e.name].weight * e.value;
+        }, 0);
+    });
+    
+    // weighted sum model, to calculate the similarity
+    // update edges, based on Crowdsourcing
+    edges.forEach(function (e) {
+        // e.strength = cosineSimilarity(e.source, e.target, entities);
+        e.strength = softSimilarity(e.source, e.target, entities, crowd);
+        if (isNaN(e.strength)) {
+            e.strength = 0.005;
+        }
+    });
+    
 }
 
