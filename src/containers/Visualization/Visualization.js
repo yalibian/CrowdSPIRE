@@ -78,7 +78,7 @@ class Visualization extends Component {
     static propTypes = {
         nodes: PropTypes.array,
         links: PropTypes.array,
-    
+        
         openDocument: PropTypes.func,
         overlapDocuments: PropTypes.func,
         highlightText: PropTypes.func,
@@ -143,15 +143,15 @@ class Visualization extends Component {
         
         linkG = svg.append('g');
         link = null;
-    
-        let onNodeDragEnded = function(d){
+        
+        let onNodeDragEnded = function (d) {
             nodeDragEnded(d, overlapDocuments);
         };
-    
+        
         let onNodeDoubleClicked = function (d) {
             nodeDoubleClicked(d, openDocument);
         };
-    
+        
         node = svg.selectAll(".node")
             .data(nodes)
             .enter().append("g")
@@ -165,7 +165,7 @@ class Visualization extends Component {
                 .on("start", nodeDragStarted)
                 .on("drag", nodeDragged)
                 .on("end", onNodeDragEnded));
-                // .on("end", nodeDragEnded));
+        // .on("end", nodeDragEnded));
         
         // label
         node.append("text")
@@ -207,51 +207,51 @@ class Visualization extends Component {
         
         
         function nodeDragEnded(d) {
-    
-    if (d.visualDetailLevel == 'Document') {
-        
-        let hasOverlap = false;
-        let overlappedDocId = null;
-        let rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
-        node.selectAll('rect')
-            .attr('border', function (dd) {
-                if (dd.visualDetailLevel != 'Document' || dd.id == d.id) {
-                    return '';
-                } else {
-                    let rectB = {
-                        x: dd.x - dd.width / 2,
-                        y: dd.y - dd.height / 2,
-                        width: dd.width,
-                        height: dd.height
-                    };
-                    if (rectOverlap(rectA, rectB)) {
-                        hasOverlap = true;
-                        overlappedDocId = dd.id;
-                        return '1px solid black';
-                    } else {
-                        return '';
-                    }
+            
+            if (d.visualDetailLevel == 'Document') {
+                
+                let hasOverlap = false;
+                let overlappedDocId = null;
+                let rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
+                node.selectAll('rect')
+                    .attr('border', function (dd) {
+                        if (dd.visualDetailLevel != 'Document' || dd.id == d.id) {
+                            return '';
+                        } else {
+                            let rectB = {
+                                x: dd.x - dd.width / 2,
+                                y: dd.y - dd.height / 2,
+                                width: dd.width,
+                                height: dd.height
+                            };
+                            if (rectOverlap(rectA, rectB)) {
+                                hasOverlap = true;
+                                overlappedDocId = dd.id;
+                                return '1px solid black';
+                            } else {
+                                return '';
+                            }
+                        }
+                    });
+                
+                
+                if (hasOverlap) {
+                    overlapDocuments([overlappedDocId, d.id]);
+                    // model.documentOverlapping(overlappedDocId, d.id);
                 }
-            });
-        
-        
-        if (hasOverlap) {
-            overlapDocuments([overlappedDocId, d.id]);
-            // model.documentOverlapping(overlappedDocId, d.id);
+            }
+            
+            if (!d3.event.active) {
+                simulation.alphaTarget(0);
+            }
+            // forceCollide.initialize(simulation.nodes());
+            
+            // Update and restart the simulation.
+            simulation.nodes(nodes);
+            simulation.force("link").links(links);
+            simulation.alpha(0.3).restart();
         }
-    }
-    
-    if (!d3.event.active) {
-        simulation.alphaTarget(0);
-    }
-    // forceCollide.initialize(simulation.nodes());
-    
-    // Update and restart the simulation.
-    simulation.nodes(nodes);
-    simulation.force("link").links(links);
-    simulation.alpha(0.3).restart();
-}
-
+        
         
     }
     
@@ -267,10 +267,10 @@ class Visualization extends Component {
         let overlapDocuments = this.props.overlapDocuments;
         let openDocument = this.props.openDocument;
         
-        let onNodeDragEnded = function(d){
+        let onNodeDragEnded = function (d) {
             nodeDragEnded(d, overlapDocuments);
         };
-    
+        
         let onNodeDoubleClicked = function (d) {
             nodeDoubleClicked(d, openDocument);
         };
@@ -335,17 +335,31 @@ class Visualization extends Component {
                 return d.id;
             });
         
+        // update the contents, when node has type 'DOCUMENT'
         node.data(nodes).select('rect')
             .attr("width", function (d) {
+                if (d.type == 'DOCUMENT') {
+                    let c = 90;
+                    let a = 69;
+                    let goldenRatio = 1.618;
+                    return d.width = (a + Math.sqrt(a * a + 4 * goldenRatio * c * d.content.length)) / (2 * goldenRatio);
+                }
+                
                 d.radius = IconSide / Math.sqrt(2.00);
                 d.width = IconSide;
                 return IconSide;
+                
             })
             .attr("height", function (d) {
+                if (d.type == 'DOCUMENT') {
+                    return d.height = 1.61803398875 * d.width;
+                    
+                }
                 d.height = IconSide;
                 return IconSide;
             })
             .attr("x", function (d) {
+                console.log(d.type);
                 return d.width;
             })
             .attr("y", function (d) {
@@ -388,14 +402,12 @@ class Visualization extends Component {
         );
     }
     
-   
+    
 }
 
 export default Visualization;
 
 
-
- 
 function nodeClicked(d) {
     
     if (clickedDoc != d.id) {
