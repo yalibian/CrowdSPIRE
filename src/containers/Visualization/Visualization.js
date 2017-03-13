@@ -389,7 +389,6 @@ class Visualization extends Component {
         
         docNodes.select('rect')
             .attr('width', function (d) {
-                console.log(d.id);
                 let c = 90;
                 let a = 69;
                 let goldenRatio = 1.618;

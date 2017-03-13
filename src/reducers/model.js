@@ -26,6 +26,7 @@ import * as crowd from './crescent_crowd.json';
 
 
 const ENTITY_K = 0.1; // Constant for update entity weight
+const OPEN_DOCUMENT_K = 0.0035; // Constant for update entity weight
 
 const KEYWORD_K = 0.5;
 const SIMILARITY_THRESHOLD = 0.0;
@@ -141,8 +142,47 @@ export default function model(state = initialState, action) {
                     n.type = DOC;
                 }
             });
-            // Update links
+    
+            let sharedEntities = documents.find(function (d) {
+                return d.id == docId;
+            }).entities;
+    
+            let decK = 0.0; // count how many entities updated
+            let count = sharedEntities.length; // count how many entities updated
+            sharedEntities.forEach(function (e) {
+                let entity = entities[e.name];
+                let d1 = entity.weight;
+                entity.weight = Math.min(1, entity.weight + OPEN_DOCUMENT_K);
+                entity.update = true;
+                decK += entity.weight - d1;
+                console.log(d1, entity.weight);
+            });
             
+            // Update links, only links
+            let keys = Object.keys(entities);
+            decK = decK / count;
+            for (let i in keys) {
+                let e = entities[keys[i]];
+                if (!sharedEntities.find(function (se) {
+                        return se.name == e.name;
+                    })) {
+                    e.weight -= decK ;
+                }
+            }
+            
+            // nodes mass changed too!
+            nodes.forEach(function (n) {
+                let d;
+                if(d = documents.find(function (d) {
+                       return d.id == n.id;
+                    })){
+                        n.mass = d.entities.reduce(function (acc, e) {
+                        return acc + entities[e.name].weight * e.value;
+                    }, 0);
+                }
+            });
+            
+            links = linker(nodes);
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
                     .set('links', links);
@@ -164,7 +204,6 @@ export default function model(state = initialState, action) {
             
             let count = 0; // count how many entities updated
             let decK = 0.0; // count how many entities updated
-            let sharedEntities = [];
             doc1.entities.forEach(function (e1) {
                 doc2.entities.forEach(function (e2) {
                     if (e1.name == e2.name) {
