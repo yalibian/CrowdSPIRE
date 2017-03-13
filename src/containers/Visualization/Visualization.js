@@ -263,7 +263,6 @@ class Visualization extends Component {
         console.log('Update VIS');
         nodes = this.props.nodes;
         links = this.props.links;
-        console.log(nodes);
         let overlapDocuments = this.props.overlapDocuments;
         let openDocument = this.props.openDocument;
         
@@ -276,6 +275,7 @@ class Visualization extends Component {
         };
         
         
+        // Enter
         let newAddedNodes = svg.selectAll('.node').data(nodes)
             .enter()
             .append("g")
@@ -294,7 +294,6 @@ class Visualization extends Component {
             .attr("dx", 12)
             .attr("dy", ".35em")
             .text(function (d) {
-                console.log(d.id);
                 return d.id;
             });
         
@@ -329,39 +328,75 @@ class Visualization extends Component {
             .attr('class', 'IconRect');
         
         
-        console.log(svg.selectAll('.node'));
-        // Update the contents
-        svg.selectAll('.node').data(nodes)
-            .select('text')
+        // Update
+        newAddedNodes = svg.selectAll('.node').data(nodes);
+        let docNodes = newAddedNodes.filter(function (d) {
+            return d.type == 'DOCUMENT';
+        });
+        
+        let iconNodes = newAddedNodes.filter(function (d) {
+            return d.type != 'DOCUMENT';
+        });
+        
+        
+        iconNodes.selectAll('foreignObject').remove();
+        iconNodes.selectAll('image').remove();
+        iconNodes.select('text')
             .text(function (d) {
-                console.log(d.id);
                 d.x = 0.0;
                 d.y = 0.0;
                 return d.id;
             });
         
-        // update the contents, when node has type 'DOCUMENT'
-        svg.selectAll('.node').data(nodes).select('rect')
-            .attr("width", function (d) {
-                if (d.type == 'DOCUMENT') {
-                    let c = 90;
-                    let a = 69;
-                    let goldenRatio = 1.618;
-                    return d.width = (a + Math.sqrt(a * a + 4 * goldenRatio * c * d.content.length)) / (2 * goldenRatio);
-                }
-                
+        iconNodes.select('rect')
+            .attr('width', function (d) {
                 d.radius = IconSide / Math.sqrt(2.00);
                 d.width = IconSide;
                 return IconSide;
-                
+            }).attr('height', function (d) {
+            d.height = IconSide;
+            return IconSide;
+        }).attr("x", function (d) {
+            // console.log(d.id);
+            // d.fx = d.width;
+            return d.width;
+        })
+            .attr("y", function (d) {
+                // d.fy = d.height;
+                return d.height;
             })
-            .attr("height", function (d) {
-                if (d.type == 'DOCUMENT') {
-                    return d.height = 1.61803398875 * d.width;
-                    
+            .attr("fill", function (d) {
+                if (d.type == 'KEYWORD') {
+                    return 'red';
                 }
-                d.height = IconSide;
-                return IconSide;
+                return 'steelblue';
+            })
+            .attr('rx', function (d) {
+                return IconR;
+            })
+            .attr('ry', function (d) {
+                return IconR;
+            })
+            .attr('class', function (d) {
+                if (d.type == 'KEYWORD') {
+                    return 'EntityRect'
+                }
+                return 'IconRect'
+            })
+            .style('stroke-width', function () {
+                return 0;
+        });
+        
+        docNodes.select('rect')
+            .attr('width', function (d) {
+                console.log(d.id);
+                let c = 90;
+                let a = 69;
+                let goldenRatio = 1.618;
+                return d.width = (a + Math.sqrt(a * a + 4 * goldenRatio * c * d.content.length)) / (2 * goldenRatio);
+            })
+            .attr('height', function (d) {
+                return d.height = 1.61803398875 * d.width;
             })
             .attr("x", function (d) {
                 // console.log(d.id);
@@ -385,12 +420,140 @@ class Visualization extends Component {
                 return IconR;
             })
             .attr('class', function (d) {
-                if (d.type == 'KEYWORD') {
-                    return 'EntityRect'
-                }
-                return 'IconRect'
+                return 'DocRect'
             });
         
+        // Add close/delete button
+        docNodes.append('image')
+            .attr("xlink:href", function (d) {
+                return closeImage;
+                // return '../assets/images/close.png';
+            })
+            .attr("width", "16px")
+            .attr("height", "16px")
+            .attr('class', 'CloseNode')
+            .attr('x', function (d) {
+                return d.width / 2 - 25;
+            })
+            .attr('y', function (d) {
+                return -d.height / 2 + 2;
+            })
+            .on('click', closeNode);
+        
+        // Add minimize button
+        docNodes.append('image')
+            .attr("xlink:href", function (d) {
+                return minusImage;
+                // return './img/minus.png';
+            })
+            .attr("width", "16px")
+            .attr("height", "16px")
+            .attr('class', 'MinimizeNode')
+            .attr('x', function (d) {
+                return d.width / 2 - 45;
+            })
+            .attr('y', function (d) {
+                return -d.height / 2 + 2;
+            })
+            .on('click', minimizeNode);
+        
+        //Add document content into docNode(Document Level Node)
+        let docContent = docNodes.append("foreignObject")
+            .attr("class", "doc")
+            .on('click', function () {
+            })
+            .attr("width", function (d) {
+                return d.width;
+            })
+            .attr("height", function (d) {
+                return d.height - 40;
+            })
+            .attr("x", function (d) {
+                return -d.width / 2;
+            })
+            .attr("y", function (d) {
+                return -d.height / 2 + 20;
+            })
+            .append("xhtml:body")
+            .style("margin", 0)
+            .style("padding", 0)
+            .append("div")
+            .style("max-height", function (d) {
+                return d.height - 40 + 'px';
+            })
+            .style("height", function (d) {
+                return d.height - 40 + 'px';
+            });
+        
+        docContent.append('p')
+            .attr('class', 'doc-title')
+            .text(function (d) {
+                return d.id;
+            });
+        
+        docContent.append('p')
+            .attr('class', 'doc-content')
+            .attr('height', function (d) {
+                return d.height - 50 + 'px';
+            })
+            .text(function (d) {
+                return d.content;
+            });
+        
+        
+        // update the contents, when node has type 'DOCUMENT'
+        // svg.selectAll('.node').data(nodes).select('rect')
+        //     .attr("width", function (d) {
+        //         if (d.type == 'DOCUMENT') {
+        //             console.log(d.id);
+        //             let c = 90;
+        //             let a = 69;
+        //             let goldenRatio = 1.618;
+        //             return d.width = (a + Math.sqrt(a * a + 4 * goldenRatio * c * d.content.length)) / (2 * goldenRatio);
+        //         }
+        //
+        //         d.radius = IconSide / Math.sqrt(2.00);
+        //         d.width = IconSide;
+        //         return IconSide;
+        //
+        //     })
+        //     .attr("height", function (d) {
+        //         if (d.type == 'DOCUMENT') {
+        //             return d.height = 1.61803398875 * d.width;
+        //
+        //         }
+        //
+        //         d.height = IconSide;
+        //         return IconSide;
+        //     })
+        //     .attr("x", function (d) {
+        //         // console.log(d.id);
+        //         // d.fx = d.width;
+        //         return d.width;
+        //     })
+        //     .attr("y", function (d) {
+        //         // d.fy = d.height;
+        //         return d.height;
+        //     })
+        //     .attr("fill", function (d) {
+        //         if (d.type == 'KEYWORD') {
+        //             return 'red';
+        //         }
+        //         return 'steelblue';
+        //     })
+        //     .attr('rx', function (d) {
+        //         return IconR;
+        //     })
+        //     .attr('ry', function (d) {
+        //         return IconR;
+        //     })
+        //     .attr('class', function (d) {
+        //         if (d.type == 'KEYWORD') {
+        //             return 'EntityRect'
+        //         }
+        //         return 'IconRect'
+        //     });
+        //
         
         svg.selectAll('.node').data(nodes).exit().remove();
         
