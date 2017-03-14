@@ -193,6 +193,9 @@ Our proposed research builds on these earlier projects in significant ways. Firs
 Real-time crowdsourcing systems have been developed to assist individuals with sensemaking tasks [5,6,26,27]. For example, VizWiz [6] is a mobile app that lets blind users capture images that sighted crowd workers can describe for them, and Chorus [27] provides a chat interface for crowd workers to help users with online search tasks like finding a nearby restaurant. We take inspiration from these systems, especially their mechanisms for recruiting and aggregating crowd work in real time, and extend them to complex sensemaking tasks where crowds are directed by mechanisms other than explicit user requests.
 
 
+In this paper, we focus on the crowdsourcing of such plans as a case study of constraint-based human computation tasks and introduce a collaborative planning system called Mobi that illustrates a novel crowdware paradigm. Mobi presents a single inter- face that enables crowd participants to view the current so- lution context and make appropriate contributions based on current needs. 
+
+
 
 \section{Semantic Interactions for Crowdsourcing}
 
@@ -246,14 +249,63 @@ Obviously, if a user explicitly queries for information, it should be returned p
 Otherwise, it may be a better option to check for new potentially relevant information and/or update the underlying model every n interactions.
 
 
+%% Uncomment below to include a teaser figure.
+% \teaser{
+%   \centering
+%   \includegraphics[width=\linewidth]{Pipeline}
+%   \caption{CrowdSPIRE: StartSPIRE based visual analytics with semantic interactions to assign crowdsourcing works}
+	% \label{fig:pipeline}
+% }
+
+% \begin{figure}[tb]
+\begin{figure*}
+ \centering % avoid the use of \begin{center}...\end{center} and use \centering instead (more compact)
+%  \includegraphics[width=\columnwidth]{Pipeline}
+  \includegraphics[width=\textwidth]{Pipeline}
+ \caption{crowdsourcing based semantic interaction visualization pipeline. 
+ Once the user perceives the visualization, they can choose to interact in it. 
+ This interaction feedback is interpreted as requests to the human computation system, which could assign several micro-tasks to crowds. 
+ The project algorithms could update visualization based on crowdsourcing outputs through their types, along with original data.
+	 }
+ \label{fig:pipeline}
+\end{figure*}
 
 
+Define four levels of crowdsourcing on text analytics:
+(A): find entities  the connect to documents
+(B): Label semantic-level connections between to documents
+(C): Find related docs
+(D): Cluster documents
 
 The overview of whole system, with input and output.
 
-\subsection{Input}
+\subsection{Human Computation Tasks Assignment based on Semantic Interaction}
 
+
+\begin{table}[tb]
+  \caption{Crowdsourcing based semantic interactions and their associated crowd tasks.}
+  \label{tab:interaction2tasks}
+  \scriptsize%
+	\centering%
+\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}lll}
+  \hline
+   Semantic Interaction &  Crowsourcing Tasks \\
+  \hline
+  Resize document & A, B, C \\
+  Minimizie document & B \\
+  Close document & A, B \\
+  Annotation & A \\
+  Search & A, B \\
+  Highlight & A, B \\
+  Overlap documents & A, B, C\\
+  Cluster documents & D \\
+  \bottomrule
+\end{tabular*}
+\end{table}
+
+For different semantic interactions, we could assign different tasks.
 input:  how to use semantic interaction as input to direct the crowd tasks
+
 
 can create several kinds of micro-tasks for each SI, some quick, some slow  (simulated in this paper with Tianyi data?) \newline 
 Drags two docs togethers
@@ -271,6 +323,11 @@ synchronous tasks
 How to integrating microtasks into a more collaborative, unstructured interface embodied in Frenzy and other forms of crowdware
 
 
+Human computation
+
+
+
+
 
 
 Open Document
@@ -280,7 +337,7 @@ Search Keywords\newline
 Clusters \newline 
 
 
-\subsection{Output}
+\subsection{Project Algorithms}
 
 output:  how to use crowd output in response to semantic interaction in the visualization
 
