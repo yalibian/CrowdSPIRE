@@ -38,7 +38,6 @@ export default class Controller extends Component {
         return (
             <div id="controller" style={controllerStyle}>
                 <h1 style={style1}>Controller</h1>
-                {/*<ControllerTabs searchTerms={this.props.searchTerms}/>*/}
                 <ControllerTabs/>
             </div>
         );

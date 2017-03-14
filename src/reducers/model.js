@@ -26,7 +26,7 @@ import * as crowd from './crescent_crowd.json';
 
 
 const ENTITY_K = 0.1; // Constant for update entity weight
-const OPEN_DOCUMENT_K = 0.0035; // Constant for update entity weight
+const OPEN_DOCUMENT_K = 0.0015; // Constant for update entity weight
 
 const KEYWORD_K = 0.5;
 const SIMILARITY_THRESHOLD = 0.0;
@@ -201,7 +201,8 @@ export default function model(state = initialState, action) {
             let doc2 = documents.find(function (d) {
                 return d.id == docId2;
             });
-            
+    
+            let sharedEntities = [];
             let count = 0; // count how many entities updated
             let decK = 0.0; // count how many entities updated
             doc1.entities.forEach(function (e1) {

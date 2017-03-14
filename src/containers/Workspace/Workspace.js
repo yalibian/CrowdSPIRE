@@ -101,10 +101,8 @@ export default class Workspace extends Component {
                 <div id="workspace"
                      style={workspaceStyle}>
                     <h1 id="vis-bar" style={visBarStyle}>WorkSpace</h1>
-                    {/*<Visualization nodes={nodes} links={links} overlapDocuments={overlapDocuments}/>*/}
                     <Visualization/>
                 </div>
-                {/*<ControllerTabs/>*/}
                 <Controller/>
             </div>
         );

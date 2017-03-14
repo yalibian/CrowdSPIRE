@@ -1,10 +1,14 @@
 \BOOKMARK [1][]{section.2}{Introduction}{}% 1
-\BOOKMARK [1][]{section.4}{Using the Style Template}{}% 2
-\BOOKMARK [1][]{section.5}{Bibliography Instructions}{}% 3
-\BOOKMARK [1][]{section.6}{Example Section}{}% 4
-\BOOKMARK [1][]{section.7}{Exposition}{}% 5
-\BOOKMARK [2][]{subsection.9}{Lorem ipsum}{section.7}% 6
-\BOOKMARK [2][]{subsection.11}{Mezcal Head}{section.7}% 7
-\BOOKMARK [3][-]{subsubsection.12}{Duis Autem}{subsection.11}% 8
-\BOOKMARK [3][-]{subsubsection.14}{Ejector Seat Reservation}{subsection.11}% 9
-\BOOKMARK [1][]{section.19}{Conclusion}{}% 10
+\BOOKMARK [1][]{section.4}{Related Work}{}% 2
+\BOOKMARK [2][]{subsection.5}{Multi-model Semantic Interaction}{section.4}% 3
+\BOOKMARK [2][]{subsection.6}{Crowdsourced synthesis and sensemaking}{section.4}% 4
+\BOOKMARK [1][]{section.7}{Semantic Interactions for Crowdsourcing}{}% 5
+\BOOKMARK [2][]{subsection.8}{Updated Visualization Pipeline}{section.7}% 6
+\BOOKMARK [2][]{subsection.9}{Input}{section.7}% 7
+\BOOKMARK [2][]{subsection.10}{Output}{section.7}% 8
+\BOOKMARK [1][]{section.11}{CrowdSPIRE}{}% 9
+\BOOKMARK [2][]{subsection.12}{Visual Encodings}{section.11}% 10
+\BOOKMARK [2][]{subsection.13}{Interactions}{section.11}% 11
+\BOOKMARK [2][]{subsection.14}{Related Crowdsourcing Tasks}{section.11}% 12
+\BOOKMARK [1][]{section.15}{Case Study}{}% 13
+\BOOKMARK [1][]{section.16}{Conclusion}{}% 14

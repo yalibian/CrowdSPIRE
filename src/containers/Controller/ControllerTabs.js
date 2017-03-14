@@ -3,9 +3,23 @@
  */
 
 import React, {Component, PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as ListsActions from '../../actions/actions';
 
 import {Tabs, Tab} from 'material-ui/Tabs';
 import SearchTerms from './SearchTerms'
+
+function mapStateToProps(state) {
+    return {
+        nodes: state.model.nodes,
+        links: state.model.links
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(ListsActions, dispatch);
+}
 
 const styles = {
     headline: {
@@ -44,6 +58,7 @@ const buttonStyle = {
     height: '30px'
 };
 
+@connect(mapStateToProps, mapDispatchToProps)
 export default class ControllerTabs extends React.Component {
     
     constructor(props) {
