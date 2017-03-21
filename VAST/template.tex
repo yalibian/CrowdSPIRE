@@ -51,6 +51,7 @@
 \usepackage{cite}                      % needed to automatically sort the references
 \usepackage{tabu}                      % only used for the table example
 \usepackage{booktabs}                  % only used for the table example
+\usepackage{multirow}
 %% We encourage the use of mathptmx for consistent usage of times font
 %% throughout the proceedings. However, if you encounter conflicts
 %% with other math-related packages, you may want to disable it.
@@ -75,16 +76,16 @@
 \vgtcpapertype{please specify}
 
 %% Paper title.
-\title{Enhance Visual Analytics with Crowdsourcing through Semantic Interactions}
+\title{CrowdSPIRE: Crowdsourced Visual Analytics based on Semantic Interactions}
 
 %% This is how authors are specified in the journal style
 
 %% indicate IEEE Member or Student Member in form indicated below
-\author{Yali Bian, Chris North}
+\author{Yali Bian, Tianyi Li, Ji Wang, Kurt Luther, Chris North}
 \authorfooter{
 %% insert punctuation at end of each item
 \item
- Yali Bian, Chris North are with Virginia Tech. E-mail: [yali, north]@vt.eud.
+ Yali Bian, Kurt Luther, Chris North are with Virginia Tech. E-mail: [yali, north]@vt.eud.
 }
 
 %other entries to be set up for journal
@@ -93,30 +94,23 @@
 
 %% Abstract section.
 \abstract{
-Maing sense of large collection of document could be challenging.
+Visual analytics could help users explore and gain insight (comprehend) from dataset through interactive visualization and underlying analytics models.
+However, making sense of large text dataset is still challenging in many domains.
+because these tools generally assist with low-level tasks, requiring significant effort on the part of users.(Human sensemaking abilities remain essential and central to success.)
+To boost the sensemaking process, we present the concept of crowd-powered semantic interaction, where semantic semantic interactions can be used to automatically define and assign tasks to crowds, and update the visual interface based on crowdsourcing output.
+To demonstrate this model, we introduce CrowdSPIRE, a visual text analytics prototype that convert user interactions on documents into micro-tasks(that foster the related foraging and synthesis parts for user),
 
 How to use semantic interactions by expert to steer novice crowds (in addition to steers algorithms)
-		a. input:  how to use semantic interaction as input to direct the crowd tasks
-			i. can create several kinds of micro-tasks for each SI, some quick, some slow  (simulated in this paper with Tianyi data?)
-				1) e.g. when expert drags 2 docs together:
-					a) find entities that connect the 2 docs (quick)
-					b) label semantic-level connections between the 2 docs (quick) -> text that can be used
-					c) find related docs (slow)
-						i) must compare to every other doc?
-						ii) or use (a) and (b) to reduce the search set?  context slice?
-				2) other SI ...
-		b. output:  how to use crowd output in response to semantic interaction in the visualization
-			i. can use crowd results in visualization (e.g. distance function for Force Directed layout)
-			ii. can use crowd results in further algorithmic processing (e.g. search)
-			iii. dynamic output, streaming from crowds
 
-
-
+As the expert begins working, certain sensemaking subtasks, e.g. foraging and synthesizing, can be spun off from the expert and performed by crowdworkers, or handled automatically, in parallel with the expert’s own investigation.
+and update visual interface based on tasks feedback.
+The completed results are integrated into the expert’s workspace in the appropriate context.
+Consequently, the expert is able to solve the sensemaking problem much more quickly, with lower total effort, than she could ordinarily.
 } % end of abstract
 
 %% Keywords that describe your work. Will show as 'Index Terms' in journal
 %% please capitalize first letter and insert punctuation after last keyword
-\keywords{Visual analytics, Semantic Interaction, Crowdsourcing, Sensemaking.}
+\keywords{Visual analytics, Semantic Interaction, Crowdsourcing, Sensemaking, Crowd-powered Interface.}
 
 \CCScatlist{ % not used in journal version
  \CCScat{K.6.1}{Management of Computing and Information Systems}%
@@ -138,7 +132,6 @@ How to use semantic interactions by expert to steer novice crowds (in addition t
 %% Copyright space is enabled by default as required by guidelines.
 %% It is disabled by the 'review' option or via the following command:
 % \nocopyrightspace
-
 \vgtcinsertpkg
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,41 +140,84 @@ How to use semantic interactions by expert to steer novice crowds (in addition t
 
 \begin{document}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Introduction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \firstsection{Introduction}
 \maketitle
 %% \section{Introduction}
+Sensemaking tremendous amount of unstructured text is challenging but urgently needed. We are in the midst of a data deluge that shows no signs of slowing down.If we can find ways to make sense of this big data, the possibilities for learning more about ourselves and how to improve the world we live in are almost boundless.(Fox example, sensemaking help intellgience analytics find plots).
+The human mind can be immensely powerful, but it is also fundamentally constrained, in ways that have been precisely quantified, in its ability to process information.
+Interactive visualization tools help us convert textual information into visual representations much faster and easier to comprehend and manipulate. Data mining and text analytics help us parse huge quantities of digitized documents to find those that are most relevant and highlight what matters about them. The emerging field of visual analytics combines these powerful approaches--information visualization and data mining--to create a new class of sensemaking tools enabling new kinds of exploration and insights.
 
-We are in the midst of a data deluge that shows no signs of slowing down. Human behavior is increasingly mediated by technology, and these devices capture, store, and transmit data about their users at speeds and scales never before imagined. Documents are increasingly authored, shared, and read entirely online. Social network sites, pedometers, automobiles, and even buildings are instrumented to be sources of “big data,” and momentum is gathering to create an Internet of Things, connecting still more everyday objects to a worldwide digital network. The resulting quantities of data are astonishing. In 2008, the world generated 14.7 exabytes ($2^60$ bytes) of new information, almost three times more than just five years earlier. While some see these numbers as foreboding, others see a remarkable opportunity. If we can find ways to make sense of this big data, the possibilities for learning more about ourselves and how to improve the world we live in are almost boundless.
+Some data analysis tasks are more well-suited for automation, while other tasks that are perhaps less structured and defined are better for humans to perform. For example, com- puting clusters from data is more efficiently performed by computation, as long as the parameters of the clustering algorithm are known by the user. In contrast, generating questions, hypotheses, or stories about potentially interesting insights may be better suited for human reasoning. e understanding of which tasks during analysis are better suited for computation or cognition is an open area of research, yet an area well-suited for visual analytics.
 
-Yet, making sense of large amounts of data is challenging. The human mind can be immensely powerful, but it is also fundamentally constrained, in ways that have been precisely quantified, in its ability to process information [10]. Humans can only read so much text, or view so many images, or listen to so many words or sounds at a time. Thus, since the earliest days of computing, researchers and practitioners have sought to understand how computers might augment the analytical abilities of people. We have come a long way since the steam-powered calculators of Babbage and others, and today we benefit from a tremendous array of sensemaking technologies. Interactive visualization tools help us convert textual information into visual representations much faster and easier to comprehend and manipulate. Data mining and text analytics help us parse huge quantities of digitized documents to find those that are most relevant and highlight what matters about them. The emerging field of visual analytics combines these powerful approaches--information visualization and data mining--to create a new class of sensemaking tools enabling new kinds of exploration and insights.
+However, sensemaking of large datasets remains time-consuming and onerous, and existing support tools still have a long way to go.
+Machine learning techniques for finding, clustering, and summarizing documents can be highly effective in specialized contexts, but general purpose tools are less successful.
+Often, the connections that help us understand our data are more subtle than what an algorithm has been programmed to recognize.
+Information visualization tools amplify the cognitive abilities of their users, but many users come with limited knowledge or experience.
+Visual analytics overcomes some of these drawbacks by leveraging the complementary strengths of human cognition and computation, but these tools generally assist with low-level tasks, requiring significant effort on the part of users.
+Human sensemaking abilities remain essential and central to success.
 
-Despite these advances, sensemaking of large datasets remains time-consuming and onerous, and existing support tools still have a long way to go. Machine learning techniques for finding, clustering, and summarizing documents can be highly effective in specialized contexts, but general purpose tools are less successful. Often, the connections that help us understand our data are more subtle than what an algorithm has been programmed to recognize. Information visualization tools amplify the cognitive abilities of their users, but many users come with limited knowledge or experience. Visual analytics overcomes some of these drawbacks by leveraging the complementary strengths of human cognition and computation, but these tools generally assist with low-level tasks, requiring significant effort on the part of users. Human sensemaking abilities remain essential and central to success.
-
-In parallel with these developments, crowdsourcing has emerged as a promising technique for augmenting user interfaces and accomplishing tasks with which computers typically struggle. Crowdsourcing refers to online labor markets where distributed groups of people complete small amounts of work (micro-tasks), often for payment. APIs on platforms like Amazon Mechanical Turk [42] allow crowdsourced human intelligence to be applied algorithmically to complex problems and even embedded in software back-ends and user interfaces. Crowdsourcing was originally used for simple, independent tasks that leverage innate human abilities like transcribing text, identifying images, and categorizing or labeling items. More recent research investigates how complex and creative tasks, like planning a vacation, writing a news article, or shopping for a digital camera might also be crowdsourced, often with algorithms or workflows that decompose large tasks into smaller ones that can be completed in parallel.
-
+% Why Crowdsoucing, why crowdsoucing hard to use
+Crowdsourcing presents new opportunities to deal with this issue by augmenting the cognitive work of individual analysts, providing more insightful analysis than automated approaches and scaling better than traditional work. We propose the novel idea of using crowdsourcing to help augument the sensemaking part on users. In parallel with these developments, crowdsourcing has emerged as a promising technique for augmenting user interfaces and accomplishing tasks with which computers typically struggle. Crowdsourcing refers to online labor markets where distributed groups of people complete small amounts of work (micro-tasks), often for payment. APIs on platforms like Amazon Mechanical Turk [42] allow crowdsourced human intelligence to be applied algorithmically to complex problems and even embedded in software back-ends and user interfaces. Crowdsourcing was originally used for simple, independent tasks that leverage innate human abilities like transcribing text, identifying images, and categorizing or labeling items. More recent
+research investigates how complex and creative tasks, like planning a vacation, writing a news article, or shopping for a digital camera might also be crowdsourced, often with algorithms or workflows that decompose large tasks into smaller ones that can be completed in parallel.
 Researchers have begun to investigate how crowdsourcing can been applied to complex sensemaking tasks, like creating a taxonomy of items or performing a bottom-up analysis of a large corpus of qualitative data. These efforts show promise for how crowds might assist an individual analyst with a difficult sensemaking problem, but differ in their emphasis on predefined data sets and goal of unsupervised task completion. One of the most significant challenges to crowdsourced sensemaking remains the ability to sustain deep or complex line of inquiry across multiple crowdworkers, who are generally novices with only a few minutes of time to commit.
 
-In this proposal, we investigate how crowdsourcing and computational techniques can be combined to support the efforts of an individual analyst engaged in a complex sensemaking task, such as identifying a threat to national security or determining the names of people and places in a photograph. Currently, such complex tasks are beyond the capabilities of the most advanced machine learning techniques or crowdsourcing workflows, and even trained experts struggle to perform them. We propose a series of studies to understand the sensemaking process of individuals, decompose that sensemaking process into subtasks performed by crowds and automated techniques, and develop and evaluate a prototype system based on a revised sensemaking loop optimizing the complementary strengths of individuals, crowdsourcing, and computation. At the core of our approach is the novel concept of “context slices,” an innovative technique for addressing the transience of crowdworkers by using a combination of human and computational guidance to give crowd workers only the information they need to complete their assigned task. Through a series of experiments, we will show how our prototype improves upon existing best practices in general purpose tools like search engines and specialized sensemaking tools across multiple domains. This work has broad implications for making sense of big data and using crowdsourcing to perform complex tasks.
+% Why cannot directly use crowdsourcing, directly design crowdsoucing works are hard for analysts who is not familiar with assign tasks.
 
-
-
-% Paper motivation
-expert needs help
-limits of computational methods, algorithms, cant get semantics
-human crowds can help with semantics, maybe specific domain expertise?
-combinatorics problem:  cant have crowd investigate all possible combinations
-use expert to guide the crowd, expert has overall problem expertise
-managing the crowd is onerous
-how to provide expert with management capability that is usable, fits into their sensemaking process
 unified interface for managing algorithms and crowds
-solution = semantic interaction
+managing the crowd is onerous
 
+Though crowdsourcing is a powerful method to enhance users sensemaking process, while integration of crowdsourcing into visual analytics continues to be an open research challenge.
+This is particularly important when the analyst is a non-expert in the layout model(s).
+Even the user might have the domain knowledge of design and assign the tasks to crowd, it is also a torrible interactions, that pull users out of the human in loop, disturb the sensemaking phrase of human.
+how to provide expert with management capability that is usable, fits into their sensemaking process
+
+Semantic interaction is an approach to user interaction that couples exploratory interactions with updating and steering computational models. e premise of semantic interaction is to create user interaction techniques that more closely couple this cognitive processing and reasoning of humans with the computational processes and models used in visual analytics. e goal is to create systems that optimize the balance between human and machine eﬀort for data analysis. For such systems, user interaction is the means through which this coupling takes place.
+
+% Steer crowdsourcing implicitly.
+Implicit forms of model steering can be categorized by the actions taken by the user and differentiated from the explicit forms. For example, an implicit form of model steering could be a person marking an email message as spam. e steering that happens as a result of that action typically does not require user input on the specific model parameters. Instead, the user actions are often on the data items, such as labeling or grouping them with other similar items. A more complete survey of implicit and explicit forms of model steering can be found in
+
+but Performing visual data analysis involves a blend of data analytics and human reasoning. e appropriate blend of these two parts needs to be explicitly balanced through design and eval- uation.
+
+
+In this proposal, we investigate how crowdsourcing and visual analytics can be combined to support the efforts of an individual analyst engaged in a complex sensemaking task, such as identifying a threat to national security or determining the names of people and places in a photograph.
+
+We propose the model crowd-powered semantic interaction  that combine the power of human and machine computation and decompose that sensemaking process into subtasks performed by crowds and automated techniques, and develop and evaluate a prototype system CrowdSPIRE: based on a revised sensemaking loop optimizing the complementary strengths of individuals, crowdsourcing, and computation.
+
+At the core of our approach is the novel concept of “context slices,” an innovative technique for addressing the transience of crowdworkers by using a combination of human and computational guidance to give crowd workers only the information they need to complete their assigned task.
+Through a series of experiments, we will show how our prototype improves upon existing best practices in general purpose tools like search engines and specialized sensemaking tools across multiple domains. This work has broad implications for making sense of big data and using crowdsourcing to perform complex tasks.
+Our main contribution are:
+(1) The model: crowd-powered semantic interaction, is an model that combine both human and machine computation to help analysts make sense of complex sensemaking problems.
+(2) We formalize this model in the form of an updated visualization pipeline  that reflects the generalizedbility of semantic interactions to combine crowdsourcing tasks.
+(3) We identify key issues to when combine human computation into visual analytics system: How to implicitly design and assign tasks to crowds, and how to merge the crowds output into visual interface, with out distubing the human in the loop phrase and boot the sensemaking process.
+(4) To demonstrate crowd-powered semantic interaction, we present CrowdSPIRE, a visual analyticsprototype based on ForceSPIRE. And we evaluate the effencency through several case studys: on the assign part, and visual parts.(Two parts in evaluation)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Related Work
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work}
-% MULTI-MODEL SEMANTIC INTERACTION
-\subsection{Multi-model Semantic Interaction}
-Our prior work on semantic interaction (Figure 3) was designed to enable analysts to steer computational analytical models in a usable way [8,15,17,23]. Semantic interaction shields the analysts from the low-level input parameters of the algorithms, and instead enables analysts to interact directly with the high-level outputs of the models which is where their cognition is focused. These high-level interactions are then recast into low-level inputs, through machine learning algorithms that attempt to recognize the reasoning process. For example, in text analytics, analysts can interact using Figure 3: Example of spatial text analytics their normal sensemaking actions such as reading, using our StarSpire system [8]. An expert organizing documents spatially, highlighting analyst guides the machine learning important sections, conducting searches, annotating algorithms by directly manipulating the in the margins, etc. In our StarSpire prototype [8], layout. Our vision is that the expert these actions are interpreted by the underlying interactions will also guide crowdworkers’ algorithms and applied to support the analyst by subtasks. automatically finding and organizing additional information relevant to the analyst’s thought process, integrating this visual feedback directly into the analyst’s visual spatial workspace. In our studies, we have found that this method successfully recognized analysts’ reasoning processes and relieved users from the need to organize many supporting documents or read many irrelevant documents [16]. We now recognize the opportunity to apply semantic interaction techniques to enable analysts to not only direct computational algorithms, but to also direct a large force of crowdworkers. Also, since semantic interaction recognizes opportunities for supporting subtasks and relevant information, it could also be used to support the process of generating dynamic context slices for crowdworkers’ subtasks.
+The crowd-powered semantic interaction model involves techniques from three part: visual analytics with semantic interaction, human computation, and sense making model to help combine this two techniques together.
 
-\subsection{Crowdsourced synthesis and sensemaking}
+\subsection{Semantic Interaction for Visual Analytics}
+% What is semantic interaction
+Semantic interaction (Figure 3) was designed to enable analysts to steer computational analytical models in a usable way [8,15,17,23].
+Semantic interaction shields the analysts from the low-level input parameters of the algorithms, and instead enables analysts to interact directly with the high-level outputs of the models which is where their cognition is focused.
+These high-level interactions are then recast into low-level inputs, through machine learning algorithms that attempt to recognize the reasoning process.
+For example, in text analytics, analysts can interact using their normal sensemaking actions such as reading, organizing documents spatially, highlighting important sections, conducting searches, annotating in the margins, etc. In the StartSPIRE prototype, these actions are interpreted by the underlying algorithms and applied to support the analyst by automatically finding and organizing additional information relavant to the analysts' thought process, integrating this visual feedback directly into the analyst's visual spatial workspace.
+In our studies, we have found that this method successfully recognized analysts’ reasoning processes and relieved users from the need to organize many supporting documents or read many irrelevant documents [16].
+
+We now recognize the opportunity to apply semantic interaction techniques to enable analysts to not only direct computational algorithms, but to also direct a large force of crowdworkers.
+Also, since semantic interaction recognizes opportunities for supporting subtasks and relevant information, it could also be used to support the process of generating dynamic context slices for crowdworkers’ subtasks.
+
+\subsection{Sensemaking}
+Two parts of sensemaking phrases: foraging and synthesis.
+
+\subsection{Crowdsourced synthesis and sensemaking, Crowd-powered interface}
+Intro to crowdsourcing, then two part intro to how combine crowdsourced synthesis, and How about use crowdsourcing to Visual Analytics.
+\subsubsection{Crowdsourced synthesis}
 Researchers have explored the value of using Figure 1: The sensemaking loop for crowdsourcing, either alone or combined with intelligence analysts described by [32]. automated approaches, to synthesize information with diverse or unknown schemas. One fruitful approach has been to blend crowdsourcing with ML algorithms. Partial clustering [19,40] and crowd kernel [35] are two such examples, but their application domain limited to imagery, and they focus on low context merges between pairs or triplets of items.
 
 Other crowdsourcing research explores higher-context clustering. Cascade [12] produces crowdsourced taxonomies of hierarchical data sets by letting workers generate, and later select, multiple categories per item. Frenzy [11] is a web-based collaborative session organizer that elicits paper metadata by letting crowdworkers group papers into sessions using a synchronous clustering tool. We draw design inspiration from these projects, particularly the notion of integrating microtasks into a more collaborative, unstructured interface embodied in Frenzy and other forms of crowdware [41]. Our prior work builds on this research by evaluating these clustering-style interfaces compared to other interfaces and workflows.
@@ -190,108 +226,249 @@ Researchers have also studied how much context to provide crowdworkers during cl
 
 Our proposed research builds on these earlier projects in significant ways. First, and most importantly, our unit of analysis is the entire sensemaking loop and ways that an individual analyst can be supported in real time by crowds or computation. We seek to augment the capabilities of these analysts, regardless of their expertise, allowing them to work faster accomplish more than they could unaided. To this end, all of our studies focus on how crowds or computation ultimately contribute to the performance of this individual. This approach is a significant departure from the majority of prior work that emphasizes unsupervised crowdsourced or computational techniques aimed at matching the performance of a motivated individual for a specific task or situation. Second, unlike most crowdsourced sensemaking projects that focus on either images or text, we investigate both domains to identify generalizable patterns and distill cross-domain design principles. Third, while prior work (including our own) establishes the importance of giving crowd workers the right amount of context, we extend this work by introducing the concept of dynamic context slices, which uses one of several methods to give each worker an amount of context customized to his or her unique task.
 
+\subsubsection{Real-time crowdsoucing and Crowd-powered interface, human in a loop}
 Real-time crowdsourcing systems have been developed to assist individuals with sensemaking tasks [5,6,26,27]. For example, VizWiz [6] is a mobile app that lets blind users capture images that sighted crowd workers can describe for them, and Chorus [27] provides a chat interface for crowd workers to help users with online search tasks like finding a nearby restaurant. We take inspiration from these systems, especially their mechanisms for recruiting and aggregating crowd work in real time, and extend them to complex sensemaking tasks where crowds are directed by mechanisms other than explicit user requests.
 
-
-In this paper, we focus on the crowdsourcing of such plans as a case study of constraint-based human computation tasks and introduce a collaborative planning system called Mobi that illustrates a novel crowdware paradigm. Mobi presents a single inter- face that enables crowd participants to view the current so- lution context and make appropriate contributions based on current needs. 
-
+In this paper, we focus on the crowdsourcing of such plans as a case study of constraint-based human computation tasks and introduce a collaborative planning system called Mobi that illustrates a novel crowdware paradigm. Mobi presents a single inter- face that enables crowd participants to view the current solution context and make appropriate contributions based on current needs.
 
 
-\section{Semantic Interactions for Crowdsourcing}
-
-To make full use of crowdsourcing on visual analytics system, we need to find out a better way to combine crowdsourcing and visual analytics. 
-Since semantic interactions is a good way to help experts to make full use of 
-
-Visual analytics places an emphasis on the integration of data analytics into the visual data ex- ploration process.
-
-
-MODEL STEERING
-Model steering (sometimes referred to as computational steering) consists of the explicit or im- plicit guidance of analytic models or computation. Computational models are eﬀective at high- lighting speciﬁc phenomena based on data characteristics in datasets. Each model comes with tradeoﬀs, designed and developed for speciﬁc data types, characteristics, or answers one seeks to gain from performing the computation.
-
-Models can be steered explicitly or 
-
-
-Since semantic interaction provides a link from the data in visualizations back to the analytic models that compute them. 
-Semantic interaction uses the visual metaphor as a bi-direction medium through which people can analytic models can communicate and collaborate about data.
-So semantic interactions could also provide as a powerful way to combinate visual analytics with crowdsourcing. 
-However, crowdsourcing is different from background algorithms(Machine learning algorithms): crowdsourcing is much slower and human needed, machine computation is much faster and the scalibility
-To combinate semantic interactions and crowdsourcing seamlessly. We make a new visualization pipeline as follows.
-
-
-
-
-how to use semantic interactions by expert to steer novice crowds (in addition to steers algorithms). 
-
-How to use semantic interaction as input to direct the crowd tasks.
-
-And how to make full use of feedbacks to combined with this visual analytics system, help experts sensemaking the documents.
-
-
-\subsection{Updated Visualization Pipeline}
-
-We present an updated visualization pipeline to reflect semantic interaction for crowdsourcing. 
-The initial spatialization is constructed by taking the data, or a working set of the data as determined by a relevance model, and passing it through a display layout model. 
-The user then perceives the spatialization and has the option of interacting with the data within the spatial metaphor. 
-All interactions are interpreted and directed to the appropriate inverted model(s). 
-The inverted models then are combined, if necessary, and the new parameters are stored in the user’s high dimensional model of the data.
-This high dimensional model is then coupled with the dataset to pass through the retrieval and projection portion of the loop, resulting in an updated spatialization. 
-This pipeline currently assumes a single shared set of model parameters. 
-Possible extensions of this pipeline include multiple user models for the data (e.g. the user believes the data should be arranged in a different manner than what the user believes should be displayed).
-Not all semantic interactions will necessarily influence every model or have the same impact. 
-We offer a few examples to illustrate this point. 
-Highlighting a phrase in a document typically indicates its importance, while minimizing a document when space is not constricted typically indicates the unimportance of its contents.
-Moving points around the display would naturally update the display layout, but would not necessarily fetch new data points for the workspace.
-
-Furthermore, updates to the underlying models should be executed wisely. 
-Updating a model that impacts the entirety of the data set will likely be a slow operation, whereas a display layout model operating on a small subset of the data can be executed much quicker. 
-Therefore, it is practical to update the display layout model with each semantic interaction, but it may not be practical to do so for the information retrieval model.
-Obviously, if a user explicitly queries for information, it should be returned promptly. 
-Otherwise, it may be a better option to check for new potentially relevant information and/or update the underlying model every n interactions.
-
-
-%% Uncomment below to include a teaser figure.
-% \teaser{
-%   \centering
-%   \includegraphics[width=\linewidth]{Pipeline}
-%   \caption{CrowdSPIRE: StartSPIRE based visual analytics with semantic interactions to assign crowdsourcing works}
-	% \label{fig:pipeline}
-% }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Crowd-Powered Semantic Interaction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Crowd-powered Semantic Interactions}
 
 % \begin{figure}[tb]
 \begin{figure*}
  \centering % avoid the use of \begin{center}...\end{center} and use \centering instead (more compact)
 %  \includegraphics[width=\columnwidth]{Pipeline}
   \includegraphics[width=\textwidth]{Pipeline}
- \caption{crowdsourcing based semantic interaction visualization pipeline. 
- Once the user perceives the visualization, they can choose to interact in it. 
- This interaction feedback is interpreted as requests to the human computation system, which could assign several micro-tasks to crowds. 
+ \caption{crowdsourcing based semantic interaction visualization pipeline.
+ Once the user perceives the visualization, they can choose to interact in it.
+ This interaction feedback is interpreted as requests to the human computation system, which could assign several micro-tasks to crowds.
  The project algorithms could update visualization based on crowdsourcing outputs through their types, along with original data.
 	 }
  \label{fig:pipeline}
 \end{figure*}
 
 
-Define four levels of crowdsourcing on text analytics:
-(A): find entities  the connect to documents
-(B): Label semantic-level connections between to documents
-(C): Find related docs
-(D): Cluster documents
+% Main idea and examples to explain the idea.
+To help boosting the sensemaking phrase of analytics, we propose the novel idea of combining visual analytics with crowdsourcing.
+However, to combine this two fields appropriately and make full use the advantages from both field, we extension the idea of semantic interaction, that help expert analysts guide the machine learning algorithms by directly manipulating the layout, into the crowdsoucring field: that use semantic interactions to guide crowdworkers' subtask automatically and update the visual interface appropriately when tasks finished.
+Ultimately, this system design will be two major step towards developing powerful software tools to augment human intelligence and sensemaking:
 
-The overview of whole system, with input and output.
+(1) Generate and design tasks automatically based on semantic interaction: We will begin by generating a list of potential subtasks to be modularized and decomposed from the sensemaking process,the sensemaking process be most effectively divided between individuals, crowds, andHow can the sensemaking process be most effectively divided between individuals, crowds, and computing? What are the finest granularities of tasks that can be effectively aggregated to contribute to sensemaking? How much information context is necessary for an individual to contribute meaningfully to a collaborative sensemaking effort? computing? task allocation strategies, perform complex sensemaking using crowdsourcing while minimizing bottlenecks and redundancies?
+We envision an expert analyst working in a sensemaking environment that observes and dynamically responds to her reasoning process.
+As the expert begins working, certain sensemaking subtasks, e.g. foraging and synthesizing, can be spun off from the expert and performed by crowdworkers, or handled automatically, in parallel with the expert’s own investigation.
+The spin-off process may occur explicitly, initiated by the expert herself as a kind of crowd delegation, or implicitly, by the system analyzing her activities and generating predictions of promising lines of inquiry.
+The crowd might even direct itself, drawing on human intuition and hunches.
 
-\subsection{Human Computation Tasks Assignment based on Semantic Interaction}
+(2) Integrate completed task results into the visual interface in the appropriate context.
+As crowdworkers enter and leave their work environments, context slices allow them to complete tasks or pass on their works-in-progress to the next crowd. The completed results are integrated into the expert’s workspace in the appropriate context.
+prior work comparing tournament (parallel) versus linear (serial) crowdsourcing workflows for synthesizing diverse information sources provides a strong foundation
+As crowdworkers enter and leave their work environments, context slices allow them to complete tasks or pass on their works-in-progress to the next crowd.
+The completed results are integrated into the expert’s workspace in the appropriate context.
+Consequently, the expert is able to solve the sensemaking problem much more quickly, with lower total effort, than she could ordinarily.
+
+% Example on Crowd-powered Semantic Interaction
+As an example, an expert working in intelligence analysis may be investigating three different individuals suspected of being involved in a terrorist plot.
+He and his colleagues have collected a large corpus of potentially relevant documents including police reports, depositions, surveillance footage, and other materials.
+The expert launches our software on a computer with a large display and begins sifting through and grouping related documents.
+He puts three documents about Suspect 1 together to form a cluster, and makes another cluster with two documents related to Suspect 2.
+He begins work on Suspect 3.
+Meanwhile, the software begins seeking potential connections between suspects using both computational and crowd-based techniques.
+A data mining algorithm identifies simple connections between the suspects based on overlapping metadata, such as the fact that Suspects 1 and 2 live in the same state, but this connection is unimportant to the analyst.
+The software also recruits crowdworkers to examine the clusters and suggest potentially relevant connections between the two suspects and five documents.
+Buried deep in the documents is a surprising connection: both suspects own multiple luxury cars.
+The system highlights this crowd-identified relationship for the expert, who notices the update, and begins formulating a hypothesis about the two suspects working together and receiving a large payment.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Updated Visualization Pipeline
+\subsection{Updated Visualization Pipeline}
+
+
+We present an updated visualization pipeline to reflect crowd-powered semantic interaction model.
+The initial visualization is constructed by taking the data, or a working set of the data as determined by a relevance model, and passing it through a display layout model.
+The user then perceives the visualization and has the option of interacting with the data within the spatial metaphor.
+All interactions are interpreted and directed to the appropriate tasks based on task allocation strategy.
+For each interaction, the task allocation strategy could assign several sensemaking sub-tasks (foraging and synthesizing) based on current contexts(elements showed on screen) to crowds. Some sub-tasks could also be combined to support other complex sub-tasks.
+After several times of recursion, the completed tasks' output combined with original data could be mapped to visualization based on appropriate current contents. Only related information could be used to update the visualization, other information from crowd might disturb the human in a loop. This pipeline currently assumes a single layout model used on our visualization system.
+
+Possible extensions of this pipeline include multiple automatic computation models for the data (e.g. the user believes the data should be arranged in a different manner than what the user believes should be displayed), on interaction interpreter to help find and define more needed crowd tasks.
+Not all semantic interactions will necessarily start and assign the crowd task since original interactions could have already finished the tasks.
+For examples to illustrate this point.
+Highlighting a phrase in a document typically indicates its importance, while minimizing a document when space is not constricted typically indicates the unimportance of its contents.
+Moving points around the display would naturally update the display layout, but would not necessarily fetch new data points for the workspace.
+
+Tasks outputs could be stored so that users can make use of external knowledge in the future, instead of create a new tasks.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Task allocation strategy
+\subsection{Task allocation strategy}
+
+% Define sensemaking tasks. on two phrase.
+Since semantic interactions right now are mainly on spatilation. We, design sensemaking tasks main on their relationships.
+For each interaction, semantic interaction could help us understand each of their reasoning, which we could define several sensemaking tasks.
+And each sensemaking tasks could be modularized and decomposed, to several sub-tasks so that crowdsourcing could be used to perform them.
+Different phrase have different contexts,
+Current senmaking tasks. For example, when searching new words, at the foraging loop, the context is the whole dataset. If highlight a setence on an opened document, the main context is current documents on the screen.
+
+create multiple alternative competing hypotheses based on the given data
+find additional relevant information that supports the created hypotheses.
+dual search, occurs between these two loops in which analysts must simultaneously create multiple alternative competing hypotheses based on the given data and, at the same time, find additional relevant information that supports the created hypotheses.
+
+Based on different sensemaking tasts and their context, we could design to the task based on task allocation strategy.
+For each of those sensemaking task, we could design several kind of sensemaking tasks to get a clear results.
+What's more, for each interaction, there is a context, that describe current sensemaking issues.
+How the sensemaking tasks identified in that study could be modularized and decomposed, so that either automated techniques, or crowdsourcing, could be used to perform them. The goal of this study is to generate automated or crowd-powered alternatives to individual analysts performing these tasks, towards the goal of augmenting analysts with a suite of support tools. To reach this goal, we will perform a series of experiments to identify the benefits, drawbacks, and tradeoffs of using individuals, automated techniques like data mining, and crowdsourcing for each component of the sensemaking process.
+
+The details of each subtask experimental procedure will vary depending on the details of the subtask alternatives; for example, foraging subtasks imply different participant goals than synthesis subtasks. However, in general, our goal is to devise and compare individual analyst performance and subjective experiences to those of crowdworkers, as well as a state-of-the-art automated approach. Crowdworker tasks and interfaces will be designed to assume minimal worker skill and expertise, to be verified using pre-survey screenings.
+
+We convert the translates the sensemaking tasks into real problems like the distance between documents, which is a unified task purpose to do tasks and update the visual interface.
+
+Spatializations are frequently employed to aid sensemaking (foraging and synthesis) of unstructured text documents [2, 21, 30, 33, 34].
+Large, high-resolution displays in particular have been found beneficial in affording a large, flexible workspace that allows users to externalize knowledge and create semantic schemas.
+
+For different interactions, the difference is that we get different contexts, and informations for this task.
+Also, each interaction, we could reason this interaction from two kind of sensemaking phrase: based on the associate analytic reasoning, we list the task like this:
+
+\begin{table*}[t]
+  \caption{Sensemaking context in each Semantic Interction}
+  \label{tab:context}
+  \centering
+  \begin{tabular}{| m{2cm} | m{6cm} | m{4cm} | m{4cm} |}
+  \hline
+   \multirow{2}{2cm}{Semantic Interaction} & \multirow{2}{6cm}{Associate Analytic Reasoning} & \multicolumn{2}{c|}{Crowdsourced Subtasks} \\ \cline{3-4} & & Foraging Task & Synthesis Task\\ \hline
+
+Document Movement  &  Similarity/Dissimilarity \newline Create spatial construct (e.g. cluster, timeline, list, etc.) \newline Test hypothesis, see how document “fits” in region &  & Rearrange the spatial workspace to reflect the user’s organizational schema.\\ \hline
+
+Text Highlighting & Mark importance of phrase (collection of entities) \newline Augment visual appearance of document for reference  & Retrieves documents matching the highlighted text from dataset & Find related entities and rearrange the document layout based on highlighted text \\ \hline
+
+Pinning Document & Give semantic meaning to space/layout &  & Rearrange the spatial workspace to reflect the user’s organizational schema.\\ \hline
+
+Annotation, “Sticky Note” & Put semantic information in workspace, within document context & Retrieve documents matching the annotation & Layout current documents on workspace based on annotations, find more links between this document based on the annotation\\ \hline
+
+Open document & Change ease of visually referencing information (e.g., full detail = more important = easy to reference) & Retrieves more documents related to this document & Find more relationships between this document and other documents on current workspace. Re-layout the neighbors of selected document \\ \hline
+
+Minimize document & Change ease of visually referencing information (e.g., full detail = more important = easy to reference) & Retrieves more documents related to this document & Find more relationships between this document and other documents on current workspace. Re-layout the neighbors of selected document \\ \hline
+
+Search Terms & Expressive search for entity & Retrieve more documents matching searching terms & Find related terms have the meaning on current context, Re-layout documents on current workspace based on searching terms \\ \hline
+
+
+Overlapping documents
+& Expressive search for entity & Retrieve more documents that connected with those two documents & Find relationships between overlapped documents and compare their contents, Re-layout documents on current workspace based on the overlapped documents locations\\ \hline
+\end{tabular}
+\end{table*}
+
+Two sensemaking phrase provide different functions, the foraging part is responsible for gathering relevant information based on current user's intention which could be expressed through interactions with the visualization. Even for the foraging crowdsourcing tasks, different interactions, could assign different level of foraging tasks: for example, text highlighting could trigger.
+
+
+Right now semantic interactions are mainly based on spatiation, so the purpose of sensemaking tasks could also be the layout of statialation.
+
+Users could make sense of dataset in details through interaction like searching.
+For example, ForceSPIRE[] provides a list of various forms of semantic interaction, including how each can be used within the analytic process of investigating textual information spatially.
+is list is likely incomplete, but serves as a starting point to introduce how semantic interaction can be integrated into a user’s reasoning process.
+Each interaction corresponds to reasoning of users within the analytic process.
+Corresponding model updates are performed to steer the crowd-tasks assign system.
+Based on different resoning of each interaction, that users use when they want to find more details about interested information about certain word, document, compare between two documets, or a cluster of documets.
+they want to narrow down the prolem.
+
+** Semantic interaction and their context
+For each semantic interaction, they have a object to specifid, which narrow down theire thinks to (Search for relations/in shobox)
+When they open document,
+As corresponded to past semantic interaction when they INTERPRETING interactions with ASSOCIATED ANALYTICAL REASONING
+In interpreting the interaction, the system determines the analytical reasoning associated with the interactions and updates the model accordingly. From previous findings [5], categories of user interaction can be associated with specific forms of analytical reasoning (see Table 4.1). It is essentially the model’s task to determine why, in terms of the data, the interaction occurred, and how that information can be used to augment and adjust the analytic models of the system to help the user’s task. e goal is to calculate, based on the data, what information is consistent with the captured interaction. For instance, we can associate text highlighting with adding importance to the text being highlighted.
+Since, each interaction have a reasoning when they do some interaction at specific level visual elemenets on visualization.
+Their sensemaking phrase could have a implicit specified context, based on [5].
+Right now we list the implicit context as follows:
+
+The context users used for sensemaking are as follows:
+
+With diferent context:
+
+As shown on tabel \autoref{tab:context}, when user drag two document together, this means on the context of whole documets shown on screen(dataset), they think those tow doucments are similar, we should assign crowd that based on those two documents, we need find more related documents,
+and why those two documets are
+
+Levels of documents could be mapped to different kinds of crowd tasks.
+
+Why we assign crowd in this a way, because of sensemakings
+There are two very important factors that steer the crowd taks assignment part: sensemaking context, associate analytic reasoning.
+
+For the associate analytic part, we could understand why two documents are related.
+For the associate analytic part, we could get more knowledge on this sensemaking context.
+
+The crowd could help users find high level concepts from documents,
+
+Using crowdsourcing to help booster the sensemaking process through two part: foraging and synthsis.
+
+Crowd Synthesis: make clusters.
+
+As such crowd-workflows become complex, researchers must identify the level of crowd-supervision needed for optimal output.
+Intead of let crowdsourcing design experts to assign tasks to crowds, we use semantic interactions to latently
+
+HIT Design based on Semantic Interactions
+
+For different semantic interactions, we could assign different tasks.
+input:  how to use semantic interaction as input to direct the crowd tasks
+
+can create several kinds of micro-tasks for each SI, some quick, some slow  (simulated in this paper with Tianyi data?) \newline
+Drags two docs togethers
+1) e.g. when expert drags 2 docs together:
+
+a) find entities that connect the 2 docs (quick)
+b) label semantic-level connections between the 2 docs (quick) -> text that can be used
+c) find related docs (slow)
+i) must compare to every other doc?
+ii) or use (a) and (b) to reduce the search set?  context slice?\newline
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Task allocation strategy
+\subsection{Integrate Crowds into Workspace}
+
+synchronous tasks
+How to integrating microtasks into a more collaborative, unstructured interface embodied in Frenzy and other forms of crowdware
+Human computation
+Open Document
+Search Keywords\newline
+Clusters \newline
+
+% integrated into the expert’s workspace
+To integrate the crowds into visual analytics, we need to merge all the sub tasks into formated and combine the modularized subtasks in to a comprehensive sensemaking loop. To doing that, we should general the combination into two things: tasks levels (sub-tasks), and  tasks time complexity.
+
+considering how to recombine the modularized subtasks identified in the previous studies into a comprehensive, revised sensemaking loop, and to implement a software prototype based on this revised process.
+This effort implies a modification of the traditional sensemaking loop that accounts for the modularized components developed in Study 2.
+We plan a series of experiments leading to the design of effective workflows and task allocation strategies that allow individuals, crowds, and computation to synergistically perform complex sensemaking tasks, while minimizing bottlenecks and redundancies.
+
+
+\subsubsection{Crowds tasks in different levels}
+
+Crowds sensemaking tasks, based on different phrase, could be divided into two functions: foraging phrase: find more related documents on datasets.  Find documents not based on whether they are entities related but also semantically related.
+
+synthesis phrase: synthesize information with diverse or unknown schemas:
+
+For the first phrase, we could translate the tasks output into distances or orders that which one close to each other.
+
+For synthesis sub-tasks: we could find their schemas on three different levels based on different interactions.
+
+Other level of relationships: compare the similarity between two overlapped documents, based on their contents, if has connections between each other, based on shared entities. or has same high level concepts. For this kinds of tasks, we needs store their outputs in three levels:
+entity links
+documents similariitys.
+clusters.
+
+Entity level tasks
 \begin{table}[tb]
-  \caption{Crowdsourcing based semantic interactions and their associated crowd tasks.}
-  \label{tab:interaction2tasks}
+  \caption{Sensemaking tasks in different levels}
+  \label{tab:tasks}
   \scriptsize%
 	\centering%
 \begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}lll}
   \hline
-   Semantic Interaction &  Crowsourcing Tasks \\
+   Interaction & Task Schemas Level & Task demo\\
   \hline
-  Resize document & A, B, C \\
+   Keywords &  \\
   Minimizie document & B \\
   Close document & A, B \\
   Annotation & A \\
@@ -303,70 +480,163 @@ The overview of whole system, with input and output.
 \end{tabular*}
 \end{table}
 
-For different semantic interactions, we could assign different tasks.
-input:  how to use semantic interaction as input to direct the crowd tasks
+How to tranverse outs puts into workspaces.
+For each kind of crowdsourcing tasks, we could integrate the results into workspaces.
 
+Also, micro-task are not independent, micro-tasks could designed for each other automatically, for example, linked dots could be used as inputs or contraints for another subtasks.
 
-can create several kinds of micro-tasks for each SI, some quick, some slow  (simulated in this paper with Tianyi data?) \newline 
-Drags two docs togethers
-1) e.g. when expert drags 2 docs together:
+Right now, crowdsourcing tasks for sensemaking could be classified into three levels: entities, documents (VizWiz: Nearly Real-time Answers to Visual Questions.
+find contents on documents, or edits , Frenzy: Collaborative Data Organization for Creating Conference Sessions.),
+clusters (Crowd Synthesis: Extracting Categories and Clusters from Complex Data.,  ). For each kinds of crowdsourcing tasks, each kind of crowdsourcing could build on each other.
+Lots of details on
 
-a) find entities that connect the 2 docs (quick)
-b) label semantic-level connections between the 2 docs (quick) -> text that can be used
-c) find related docs (slow)
-i) must compare to every other doc?
-ii) or use (a) and (b) to reduce the search set?  context slice?\newline 
+Find entities that connect the 2 docs (quick)
+For the entities level, we could be used to used as the input to other two level inputs. Also could used to provides as the inputs for automatic computation models.
 
+For document level, we could find more related documents, or find similarity or dissimilarity between small number of documents (usually less than five documents). Find related documents, or remove unrelated documents. Directly to the documents,
 
-synchronous tasks
+For cluster level tasks, we could map the layout to the workspace directly, as a distance function.
 
-How to integrating microtasks into a more collaborative, unstructured interface embodied in Frenzy and other forms of crowdware
-
-
-Human computation
-
-
-
-
-
-
-Open Document
-
-Search Keywords\newline 
-
-Clusters \newline 
-
-
-\subsection{Project Algorithms}
+label semantic-level connections between the 2 docs (quick) -> text that can be used
+find related docs (slow)
 
 output:  how to use crowd output in response to semantic interaction in the visualization
-
 can use crowd results in visualization (e.g. distance function for Force Directed layout)
-
 can use crowd results in further algorithmic processing (e.g. search)
-
 dynamic output, streaming from crowds
 
+\subsubsection{Crowds tasks in different time complexity}
 
+an individual analyst can be supported in real time by crowds or computation.
+
+Real-time crowdsourcing systems have been developed to assist individuals with sensemaking tasks [5,6,26,27].
+We seek to augment the capabilities of these analysts, regardless of their expertise, allowing them to work faster accomplish more than they could unaided.
+
+real time
+For synthesis phrase tasks, main on a small number of documents,
+
+For most foraging phrase tasks, since there are lots of documents to compile, automatic models could help to find the most possibly related documents, to let crowds to find. It might still be an time-assuming works(more than five mining):
+streaming
+batching results
+
+for those crowdsouricng tasks, there are two approaches to maneging latency in crowd-powered interfaces: steaming, batching results.
+Even if the crowdsourcing tasks are too slow to fit into the human in the loop (react less than ten seconds, the crowdsourcing could still be store to knowledge base, as an external knowledge for latter use, for example, analyst went to the similar situation, like overlap two document again, instead of assign a new task, the system could get crowdsourcing outputs immediately)
+
+
+If current context changed, store data for latter use.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	CrowdSPIRE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CrowdSPIRE}
+\begin{figure*}
+ \centering
+  \includegraphics[width=\textwidth]{Hit}
+ \caption{The Connect the Dots web application interface}
+ \label{fig:hit}
+\end{figure*}
 
+说明一下系统是用了机器学习的东西的，为了保证其他交互和StartSPIRE的一致.
+CrowdSPIRE (Crowd-powered Spatial Paradigm for Information Retrieval and Exploration) is a visual analytics tool prototype that implements crowd-powered semantic interaction technique: like ForceSPIRE, a semantic interaction visual analytics tool prototype for exploring unstructured text documents.
+CrowdSPIRE and ForceSPIRE share a flexible spatial workspace (driven by a modified force-directed layout and several semantic interactions.
+However, with different models on the background to help calculate the layouts of documents.
+Instead of using machine learning models, CrowdSPIRE use human computation to help calculate the distance between documents and update the layout of workspace.
+
+Right now, CrowdSPIRE integrate the "Connect the dots" tasks, which let crowds labels related entities in documents in a context slice and helps crowd workers with the micro-task of creating and labeling connections between entities extracted from the text.
+Through related entities in each document, we could calculate their TF-IDF similarity. When doing overlapping two documents.
+This system extends upon previous work to integrate relevance-based retrieval and layout models, provides richer visual encodings, and adds to the semantic interactions leveraged.
+
+StarSPIRE dynamically adjusts how many data points are displayed by using heuristic-based relevance metrics.
+
+Difference from basic pipeline.
+% Crowd-sourcing part
+% Document overlapping part.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Visual Encoding
 \subsection{Visual Encodings}
+Within the spatial workspace, document nodes are visually encoded to relate their relevance to the user’s high dimensional understanding of the data [Figure 5].
+Node size and saturation are encoded to reflect how closely a document matches the entities the user has deemed important.
+Node size and saturation are calculated by summing all of the entity weights in a document, ranking these values, and sorting them into quartiles.
+Quartiles were chosen instead of absolute
+ranking to optimize the node drawing process, minimizing the number of calculations and changes required with each user interaction.
+This was done to promote a quick interaction-feedback loop.
+These encodings give the illusion of a third dimension in the workspace where more important documents are in the foreground while less important documents fade into the background.
+However, unlike a true three-dimensional layout, document nodes cannot overlap each other, preventing occlusion.
+Additionally, StarSPIRE provides visual cues for navigating the workspace.
+Node color is used to indicate search term matches.
+Instead of showing all links between all documents, StarSPIRE restricts the edges shown to those connected to the selected node.
+Entities shared between documents are labelled on the edge, but are restricted to the top four entities, determined by their importance weights.
+All nodes are labelled with their document’s titles in order to allow for easier navigation in the space and to allow users to track a specific node’ s movement throughout the space.
+Each node’ s outline color is used to denote its read or unread status in order to allow analysts to see which documents they have read and closed.
 
-\subsection{Interactions}
+Within each document, search terms are identified and the text color is changed to allow the terms to stand out for easier identification.
+These encodings were identified and/or adjusted through an informal usability requirements analysis of StarSPIRE.
 
-\subsection{Related Crowdsourcing Tasks}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Crowd-powered Document Overlapping
+\subsection{Crowd-powered Document Overlapping}
+CrowdSPIRE implement all the interactions on ForceSPIRE, users could explore the whole datasets based on document movement, text highlighting, pining document, annotation sticky note, open document, minimize document and overlapping documents. However, to make the system simple and easy to evaluate, we only combine document overlapping interaction with crowdsourcing tasks.
 
+To evaluate the crowd-powered semantic interaction model, we only combined the document overlapping interaction with crowdsourcing tasks.
+At first, we have the distance between documents based on algorithms models.
 
+We two or more documents overlapped each other, the semantic interaction will trigger the task allocation stregory design a connect the dots crowdsourcing, based on overlapped documents.
+
+We define D as the set of overlapped documents, for each
+To carry out the 'connect the dots' task that help synthesis the overlapped documents:
+The task allocation strategy procedure that automatically assign current overlapping interactions to task:\newline
+(1) Pick m documents d1, dj from D (i != j), for all the di, dj. \newline
+(2) Generate a Hit to MTurk that show m documents:
+(2)	Show di, dj to k workers on a visualization view sub-task, which requires workers connect the related entities if they are related. \newline
+(3) For each link, the worker should input the certain, and how are these dots related. Document used to make this connection \newline
+
+For example, if three documents d1, and d2 and d3 are overlapped to each other, one of the micro-tasks is on Figure 1: {d1, d2}, {d1, d3} ... will be formed to give tasks to differnet.
+
+based two documents, the connect the dots will publish an Hit on MTurk
+
+%	Integrate 'Connect the Dots' into Workspace
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Integrate
+\subsection{Integrate "Connect the Dots" into Workspace}
+To make full use of the 'Connect the Dots' tasks as a real time services, we prototype the task, before the overlapping interactions.
+For example, instead of design the hit, after the semantic interaction, we pre-assigned the task, and store outputs to the database, when the overlapping interaction be implements, we retreave this context, as it is.
+The related nodes could also be mapped to distances. based on
+BAsed on algorithms. Aslo, mapping the distance functions based on related entities.
+Pre-store current storage to mimic the real time crowdsourcing.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Case Study
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Case Study}
 
 Comparison of crowd-enhanced version with algorithm-only version
-
-
 produces different insight?
+better insight???
+compare to Gold Standard Solution
+beyond simple keywords, semantics similarities
+compare to previous user study cluster results?
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Evaluation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Evaluation}
+
+For the evaluation, we use documents from .
+
+We compared the CrowdSPIRE version layout and StartSPIRE version.
+which we find the pattern that CrowdSPIRE could help more things on layout part.
+
+How the assigned tasks is good to current tasks.
+Comparison of crowd-enhanced version with algorithm-only version
+produces different insight?
 better insight???
 
 
+
+
+Throught the results, we compare to the Gold stand solution
 compare to Gold Standard Solution
 
 
@@ -375,10 +645,19 @@ beyond simple keywords, semantics similarities
 
 compare to previous user study cluster results?
 
-Finally we find that .
 
+Finally we find that crowdsourcing could help users have a good overview and some hard connections between documents.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	CrowdSPIRE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \acknowledgments{
 The authors wish to thank A, B, C. This work was supported in part by
 a grant from XYZ.}

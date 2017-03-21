@@ -1,14 +1,20 @@
 \BOOKMARK [1][]{section.2}{Introduction}{}% 1
 \BOOKMARK [1][]{section.4}{Related Work}{}% 2
-\BOOKMARK [2][]{subsection.5}{Multi-model Semantic Interaction}{section.4}% 3
-\BOOKMARK [2][]{subsection.6}{Crowdsourced synthesis and sensemaking}{section.4}% 4
-\BOOKMARK [1][]{section.7}{Semantic Interactions for Crowdsourcing}{}% 5
-\BOOKMARK [2][]{subsection.8}{Updated Visualization Pipeline}{section.7}% 6
-\BOOKMARK [2][]{subsection.10}{Human Computation Tasks Assignment based on Semantic Interaction}{section.7}% 7
-\BOOKMARK [2][]{subsection.12}{Project Algorithms}{section.7}% 8
-\BOOKMARK [1][]{section.13}{CrowdSPIRE}{}% 9
-\BOOKMARK [2][]{subsection.14}{Visual Encodings}{section.13}% 10
-\BOOKMARK [2][]{subsection.15}{Interactions}{section.13}% 11
-\BOOKMARK [2][]{subsection.16}{Related Crowdsourcing Tasks}{section.13}% 12
-\BOOKMARK [1][]{section.17}{Case Study}{}% 13
-\BOOKMARK [1][]{section.18}{Conclusion}{}% 14
+\BOOKMARK [2][]{subsection.5}{Semantic Interaction for Visual Analytics}{section.4}% 3
+\BOOKMARK [2][]{subsection.6}{Sensemaking}{section.4}% 4
+\BOOKMARK [2][]{subsection.7}{Crowdsourced synthesis and sensemaking, Crowd-powered interface}{section.4}% 5
+\BOOKMARK [3][-]{subsubsection.8}{Crowdsourced synthesis}{subsection.7}% 6
+\BOOKMARK [3][-]{subsubsection.9}{Real-time crowdsoucing and Crowd-powered interface, human in a loop}{subsection.7}% 7
+\BOOKMARK [1][]{section.10}{Crowd-powered Semantic Interactions}{}% 8
+\BOOKMARK [2][]{subsection.12}{Updated Visualization Pipeline}{section.10}% 9
+\BOOKMARK [2][]{subsection.13}{Task allocation strategy}{section.10}% 10
+\BOOKMARK [2][]{subsection.15}{Integrate Crowds into Workspace}{section.10}% 11
+\BOOKMARK [3][-]{subsubsection.16}{Crowds tasks in different levels}{subsection.15}% 12
+\BOOKMARK [3][-]{subsubsection.18}{Crowds tasks in different time complexity}{subsection.15}% 13
+\BOOKMARK [1][]{section.19}{CrowdSPIRE}{}% 14
+\BOOKMARK [2][]{subsection.21}{Visual Encodings}{section.19}% 15
+\BOOKMARK [2][]{subsection.22}{Crowd-powered Document Overlapping}{section.19}% 16
+\BOOKMARK [2][]{subsection.23}{Integrate "Connect the Dots" into Workspace}{section.19}% 17
+\BOOKMARK [1][]{section.24}{Case Study}{}% 18
+\BOOKMARK [1][]{section.25}{Evaluation}{}% 19
+\BOOKMARK [1][]{section.26}{Conclusion}{}% 20
