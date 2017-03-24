@@ -1,14 +1,14 @@
 \BOOKMARK [1][]{section.2}{Introduction}{}% 1
-\BOOKMARK [1][]{section.4}{Related Work}{}% 2
-\BOOKMARK [2][]{subsection.5}{Semantic Interaction for Visual Analytics}{section.4}% 3
-\BOOKMARK [2][]{subsection.6}{Sensemaking}{section.4}% 4
-\BOOKMARK [2][]{subsection.7}{Crowdsourced synthesis and sensemaking, Crowd-powered interface}{section.4}% 5
-\BOOKMARK [3][-]{subsubsection.8}{Crowdsourced synthesis}{subsection.7}% 6
-\BOOKMARK [3][-]{subsubsection.9}{Real-time crowdsoucing and Crowd-powered interface, human in a loop}{subsection.7}% 7
-\BOOKMARK [1][]{section.10}{Crowd-powered Semantic Interactions}{}% 8
-\BOOKMARK [2][]{subsection.12}{Updated Visualization Pipeline}{section.10}% 9
-\BOOKMARK [2][]{subsection.13}{Task allocation strategy}{section.10}% 10
-\BOOKMARK [2][]{subsection.15}{Integrate Crowds into Workspace}{section.10}% 11
+\BOOKMARK [1][]{section.5}{Related Work}{}% 2
+\BOOKMARK [2][]{subsection.6}{Semantic Interaction for Visual Analytics}{section.5}% 3
+\BOOKMARK [2][]{subsection.7}{Sensemaking}{section.5}% 4
+\BOOKMARK [2][]{subsection.8}{Crowdsourced synthesis and sensemaking, Crowd-powered interface}{section.5}% 5
+\BOOKMARK [3][-]{subsubsection.9}{Crowdsourced synthesis}{subsection.8}% 6
+\BOOKMARK [3][-]{subsubsection.10}{Real-time crowdsoucing and Crowd-powered interface, human in a loop}{subsection.8}% 7
+\BOOKMARK [1][]{section.11}{Crowd-powered Semantic Interactions}{}% 8
+\BOOKMARK [2][]{subsection.13}{Updated Visualization Pipeline}{section.11}% 9
+\BOOKMARK [2][]{subsection.14}{Task allocation strategy}{section.11}% 10
+\BOOKMARK [2][]{subsection.15}{Integrate Crowds into Workspace}{section.11}% 11
 \BOOKMARK [3][-]{subsubsection.16}{Crowds tasks in different levels}{subsection.15}% 12
 \BOOKMARK [3][-]{subsubsection.18}{Crowds tasks in different time complexity}{subsection.15}% 13
 \BOOKMARK [1][]{section.19}{CrowdSPIRE}{}% 14
