@@ -94,19 +94,18 @@
 
 %% Abstract section.
 \abstract{
-Visual analytics could help users explore and gain insight (comprehend) from dataset through interactive visualization and underlying analytics models.
+Visual analytics could help users explore and gain insight from dataset through interactive visualization and underlying analytics models.
 However, making sense of large text dataset is still challenging in many domains.
-because these tools generally assist with low-level tasks, requiring significant effort on the part of users.(Human sensemaking abilities remain essential and central to success.)
-To boost the sensemaking process, we present the concept of crowd-powered semantic interaction, where semantic semantic interactions can be used to automatically define and assign tasks to crowds, and update the visual interface based on crowdsourcing output.
-To demonstrate this model, we introduce CrowdSPIRE, a visual text analytics prototype that convert user interactions on documents into micro-tasks(that foster the related foraging and synthesis parts for user),
+For example, an intelligence analyst might need to find a coordinated terrorist assault in three US cities from one hundred of documents in a limited time.
+Existing visual analytics techniques only assist with low-level tasks, such as finding related documents based on shared entities, which still require significant effort on the part of users.
 
-How to use semantic interactions by expert to steer novice crowds (in addition to steers algorithms)
-
-As the expert begins working, certain sensemaking subtasks, e.g. foraging and synthesizing, can be spun off from the expert and performed by crowdworkers, or handled automatically, in parallel with the expert’s own investigation.
-and update visual interface based on tasks feedback.
-The completed results are integrated into the expert’s workspace in the appropriate context.
-Consequently, the expert is able to solve the sensemaking problem much more quickly, with lower total effort, than she could ordinarily.
-} % end of abstract
+To support the sensemaking process in visual analytics, we present the concept of crowd-powered semantic interaction, where semantic interactions can be used assign micro-tasks to crowds.
+This model could help users to steer crowd-workers to carry out sensemaking tasks implicitly even they are novice on crowdsourcing.
+The completed output could be used to update the visualization appropriately that foster the related foraging and synthesis parts for users.
+To demonstrate this model, we introduce CrowdSPIRE, a visual text analytics prototype that converts user interactions on documents into micro-tasks called "Connect the Dots".
+For example, the user drags two texts together, which triggers the assignment of certain sensemaking tasks to crowdworkers automatically,  in parallel with the expert’s own investigation.
+When the tasks finished, outputs could be used to update current visualization appropriately without distracting user's attention from the current thinking.
+}
 
 %% Keywords that describe your work. Will show as 'Index Terms' in journal
 %% please capitalize first letter and insert punctuation after last keyword
@@ -609,58 +608,149 @@ Pre-store current storage to mimic the real time crowdsourcing.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Case Study
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Case Study}
 
-Comparison of crowd-enhanced version with algorithm-only version
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Evaluation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{USAGE SCENARIO}
+
+
+In this section, we will demonstrate how CrowdSPIRE helps an analyst to make sense of complex dataset.
+We use The sign of the Crescent dataset[ref] which contains 41 fictional intelligence reports regarding a coordinated terrorist plot in three US cities.
+We will evaluate the effectiveness of CrowdSPIRE, we make a comparison of crowd-powered visual analytics (CrowdSPIRE) and algorithm-only based visual analytics (ForceSPIRE).
+Also, to test that the crowdsourcing tasks outputs correctness that we compare the layout of documents based on crowdsourcing with the gold standard solution/and the most correct layouts we get when users make sense of documents.
+\begin{figure*}
+ \centering
+  \includegraphics[width=\textwidth]{Case}
+ \caption{A process of finding a major threat plot with key steps. (1): Based on A. Ramazi, finding that there are two similar bundles and two cells. (2): One name and two bundles are highlighted when hovering the mouse over B. Dhaliwal. (3): Three names and three bundles are highlighted when exploring F. Goba. (4) Referring to the four connected groups of useful entities for hypothesis generation.}
+ \label{fig:case}
+\end{figure*}
+
+In this section, we walk through a text analytics scenario to demonstrate the how crowdsourcing supports
+Comparison of crowd-enhanced version (CrowdSPIRE) with algorithm-only version(ForceSPIRE).
+
+We prototype a web-version ForceSPIRE at the same version.
+The different between ForceSPIRE and CrowdSPIRE is that when overlapping documents together:
+ForceSPIRE will trigger the underlying machine learning alorithm to help calculatet the distance between documents.
+CrowdSPIRE will trigger the crowd micro-tasks allcation alorithm to assign "Connect the Dots" micro-tasks, and then use the output to calculate the document distance.
+
+So if we let the a user explore the doucments through this two documents, with the same interaction except overlapping documents, they will get similar layout.
+Through the layout of overlapping documents interaction, we could analyse current layout that could help user make sense of documents.
+
+For example, if we drag document together, the different layout on two techniques could help use analyse the effectiveness of CrowdSPIRE.
+
+To demonstrate StarSPIRE’s functionality, we used the VAST 2007 Challenge Dataset (“Blue Iguanodon”) [17].
+Because StarSPIRE is currently designed to operate on unstructured text documents only, we omitted all images and spreadsheets from the dataset, resulting in approximately 1,500 text files.
+Blog entries that were included in the data were converted into text files, one for each blog entry.
+Preliminary entity extraction was done on the dataset.
+The challenge task is an open-ended sensemaking task to investigate “unexpected activities concerning wildlife law enforcement, endangered species issues, and ecoterrorism” [17].
+We present the following usage scenario to demonstrate how StarSPIRE can leverage the MSI technique.
+The user began with a search for “chinchilla.” This was unsurprising, because the dataset contained a directory titled “Chinchillas.”
+She read through several documents, arranging them in the display based on document similarity.
+The user then began highlighting information regarding chinchillas, which branched into additional endangered species.
+This loosely structured analysis continued until the user read a document concerning a musical artist owning an extremely large number of exotic animals whose actions did not seem to match his words regarding animal conservation.
+The analyst denoted this as suspicious and began investigating it further.
+ This investigation was driven through highlighting the artist’s name and the name of his animal sanctuary, which imported many documents onto the display, some of which had a large node size.
+  The analyst opened the largest new nodes first.
+[Figure 8] shows the evolution of the user’s spatial organization schemas through the sensemaking task.
+Clusters of documents were moved around the screen and a mixture of visual encodings and document proximity motivated the choice of documents to investigate next.
+Furthermore, it can be seen that the user initially executed two searches to obtain some initial documents, but then opted for other multi-scale semantic interaction techniques to obtain new documents (e.g. highlighting, linking documents – denoted by the purple bars, and annotating documents).
+Document annotations were used to record hypotheses and insights (e.g. “r’Bert is r’Bear?” and “r’Bear might have monkeypox”).
+In the later stages of analysis, searches were used primarily to label the space, serving as reminders of which documents concerns which persons or topics.
+However, they were also used to ensure that important information or documents had not been overlooked.
+
+Once the user identified suspicious activity regarding a large exotic animal reservation, it became apparent that many documents were interconnected via several subplots.
+As her understanding of the dataset evolved, so did her spatial representation.
+For example, two documents that were initially considered “not quite relevant, but interesting enough to not minimize” concerning an outbreak of a disease were initially placed in the upper right hand corner of the display.
+After realizing that the owner of the large exotic animal sanctuary had contracted the same disease, she moved the two documents down next to the exotic animal sanctuary documents.
+Highlights, document annotations, and document linking were primarily used to obtain new documents in the workspace.
+Searches were executed to check for additional information on important persons, but also used to label the spatial workspace.
+After approximately ninety minutes of analyzing the data, the user concluded that she had a sufficient understanding of the plot and subplots in the data.
+The user’s results were compared with the known ground truth solution.
+The user correctly identified four out of five subplots in the data.
+The use added 145 documents to the workspace, which is 10% of the actual dataset.
+47 documents were opened and 33 remained open at the conclusion of the sensemaking session.
+The user made eight searches, four document annotations, and 21 highlights.
+45 documents were added through searches, whereas the remaining 100 documents were added through other multi-scale semantic interactions (e.g. highlight, annotate, document proximity).
+Out of 26 documents relevant to the final solution, the user had added 18 of them to the workspace.
+Six of these 18 documents were added through an explicit search, while twelve were added through implicit multi-scale semantic interactions.
+13% (6/45) of documents added through explicit searches were relevant to the solution, and 12% (12/100) of documents added through implicit searches were relevant to the solution.
+Therefore, the documents that originated from multi-scale semantic interactions were similar in quality to those that originated from explicit searches from the user.
+Out of approximately 1,500 documents, 47 were read.
+Thus, the analyst was able to construct 80% (four out of five subplots) of the solution while only reading 3.13% of the documents in the dataset.
+While the results of this usage scenario appear promising, further work is required to evaluate the performance of MSI techniques as compared to existing SI techniques.
+
+
+
+We get the conclusion that:
+
+1. If Crowds could help remove noises from when sensemaking, to find most imports trifiles/dots.
+2. If Crowds could help group close dots together.
+3. If Crowds could provides external knowledge that not list on documents.
+
+1. Crowds could help remove the noise, that are irrelebant details, dots, or trifles, even they are closed related to important documents.
+three assignments contained little or no "noise" in the form of irrelevant details, dots, or trifles. I
+embedded in an array of irrelevant dots that exist in intelligence reports that will lead the students nowhere as far as the hypothesis that is suggested by the relevant dots.
+
+2. Crowds could be helpful for simultaneous and coordinated terrorist activities involving three actions planned for
+3. Provides knowledge that not included in documents. most important element of imaginative and productive intelligence analysis in real life.
+
+have included a variety of irrelevant or distracter items.
+In short, skillful and thorough intelligence analysis requires that you carefully find out about what some dot or trifle is telling you.
+Such knowledge is not always, perhaps only rarely, revealed in the reports in which these dots or trifles are given to you.
+different persons will generate different hypotheses from the same body of evidence.
+
 produces different insight?
 better insight???
 compare to Gold Standard Solution
 beyond simple keywords, semantics similarities
 compare to previous user study cluster results?
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Evaluation
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Evaluation}
-
-For the evaluation, we use documents from .
-
-We compared the CrowdSPIRE version layout and StartSPIRE version.
-which we find the pattern that CrowdSPIRE could help more things on layout part.
 
 How the assigned tasks is good to current tasks.
 Comparison of crowd-enhanced version with algorithm-only version
 produces different insight?
 better insight???
-
-
-
-
-Throught the results, we compare to the Gold stand solution
 compare to Gold Standard Solution
-
-
 beyond simple keywords, semantics similarities
-
-
 compare to previous user study cluster results?
-
-
-Finally we find that crowdsourcing could help users have a good overview and some hard connections between documents.
-
+Finally we find that .
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Conclusion
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusion}
+\section{Conclusion and Future Work}
+
+We present crowd-powered semantic interaction model, a visual analytics model, which help analysts make sense of documents quickly through the help of crowdsourcing.
+In this model, we use semantic interaction to enable users to steer the crowdsourcing assginement implicitly instead of require users of domain knowledge fo crowdsourcing.
+In addition, we provide several different ways to help combine the crowd outputs back into the workspace(visual interface)) appropirately based on current visualization layout.
+% tells more about crowd-powered semantic interactions.
+Moreover, this model also takes the combination of human computation and automatic computation.
+That automatic computation methods, like, machine learning could be used to find more related data that can be used in mirco-tasks.
+The outputs from crowds, could help update the layout of workspace directly, or undirectly through providing more knowledge for automatic computation methods.
+For example, more semantic links between documents or entities could help improve the correctness of machine learnning algorithms, when doing clustering.
+With a usage scenario, we demonstrate how crowdsourcing can potentially support an analyst to explore complex sensemaking tasks.
+However, there are still three challenges that need further explorations.
+Current version of CrowdSPIRE only contains the basic needed components of: Visualization, Anlytic model and Crowd part "Connect the Dots".
+More works needed to be done on this parts:
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	CrowdSPIRE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\acknowledgments{
-The authors wish to thank A, B, C. This work was supported in part by
-a grant from XYZ.}
+C1: Find the most appropriate crowdsourcing tasks for current visual analytic system.
+In CrowdSPIRE, we combine the visual analytic system with machine learning algorithms, and basic crowdsourcing tasks "Connect the Dots".
+The connection between semantic interactions with "Connect the Dots" shows us crodsourcing could provides help that machines are inadequacy to do right now.
+However, there are lots of crowdsourcing tasks that we could do for each interaction, which we must perfom lots of experiements to find the best solution.
+
+C2: Ways to integrate crowdsourcing output into workspace.
+Current ways of integrate crowdsourcing into workspace, is pre-perfoming all the needed micro-tasks, and store the outputs permanently.
+When some interactions intrigger some specific micro-tasks, we just search for related micro-tasks results directly from database, instead of carry out a real-time HIT.
+Several other ways of carry out tasks should be considered: how to carry out real-time hits instead of the prostored results.
+More integrating ways needed to be explored, to find the best stretegy to comnbine crowdsourcing and visual analytics.
+
+
+C3: Comparision between crowdsourcing and machine learning algorithms.
+CrowdSPIRE give a simple demo on how could we combine crowdsourcing together with machine learning algorithms to help analysts' sensemaking.
+However, we must doing more research on finding which part is good at what kinds of tasks.
+So the semantic interaction could decide assign what kind of tasks to crowds and other tasks to machine learning algorithms.
+
 
 %\bibliographystyle{abbrv}
 \bibliographystyle{abbrv-doi}
