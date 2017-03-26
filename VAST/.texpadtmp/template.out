@@ -1,19 +1,17 @@
 \BOOKMARK [1][]{section.2}{Introduction}{}% 1
-\BOOKMARK [1][]{section.5}{Related Work}{}% 2
-\BOOKMARK [2][]{subsection.6}{Semantic Interaction for Visual Analytics}{section.5}% 3
-\BOOKMARK [2][]{subsection.7}{Sensemaking}{section.5}% 4
-\BOOKMARK [2][]{subsection.8}{Crowdsourced synthesis and sensemaking, Crowd-powered interface}{section.5}% 5
-\BOOKMARK [3][-]{subsubsection.9}{Crowdsourced synthesis}{subsection.8}% 6
-\BOOKMARK [3][-]{subsubsection.10}{Real-time crowdsoucing and Crowd-powered interface, human in a loop}{subsection.8}% 7
-\BOOKMARK [1][]{section.11}{Crowd-powered Semantic Interactions}{}% 8
-\BOOKMARK [2][]{subsection.13}{Updated Visualization Pipeline}{section.11}% 9
-\BOOKMARK [2][]{subsection.14}{Task allocation strategy}{section.11}% 10
-\BOOKMARK [2][]{subsection.15}{Integrate Crowds into Workspace}{section.11}% 11
-\BOOKMARK [3][-]{subsubsection.16}{Crowds tasks in different levels}{subsection.15}% 12
-\BOOKMARK [3][-]{subsubsection.18}{Crowds tasks in different time complexity}{subsection.15}% 13
-\BOOKMARK [1][]{section.19}{CrowdSPIRE}{}% 14
-\BOOKMARK [2][]{subsection.21}{Visual Encodings}{section.19}% 15
-\BOOKMARK [2][]{subsection.22}{Crowd-powered Document Overlapping}{section.19}% 16
-\BOOKMARK [2][]{subsection.23}{Integrate "Connect the Dots" into Workspace}{section.19}% 17
-\BOOKMARK [1][]{section.24}{USAGE SCENARIO}{}% 18
-\BOOKMARK [1][]{section.26}{Conclusion and Future Work}{}% 19
+\BOOKMARK [1][]{section.4}{Related Work}{}% 2
+\BOOKMARK [2][]{subsection.5}{Semantic Interaction}{section.4}% 3
+\BOOKMARK [2][]{subsection.7}{Crowdsourcing}{section.4}% 4
+\BOOKMARK [3][-]{subsubsection.9}{Crowdsourced sensemaking tasks}{subsection.7}% 5
+\BOOKMARK [3][-]{subsubsection.10}{Crowd-powered System}{subsection.7}% 6
+\BOOKMARK [1][]{section.11}{Crowd-powered Semantic Interactions}{}% 7
+\BOOKMARK [2][]{subsection.13}{Task allocation strategy}{section.11}% 8
+\BOOKMARK [2][]{subsection.14}{Integrate Crowds into Workspace}{section.11}% 9
+\BOOKMARK [3][-]{subsubsection.15}{Crowds tasks in different levels}{subsection.14}% 10
+\BOOKMARK [3][-]{subsubsection.17}{Crowds tasks in different time complexity}{subsection.14}% 11
+\BOOKMARK [1][]{section.18}{CrowdSPIRE}{}% 12
+\BOOKMARK [2][]{subsection.20}{Visual Encodings}{section.18}% 13
+\BOOKMARK [2][]{subsection.21}{Crowd-powered Document Overlapping}{section.18}% 14
+\BOOKMARK [2][]{subsection.22}{Integrate "Connect the Dots" into Workspace}{section.18}% 15
+\BOOKMARK [1][]{section.23}{USAGE SCENARIO}{}% 16
+\BOOKMARK [1][]{section.25}{Conclusion and Future Work}{}% 17

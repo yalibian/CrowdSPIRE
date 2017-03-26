@@ -2,48 +2,49 @@ This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: /Users/Yali/Studio/CrowdSPIRE/VAST/.texpadtmp/template.aux
 The style file: ../abbrv-doi.bst
-I found no \citation commands---while reading file /Users/Yali/Studio/CrowdSPIRE/VAST/.texpadtmp/template.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ../template.bib
-You've used 0 entries,
+Warning--to sort, need author or key in MTurk
+Warning--empty institution in Thomas2005
+You've used 18 entries,
             2598 wiz_defined-function locations,
-            592 strings with 4361 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+            725 strings with 9811 characters,
+and the built_in function-call counts, 15958 in all, are:
+= -- 3200
+> -- 460
+< -- 478
++ -- 649
+- -- 174
+* -- 637
+:= -- 2319
+add.period$ -- 53
+call.type$ -- 18
+change.case$ -- 136
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 20
+duplicate$ -- 290
+empty$ -- 531
+format.name$ -- 164
+if$ -- 4109
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 18
+missing$ -- 16
+newline$ -- 145
+num.names$ -- 34
+pop$ -- 140
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 118
 quote$ -- 0
-skip$ -- 1
+skip$ -- 252
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 961
+swap$ -- 113
+text.length$ -- 265
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+type$ -- 72
+warning$ -- 2
+while$ -- 93
+width$ -- 20
+write$ -- 470
+(There were 2 warnings)
