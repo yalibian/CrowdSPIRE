@@ -1,6 +1,6 @@
-This is BibTeX, Version 0.99d (TeX Live 2016)
+This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: /Users/Yali/Studio/CrowdSPIRE/VAST/.texpadtmp/template.aux
+The top-level auxiliary file: /Users/ericshape/Dropbox/work/CrowdSPIRE/VAST/.texpadtmp/template.aux
 The style file: ../abbrv-doi.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ../template.bib
@@ -12,7 +12,7 @@ Warning--to sort, need author or key in MTurk
 Warning--empty institution in Thomas2005
 You've used 30 entries,
             2598 wiz_defined-function locations,
-            790 strings with 11998 characters,
+            790 strings with 12020 characters,
 and the built_in function-call counts, 23676 in all, are:
 = -- 4602
 > -- 654

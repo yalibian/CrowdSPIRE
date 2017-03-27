@@ -95,17 +95,18 @@
 
 %% Abstract section.
 \abstract{
-Visual analytics could help users explore and gain insight from dataset through interactive visualization and underlying analytics models.
-However, making sense of large text dataset is still challenging in many domains.
+Visual analytics could help users explore and gain insight from dataset through interactive visualization and underlying data analytics models.
+However,  understanding of large text dataset is still challenging in many domains.
 For example, an intelligence analyst might need to find a coordinated terrorist assault in three US cities from one hundred of documents in a limited time.
 Existing visual analytics techniques only assist with low-level tasks, such as finding related documents based on shared entities, which still require significant effort on the part of users.
 
-To support the sensemaking process in visual analytics, we present the concept of crowd-powered semantic interaction, where semantic interactions can be used assign micro-tasks to crowds.
+To support the high-level sensemaking process in visual analytics, we present the framework of crowd-powered semantic interaction, where semantic interactions \textit{[citations]} can be used assign micro-tasks to crowds, and forges the crowds feedbacks for final decisions of expert users.
 This model could help users to steer crowd-workers to carry out sensemaking tasks implicitly even they are novice on crowdsourcing.
-The completed output could be used to update the visualization appropriately that foster the related foraging and synthesis parts for users.
-To demonstrate this model, we introduce CrowdSPIRE, a visual text analytics prototype that converts user interactions on documents into micro-tasks called "Connect the Dots".
+The completed crowds feedbacks would be used to update the visualization appropriately that foster the related foraging and synthesis parts for users.
+
+To explain this model, we introduce CrowdSPIRE, a visual text analytics concept proof prototype that converts user interactions on documents into micro-tasks called "Connect the Dots".
 For example, the user drags two texts together, which triggers the assignment of certain sensemaking tasks to crowdworkers automatically,  in parallel with the expert’s own investigation.
-When the tasks finished, outputs could be used to update current visualization appropriately without distracting user's attention from the current thinking.
+When the tasks finished, crowds feedbacks could be used to update current visualization appropriately without distracting users' attention from their process.
 }
 
 %% Keywords that describe your work. Will show as 'Index Terms' in journal
@@ -146,7 +147,8 @@ When the tasks finished, outputs could be used to update current visualization a
 \firstsection{Introduction}
 \maketitle
 %% \section{Introduction}
-Sensemaking large amount of unstructured text is urgently needed but challenging today. If we can find ways to make sense of this big data, the possibilities for learning more about ourselves and how to improve the world we live in are almost boundless. For example, detecting and preventing a terrorist attack based on intelligence reports. Responding to the challenging, there emerged the field of visual analytics\cite{Thomas2005} that combines the powerful approaches--information visualization\cite{card1999readings} and data mining\cite{berry1997data} --to create a new class of sensemaking tools\cite{Pirolli2005} enabling new kinds of exploration and insights. (Exemple)
+Understanding large amount of unstructured text is emering today. If we can find ways to make sense of them, the possibilities for learning more about ourselves and how to improve the world we live in are almost boundless. 
+For example, detecting and preventing a terrorist attack based on intelligence reports. Responding to the challenging, there emerged the field of visual analytics\cite{Thomas2005} that combines the powerful approaches--information visualization\cite{card1999readings} and data mining\cite{berry1997data} --to create a new class of sensemaking tools\cite{Pirolli2005} enabling new kinds of exploration and insights. (Exemple)
 
 However, it remains time-consuming and onerous, and existing support tools still have a long way to go. Machine learning techniques could help find clusters and summarize documents efficiently, but currently, they cannot generate questions, hypotheses, or conclusions based on data that are more subtle than what an algorithm has been programmed to recognize. What's more, visualization tools amplify the cognitive abilities of their users, but many users could only access to low-level information on documents, which requiring significant effort on the part of users to get the deep insight of data with all kinds of external knowledge. For example, analysts cannot find the relationship between AMTRAK \#19 with a terrist attack if they don't consult the AMTRAK schedules on the Internet to see that Train \#19 is in fact called "The Crescent."
 
@@ -162,7 +164,7 @@ Semantic interaction\cite{Endert2014} has been approved to a be a good way to he
 
 With semantic interaction, an expert analyst could guide the machine learning algorithms by directly manipulating the visualization layout. Our vision is that the expert interactions will also guide crowdsourcing micro-tasks to do more sensemaking works that machine learning algorithms not good at. We propose the crowd-powered semantic interaction model by coupling visual analytics with crowdsourcing through semantic interaction, and therefore, coupling analysts not only with the ability to parse huge quantities of documents but also the power to make sense of complex tasks effectively.
 
-Designing visual analytics systems with crowdsourcing involves new challenges that we should take into consideration. Visual analytics system should map interactions to appropriate relevant sensemaking-tasks semantically. For example, it is not a good idea to map interaction of dragging two documents aways from each other to micro-tasks that find their similarities. Also, coordinating and aggregating different kinds of tasks to effectively contribute to sensemaking visual feedback is another problem. Since different sub-tasks could have different granularity, information context, correctness, and efficiency.
+Designing visual analytics systems with crowdsourcing involves new challenges that we should take into consideration. Visual analytics system should map interactions to appropriate relevant sensemaking tasks semantically. For example, it is not a good idea to map interaction of dragging two documents aways from each other to micro-tasks that find their similarities. Also, coordinating and aggregating different kinds of tasks to effectively contribute to sensemaking visual feedback is another problem. Since different sub-tasks could have different granularity, information context, correctness, and efficiency.
 
 To address such challenges, we present the crowd-powered semantic interactions to support the combination of visual analytics with human computations. Our key contributions in this paper are as follows:
 
@@ -748,4 +750,3 @@ So the semantic interaction could decide assign what kind of tasks to crowds and
 \bibliography{template}
 \end{document}
 
-d
