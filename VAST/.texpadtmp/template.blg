@@ -8,47 +8,48 @@ Repeated entry---line 347 of file ../template.bib
  : @article{Endert2012
  :                    ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for ""
 Warning--to sort, need author or key in MTurk
 Warning--empty institution in Thomas2005
-You've used 30 entries,
+You've used 31 entries,
             2598 wiz_defined-function locations,
-            790 strings with 11998 characters,
-and the built_in function-call counts, 23676 in all, are:
-= -- 4602
-> -- 654
-< -- 664
-+ -- 905
-- -- 242
-* -- 953
-:= -- 3439
-add.period$ -- 93
-call.type$ -- 30
-change.case$ -- 201
+            797 strings with 12378 characters,
+and the built_in function-call counts, 25025 in all, are:
+= -- 4896
+> -- 687
+< -- 713
++ -- 966
+- -- 255
+* -- 998
+:= -- 3628
+add.period$ -- 96
+call.type$ -- 31
+change.case$ -- 210
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 491
-empty$ -- 916
-format.name$ -- 228
-if$ -- 6068
+cite$ -- 33
+duplicate$ -- 512
+empty$ -- 955
+format.name$ -- 240
+if$ -- 6429
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 30
-newline$ -- 228
-num.names$ -- 58
-pop$ -- 225
+int.to.str$ -- 31
+missing$ -- 31
+newline$ -- 239
+num.names$ -- 60
+pop$ -- 237
 preamble$ -- 1
-purify$ -- 173
+purify$ -- 181
 quote$ -- 0
-skip$ -- 402
+skip$ -- 419
 stack$ -- 0
-substring$ -- 1449
-swap$ -- 182
-text.length$ -- 369
+substring$ -- 1527
+swap$ -- 191
+text.length$ -- 396
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
+type$ -- 120
 warning$ -- 2
-while$ -- 149
-width$ -- 32
-write$ -- 712
+while$ -- 156
+width$ -- 33
+write$ -- 752
 (There was 1 error message)

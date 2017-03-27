@@ -7,17 +7,17 @@
 \BOOKMARK [1][]{section.11}{Pipeline}{}% 7
 \BOOKMARK [1][]{section.13}{Crowd-powered Semantic Interactions}{}% 8
 \BOOKMARK [2][]{subsection.14}{Interactions to sensemaking tasks}{section.13}% 9
-\BOOKMARK [2][]{subsection.15}{Crowdsourcing Task Choices for Sensemaking Task}{section.13}% 10
-\BOOKMARK [3][-]{subsubsection.16}{Connect the Dots}{subsection.15}% 11
-\BOOKMARK [3][-]{subsubsection.18}{Group or Cluster Documents}{subsection.15}% 12
-\BOOKMARK [3][-]{subsubsection.20}{Pairwise Ranking Aggregation}{subsection.15}% 13
-\BOOKMARK [2][]{subsection.21}{Integrate Crowds into Workspace}{section.13}% 14
-\BOOKMARK [3][-]{subsubsection.22}{Connect the Dots}{subsection.21}% 15
-\BOOKMARK [3][-]{subsubsection.23}{CrowdCluater}{subsection.21}% 16
-\BOOKMARK [3][-]{subsubsection.24}{Document Similarity Rank}{subsection.21}% 17
-\BOOKMARK [1][]{section.25}{CrowdSPIRE}{}% 18
-\BOOKMARK [2][]{subsection.27}{Visual Encodings}{section.25}% 19
-\BOOKMARK [2][]{subsection.28}{Crowd-powered Document Overlapping}{section.25}% 20
-\BOOKMARK [2][]{subsection.29}{Integrate "Connect the Dots" into Workspace}{section.25}% 21
-\BOOKMARK [1][]{section.30}{USAGE SCENARIO}{}% 22
-\BOOKMARK [1][]{section.32}{Conclusion and Future Work}{}% 23
+\BOOKMARK [2][]{subsection.15}{Crowdsourcing Choices for Sensemaking Task}{section.13}% 10
+\BOOKMARK [3][-]{subsubsection.17}{Connect the Dots}{subsection.15}% 11
+\BOOKMARK [3][-]{subsubsection.18}{Relevance Assessment}{subsection.15}% 12
+\BOOKMARK [3][-]{subsubsection.19}{Group or Cluster Documents}{subsection.15}% 13
+\BOOKMARK [2][]{subsection.20}{Update Visualization based on Crowds}{section.13}% 14
+\BOOKMARK [3][-]{subsubsection.21}{Connect the Dots}{subsection.20}% 15
+\BOOKMARK [3][-]{subsubsection.22}{Document Similarity Rank}{subsection.20}% 16
+\BOOKMARK [3][-]{subsubsection.23}{CrowdCluster}{subsection.20}% 17
+\BOOKMARK [1][]{section.24}{CrowdSPIRE}{}% 18
+\BOOKMARK [2][]{subsection.26}{Visual Encodings}{section.24}% 19
+\BOOKMARK [2][]{subsection.27}{Crowd-powered Document Overlapping}{section.24}% 20
+\BOOKMARK [2][]{subsection.28}{Integrate "Connect the Dots" into Workspace}{section.24}% 21
+\BOOKMARK [1][]{section.29}{USAGE SCENARIO}{}% 22
+\BOOKMARK [1][]{section.31}{Conclusion and Future Work}{}% 23

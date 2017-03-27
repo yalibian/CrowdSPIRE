@@ -68,6 +68,19 @@ J.~P. Bigham, C.~Jayant, H.~Ji, G.~Little, A.~Miller, R.~C. Miller, R.~Miller,
 \newblock {VizWiz - nearly real-time answers to visual questions.}
 \newblock {\em UIST}, p.~1, 2010.
 
+\bibitem{Bradel2013}
+L.~Bradel, J.~Z. Self, A.~Endert, M.~S. Hossain, C.~North, and N.~Ramakrishnan.
+\newblock {How analysts cognitively 'connect the dots'}.
+\newblock In {\em IEEE ISI 2013 - 2013 IEEE International Conference on
+  Intelligence and Security Informatics: Big Data, Emergent Threats, and
+  Decision-Making in Security Informatics}, pp. 24--26, 2013. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}ISI\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2013\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}6578780}}
+
+
 \bibitem{bragg2013crowdsourcing}
 J.~Bragg, D.~S. Weld, et~al.
 \newblock Crowdsourcing multi-label classification for taxonomy creation.

@@ -348,7 +348,7 @@ Two key techniques are involved in crowd-powered interaction: mapping interactio
 
 \section{Crowd-powered Semantic Interactions}
 
-
+As mentioned on related works, current crowdsourcing systems or workflows to help sensemaking documents from the perspective: connections between
 
 
 The most important step on crowd-powered semantic interactions is mapping interactions to crowdsourcing tasks. It is essential that crowdsourcing tasks could determine why interaction occurred, and the completed outputs could provide positive help to analysts. To make sure visual analytics system could assign crowdsourcing tasks accurately and rationally, we represent the task allocation strategy (See \autoref{tab:SensemakingTasks}) based on previous findings\cite{andrews2010space} that user interactions can be associated with particular forms of analytical reasoning.
@@ -378,137 +378,96 @@ For visual analytics, we define three kinds of sensemaking tasks to present inte
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Sensemaking tasks to crowdsourcing tasks
-\subsection{Crowdsourcing Task Choices for Sensemaking Task}
+\subsection{Crowdsourcing Choices for Sensemaking Task}
 
-Several visual representations for graph layouts and interaction tech- niques have been discussed in [84], many of which can potentially be applied to present and explore Entity-LR and Group-LR. Entity-LR are easy for humans to interpret.
-
+As mentioned in Section Two, there are three kinds of crowdsourcing systems could be used to carry out the sensemaking task that updating document layout based on user's organizational schema: connect the dots, cluster documents, and document ranking. In this section, we will discuss how those crowdsourcing systems could help to contribute sensemaking. For each kind of crowdsourcing systems, we explain in details how we could convert current sensemaking tasks to crowdsourcing systems.
 We define sensemaking tasks based on users' intentions that visual analytics systems could provide help on.  For systems with crowd-powered semantic interaction, sensemaking tasks could be carried out through crowdsourcingt tasks. For each kind of sensemaking task, there exiting several kinds of crowdsourcing taks help solve those sensemaking tasks.
-
-Two ways of find the layout of crowdsourcing ways.
-
 Since our sensemaking tasks could be mapped to distance between documents. We could calculate the distance between documents in different levels. Document contents level and document level. We calculate the document connections to calculate their similarity or based on pairwise ranking aggregation. Instead of calculate their relationships through connections. We could also rank their similarity between two documents.
 
-For the first kind of solution, we call them 'Connect the Dots' and the second one 'Pairwise ranking aggregation'.
+\begin{table*}[t]
+  \caption{Avaible Crowdsourcing tasks for Sensemaking tasks}
+  \label{tab:tasks}
+  \centering
+  \begin{tabular}{| m{2cm} | m{5cm} | m{2cm} |  m{3cm} | m{3cm}|}
+  \hline
+   Crowdsourcing Types & Description & Example & Pros & Cons\\
+  \hline
+
+  Connect the Dots &  Making connections between raw texts of historical textual documents and high-level concepts. & Crowdnection & Provide details about document relationships & Cannot directly mapped to layout \\ \hline
+  Document Ranking & Ranks documents based on partial document pairs. & Pairwise Ranking Aggregation & Find the most related documents for one document & Cannot get the layout of group of documents. \\  \hline
+  Crowd Cluster & Crowdsourced taxonomies of hierarchical data sets by letting workers generate, and later select, multiple categories per item. &CrowdCluster, Cascade, Frenzy & Easiy on cluster documents into groups or categories. & Less details about document connections\\ \hline
+\end{tabular}
+\end{table*}
+
 
 \subsubsection{Connect the Dots}
 
-Researchers have explored the value of using
-crowdsourcing, either alone or combined with
-automated approaches, to synthesize information with
-diverse or unknown schemas. One fruitful approach has been to blend crowdsourcing with ML algorithms. Partial clustering [19,40] and crowd kernel [35] are two such examples, but their application domain limited to imagery, and they focus on low context merges between pairs or triplets of items.
+Recent research on senmaking show how analyst could do to make sense of a collection of documents through 'connect the dots' in two or more documents\cite{Bradel2013}. There are five types of connections that analysts could use to relate documents, which identified as: entity, conceptual, temporal, speculative, and domain knowledge. Entity connections are low-level, which could be detected through algorithms. Other four high-level connections needs users connect basic on their cognitive schemas from documents, which algorithms are hard to detect.
 
+Existing Crowdsourcing tasks on this parts is lablling, clastering or categrizing .
+Crowdnection\cite{} let crowd comparing crowd workers’ to experts’ choices of topics and agreement with crowd by comparing choices of topics among crowd workers to help connecting high-level concepts through documents.
 
-CONNECTING DOCUMENT PAIRS through
-The connection types identified were entity, conceptual, temporal, speculative, and domain knowledge
-High-level connections involved users relating information gleaned from the data with their own cognitive schemas to gain more insight into the data than the low-level connections. The general form of high-level connection found by users completing the storytelling task was labeled “conceptual connection.” Conceptual connections (e.g. “These documents are about trading diamonds on the black market.”) cover a broad range of domains, but they are all related by the use of cognitive schemas to connect information, rather than data. General conceptual connections can also involve emergent themes, such as “strategic planning” or “background information.” Conceptual connections can be identified by participants describing relationships or events, using synonyms of entities occurring across multiple documents, or describing connections that go beyond co-occurrence. Users typically represent conceptual connections spatially through proximity or overlap, but this is not always the case.
+Conceptual connections can be identified by participants describing relationships or events, using synonyms of entities occurring across multiple documents, or describing connections that go beyond co-occurrence. Users typically represent conceptual connections spatially through proximity or overlap, but this is not always the case.
 
 Are mainly about how to label documents togeter, to get the distance between documents based on their shared entities or labels, on the same categories.
-
-
 The connect the dots' means we need to find the connections between documents, which could help us express as a way to calculate their distance.
 
+Crowdsourcing taks that helps related documents through connect dots could provide users a direct explain why two documents are related. The pros it could provides more tetails about similarity/dissimilarity between documents. However, the cons is connections between documents could not directly help control document layout the spatiaion.
 
-Existing Crowdsourcing tasks on this parts is lablling, clastering or categrizing .
-\begin{table}[tb]
-  \caption{Avaible Crowdsourcing tasks for Sensemaking tasks}
-  \label{tab:tasks}
-  \scriptsize%
-	\centering%
-\begin{tabular}{| m{2cm} | m{6cm} |}
-%\begin{tabular*}{\linewidth}{| m{2cm} | m{6cm} |}
-  \hline
-   Crowdsourcing system & Description \\
-  \hline
-  Cascade & crowdsourced taxonomies of hierarchical data sets by letting workers generate, and later select, multiple categories per item. \\
-  Frenzy &  web-based collaborative session organizer that elicits paper metadata by letting crowdworkers group papers into sessions using a synchronous clustering tool.\\
-  \bottomrule
-\end{tabular}
-\end{table}
+\subsubsection{Relevance Assessment}
 
-\subsubsection{Group or Cluster Documents}
-
-Other crowdsourcing research explores higher-context clustering. Cascade [12] produces crowdsourced taxonomies of hierarchical data sets by letting workers generate, and later select, multiple categories per item. Frenzy [11] is a web-based collaborative session organizer that elicits paper metadata by letting crowdworkers group papers into sessions using a synchronous clustering tool. We draw design inspiration from these projects, particularly the notion of integrating microtasks into a more collaborative, unstructured interface embodied in Frenzy and other forms of crowdware [41]. Our prior work builds on this research by evaluating these clustering-style interfaces compared to other interfaces and workflows.
-
-There
-Existing Crowdsourcing tasks on this parts is lablling, clastering or categrizing .
-
-
-\begin{table}[tb]
-  \caption{Avaible Crowdsourcing tasks for Sensemaking tasks}
-  \label{tab:tasks}
-  \scriptsize%
-	\centering%
-\begin{tabular}{| m{2cm} | m{6cm} |}
-%\begin{tabular*}{\linewidth}{| m{2cm} | m{6cm} |}
-  \hline
-   Crowdsourcing system & Description \\
-  \hline
-  Cascade & crowdsourced taxonomies of hierarchical data sets by letting workers generate, and later select, multiple categories per item. \\
-  Frenzy &  web-based collaborative session organizer that elicits paper metadata by letting crowdworkers group papers into sessions using a synchronous clustering tool.\\
-  Annotation & A \\
-  Search & A, B \\
-  Highlight & A, B \\
-  Overlap documents & A, B, C\\
-  Cluster documents & D \\
-  \bottomrule
-\end{tabular}
-\end{table}
-
-
-
-
-\subsubsection{Pairwise Ranking Aggregation}
-on the top, directly compare their similarity.
-
-
+Based on the document, we could find related documents, that related to this one, throgu several different kinds of crowdsourcing systems: find similar images.
+on the top, directly compare their similarity. Crowdlines \cite{} find merged informations for documents.
+For this type of crowdsourcing applications, could help us find the most related documents, to several documents.
 
 For all those crowdsourcing tasks could be divided into small amount of work (micro-tasks) and assigned to online crowd worker. What's more, if more than one tasks trigger by one interaction, one task could depend on other tasks' output. For example, text highlighting has two sensemaking tasks: find and add more high-level concepts and related entities; then the related concepts and entities could help the second task of finding relevant documents related to highlighted texts.
 
+A typical example for finding related document is pairwise raning aggregations to find most reltaed documents. could also be easily used to find rank-n related documents.
+
+\subsubsection{Group or Cluster Documents}
+
+In a higher level: lots of crowdsourcing researches focus on clustering or categorize documents, that could help visual analytics systems provide an overview about current layout of documents through a clustering-style.  Cascade [12] produces crowdsourced taxonomies of hierarchical data sets by letting workers generate, and later select, multiple categories per item. Frenzy [11] is a web-based collaborative session organizer that elicits paper metadata by letting crowdworkers group papers into sessions using a synchronous clustering tool. We draw design inspiration from these projects, particularly the notion of integrating microtasks into a more collaborative, unstructured interface embodied in Frenzy and other forms of crowdware [41]. Our prior work builds on this research by evaluating these clustering-style interfaces compared to other interfaces and workflows. With constrains, crowdsourcing on this type could help layout the overview directly.
+
+The advatange for this kind of crowdsourcing is .
+
+There Existing Crowdsourcing tasks on this parts is lablling, clastering or categrizing. If we move one document, from one cluster to another, crowdsourcing could help users relayout the clusters based on changes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Task allocation strategy
-\subsection{Integrate Crowds into Workspace}
-For different semantic interactions, we could assign different tasks.
-input:  how to use semantic interaction as input to direct the crowd tasks
+\subsection{Update Visualization based on Crowds}
+After the determine needed sesenmaking tasks for each interaction, system will automatically assign crowdsourcing tasks to crowd workers through crowdsourcing platform. However, different type of crowdsourcing tasks, could generate different type of outputs, that cannot be directly used to update the visual interface. The system need unify the data before using it to layout documents spatiliazation.
 
-can create several kinds of micro-tasks for each SI, some quick, some slow  (simulated in this paper with Tianyi data?) \newline
-Drags two docs togethers
-1) e.g. when expert drags 2 docs together:
-
-a) find entities that connect the 2 docs (quick)
-b) label semantic-level connections between the 2 docs (quick) -> text that can be used
-c) find related docs (slow)
-i) must compare to every other doc?
-ii) or use (a) and (b) to reduce the search set?  context slice?\newline
-
-synchronous tasks
-How to integrating microtasks into a more collaborative, unstructured interface embodied in Frenzy and other forms of crowdware
-Human computation
-Open Document
-Search Keywords\newline
-Clusters \newline
-
-% integrated into the expert’s workspace
-To integrate the crowds into visual analytics, we need to merge all the sub tasks into formated and combine the modularized subtasks in to a comprehensive sensemaking loop. To doing that, we should general the combination into two things: tasks levels (sub-tasks), and  tasks time complexity.
-
-considering how to recombine the modularized subtasks identified in the previous studies into a comprehensive, revised sensemaking loop, and to implement a software prototype based on this revised process.
-This effort implies a modification of the traditional sensemaking loop that accounts for the modularized components developed in Study 2.
-We plan a series of experiments leading to the design of effective workflows and task allocation strategies that allow individuals, crowds, and computation to synergistically perform complex sensemaking tasks, while minimizing bottlenecks and redundancies.
-
-
+We define a unifomred distance functions $D(d_i, d_j)$, that could directly update current views. Where we denote $d_i$ the $i$-th document, and $d_j$ is the $j$-th document in the documents, where $i \neq j$.
+For different types of crowdsourcing tasks, we should different Distance functions.
 \subsubsection{Connect the Dots}
-We could help to calculate the document distance based on count the similarity's based on links. Such as cosine similarity.
+
+ Euclidean, Cosine, Jaccard, edit distance
+
+The output of connect the dots crowdsourcing tasks, is a graph, that documents are nodes, and connections between documents are linkes. We could get the distance between two documents, based on the connections they have, more connections means they are more close to each other. We convert documents links into vectors for each documents. We could use consine similarity to define distance between documents as: soft simialrities. We could help to calculate the document distance based on count the similarity's based on links. Such as cosine similarity.
+
+    $Distance(d_i, d_j) = \frac{\cos^{-1}(Similarity(d_i, d_j))}{\pi}$
+
+    $Similarity(d_i, d_j) = cos(d_i, d_j) = \frac {d_i \cdot d_j}{||d_i|| \cdot ||d_j||} $
+
+What's more, the connections between documents could be mapped to we could use soft similarity if the conception connection are where
+ $c_{m,n} = connectionFactor(concept_m, concept_n)$
+
+Other kinds of distance algorihtms, such as Jaccard index\cite{} could be used to calcuate the distances as long as we transfer connections between documents, to document vectors.
+
+\subsubsection{Document Similarity Rank}
+The document similarity could be directly positive correlation with votes, or ranks. So the distance between documents could given by: \newline
+
+    $Similarity(d_i, d_j) = f(Votes * K )$
+
+    $Distance(d_i, d_j) = \frac{C}{(Similarity(d_i, d_j))}$
+
+Where $Votes(di, dj)$ is how many crowds think this two documents are related. Or other documetns cuold be used to help understand the similarities between documents like their $n$-th closed to this document.
 
 
-\subsubsection{CrowdCluater}
+\subsubsection{CrowdCluster}
 
 Distances between Clustering, Hierarchical Clustering, use basic MDS algorithms to map categoried elements to layout.
 
-
-\subsubsection{Document Similarity Rank}
-Directly using force-direct graph, to help layout
-
-Distance() R()
 
 
 
@@ -523,7 +482,6 @@ Distance() R()
  \label{fig:hit}
 \end{figure*}
 
-说明一下系统是用了机器学习的东西的，为了保证其他交互和StartSPIRE的一致.
 CrowdSPIRE (Crowd-powered Spatial Paradigm for Information Retrieval and Exploration) is a visual analytics tool prototype that implements crowd-powered semantic interaction technique: like ForceSPIRE, a semantic interaction visual analytics tool prototype for exploring unstructured text documents.
 CrowdSPIRE and ForceSPIRE share a flexible spatial workspace (driven by a modified force-directed layout and several semantic interactions.
 However, with different models on the background to help calculate the layouts of documents.
