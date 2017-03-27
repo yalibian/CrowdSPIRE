@@ -4,47 +4,51 @@ The top-level auxiliary file: /Users/Yali/Studio/CrowdSPIRE/VAST/.texpadtmp/temp
 The style file: ../abbrv-doi.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ../template.bib
+Repeated entry---line 347 of file ../template.bib
+ : @article{Endert2012
+ :                    ,
+I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in MTurk
 Warning--empty institution in Thomas2005
-You've used 18 entries,
+You've used 30 entries,
             2598 wiz_defined-function locations,
-            725 strings with 9811 characters,
-and the built_in function-call counts, 15958 in all, are:
-= -- 3200
-> -- 460
-< -- 478
-+ -- 649
-- -- 174
-* -- 637
-:= -- 2319
-add.period$ -- 53
-call.type$ -- 18
-change.case$ -- 136
+            790 strings with 11998 characters,
+and the built_in function-call counts, 23676 in all, are:
+= -- 4602
+> -- 654
+< -- 664
++ -- 905
+- -- 242
+* -- 953
+:= -- 3439
+add.period$ -- 93
+call.type$ -- 30
+change.case$ -- 201
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 290
-empty$ -- 531
-format.name$ -- 164
-if$ -- 4109
+cite$ -- 32
+duplicate$ -- 491
+empty$ -- 916
+format.name$ -- 228
+if$ -- 6068
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 16
-newline$ -- 145
-num.names$ -- 34
-pop$ -- 140
+int.to.str$ -- 30
+missing$ -- 30
+newline$ -- 228
+num.names$ -- 58
+pop$ -- 225
 preamble$ -- 1
-purify$ -- 118
+purify$ -- 173
 quote$ -- 0
-skip$ -- 252
+skip$ -- 402
 stack$ -- 0
-substring$ -- 961
-swap$ -- 113
-text.length$ -- 265
+substring$ -- 1449
+swap$ -- 182
+text.length$ -- 369
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
+type$ -- 116
 warning$ -- 2
-while$ -- 93
-width$ -- 20
-write$ -- 470
-(There were 2 warnings)
+while$ -- 149
+width$ -- 32
+write$ -- 712
+(There was 1 error message)

@@ -3,6 +3,24 @@
 \bibitem{MTurk}
 {Amazon Mechanical Turk}.
 
+\bibitem{andrews2010space}
+C.~Andrews, A.~Endert, and C.~North.
+\newblock Space to think: large high-resolution displays for sensemaking.
+\newblock In {\em Proceedings of the SIGCHI conference on human factors in
+  computing systems}, pp. 55--64. ACM, 2010.
+
+\bibitem{Bernstein2012}
+M.~S. Bernstein.
+\newblock {Crowd-Powered Systems}.
+\newblock {\em KI - K{\"{u}}nstliche Intelligenz}, 27(1):69--73, 2012. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1007\discretionary{/}{%
+}{/}s13218\discretionary{%
+}{-}{-}012\discretionary{%
+}{-}{-}0233\discretionary{%
+}{-}{-}0}}
+
+
 \bibitem{Bernstein2010}
 M.~S. Bernstein, G.~Little, R.~C. Miller, B.~Hartmann, M.~S. Ackerman, D.~R.
   Karger, D.~Crowell, and K.~Panovich.
@@ -26,6 +44,12 @@ M.~S.~M. Bernstein, J.~Brandt, R.~C. Miller, and D.~R. Karger.
 }{.}\hspace{.4pt}2047201}}
 
 
+\bibitem{berry1997data}
+M.~J. Berry and G.~Linoff.
+\newblock {\em Data mining techniques: for marketing, sales, and customer
+  support}.
+\newblock John Wiley \& Sons, Inc., 1997.
+
 \bibitem{Bigham2010}
 J.~P. Bigham, C.~Jayant, H.~Ji, G.~Little, A.~Miller, R.~C. Miller, R.~Miller,
   A.~Tatarowicz, B.~White, S.~White, and T.~Yeh.
@@ -43,6 +67,23 @@ J.~P. Bigham, C.~Jayant, H.~Ji, G.~Little, A.~Miller, R.~C. Miller, R.~Miller,
   {White, Brandyn}, {White, Samuel}, and {Yeh, Tom}.
 \newblock {VizWiz - nearly real-time answers to visual questions.}
 \newblock {\em UIST}, p.~1, 2010.
+
+\bibitem{bragg2013crowdsourcing}
+J.~Bragg, D.~S. Weld, et~al.
+\newblock Crowdsourcing multi-label classification for taxonomy creation.
+\newblock In {\em First AAAI conference on human computation and
+  crowdsourcing}, 2013.
+
+\bibitem{card1999readings}
+S.~K. Card, J.~D. Mackinlay, and B.~Shneiderman.
+\newblock {\em Readings in information visualization: using vision to think}.
+\newblock Morgan Kaufmann, 1999.
+
+\bibitem{causer2012transcription}
+T.~Causer, J.~Tonra, and V.~Wallace.
+\newblock Transcription maximized; expense minimized? crowdsourcing and editing
+  the collected works of jeremy bentham.
+\newblock {\em Literary and Linguistic Computing}, 27(2):119--137, 2012.
 
 \bibitem{Chilton2014}
 L.~B. Chilton, J.~Kim, P.~Andr{\'{e}}, F.~Cordeiro, J.~A. Landay, D.~S. Weld,
@@ -68,6 +109,19 @@ L.~B. Chilton, G.~Little, D.~Edge, D.~S. Weld, and J.~A. Landay.
 }{.}\hspace{.4pt}2466265}}
 
 
+\bibitem{Endert2014}
+A.~Endert.
+\newblock {Semantic interaction for visual analytics: Toward coupling cognition
+  and computation}.
+\newblock {\em IEEE Computer Graphics and Applications}, 34(4):8--15, 2014.
+  doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}MCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2014\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}73}}
+
+
 \bibitem{Endert:2016co}
 A.~Endert.
 \newblock { Semantic Interaction for Visual Analytics: Inferring Analytical
@@ -80,10 +134,45 @@ A.~Endert, P.~Fiaux, and C.~North.
   Reasoning for Model Steering.}
 \newblock {\em IEEE Trans. Vis. Comput. Graph.}, 2012.
 
+\bibitem{Endert2012}
+A.~Endert, P.~Fiaux, and C.~North.
+\newblock {Semantic interaction for visual text analytics}.
+\newblock {\em Proceedings of the 2012 ACM annual conference on Human Factors
+  in Computing Systems - CHI '12}, pp. 473--482, 2012. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}2207676\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2207741}}
+
+
+\bibitem{Endert2012V}
+A.~Endert, P.~Fiaux, and C.~North.
+\newblock {Semantic interaction for visual text analytics}.
+\newblock {\em Proceedings of the 2012 ACM annual conference on Human Factors
+  in Computing Systems - CHI '12}, pp. 473--482, 2012. doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}2207676\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2207741}}
+
+
+\bibitem{gupta2013faking}
+A.~Gupta, H.~Lamba, P.~Kumaraguru, and A.~Joshi.
+\newblock Faking sandy: characterizing and identifying fake images on twitter
+  during hurricane sandy.
+\newblock In {\em Proceedings of the 22nd international conference on World
+  Wide Web}, pp. 729--736. ACM, 2013.
+
 \bibitem{Jeong:2009gc}
 D.~H. Jeong, C.~Ziemkiewicz, B.~Fisher, W.~Ribarsky, and R.~Chang.
 \newblock {iPCA: An Interactive System for PCA-based Visual Analytics}.
 \newblock {\em Computer Graphics Forum}, 28(3):767--774, June 2009.
+
+\bibitem{kittur2011crowdforge}
+A.~Kittur, B.~Smus, S.~Khamkar, and R.~E. Kraut.
+\newblock Crowdforge: Crowdsourcing complex work.
+\newblock In {\em Proceedings of the 24th annual ACM symposium on User
+  interface software and technology}, pp. 43--52. ACM, 2011.
 
 \bibitem{Lasecki2013}
 W.~S. Lasecki, R.~Wesley, J.~Nichols, A.~Kulkarni, J.~F. Allen, and J.~Bigham.
@@ -153,6 +242,14 @@ P.~Welinder and P.~Perona.
   labels.
 \newblock In {\em Computer Vision and Pattern Recognition Workshops (CVPRW),
   2010 IEEE Computer Society Conference on}, pp. 25--32. IEEE, 2010.
+
+\bibitem{zaidan2011crowdsourcing}
+O.~F. Zaidan and C.~Callison-Burch.
+\newblock Crowdsourcing translation: Professional quality from
+  non-professionals.
+\newblock In {\em Proceedings of the 49th Annual Meeting of the Association for
+  Computational Linguistics: Human Language Technologies-Volume 1}, pp.
+  1220--1229. Association for Computational Linguistics, 2011.
 
 \bibitem{Zhang2012}
 H.~Zhang, E.~Law, R.~C. Miller, K.~Z. Gajos, D.~C. Parkes, and E.~Horvitz.
