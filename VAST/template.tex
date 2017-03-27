@@ -378,7 +378,9 @@ For visual analytics, we define three kinds of sensemaking tasks to present inte
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Sensemaking tasks to crowdsourcing tasks
-\subsection{Sensemkaing tasks to crowdsourcing tasks}
+\subsection{Crowdsourcing Task Choices for Sensemaking Task}
+
+Several visual representations for graph layouts and interaction tech- niques have been discussed in [84], many of which can potentially be applied to present and explore Entity-LR and Group-LR. Entity-LR are easy for humans to interpret.
 
 We define sensemaking tasks based on users' intentions that visual analytics systems could provide help on.  For systems with crowd-powered semantic interaction, sensemaking tasks could be carried out through crowdsourcingt tasks. For each kind of sensemaking task, there exiting several kinds of crowdsourcing taks help solve those sensemaking tasks.
 
@@ -389,10 +391,46 @@ Since our sensemaking tasks could be mapped to distance between documents. We co
 For the first kind of solution, we call them 'Connect the Dots' and the second one 'Pairwise ranking aggregation'.
 
 \subsubsection{Connect the Dots}
-"Labing them, categority them, using links"
 
-\subsubsection{Pairwise Ranking Aggregation}
-on the top, directly compare their similarity.
+Researchers have explored the value of using
+crowdsourcing, either alone or combined with
+automated approaches, to synthesize information with
+diverse or unknown schemas. One fruitful approach has been to blend crowdsourcing with ML algorithms. Partial clustering [19,40] and crowd kernel [35] are two such examples, but their application domain limited to imagery, and they focus on low context merges between pairs or triplets of items.
+
+
+CONNECTING DOCUMENT PAIRS through
+The connection types identified were entity, conceptual, temporal, speculative, and domain knowledge
+High-level connections involved users relating information gleaned from the data with their own cognitive schemas to gain more insight into the data than the low-level connections. The general form of high-level connection found by users completing the storytelling task was labeled “conceptual connection.” Conceptual connections (e.g. “These documents are about trading diamonds on the black market.”) cover a broad range of domains, but they are all related by the use of cognitive schemas to connect information, rather than data. General conceptual connections can also involve emergent themes, such as “strategic planning” or “background information.” Conceptual connections can be identified by participants describing relationships or events, using synonyms of entities occurring across multiple documents, or describing connections that go beyond co-occurrence. Users typically represent conceptual connections spatially through proximity or overlap, but this is not always the case.
+
+Are mainly about how to label documents togeter, to get the distance between documents based on their shared entities or labels, on the same categories.
+
+
+The connect the dots' means we need to find the connections between documents, which could help us express as a way to calculate their distance.
+
+
+Existing Crowdsourcing tasks on this parts is lablling, clastering or categrizing .
+\begin{table}[tb]
+  \caption{Avaible Crowdsourcing tasks for Sensemaking tasks}
+  \label{tab:tasks}
+  \scriptsize%
+	\centering%
+\begin{tabular}{| m{2cm} | m{6cm} |}
+%\begin{tabular*}{\linewidth}{| m{2cm} | m{6cm} |}
+  \hline
+   Crowdsourcing system & Description \\
+  \hline
+  Cascade & crowdsourced taxonomies of hierarchical data sets by letting workers generate, and later select, multiple categories per item. \\
+  Frenzy &  web-based collaborative session organizer that elicits paper metadata by letting crowdworkers group papers into sessions using a synchronous clustering tool.\\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Group or Cluster Documents}
+
+Other crowdsourcing research explores higher-context clustering. Cascade [12] produces crowdsourced taxonomies of hierarchical data sets by letting workers generate, and later select, multiple categories per item. Frenzy [11] is a web-based collaborative session organizer that elicits paper metadata by letting crowdworkers group papers into sessions using a synchronous clustering tool. We draw design inspiration from these projects, particularly the notion of integrating microtasks into a more collaborative, unstructured interface embodied in Frenzy and other forms of crowdware [41]. Our prior work builds on this research by evaluating these clustering-style interfaces compared to other interfaces and workflows.
+
+There
+Existing Crowdsourcing tasks on this parts is lablling, clastering or categrizing .
 
 
 \begin{table}[tb]
@@ -400,21 +438,29 @@ on the top, directly compare their similarity.
   \label{tab:tasks}
   \scriptsize%
 	\centering%
-\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}lll}
+\begin{tabular}{| m{2cm} | m{6cm} |}
+%\begin{tabular*}{\linewidth}{| m{2cm} | m{6cm} |}
   \hline
-   Sensemaking tasks & Existing crowdsourcing Tasks & Pros & Cons\\
+   Crowdsourcing system & Description \\
   \hline
-    &  \\
-  Minimizie document & B \\
-  Close document & A, B \\
+  Cascade & crowdsourced taxonomies of hierarchical data sets by letting workers generate, and later select, multiple categories per item. \\
+  Frenzy &  web-based collaborative session organizer that elicits paper metadata by letting crowdworkers group papers into sessions using a synchronous clustering tool.\\
   Annotation & A \\
   Search & A, B \\
   Highlight & A, B \\
   Overlap documents & A, B, C\\
   Cluster documents & D \\
   \bottomrule
-\end{tabular*}
+\end{tabular}
 \end{table}
+
+
+
+
+\subsubsection{Pairwise Ranking Aggregation}
+on the top, directly compare their similarity.
+
+
 
 For all those crowdsourcing tasks could be divided into small amount of work (micro-tasks) and assigned to online crowd worker. What's more, if more than one tasks trigger by one interaction, one task could depend on other tasks' output. For example, text highlighting has two sensemaking tasks: find and add more high-level concepts and related entities; then the related concepts and entities could help the second task of finding relevant documents related to highlighted texts.
 
@@ -422,8 +468,6 @@ For all those crowdsourcing tasks could be divided into small amount of work (mi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Task allocation strategy
 \subsection{Integrate Crowds into Workspace}
-
-
 For different semantic interactions, we could assign different tasks.
 input:  how to use semantic interaction as input to direct the crowd tasks
 
@@ -452,68 +496,20 @@ This effort implies a modification of the traditional sensemaking loop that acco
 We plan a series of experiments leading to the design of effective workflows and task allocation strategies that allow individuals, crowds, and computation to synergistically perform complex sensemaking tasks, while minimizing bottlenecks and redundancies.
 
 
-\subsubsection{Crowds tasks in different levels}
-
-Crowds sensemaking tasks, based on different phrase, could be divided into two functions: foraging phrase: find more related documents on datasets.  Find documents not based on whether they are entities related but also semantically related.
-
-synthesis phrase: synthesize information with diverse or unknown schemas:
-
-For the first phrase, we could translate the tasks output into distances or orders that which one close to each other.
-
-For synthesis sub-tasks: we could find their schemas on three different levels based on different interactions.
-
-Other level of relationships: compare the similarity between two overlapped documents, based on their contents, if has connections between each other, based on shared entities. or has same high level concepts. For this kinds of tasks, we needs store their outputs in three levels:
-entity links
-documents similariitys.
-clusters.
-
-Entity level tasks
+\subsubsection{Connect the Dots}
+We could help to calculate the document distance based on count the similarity's based on links. Such as cosine similarity.
 
 
-How to tranverse outs puts into workspaces.
-For each kind of crowdsourcing tasks, we could integrate the results into workspaces.
+\subsubsection{CrowdCluater}
 
-Also, micro-task are not independent, micro-tasks could designed for each other automatically, for example, linked dots could be used as inputs or contraints for another subtasks.
-
-Right now, crowdsourcing tasks for sensemaking could be classified into three levels: entities, documents (VizWiz: Nearly Real-time Answers to Visual Questions.
-find contents on documents, or edits , Frenzy: Collaborative Data Organization for Creating Conference Sessions.),
-clusters (Crowd Synthesis: Extracting Categories and Clusters from Complex Data.,  ). For each kinds of crowdsourcing tasks, each kind of crowdsourcing could build on each other.
-Lots of details on
-
-Find entities that connect the 2 docs (quick)
-For the entities level, we could be used to used as the input to other two level inputs. Also could used to provides as the inputs for automatic computation models.
-
-For document level, we could find more related documents, or find similarity or dissimilarity between small number of documents (usually less than five documents). Find related documents, or remove unrelated documents. Directly to the documents,
-
-For cluster level tasks, we could map the layout to the workspace directly, as a distance function.
-
-label semantic-level connections between the 2 docs (quick) -> text that can be used
-find related docs (slow)
-
-output:  how to use crowd output in response to semantic interaction in the visualization
-can use crowd results in visualization (e.g. distance function for Force Directed layout)
-can use crowd results in further algorithmic processing (e.g. search)
-dynamic output, streaming from crowds
-
-\subsubsection{Crowds tasks in different time complexity}
-
-an individual analyst can be supported in real time by crowds or computation.
-
-Real-time crowdsourcing systems have been developed to assist individuals with sensemaking tasks [5,6,26,27].
-We seek to augment the capabilities of these analysts, regardless of their expertise, allowing them to work faster accomplish more than they could unaided.
-
-real time
-For synthesis phrase tasks, main on a small number of documents,
-
-For most foraging phrase tasks, since there are lots of documents to compile, automatic models could help to find the most possibly related documents, to let crowds to find. It might still be an time-assuming works(more than five mining):
-streaming
-batching results
-
-for those crowdsouricng tasks, there are two approaches to maneging latency in crowd-powered interfaces: steaming, batching results.
-Even if the crowdsourcing tasks are too slow to fit into the human in the loop (react less than ten seconds, the crowdsourcing could still be store to knowledge base, as an external knowledge for latter use, for example, analyst went to the similar situation, like overlap two document again, instead of assign a new task, the system could get crowdsourcing outputs immediately)
+Distances between Clustering, Hierarchical Clustering, use basic MDS algorithms to map categoried elements to layout.
 
 
-If current context changed, store data for latter use.
+\subsubsection{Document Similarity Rank}
+Directly using force-direct graph, to help layout
+
+Distance() R()
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

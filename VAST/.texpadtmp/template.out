@@ -7,13 +7,17 @@
 \BOOKMARK [1][]{section.11}{Pipeline}{}% 7
 \BOOKMARK [1][]{section.13}{Crowd-powered Semantic Interactions}{}% 8
 \BOOKMARK [2][]{subsection.14}{Interactions to sensemaking tasks}{section.13}% 9
-\BOOKMARK [2][]{subsection.15}{Sensemkaing tasks to crowdsourcing tasks}{section.13}% 10
-\BOOKMARK [2][]{subsection.17}{Integrate Crowds into Workspace}{section.13}% 11
-\BOOKMARK [3][-]{subsubsection.18}{Crowds tasks in different levels}{subsection.17}% 12
-\BOOKMARK [3][-]{subsubsection.19}{Crowds tasks in different time complexity}{subsection.17}% 13
-\BOOKMARK [1][]{section.20}{CrowdSPIRE}{}% 14
-\BOOKMARK [2][]{subsection.22}{Visual Encodings}{section.20}% 15
-\BOOKMARK [2][]{subsection.23}{Crowd-powered Document Overlapping}{section.20}% 16
-\BOOKMARK [2][]{subsection.24}{Integrate "Connect the Dots" into Workspace}{section.20}% 17
-\BOOKMARK [1][]{section.25}{USAGE SCENARIO}{}% 18
-\BOOKMARK [1][]{section.27}{Conclusion and Future Work}{}% 19
+\BOOKMARK [2][]{subsection.15}{Crowdsourcing Task Choices for Sensemaking Task}{section.13}% 10
+\BOOKMARK [3][-]{subsubsection.16}{Connect the Dots}{subsection.15}% 11
+\BOOKMARK [3][-]{subsubsection.18}{Group or Cluster Documents}{subsection.15}% 12
+\BOOKMARK [3][-]{subsubsection.20}{Pairwise Ranking Aggregation}{subsection.15}% 13
+\BOOKMARK [2][]{subsection.21}{Integrate Crowds into Workspace}{section.13}% 14
+\BOOKMARK [3][-]{subsubsection.22}{Connect the Dots}{subsection.21}% 15
+\BOOKMARK [3][-]{subsubsection.23}{CrowdCluater}{subsection.21}% 16
+\BOOKMARK [3][-]{subsubsection.24}{Document Similarity Rank}{subsection.21}% 17
+\BOOKMARK [1][]{section.25}{CrowdSPIRE}{}% 18
+\BOOKMARK [2][]{subsection.27}{Visual Encodings}{section.25}% 19
+\BOOKMARK [2][]{subsection.28}{Crowd-powered Document Overlapping}{section.25}% 20
+\BOOKMARK [2][]{subsection.29}{Integrate "Connect the Dots" into Workspace}{section.25}% 21
+\BOOKMARK [1][]{section.30}{USAGE SCENARIO}{}% 22
+\BOOKMARK [1][]{section.32}{Conclusion and Future Work}{}% 23
