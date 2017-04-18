@@ -147,7 +147,7 @@ When the tasks finished, crowds feedbacks could be used to update current visual
 \firstsection{Introduction}
 \maketitle
 %% \section{Introduction}
-Understanding large amount of unstructured text is emering today. If we can find ways to make sense of them, the possibilities for learning more about ourselves and how to improve the world we live in are almost boundless. 
+Understanding large amount of unstructured text is emering today. If we can find ways to make sense of them, the possibilities for learning more about ourselves and how to improve the world we live in are almost boundless.
 For example, detecting and preventing a terrorist attack based on intelligence reports. Responding to the challenging, there emerged the field of visual analytics\cite{Thomas2005} that combines the powerful approaches--information visualization\cite{card1999readings} and data mining\cite{berry1997data} --to create a new class of sensemaking tools\cite{Pirolli2005} enabling new kinds of exploration and insights. (Exemple)
 
 However, it remains time-consuming and onerous, and existing support tools still have a long way to go. Machine learning techniques could help find clusters and summarize documents efficiently, but currently, they cannot generate questions, hypotheses, or conclusions based on data that are more subtle than what an algorithm has been programmed to recognize. What's more, visualization tools amplify the cognitive abilities of their users, but many users could only access to low-level information on documents, which requiring significant effort on the part of users to get the deep insight of data with all kinds of external knowledge. For example, analysts cannot find the relationship between AMTRAK \#19 with a terrist attack if they don't consult the AMTRAK schedules on the Internet to see that Train \#19 is in fact called "The Crescent."
@@ -468,10 +468,17 @@ Where $Votes(di, dj)$ is how many crowds think this two documents are related. O
 
 \subsubsection{CrowdCluster}
 
+The distance between two documents could be depened on the clusters they belongs. If two doucments to the same clsuter or cateogy, they are close to each other, or they will be far away from each other.
+
+
+Distance($d_i, d_j$) = \left\{
+         \begin{array}{l l}
+         d_1 & \quad \text{$if\ d_i\ and\ d_j\ in\ the\ same\ cluster$}\\
+         d_2 & \quad \text{else}\\
+          \end{array}
+          \right.
+
 Distances between Clustering, Hierarchical Clustering, use basic MDS algorithms to map categoried elements to layout.
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	CrowdSPIRE
@@ -484,6 +491,7 @@ Distances between Clustering, Hierarchical Clustering, use basic MDS algorithms 
  \label{fig:hit}
 \end{figure*}
 
+To help
 CrowdSPIRE (Crowd-powered Spatial Paradigm for Information Retrieval and Exploration) is a visual analytics tool prototype that implements crowd-powered semantic interaction technique: like ForceSPIRE, a semantic interaction visual analytics tool prototype for exploring unstructured text documents.
 CrowdSPIRE and ForceSPIRE share a flexible spatial workspace (driven by a modified force-directed layout and several semantic interactions.
 However, with different models on the background to help calculate the layouts of documents.
@@ -551,10 +559,6 @@ For example, instead of design the hit, after the semantic interaction, we pre-a
 The related nodes could also be mapped to distances. based on
 BAsed on algorithms. Aslo, mapping the distance functions based on related entities.
 Pre-store current storage to mimic the real time crowdsourcing.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Case Study
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Evaluation
