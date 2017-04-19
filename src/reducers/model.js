@@ -1,10 +1,12 @@
 /**
  * Created by Yali on 3/2/17.
  */
-
+// Key idea is: mapping docs and entities --> nodes and links
 
 import {Record} from 'immutable';
 import {softSimilarity, cosineSimilarity} from '../utilities';
+import {preprocess} from './preprocess';
+import * as ATL from '../data/AtlanticStorm.json';
 
 import {
     SEARCH_TERMS,
@@ -21,27 +23,18 @@ import {
 const DOC = "DOCUMENT";
 const ICON = "ICON";
 const KEYWORD = "KEYWORD";
-import * as data from './crescent.json';
-import * as crowd from './crescent_crowd.json';
-
-
 const ENTITY_K = 0.1; // Constant for update entity weight
 const OPEN_DOCUMENT_K = 0.0015; // Constant for update entity weight
-
 const KEYWORD_K = 0.5;
 const SIMILARITY_THRESHOLD = 0.0;
-let documents, edges, entities; // real docs
-documents = data.documents;
-edges = data.edges;
-entities = data.entities;
-let nodes, links; // data to render on force directed graph
-// convert documents into nodes
-nodes = [];
-documents.forEach(function (d) {
-    let node = {};
-    node.id = d.id;
-    node.type = ICON;
-    node.content = d.text;
+
+
+// docs, entities --> nodes, links: used to control force directed graph
+let {docs, entities} = preprocess(ATL); // real docs
+
+let nodes = [];
+docs.forEach(function (d) {
+    let node = {id: d.id, type: ICON, content: d.text};
     // node.entities = d.entities;
     node.mass = d.entities.reduce(function (acc, e) {
         return acc + entities[e.name].weight * e.value;
@@ -50,16 +43,15 @@ documents.forEach(function (d) {
     nodes.push(node);
 });
 
-// This update function will change anyway, since we need to calculate again and again.
 // Calculate links based on updated nodes
-links = linker(nodes);
-//
+let links = linker(nodes);
+
 const InitialState = Record({
     isFetching: false,
     nodes: nodes,
     links: links
 });
-//
+
 
 // Transform data into nodes and links, the nodes includes (keywords and docs, links include their links between nodes.)
 const initialState = new InitialState;
@@ -75,18 +67,15 @@ export default function model(state = initialState, action) {
             // convert documents into nodes
             const keywords = action.keywords;
             nodes = [];
-            documents.forEach(function (d) {
+            docs.forEach(function (d) {
                 
                 if (d.entities.find(function (e) {
                         return keywords.find(function (key) {
-                            return key == e.name;
+                            return key === e.name;
                         });
                     })) {
-                    
-                    let node = {};
-                    node.id = d.id;
-                    node.type = ICON;
-                    node.content = d.text;
+    
+                    let node = {id: d.id, type: ICON, content: d.text};
                     node.mass = d.entities.reduce(function (acc, e) {
                         return acc + entities[e.name].weight * e.value;
                     }, 0);
@@ -96,10 +85,8 @@ export default function model(state = initialState, action) {
             });
             
             keywords.forEach(function (word) {
-                
-                let node = {};
-                node.id = word;
-                node.type = KEYWORD;
+    
+                let node = {id: word, type: KEYWORD};
                 if (entities.hasOwnProperty(word)) {
                     node.mass = entities[word].weight;
                 } else {
@@ -138,13 +125,13 @@ export default function model(state = initialState, action) {
             console.log('model: OPEN_DOCUMENT');
             let docId = action.docId;
             nodes.forEach(function (n) {
-                if(n.id == docId){
+                if (n.id === docId) {
                     n.type = DOC;
                 }
             });
     
-            let sharedEntities = documents.find(function (d) {
-                return d.id == docId;
+            let sharedEntities = docs.find(function (d) {
+                return d.id === docId;
             }).entities;
     
             let decK = 0.0; // count how many entities updated
@@ -164,19 +151,19 @@ export default function model(state = initialState, action) {
             for (let i in keys) {
                 let e = entities[keys[i]];
                 if (!sharedEntities.find(function (se) {
-                        return se.name == e.name;
+                        return se.name === e.name;
                     })) {
-                    e.weight -= decK ;
+                    e.weight -= decK;
                 }
             }
             
             // nodes mass changed too!
             nodes.forEach(function (n) {
                 let d;
-                if(d = documents.find(function (d) {
-                       return d.id == n.id;
-                    })){
-                        n.mass = d.entities.reduce(function (acc, e) {
+                if (d = docs.find(function (d) {
+                        return d.id === n.id;
+                    })) {
+                    n.mass = d.entities.reduce(function (acc, e) {
                         return acc + entities[e.name].weight * e.value;
                     }, 0);
                 }
@@ -195,11 +182,11 @@ export default function model(state = initialState, action) {
             
             let docId1 = action.docList[0];
             let docId2 = action.docList[1];
-            let doc1 = documents.find(function (d) {
-                return d.id == docId1;
+            let doc1 = docs.find(function (d) {
+                return d.id === docId1;
             });
-            let doc2 = documents.find(function (d) {
-                return d.id == docId2;
+            let doc2 = docs.find(function (d) {
+                return d.id === docId2;
             });
     
             let sharedEntities = [];
@@ -207,7 +194,7 @@ export default function model(state = initialState, action) {
             let decK = 0.0; // count how many entities updated
             doc1.entities.forEach(function (e1) {
                 doc2.entities.forEach(function (e2) {
-                    if (e1.name == e2.name) {
+                    if (e1.name === e2.name) {
                         sharedEntities.push(e1.name);
                         entities[e1.name].weight += ENTITY_K;
                         decK += ENTITY_K;
@@ -229,15 +216,15 @@ export default function model(state = initialState, action) {
                     e.weight = Math.max(0.00, e.weight);
                 }
             }
-            
-            
-            let filteredDocs = documents.filter(function (d) {
+    
+    
+            let filteredDocs = docs.filter(function (d) {
                 let hasSharedEntities = false;
                 d.entities.forEach(function (e) {
                     // console.log(e.name);
-                    if(sharedEntities.find(function (se) {
-                            return se == e.name
-                        })){
+                    if (sharedEntities.find(function (se) {
+                            return se === e.name
+                        })) {
                         hasSharedEntities = true;
                     }
                 });
@@ -249,7 +236,7 @@ export default function model(state = initialState, action) {
             // Update nodes based on filteredDocs, and current nodes
             filteredDocs.forEach(function (d) {
                 if (!nodes.find(function (n) {
-                        return n.id == d.id;
+                        return n.id === d.id;
                     })) {
                     let node = {};
                     node.id = d.id;
@@ -258,7 +245,7 @@ export default function model(state = initialState, action) {
                     node.mass = d.entities.reduce(function (acc, e) {
                         return acc + entities[e.name].weight * e.value;
                     }, 0);
-            
+    
                     nodes.push(node);
                 }
             });
@@ -308,33 +295,33 @@ export default function model(state = initialState, action) {
 // If one document and one keyword, we could calculate directly
 function nodeSimilarity(node1, node2) {
     // In nodeSimilarity
-    if ((node1.type != KEYWORD) && (node2.type != KEYWORD)) {
-        const doc1 = documents.find(function (doc) {
-            return doc.id == node1.id;
+    if ((node1.type !== KEYWORD) && (node2.type !== KEYWORD)) {
+        const doc1 = docs.find(function (doc) {
+            return doc.id === node1.id;
         });
         
-        const doc2 = documents.find(function (doc) {
-            return doc.id == node2.id;
+        const doc2 = docs.find(function (doc) {
+            return doc.id === node2.id;
         });
         return cosineSimilarity(doc1, doc2, entities);
-    } else if (node1.type == KEYWORD && node2.type == KEYWORD) {
+    } else if (node1.type === KEYWORD && node2.type === KEYWORD) {
         // No example right now.
     } else {
-        if (node1.type == KEYWORD) {
+        if (node1.type === KEYWORD) {
             let temp = node1;
             node1 = node2;
             node2 = temp;
         }
         
-        const doc = documents.find(function (doc) {
-            return doc.id == node1.id;
+        const doc = docs.find(function (doc) {
+            return doc.id === node1.id;
         });
         
         
         const keyword = node2.id;
         
         if (doc.entities.find(function (e) {
-                return e.name == keyword;
+                return e.name === keyword;
             })) {
             return KEYWORD_K;
         }
@@ -346,41 +333,41 @@ function nodeSimilarity(node1, node2) {
 function sharedEntities(node1, node2) {
     
     let shared = [];
-    if ((node1.type != KEYWORD) && (node2.type != KEYWORD)) {
-        const doc1 = documents.find(function (doc) {
-            return doc.id == node1.id;
+    if ((node1.type !== KEYWORD) && (node2.type !== KEYWORD)) {
+        const doc1 = docs.find(function (doc) {
+            return doc.id === node1.id;
         });
         
-        const doc2 = documents.find(function (doc) {
-            return doc.id == node2.id;
+        const doc2 = docs.find(function (doc) {
+            return doc.id === node2.id;
         });
         
         doc1.entities.forEach(function (e1) {
             doc2.entities.forEach(function (e2) {
-                if (e1.name == e2.name) {
+                if (e1.name === e2.name) {
                     shared.push(e1.name);
                 }
             });
         });
         
-    } else if (node1.type == KEYWORD && node2.type == KEYWORD) {
+    } else if (node1.type === KEYWORD && node2.type === KEYWORD) {
         // No example right now.
         
     } else {
         
-        if (node1.type == KEYWORD) {
+        if (node1.type === KEYWORD) {
             let temp = node1;
             node1 = node2;
             node2 = temp;
         }
-        const doc = documents.find(function (doc) {
-            return doc.id == node1.id;
+        const doc = docs.find(function (doc) {
+            return doc.id === node1.id;
         });
         
         const keyword = node2.id;
         
         if (doc.entities.find(function (e) {
-                return e.name == keyword;
+                return e.name === keyword;
             })) {
             shared.push(keyword);
         }
@@ -410,21 +397,10 @@ function linker(nodes) {
 function updateMode() {
     
     // update mass:
-    documents.forEach(function (d) {
+    docs.forEach(function (d) {
         d.mass = d.entities.reduce(function (acc, e) {
             return acc + entities[e.name].weight * e.value;
         }, 0);
     });
-    
-    // weighted sum model, to calculate the similarity
-    // update edges, based on Crowdsourcing
-    edges.forEach(function (e) {
-        // e.strength = cosineSimilarity(e.source, e.target, entities);
-        e.strength = softSimilarity(e.source, e.target, entities, crowd);
-        if (isNaN(e.strength)) {
-            e.strength = 0.005;
-        }
-    });
-    
 }
 
