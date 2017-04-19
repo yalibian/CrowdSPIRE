@@ -9,8 +9,8 @@ import {connect} from 'react-redux';
 import * as ListsActions from '../../actions/actions';
 // import Vis from '../Vis/Vis'
 import Visualization from '../Visualization/Visualization'
-import Controller from '../Controller/Controller'
-
+// import Controller from '../Controller/Controller'
+import Header from "../Header/Header";
 
 function mapStateToProps(state) {
     return {
@@ -100,10 +100,11 @@ export default class Workspace extends Component {
             <div id="main" style={mainStyle}>
                 <div id="workspace"
                      style={workspaceStyle}>
-                    <h1 id="vis-bar" style={visBarStyle}>WorkSpace</h1>
+                    {/*<h1 id="vis-bar" style={visBarStyle}>WorkSpace</h1>*/}
+                    <Header/>
                     <Visualization/>
                 </div>
-                <Controller/>
+                {/*<Controller/>*/}
             </div>
         );
     }

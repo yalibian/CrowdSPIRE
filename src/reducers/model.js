@@ -142,7 +142,6 @@ export default function model(state = initialState, action) {
                 entity.weight = Math.min(1, entity.weight + OPEN_DOCUMENT_K);
                 entity.update = true;
                 decK += entity.weight - d1;
-                console.log(d1, entity.weight);
             });
             
             // Update links, only links
@@ -221,7 +220,6 @@ export default function model(state = initialState, action) {
             let filteredDocs = docs.filter(function (d) {
                 let hasSharedEntities = false;
                 d.entities.forEach(function (e) {
-                    // console.log(e.name);
                     if (sharedEntities.find(function (se) {
                             return se === e.name
                         })) {
@@ -231,7 +229,6 @@ export default function model(state = initialState, action) {
                 return hasSharedEntities;
             });
             
-            // console.log(filteredDocs);
             
             // Update nodes based on filteredDocs, and current nodes
             filteredDocs.forEach(function (d) {
@@ -304,7 +301,6 @@ function nodeSimilarity(node1, node2) {
             return doc.id === node2.id;
         });
     
-        console.log(cosineSimilarity(doc1, doc2, entities));
         return cosineSimilarity(doc1, doc2, entities);
     } else if (node1.type === KEYWORD && node2.type === KEYWORD) {
         // No example right now.
@@ -379,14 +375,11 @@ function sharedEntities(node1, node2) {
 
 // Generate links based on input nodes
 function linker(nodes) {
-    console.log("In linker");
-    console.log(nodes);
     let links = [];
     let len = nodes.length;
     for (let i = 0; i < len; i++) {
         for (let j = i + 1; j < len; j++) {
             let sim = nodeSimilarity(nodes[i], nodes[j]);
-            console.log(sim)
             if (sim > SIMILARITY_THRESHOLD) {
                 let link = {source: nodes[i].id, target: nodes[j].id};
                 link.strength = sim;
@@ -395,7 +388,6 @@ function linker(nodes) {
             }
         }
     }
-    console.log(links)
     return links;
 }
 
