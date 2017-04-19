@@ -37,7 +37,7 @@ docs.forEach(function (d) {
     let node = {id: d.id, type: ICON, content: d.text};
     // node.entities = d.entities;
     node.mass = d.entities.reduce(function (acc, e) {
-        return acc + entities[e.name].weight * e.value;
+        return acc + entities[e.name].weight * e.TF_IDF;
     }, 0);
     
     nodes.push(node);
@@ -303,6 +303,8 @@ function nodeSimilarity(node1, node2) {
         const doc2 = docs.find(function (doc) {
             return doc.id === node2.id;
         });
+    
+        console.log(cosineSimilarity(doc1, doc2, entities));
         return cosineSimilarity(doc1, doc2, entities);
     } else if (node1.type === KEYWORD && node2.type === KEYWORD) {
         // No example right now.
@@ -377,11 +379,14 @@ function sharedEntities(node1, node2) {
 
 // Generate links based on input nodes
 function linker(nodes) {
+    console.log("In linker");
+    console.log(nodes);
     let links = [];
     let len = nodes.length;
     for (let i = 0; i < len; i++) {
         for (let j = i + 1; j < len; j++) {
             let sim = nodeSimilarity(nodes[i], nodes[j]);
+            console.log(sim)
             if (sim > SIMILARITY_THRESHOLD) {
                 let link = {source: nodes[i].id, target: nodes[j].id};
                 link.strength = sim;
@@ -390,6 +395,7 @@ function linker(nodes) {
             }
         }
     }
+    console.log(links)
     return links;
 }
 

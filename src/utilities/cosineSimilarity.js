@@ -17,11 +17,11 @@ export default function cosineSimilarity(doc1, doc2, entities) {
     
     doc1.entities.forEach(function (e1) {
         
-        len1 += e1.value * e1.value * entities[e1.name].weight;
+        len1 += e1.TF_IDF * e1.TF_IDF * entities[e1.name].weight;
         doc2.entities.forEach(function (e2) {
-            len2 += e2.value * e2.value * entities[e2.name].weight;
-            if (e1.name == e2.name) {
-                distance += e1.value * e2.value * entities[e1.name].weight;
+            len2 += e2.TF_IDF * e2.TF_IDF * entities[e2.name].weight;
+            if (e1.name === e2.name) {
+                distance += e1.TF_IDF * e2.TF_IDF * entities[e1.name].weight;
             }
         });
         
