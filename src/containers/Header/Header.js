@@ -3,7 +3,8 @@
  */
 
 // Header: CrowdSPIRE ICON and controller
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
+// import React from 'react';
 import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
@@ -26,39 +27,38 @@ const styles = {
 
 export default class Header extends React.Component {
     
+    static propTypes = {
+        changeMovementMode: PropTypes.func.isRequired,
+    };
+    
     constructor(props) {
         super(props);
-        this.state = {
-            value: 3,
-        };
     }
-    
-    handleChange = (event, index, value) => this.setState({value});
     
     render() {
         return (
             <Toolbar>
                 <ToolbarGroup>
-                    <ToolbarTitle text="CrowdSPIRE" />
+                    <ToolbarTitle text="CrowdSPIRE"/>
                     <ToolbarSeparator />
                     <SearchTerms/>
                 </ToolbarGroup>
-    
+                
                 <ToolbarGroup>
-                        <RadioButtonGroup name="shipSpeed" defaultSelected="not_light">
+                    <RadioButtonGroup name="shipSpeed" defaultSelected="exploratory" onChange={(event, value)=>{this.props.changeMovementMode(value);}}>
                         <RadioButton
-                            value="not_light"
+                            // value="not_light"
+                            value="exploratory"
                             label="Exploratory"
                             style={styles.radioButton}
                         />
                         <RadioButton
-                            value="light"
+                            value="expressive"
                             label="Expressive"
                             style={styles.radioButton}
                         />
-                        
                     </RadioButtonGroup>
-                    <RaisedButton label="Update Layout" />
+                    <RaisedButton label="Update Layout"/>
                     <ToolbarSeparator />
                     <RaisedButton
                         href="https://github.com/callemall/material-ui"

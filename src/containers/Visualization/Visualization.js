@@ -67,7 +67,7 @@ let simulation = d3.forceSimulation()
     .force("collide", forceCollide)
     .on("tick", ticked);
 
-let nodes, links;
+let nodes, links, movementMode;
 let node, link, linkG;
 let WIDTH, HEIGHT;
 let clickedDoc = null;
@@ -78,6 +78,7 @@ class Visualization extends Component {
     static propTypes = {
         nodes: PropTypes.array,
         links: PropTypes.array,
+        movementMode: PropTypes.string.isRequired,
         
         openDocument: PropTypes.func,
         overlapDocuments: PropTypes.func,
@@ -121,9 +122,12 @@ class Visualization extends Component {
     
     // Init the whole force directed graph visualization based on d3.js and (data: nodes, links).
     componentDidMount() {
-        console.log("Init VIS");
+        console.log("Init VISUALIZATION");
         nodes = this.props.nodes;
         links = this.props.links;
+        movementMode = this.props.movementMode;
+        console.log(movementMode);
+        
         let overlapDocuments = this.props.overlapDocuments;
         let openDocument = this.props.openDocument;
         svg = d3.select(this.refs.vis);
@@ -263,6 +267,8 @@ class Visualization extends Component {
         console.log('Update VIS');
         nodes = this.props.nodes;
         links = this.props.links;
+        movementMode = this.props.movementMode;
+        console.log(movementMode);
         let overlapDocuments = this.props.overlapDocuments;
         let openDocument = this.props.openDocument;
         
@@ -680,7 +686,7 @@ function nodeDragStarted(d) {
     d3.select(this).moveToFront();
     
     if (d.visualDetailLevel == 'Document') {
-        
+    
     }
     
     if (!d3.event.active) {
@@ -1063,4 +1069,4 @@ function unfixNodes() {
         link.remove();
     }
 }
-    
+

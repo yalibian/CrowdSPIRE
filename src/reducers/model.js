@@ -17,6 +17,7 @@ import {
     CLUSTER_DOCUMENTS,
     ANNOTATE_DOCUMENT,
     PIN_DOCUMENT,
+    MOVEMENT_MODE,
 } from '../actions/actions';
 
 
@@ -27,6 +28,7 @@ const ENTITY_K = 0.1; // Constant for update entity weight
 const OPEN_DOCUMENT_K = 0.0015; // Constant for update entity weight
 const KEYWORD_K = 0.5;
 const SIMILARITY_THRESHOLD = 0.0;
+let movementMode = 'exploratory';
 
 
 // docs, entities --> nodes, links: used to control force directed graph
@@ -49,7 +51,8 @@ let links = linker(nodes);
 const InitialState = Record({
     isFetching: false,
     nodes: nodes,
-    links: links
+    links: links,
+    movementMode: movementMode,
 });
 
 
@@ -112,7 +115,11 @@ export default function model(state = initialState, action) {
                     .set('links', links);
             });
         }
-        
+        case MOVEMENT_MODE: {
+            return state.withMutations((ctx) =>{
+                ctx.set('movementMode', action.mode);
+            })
+        }
         
         case MOVE_DOCUMENT: {
             return state.withMutations((ctx) => {
@@ -262,7 +269,6 @@ export default function model(state = initialState, action) {
                     .set('links', links);
             });
         }
-        
         
         case ANNOTATE_DOCUMENT: {
             

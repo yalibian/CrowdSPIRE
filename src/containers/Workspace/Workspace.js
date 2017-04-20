@@ -16,6 +16,7 @@ function mapStateToProps(state) {
     return {
         nodes: state.model.nodes,
         links: state.model.links,
+        movementMode: state.model.movementMode,
     };
 }
 
@@ -31,9 +32,11 @@ export default class Workspace extends Component {
         clusterDocuments: PropTypes.func.isRequired,
         annotateDocument: PropTypes.func.isRequired,
         pinDocument: PropTypes.func.isRequired,
+        changeMovementMode: PropTypes.func.isRequired,
         
         nodes: React.PropTypes.array,
         links: React.PropTypes.array,
+        movementMode: PropTypes.string.isRequired,
     };
     
     constructor(props) {
@@ -43,6 +46,7 @@ export default class Workspace extends Component {
         this.clusterDocuments = this.clusterDocuments.bind(this);
         this.annotateDocument = this.annotateDocument.bind(this);
         this.pinDocument = this.pinDocument.bind(this);
+        this.changeMovementMode = this.changeMovementMode.bind(this);
     }
     
     searchTerms(keywords) {
@@ -63,6 +67,10 @@ export default class Workspace extends Component {
     
     pinDocument(doc) {
         this.props.pinDocument(doc);
+    }
+    
+    changeMovementMode(mode){
+        this.props.changeMovementMode(mode);
     }
     
     render() {
@@ -100,9 +108,8 @@ export default class Workspace extends Component {
             <div id="main" style={mainStyle}>
                 <div id="workspace"
                      style={workspaceStyle}>
-                    {/*<h1 id="vis-bar" style={visBarStyle}>WorkSpace</h1>*/}
-                    <Header/>
-                    <Visualization/>
+                    <Header changeMovementMode={this.changeMovementMode}/>
+                    <Visualization movementMode={this.props.movementMode}/>
                 </div>
                 {/*<Controller/>*/}
             </div>
