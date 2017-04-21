@@ -20,6 +20,7 @@ import {
     PIN_DOCUMENT,
     MOVEMENT_MODE,
     UPDATE_LAYOUT,
+    RESET_LAYOUT,
 } from '../actions/actions';
 
 
@@ -286,11 +287,19 @@ export default function model(state = initialState, action) {
         }
 
         case UPDATE_LAYOUT:{
-            let needUpdateLayout = true;
+            
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
                     .set('links', links)
                     .set('interaction', UPDATE_LAYOUT);
+            });
+        }
+        case RESET_LAYOUT:{
+        
+            return state.withMutations((ctx) => {
+                ctx.set('nodes', nodes)
+                    .set('links', links)
+                    .set('interaction', RESET_LAYOUT);
             });
         }
 

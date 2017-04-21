@@ -36,6 +36,8 @@ export default class Workspace extends Component {
         changeMovementMode: PropTypes.func.isRequired,
         requireLayoutUpdate: PropTypes.func.isRequired,
         
+        requireLayoutReset: PropTypes.func.isRequired,
+        
         nodes: React.PropTypes.array,
         links: React.PropTypes.array,
         movementMode: PropTypes.string.isRequired,
@@ -51,6 +53,7 @@ export default class Workspace extends Component {
         this.pinDocument = this.pinDocument.bind(this);
         this.changeMovementMode = this.changeMovementMode.bind(this);
         this.requireLayoutUpdate = this.requireLayoutUpdate.bind(this);
+        this.requireLayoutReset = this.requireLayoutReset.bind(this);
     }
     
     searchTerms(keywords) {
@@ -77,8 +80,12 @@ export default class Workspace extends Component {
         this.props.changeMovementMode(mode);
     }
     
-    requireLayoutUpdate(nodes){
-        this.props.requireLayoutUpdate(nodes);
+    requireLayoutUpdate(){
+        this.props.requireLayoutUpdate();
+    }
+    
+    requireLayoutReset(){
+        this.props.requireLayoutReset();
     }
     
     render() {
@@ -116,7 +123,7 @@ export default class Workspace extends Component {
             <div id="main" style={mainStyle}>
                 <div id="workspace"
                      style={workspaceStyle}>
-                    <Header changeMovementMode={this.changeMovementMode} requireLayoutUpdate={this.requireLayoutUpdate}/>
+                    <Header changeMovementMode={this.changeMovementMode} requireLayoutUpdate={this.requireLayoutUpdate} requireLayoutReset={this.requireLayoutReset}/>
                     <Visualization movementMode={this.props.movementMode} interaction={this.props.interaction}/>
                 </div>
                 {/*<Controller/>*/}

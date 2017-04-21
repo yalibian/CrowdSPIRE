@@ -181,6 +181,7 @@ class Visualization extends Component {
         linkG = svg.append('g');
         link = null;
         let nodeDragEnded = this.nodeDragEnded;
+    
         
         let onNodeDragEnded = function (d) {
             nodeDragEnded(d, overlapDocuments);
@@ -190,7 +191,8 @@ class Visualization extends Component {
             console.log('onNodeDoubleClicked');
             this.nodeDoubleClicked(d, openDocument);
         };
-        
+    
+        let doubleClicked = this.nodeDoubleClicked;
         let dragStarted = this.nodeDragStarted;
         let dragged = this.nodeDragged;
         let drag = d3.drag()
@@ -210,14 +212,11 @@ class Visualization extends Component {
                 d3.event.preventDefault();
             })
             .on('click', this.nodeClicked)
-            .on('dblclick', onNodeDoubleClicked)
+            .on('dblclick', function (d) {
+                doubleClicked(d, this);
+            })
             .call(drag);
-        
-        // .call(d3.drag()
-        //     .on("start", this.nodeDragStarted)
-        //     .on("drag", this.nodeDragged)
-        //     .on("end", onNodeDragEnded));
-        
+       
         // label
         node.append("text")
             .attr("dx", 12)
@@ -649,12 +648,7 @@ class Visualization extends Component {
     }
     
     nodeDragStarted(d, that) {
-        console.log("Node Drag Start");
-        
-        console.log(d);
-        
         d3.select(that).moveToFront();
-        console.log("Node Drag Start");
         if (d.visualDetailLevel === 'Document') {
         
         }
@@ -738,8 +732,8 @@ class Visualization extends Component {
     nodeDragEnded(d, overlapDocuments) {
         
         if (movementMode === 'expressive') {
-            console.log(d);
-            this.moveDocument(d);
+            let doc = {id: d.id, x: d.x, y: d.y};
+            this.moveDocument(doc);
         }
         
         if (d.visualDetailLevel === 'Document') {

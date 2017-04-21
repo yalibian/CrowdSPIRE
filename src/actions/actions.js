@@ -14,6 +14,7 @@ export const ANNOTATE_DOCUMENT = 'ANNOTATE_DOCUMENT';
 export const PIN_DOCUMENT = 'PIN_DOCUMENT';
 export const MOVEMENT_MODE = 'MOVEMENT_MODE';
 export const UPDATE_LAYOUT = 'UPDATE_LAYOUT';
+export const RESET_LAYOUT = 'RESET_LAYOUT';
 
 export function searchTerms(keywords) {
     return (dispatch) => {
@@ -78,3 +79,8 @@ export function requireLayoutUpdate(nodes) {
     };
 }
 
+export function requireLayoutReset(nodes) {
+    return (dispatch) => {
+        dispatch({type: RESET_LAYOUT, nodes});
+    };
+}

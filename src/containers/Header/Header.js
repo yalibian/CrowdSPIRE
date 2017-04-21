@@ -23,6 +23,7 @@ export default class Header extends React.Component {
     static propTypes = {
         changeMovementMode: PropTypes.func.isRequired,
         requireLayoutUpdate: PropTypes.func.isRequired,
+        requireLayoutReset: PropTypes.func.isRequired,
     };
     
     constructor(props) {
@@ -56,6 +57,9 @@ export default class Header extends React.Component {
                     </RadioButtonGroup>
                     <RaisedButton label="Update Layout" onClick={()=>{
                         this.props.requireLayoutUpdate();
+                    }}/>
+                    <RaisedButton label="Reset Layout" onClick={()=>{
+                        this.props.requireLayoutReset();
                     }}/>
                     <ToolbarSeparator />
                     <RaisedButton
