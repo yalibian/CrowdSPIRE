@@ -1,48 +1,74 @@
 /**
- * Created by Yali on 2/26/17.
+ * Created by Yali on 4/19/17.
  */
-import React from 'react'
-import {IndexLink, Link} from 'react-router'
-// import './Header.scss'
 
-const headerStyle = {
-  minHeight: '35px',
-  height: '2%',
-  backgroundColor: '#074563',
-  color: 'white',
-  overflow: 'hidden',
-  position: 'relative'
+// Header: CrowdSPIRE ICON and controller
+import React, {Component, PropTypes} from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
+import SearchTerms from "./SearchTerms";
+
+const styles = {
+    block: {
+        maxWidth: 2530,
+    },
+    radioButton: {
+        marginBottom: 0,
+    },
 };
 
-const style1 = {
-  margin: 0,
-  height: '30px',
-  display: 'inline-block',
-  width: '500px',
-  position: 'absolute',
-  marginRight: '10px'
-};
-
-const h1Style = {
-  margin: 0,
-  height: '60px',
-  padding: '10px',
-  fontSize: '20px'
-};
-
-const spanStyle = {
-  fontWeight: 'normal'
-};
-
-export const Header = () => (
-    <div id="header"
-         style={headerStyle}>
-      <div style={style1}>
-        <h1 style={h1Style}>
-          <span style={spanStyle}>CrowdSPIRE</span>
-        </h1>
-      </div>
-    </div>
-)
-
-export default Header
+export default class Header extends React.Component {
+    
+    static propTypes = {
+        changeMovementMode: PropTypes.func.isRequired,
+        requireLayoutUpdate: PropTypes.func.isRequired,
+    };
+    
+    constructor(props) {
+        super(props);
+    }
+    
+    render() {
+        return (
+            <Toolbar>
+                <ToolbarGroup>
+                    <ToolbarTitle text="CrowdSPIRE"/>
+                    <ToolbarSeparator />
+                    <SearchTerms/>
+                </ToolbarGroup>
+                
+                <ToolbarGroup>
+                    <RadioButtonGroup name="shipSpeed" defaultSelected="exploratory" onChange={(event, value) => {
+                        this.props.changeMovementMode(value);
+                    }}>
+                        <RadioButton
+                            // value="not_light"
+                            value="exploratory"
+                            label="Exploratory"
+                            style={styles.radioButton}
+                        />
+                        <RadioButton
+                            value="expressive"
+                            label="Expressive"
+                            style={styles.radioButton}
+                        />
+                    </RadioButtonGroup>
+                    <RaisedButton label="Update Layout" onClick={()=>{
+                        this.props.requireLayoutUpdate();
+                    }}/>
+                    <ToolbarSeparator />
+                    <RaisedButton
+                        href="https://github.com/yalibian/CrowdSPIRE"
+                        target="_blank"
+                        secondary={true}
+                        label="GITHUB"
+                        style={{
+                            margin: 12,
+                        }}
+                    />
+                </ToolbarGroup>
+            </Toolbar>
+        );
+    }
+}

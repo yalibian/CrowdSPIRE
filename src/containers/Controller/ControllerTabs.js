@@ -8,7 +8,9 @@ import {bindActionCreators} from 'redux';
 import * as ListsActions from '../../actions/actions';
 
 import {Tabs, Tab} from 'material-ui/Tabs';
-import SearchTerms from './SearchTerms'
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import SearchTerms from '../Header/SearchTerms'
+import Toggle from 'material-ui/Toggle';
 
 function mapStateToProps(state) {
     return {
@@ -29,6 +31,12 @@ const styles = {
         paddingTop: 16,
         marginBottom: 12,
         fontWeight: 400,
+    },
+    block: {
+        maxWidth: 250,
+    },
+    radioButton: {
+        marginBottom: 16,
     },
 };
 
@@ -83,15 +91,20 @@ export default class ControllerTabs extends React.Component {
                 onChange={this.handleChange}
                 style={controllerStyle}>
                 <Tab label="Entity" buttonStyle={buttonStyle} value="a">
-                    {/*<SearchTerms searchTerms={this.props.searchTerms}/>*/}
                     <SearchTerms />
                     <div>
-                        <h2 style={styles.headline}>Controllable Tab A</h2>
-                        <p>
-                            Tabs are also controllable if you want to programmatically pass them their values.
-                            This allows for more functionality in Tabs such as not
-                            having any Tab selected or assigning them different values.
-                        </p>
+                        <RadioButtonGroup name="shipSpeed" defaultSelected="not_light">
+                            <RadioButton
+                                value="not_light"
+                                label="Explosive"
+                                style={styles.radioButton}
+                            />
+                            <RadioButton
+                                value="light"
+                                label="Expressive"
+                                style={styles.radioButton}
+                            />
+                        </RadioButtonGroup>
                     </div>
                 </Tab>
                 <Tab label="Document" buttonStyle={buttonStyle} value="b">

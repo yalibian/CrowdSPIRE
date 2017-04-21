@@ -9,13 +9,15 @@ import {connect} from 'react-redux';
 import * as ListsActions from '../../actions/actions';
 // import Vis from '../Vis/Vis'
 import Visualization from '../Visualization/Visualization'
-import Controller from '../Controller/Controller'
-
+// import Controller from '../Controller/Controller'
+import Header from "../Header/Header";
 
 function mapStateToProps(state) {
     return {
         nodes: state.model.nodes,
         links: state.model.links,
+        movementMode: state.model.movementMode,
+        interaction: state.model.interaction,
     };
 }
 
@@ -31,9 +33,13 @@ export default class Workspace extends Component {
         clusterDocuments: PropTypes.func.isRequired,
         annotateDocument: PropTypes.func.isRequired,
         pinDocument: PropTypes.func.isRequired,
+        changeMovementMode: PropTypes.func.isRequired,
+        requireLayoutUpdate: PropTypes.func.isRequired,
         
         nodes: React.PropTypes.array,
         links: React.PropTypes.array,
+        movementMode: PropTypes.string.isRequired,
+        interaction: PropTypes.string,
     };
     
     constructor(props) {
@@ -43,6 +49,8 @@ export default class Workspace extends Component {
         this.clusterDocuments = this.clusterDocuments.bind(this);
         this.annotateDocument = this.annotateDocument.bind(this);
         this.pinDocument = this.pinDocument.bind(this);
+        this.changeMovementMode = this.changeMovementMode.bind(this);
+        this.requireLayoutUpdate = this.requireLayoutUpdate.bind(this);
     }
     
     searchTerms(keywords) {
@@ -63,6 +71,14 @@ export default class Workspace extends Component {
     
     pinDocument(doc) {
         this.props.pinDocument(doc);
+    }
+    
+    changeMovementMode(mode) {
+        this.props.changeMovementMode(mode);
+    }
+    
+    requireLayoutUpdate(nodes){
+        this.props.requireLayoutUpdate(nodes);
     }
     
     render() {
@@ -100,10 +116,10 @@ export default class Workspace extends Component {
             <div id="main" style={mainStyle}>
                 <div id="workspace"
                      style={workspaceStyle}>
-                    <h1 id="vis-bar" style={visBarStyle}>WorkSpace</h1>
-                    <Visualization/>
+                    <Header changeMovementMode={this.changeMovementMode} requireLayoutUpdate={this.requireLayoutUpdate}/>
+                    <Visualization movementMode={this.props.movementMode} interaction={this.props.interaction}/>
                 </div>
-                <Controller/>
+                {/*<Controller/>*/}
             </div>
         );
     }

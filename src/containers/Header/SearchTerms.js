@@ -36,7 +36,7 @@ export default class SearchTerms extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
     
-    handleChange (tags) {
+    handleChange(tags) {
         this.setState({tags});
         this.props.searchTerms(tags);
     };
