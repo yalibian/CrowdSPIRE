@@ -88,13 +88,13 @@ let clickedDoc = null;
 
 @connect(mapStateToProps, mapDispatchToProps)
 class Visualization extends Component {
-    
+
     static propTypes = {
         nodes: PropTypes.array,
         links: PropTypes.array,
         movementMode: PropTypes.string.isRequired,
         interaction: PropTypes.string,
-        
+
         openDocument: PropTypes.func,
         overlapDocuments: PropTypes.func,
         highlightText: PropTypes.func,
@@ -102,7 +102,7 @@ class Visualization extends Component {
         annotateDocument: PropTypes.func,
         pinDocument: PropTypes.func,
     };
-    
+
     constructor(props) {
         super(props);
         // this.highlightText = this.highlightText.bind(this);
@@ -111,28 +111,28 @@ class Visualization extends Component {
         // this.annotateDocument = this.annotateDocument.bind(this);
         // this.pinDocument = this.pinDocument.bind(this);
     }
-    
+
     highlightText(text) {
         this.props.highlightText(text);
     }
-    
+
     overlapDocuments(docList) {
         this.props.overlapDocuments(docList);
     }
-    
+
     clusterDocuments(docs) {
         this.props.clusterDocuments(docs);
     }
-    
+
     annotateDocument(text, doc) {
         this.props.annotateDocument(text, doc);
     }
-    
+
     pinDocument(doc) {
         this.props.pinDocument(doc);
     }
-    
-    
+
+
     // Init the whole force directed graph visualization based on d3.js and (data: nodes, links).
     componentDidMount() {
         console.log("Init VISUALIZATION");
@@ -140,35 +140,35 @@ class Visualization extends Component {
         links = this.props.links;
         movementMode = this.props.movementMode;
         console.log(movementMode);
-        
+
         let overlapDocuments = this.props.overlapDocuments;
         let openDocument = this.props.openDocument;
         svg = d3.select(this.refs.vis);
         WIDTH = parseInt(svg.style("width"), 10);
         HEIGHT = parseInt(svg.style("height"), 10);
-        
+
         simulation
             .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
             .nodes(nodes);
-        
+
         simulation.force("link")
             .links(links)
             .strength(function (link) {
                 return link.strength;
             });
-        
+
         linkG = svg.append('g');
         link = null;
-        
+
         let onNodeDragEnded = function (d) {
             nodeDragEnded(d, overlapDocuments);
         };
-        
+
         let onNodeDoubleClicked = function (d) {
             console.log('onNodeDoubleClicked');
             nodeDoubleClicked(d, openDocument);
         };
-        
+
         node = svg.selectAll(".node")
             .data(nodes)
             .enter().append("g")
@@ -182,7 +182,7 @@ class Visualization extends Component {
                 .on("start", nodeDragStarted)
                 .on("drag", nodeDragged)
                 .on("end", onNodeDragEnded));
-        
+
         // label
         node.append("text")
             .attr("dx", 12)
@@ -190,7 +190,7 @@ class Visualization extends Component {
             .text(function (d) {
                 return d.id
             });
-        
+
         // rectangle
         node.append("rect")
             .attr("width", function (d) {
@@ -218,22 +218,22 @@ class Visualization extends Component {
                 return IconR;
             })
             .attr('class', 'IconRect');
-        
+
         svg.on('mousedown', unfixNodes);
     }
-    
-    
+
+
     // Update the whole VIS when semantic interaction happened
     // The whole update has beend recored on nodes and links
     // We just need to update the binded data on links and nodes.
     componentDidUpdate() {
-        
+
         console.log('Update VIS');
         nodes = this.props.nodes;
         links = this.props.links;
         movementMode = this.props.movementMode;
         interaction = this.props.interaction;
-        
+
         // If current movement mode is 'expressive', just need to consider whether we need to update layout.
         if(movementMode === 'expressive'){
             if(interaction === UPDATE_LAYOUT){
@@ -241,18 +241,18 @@ class Visualization extends Component {
             }
             return;
         }
-        
+
         let overlapDocuments = this.props.overlapDocuments;
         let openDocument = this.props.openDocument;
-        
+
         let onNodeDragEnded = function (d) {
             nodeDragEnded(d, overlapDocuments);
         };
-        
+
         let onNodeDoubleClicked = function (d) {
             nodeDoubleClicked(d, openDocument);
         };
-        
+
         // Enter
         let newAddedNodes = svg.selectAll('.node').data(nodes)
             .enter()
@@ -267,14 +267,14 @@ class Visualization extends Component {
                 .on("start", nodeDragStarted)
                 .on("drag", nodeDragged)
                 .on("end", onNodeDragEnded));
-        
+
         newAddedNodes.append('text')
             .attr("dx", 12)
             .attr("dy", ".35em")
             .text(function (d) {
                 return d.id;
             });
-        
+
         newAddedNodes.append("rect")
             .attr("width", function (d) {
                 d.radius = IconSide / Math.sqrt(2.00);
@@ -304,19 +304,19 @@ class Visualization extends Component {
                 return IconR;
             })
             .attr('class', 'IconRect');
-        
-        
+
+
         // Update
         newAddedNodes = svg.selectAll('.node').data(nodes);
         let docNodes = newAddedNodes.filter(function (d) {
             return d.type === 'DOCUMENT';
         });
-        
+
         let iconNodes = newAddedNodes.filter(function (d) {
             return d.type !== 'DOCUMENT';
         });
-        
-        
+
+
         iconNodes.selectAll('foreignObject').remove();
         iconNodes.selectAll('image').remove();
         iconNodes.select('text')
@@ -325,7 +325,7 @@ class Visualization extends Component {
                 d.y = 0.0;
                 return d.id;
             });
-        
+
         iconNodes.select('rect')
             .attr('width', function (d) {
                 d.radius = IconSide / Math.sqrt(2.00);
@@ -364,7 +364,7 @@ class Visualization extends Component {
             .style('stroke-width', function () {
                 return 0;
             });
-        
+
         docNodes.select('rect')
             .attr('width', function (d) {
                 let c = 90;
@@ -399,7 +399,7 @@ class Visualization extends Component {
             .attr('class', function (d) {
                 return 'DocRect'
             });
-        
+
         // Add close/delete button
         docNodes.append('image')
             .attr("xlink:href", function (d) {
@@ -416,7 +416,7 @@ class Visualization extends Component {
                 return -d.height / 2 + 2;
             })
             .on('click', closeNode);
-        
+
         // Add minimize button
         docNodes.append('image')
             .attr("xlink:href", function (d) {
@@ -433,7 +433,7 @@ class Visualization extends Component {
                 return -d.height / 2 + 2;
             })
             .on('click', minimizeNode);
-        
+
         //Add document content into docNode(Document Level Node)
         let docContent = docNodes.append("foreignObject")
             .attr("class", "doc")
@@ -461,13 +461,13 @@ class Visualization extends Component {
             .style("height", function (d) {
                 return d.height - 40 + 'px';
             });
-        
+
         docContent.append('p')
             .attr('class', 'doc-title')
             .text(function (d) {
                 return d.id;
             });
-        
+
         docContent.append('p')
             .attr('class', 'doc-content')
             .attr('height', function (d) {
@@ -476,12 +476,12 @@ class Visualization extends Component {
             .text(function (d) {
                 return d.content;
             });
-        
+
         svg.selectAll('.node')
             .data(nodes)
             .exit()
             .remove();
-        
+
         console.log(movementMode);
         if (movementMode === 'expressive') {
             console.log("movementMode === expressive");
@@ -499,15 +499,15 @@ class Visualization extends Component {
             simulation.alpha(0.3).restart();
         }
     }
-    
-    
+
+
     render() {
         return (
             <svg ref="vis" style={visStyle}/>
         );
     }
-    
-    
+
+
 }
 
 export default Visualization;
@@ -531,7 +531,7 @@ function updateLayoutExpressively() {
 }
 
 function nodeClicked(d) {
-    
+
     if (clickedDoc !== d.id) {
         unfixNodes();
         d.fx = d.x;
@@ -542,18 +542,18 @@ function nodeClicked(d) {
 }
 
 function ticked() {
-    
+
     // Not change the width and height of each node.
     svg.selectAll('.node').attr("transform", function (d) {
-        
+
         // border constriction
         d.x = Math.max(d.width / 2, Math.min(WIDTH - d.width / 2, d.x));
         d.y = Math.max(d.height / 2, Math.min(HEIGHT - d.height / 2, d.y));
-        
+
         // Update the group position: which include the basic rectangle and Foreign object. (Drag Object too...)
         return "translate(" + d.x + "," + d.y + ")";
     });
-    
+
     // rectangle: keep ICON rectangle at the center of Node Group
     svg.selectAll("rect")
         .attr("x", function (d) {
@@ -562,11 +562,11 @@ function ticked() {
         .attr("y", function (d) {
             return -d.height / 2;
         });
-    
-    
+
+
     // When a node is selected(highlighted), related nodes/links should highlighted to.
     if (clickedDoc !== null) {
-        
+
         // Show labels on each related link
         link.selectAll('text')
             .attr('x', function (d) {
@@ -576,7 +576,7 @@ function ticked() {
                 return (d.source.y + d.target.y) / 2;
             })
             .attr('transform', function (d, i) {
-                
+
                 let dx = 0, dy = 0;
                 if (d.target.x > d.source.x) {
                     dx = d.target.x - d.source.x;
@@ -585,14 +585,14 @@ function ticked() {
                     dx = d.source.x - d.target.x;
                     dy = d.source.y - d.target.y;
                 }
-                
+
                 let angle = Math.atan2(dy, dx) * 180 / Math.PI;
                 let bbox = this.getBBox();
                 let rx = bbox.x + bbox.width / 2;
                 let ry = bbox.y + bbox.height / 2;
                 return 'rotate(' + angle + ' ' + rx + ' ' + ry + ')';
             });
-        
+
         // Show line between each related link
         link.selectAll('line')
             .attr('x1', function (d) {
@@ -611,7 +611,7 @@ function ticked() {
 }
 
 function nodeDoubleClicked(d, openDocument) {
-    
+
     if (d.visualDetailLevel !== 'Document') {
         openDocument(d.id);
         d.visualDetailLevel = "Document";
@@ -621,7 +621,7 @@ function nodeDoubleClicked(d, openDocument) {
     }
     if (clickedDoc !== d.id) {
         unfixNodes();
-        
+
         d.fx = d.x;
         d.fy = d.y;
         clickedDoc = d.id;
@@ -631,16 +631,16 @@ function nodeDoubleClicked(d, openDocument) {
 
 function nodeDragStarted(d) {
     console.log("Node Drag Start");
-    
+
     d3.select(this).moveToFront();
     if (d.visualDetailLevel === 'Document') {
-    
+
     }
-    
+
     if (!d3.event.active && (movementMode === 'exploratory')) {
         simulation.alphaTarget(0.3).restart();
     }
-    
+
     if (clickedDoc !== d.id) {
         unfixNodes();
         d.fx = d.x;
@@ -652,7 +652,7 @@ function nodeDragStarted(d) {
 
 // During node drag.
 function nodeDragged(d) {
-    
+
     if (movementMode === 'expressive') {
         d3.select(this)
             .attr("transform", function (d) {
@@ -661,17 +661,20 @@ function nodeDragged(d) {
                 d.y = d3.event.y;
                 d.x = Math.max(d.width / 2, Math.min(WIDTH - d.width / 2, d.x));
                 d.y = Math.max(d.height / 2, Math.min(HEIGHT - d.height / 2, d.y));
-                
+
                 // Update the group position: which include the basic rectangle and Foreign object. (Drag Object too...)
                 return "translate(" + d.x + "," + d.y + ")";
             });
+    } else {
+                 d.fx = d3.event.x;
+                d.fy = d3.event.y;
     }
-    
+
     if (d.visualDetailLevel === 'Document') {
-        
+
         // flag to record if this node has overlap with other document level node
         let hasOverlap = false;
-        
+
         let rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
         node.selectAll('rect')
             .style('stroke', 'yellow')
@@ -693,7 +696,7 @@ function nodeDragged(d) {
                     }
                 }
             });
-        
+
         d3.select(this)
             .select('rect')
             .style('stroke', 'yellow')
@@ -704,15 +707,15 @@ function nodeDragged(d) {
                     return 0;
                 }
             });
-        
+
     }
 }
 
 // the end of node drag.
 function nodeDragEnded(d, overlapDocuments) {
-    
+
     if (d.visualDetailLevel === 'Document') {
-        
+
         let hasOverlap = false;
         let overlappedDocId = null;
         let rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
@@ -736,19 +739,19 @@ function nodeDragEnded(d, overlapDocuments) {
                     }
                 }
             });
-        
-        
+
+
         if (hasOverlap) {
             overlapDocuments([overlappedDocId, d.id]);
             // model.documentOverlapping(overlappedDocId, d.id);
         }
     }
-    
+
     if (!d3.event.active && (movementMode === 'exploratory')) {
         simulation.alphaTarget(0);
     }
     // forceCollide.initialize(simulation.nodes());
-    
+
     // Update and restart the simulation.
     if (movementMode === 'exploratory') {
         simulation.nodes(nodes);
@@ -761,13 +764,13 @@ function nodeDragEnded(d, overlapDocuments) {
 //      When the close button is clicked on this Document-Level Node, smaller the size of background rectangle, and delete the foreign object.
 //  Details: remove text, buttons from Node, change class.
 function minimizeNode(d) {
-    
+
     d3.event.preventDefault();
-    
+
     let selectedNode = node.filter(function (dd) {
         return dd.id === d.id;
     });
-    
+
     selectedNode.select('rect')
         .attr("width", function (d) {
             return d.width = IconSide;
@@ -791,30 +794,30 @@ function minimizeNode(d) {
         .attr('class', function (d) {
             return 'IconRect';
         });
-    
+
     d.visualDetailLevel = 'Icon';
     selectedNode.selectAll('foreignObject').remove();
     selectedNode.selectAll('image').remove();
     d.radius = Math.sqrt(d.width * d.width + d.height * d.height) / 2;
     d.fx = null;
     d.fy = null;
-    
+
     node.selectAll('rect')
         .style('stroke-width', function (d) {
             return 0;
         });
-    
+
     // simulation.alpha(1).restart();
-    
+
     // unfixNodes();
-    
+
     svg.selectAll(".link").remove();
     // selectedNode.remove();
-    
+
     if (!d3.event.active) {
         simulation.alpha(0.3).restart();
     }
-    
+
     forceCollide.initialize(simulation.nodes());
 }
 
@@ -825,20 +828,20 @@ function closeNode(d) {
     nodes = nodes.filter(function (dd) {
         return d.id !== dd.id;
     });
-    
+
     links = links.filter(function (dd) {
         return d.id !== dd.target.id && d.id !== dd.source.id;
     });
-    
+
     let selectedNode = node.filter(function (dd) {
         return dd.id === d.id;
     });
-    
+
     // Update notes and links again
     // unfixNodes();
     svg.selectAll(".link").remove();
     selectedNode.remove();
-    
+
     // Update and restart the simulation.
     simulation.nodes(nodes);
     simulation.force("link").links(links);
@@ -848,12 +851,12 @@ function closeNode(d) {
 // Icon-Level Node -> Document-Level Node:
 // When a Icon-Level node double clicked, enlarge the size of background rectangle, and add foreign object to show contents of this node.
 function maximizeNode(selectedDoc) {
-    
+
     // Improve efficiency using node.filter (May be better)
     let docLevelNode = node.filter(function (d) {
         return d.id === selectedDoc.id;
     });
-    
+
     docLevelNode.select('rect')
         .attr("width", function (d) {
             // Changes based on d. text: each document have different length of Text
@@ -885,7 +888,7 @@ function maximizeNode(selectedDoc) {
         .attr('class', function (d) {
             return 'DocRect';
         });
-    
+
     // Add close/delete button
     docLevelNode.append('image')
         .attr("xlink:href", function (d) {
@@ -902,7 +905,7 @@ function maximizeNode(selectedDoc) {
             return -d.height / 2 + 2;
         })
         .on('click', closeNode);
-    
+
     // Add minimize button
     docLevelNode.append('image')
         .attr("xlink:href", function (d) {
@@ -919,7 +922,7 @@ function maximizeNode(selectedDoc) {
             return -d.height / 2 + 2;
         })
         .on('click', minimizeNode);
-    
+
     //Add document content into docNode(Document Level Node)
     let docContent = docLevelNode.append("foreignObject")
         .attr("class", "doc")
@@ -947,13 +950,13 @@ function maximizeNode(selectedDoc) {
         .style("height", function (d) {
             return d.height - 40 + 'px';
         });
-    
+
     docContent.append('p')
         .attr('class', 'doc-title')
         .text(function (d) {
             return d.id;
         });
-    
+
     docContent.append('p')
         .attr('class', 'doc-content')
         .attr('height', function (d) {
@@ -962,16 +965,16 @@ function maximizeNode(selectedDoc) {
         .text(function (d) {
             return d.content;
         });
-    
+
     if (!d3.event.active) {
         simulation.alpha(0.3).restart();
     }
-    
+
     forceCollide.initialize(simulation.nodes());
 }
 
 function updateLinks() {
-    
+
     link = linkG.selectAll(".link")
         .data(links.filter(linkFilter))
         .enter().append("g")
@@ -982,9 +985,9 @@ function updateLinks() {
         .attr("target", function (d) {
             return d.target.id;
         });
-    
+
     link.append('line');
-    
+
     let entity = link.append('text')
         .attr('font-size', "10px")
         .attr("text-anchor", "middle")
@@ -1000,7 +1003,7 @@ function updateLinks() {
             return str;
         })
         .attr('stroke', '#aaa');
-    
+
 }
 
 function linkFilter(d) {
@@ -1009,11 +1012,11 @@ function linkFilter(d) {
 }
 
 function unfixNodes() {
-    
+
     if (!d3.event.active && movementMode === 'exploratory') {
         simulation.alpha(0.3).restart();
     }
-    
+
     // svg.selectAll(".link").remove();
     nodes.forEach(function (d) {
         if (d.visualDetailLevel !== 'Document' && movementMode === 'exploratory') {
@@ -1021,7 +1024,7 @@ function unfixNodes() {
             d.fy = null;
         }
     });
-    
+
     clickedDoc = null;
     if (link !== null) {
         link.remove();
