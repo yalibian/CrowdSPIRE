@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 const Webpack = require("webpack");
 const WebpackDevServer = require('webpack-dev-server');
@@ -18,5 +18,5 @@ const server = new WebpackDevServer(compiler, {
 });
 
 server.listen(8080, "127.0.0.1", function() {
-    console.log("CrowdSPIRE on http://localhost:8080");
+    console.log("CrowdSPIRE on http://localhost:6666");
 });

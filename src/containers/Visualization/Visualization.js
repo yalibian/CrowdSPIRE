@@ -26,7 +26,6 @@ import {
 } from '../../actions/actions';
 
 
-
 function mapStateToProps(state) {
     return {
         nodes: state.model.nodes,
@@ -95,6 +94,7 @@ class Visualization extends Component {
         movementMode: PropTypes.string.isRequired,
         interaction: PropTypes.string,
 
+        moveDocument: PropTypes.func,
         openDocument: PropTypes.func,
         overlapDocuments: PropTypes.func,
         highlightText: PropTypes.func,
@@ -105,11 +105,15 @@ class Visualization extends Component {
 
     constructor(props) {
         super(props);
-        // this.highlightText = this.highlightText.bind(this);
+        this.moveDocument = this.moveDocument.bind(this);
         // this.clusterDocuments = this.clusterDocuments.bind(this);
         // this.overlapDocuments = this.overlapDocuments.bind(this);
         // this.annotateDocument = this.annotateDocument.bind(this);
         // this.pinDocument = this.pinDocument.bind(this);
+    }
+
+    moveDocument(doc){
+        this.props.moveDocument(doc);
     }
 
     highlightText(text) {
@@ -235,8 +239,8 @@ class Visualization extends Component {
         interaction = this.props.interaction;
 
         // If current movement mode is 'expressive', just need to consider whether we need to update layout.
-        if(movementMode === 'expressive'){
-            if(interaction === UPDATE_LAYOUT){
+        if (movementMode === 'expressive') {
+            if (interaction === UPDATE_LAYOUT) {
                 updateLayout();
             }
             return;
@@ -666,8 +670,8 @@ function nodeDragged(d) {
                 return "translate(" + d.x + "," + d.y + ")";
             });
     } else {
-                 d.fx = d3.event.x;
-                d.fy = d3.event.y;
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
     }
 
     if (d.visualDetailLevel === 'Document') {
@@ -713,6 +717,11 @@ function nodeDragged(d) {
 
 // the end of node drag.
 function nodeDragEnded(d, overlapDocuments) {
+
+    if(movementMode === 'expressive'){
+        console.log(d);
+        this.moveDocument(d);
+    }
 
     if (d.visualDetailLevel === 'Document') {
 

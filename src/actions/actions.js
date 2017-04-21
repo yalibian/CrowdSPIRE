@@ -28,21 +28,21 @@ export function highlightText(text) {
 }
 
 
-export function moveDocument(docs) {
+export function moveDocument(doc) {
     return (dispatch) => {
-        dispatch({type: MOVE_DOCUMENT, docs});
+        dispatch({type: MOVE_DOCUMENT, doc});
     };
 }
 
 export function openDocument(docId) {
-    
+
     return (dispatch) => {
         dispatch({type: OPEN_DOCUMENT, docId});
     };
 }
 
 export function overlapDocuments(docList) {
-    
+
     return (dispatch) => {
         dispatch({type: OVERLAP_DOCUMENTS, docList});
     };

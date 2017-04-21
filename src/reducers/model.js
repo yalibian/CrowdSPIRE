@@ -44,7 +44,7 @@ docs.forEach(function (d) {
     node.mass = d.entities.reduce(function (acc, e) {
         return acc + entities[e.name].weight * e.TF_IDF;
     }, 0);
-    
+
     nodes.push(node);
 });
 
@@ -64,55 +64,55 @@ const InitialState = Record({
 const initialState = new InitialState;
 export default function model(state = initialState, action) {
     switch (action.type) {
-        
+
         case SEARCH_TERMS: {
-            
+
             // Add keywords into nodes, update new links
             // Use model to change the backend data
-            
+
             // Update nodes and links
             // convert documents into nodes
             const keywords = action.keywords;
             nodes = [];
             docs.forEach(function (d) {
-                
+
                 if (d.entities.find(function (e) {
                         return keywords.find(function (key) {
                             return key === e.name;
                         });
                     })) {
-                    
+
                     let node = {id: d.id, type: ICON, content: d.text};
                     node.mass = d.entities.reduce(function (acc, e) {
                         return acc + entities[e.name].weight * e.value;
                     }, 0);
-                    
+
                     nodes.push(node);
                 }
             });
-            
+
             keywords.forEach(function (word) {
-                
+
                 let node = {id: word, type: KEYWORD};
                 if (entities.hasOwnProperty(word)) {
                     node.mass = entities[word].weight;
                 } else {
                     node.mass = 1;
                 }
-                
+
                 nodes.push(node);
             });
-            
+
             links = linker(nodes);
-            
+
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
                     .set('links', links);
             });
         }
-        
+
         case HIGHLIGHT_TEXT: {
-            
+
             // update links strength
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
@@ -124,14 +124,17 @@ export default function model(state = initialState, action) {
                 ctx.set('movementMode', action.mode);
             })
         }
-        
+
         case MOVE_DOCUMENT: {
+            let doc = action.doc;
+            console.log(doc);
+
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
                     .set('links', links);
             });
         }
-        
+
         case OPEN_DOCUMENT: {
             console.log('model: OPEN_DOCUMENT');
             let docId = action.docId;
@@ -140,11 +143,11 @@ export default function model(state = initialState, action) {
                     n.type = DOC;
                 }
             });
-            
+
             let sharedEntities = docs.find(function (d) {
                 return d.id === docId;
             }).entities;
-            
+
             let decK = 0.0; // count how many entities updated
             let count = sharedEntities.length; // count how many entities updated
             sharedEntities.forEach(function (e) {
@@ -154,7 +157,7 @@ export default function model(state = initialState, action) {
                 entity.update = true;
                 decK += entity.weight - d1;
             });
-            
+
             // Update links, only links
             let keys = Object.keys(entities);
             decK = decK / count;
@@ -166,7 +169,7 @@ export default function model(state = initialState, action) {
                     e.weight -= decK;
                 }
             }
-            
+
             // nodes mass changed too!
             nodes.forEach(function (n) {
                 let d;
@@ -178,18 +181,18 @@ export default function model(state = initialState, action) {
                     }, 0);
                 }
             });
-            
+
             links = linker(nodes);
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
                     .set('links', links);
             });
         }
-        
+
         case OVERLAP_DOCUMENTS: {
             console.log("model: OVERLAP_DOCUMENTS");
             // action.docList: a list of document ids
-            
+
             let docId1 = action.docList[0];
             let docId2 = action.docList[1];
             let doc1 = docs.find(function (d) {
@@ -198,7 +201,7 @@ export default function model(state = initialState, action) {
             let doc2 = docs.find(function (d) {
                 return d.id === docId2;
             });
-            
+
             let sharedEntities = [];
             let count = 0; // count how many entities updated
             let decK = 0.0; // count how many entities updated
@@ -213,7 +216,7 @@ export default function model(state = initialState, action) {
                     }
                 });
             });
-            
+
             let keys = Object.keys(entities);
             decK = decK / (keys.length - count);
             for (let i in keys) {
@@ -226,8 +229,8 @@ export default function model(state = initialState, action) {
                     e.weight = Math.max(0.00, e.weight);
                 }
             }
-            
-            
+
+
             let filteredDocs = docs.filter(function (d) {
                 let hasSharedEntities = false;
                 d.entities.forEach(function (e) {
@@ -239,8 +242,8 @@ export default function model(state = initialState, action) {
                 });
                 return hasSharedEntities;
             });
-            
-            
+
+
             // Update nodes based on filteredDocs, and current nodes
             filteredDocs.forEach(function (d) {
                 if (!nodes.find(function (n) {
@@ -253,19 +256,19 @@ export default function model(state = initialState, action) {
                     node.mass = d.entities.reduce(function (acc, e) {
                         return acc + entities[e.name].weight * e.value;
                     }, 0);
-                    
+
                     nodes.push(node);
                 }
             });
-            
+
             links = linker(nodes);
-            
+
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
                     .set('links', links);
             });
         }
-        
+
         case CLUSTER_DOCUMENTS: {
             // change distance between documents
             return state.withMutations((ctx) => {
@@ -273,15 +276,15 @@ export default function model(state = initialState, action) {
                     .set('links', links);
             });
         }
-        
+
         case ANNOTATE_DOCUMENT: {
-            
+
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
                     .set('links', links);
             });
         }
-        
+
         case UPDATE_LAYOUT:{
             let needUpdateLayout = true;
             return state.withMutations((ctx) => {
@@ -290,9 +293,9 @@ export default function model(state = initialState, action) {
                     .set('interaction', UPDATE_LAYOUT);
             });
         }
-        
+
         case PIN_DOCUMENT: {
-            
+
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
                     .set('links', links);
@@ -314,11 +317,11 @@ function nodeSimilarity(node1, node2) {
         const doc1 = docs.find(function (doc) {
             return doc.id === node1.id;
         });
-        
+
         const doc2 = docs.find(function (doc) {
             return doc.id === node2.id;
         });
-        
+
         return cosineSimilarity(doc1, doc2, entities);
     } else if (node1.type === KEYWORD && node2.type === KEYWORD) {
         // No example right now.
@@ -328,14 +331,14 @@ function nodeSimilarity(node1, node2) {
             node1 = node2;
             node2 = temp;
         }
-        
+
         const doc = docs.find(function (doc) {
             return doc.id === node1.id;
         });
-        
-        
+
+
         const keyword = node2.id;
-        
+
         if (doc.entities.find(function (e) {
                 return e.name === keyword;
             })) {
@@ -347,17 +350,17 @@ function nodeSimilarity(node1, node2) {
 
 // return shared entities on two nodes
 function sharedEntities(node1, node2) {
-    
+
     let shared = [];
     if ((node1.type !== KEYWORD) && (node2.type !== KEYWORD)) {
         const doc1 = docs.find(function (doc) {
             return doc.id === node1.id;
         });
-        
+
         const doc2 = docs.find(function (doc) {
             return doc.id === node2.id;
         });
-        
+
         doc1.entities.forEach(function (e1) {
             doc2.entities.forEach(function (e2) {
                 if (e1.name === e2.name) {
@@ -365,12 +368,12 @@ function sharedEntities(node1, node2) {
                 }
             });
         });
-        
+
     } else if (node1.type === KEYWORD && node2.type === KEYWORD) {
         // No example right now.
-        
+
     } else {
-        
+
         if (node1.type === KEYWORD) {
             let temp = node1;
             node1 = node2;
@@ -379,9 +382,9 @@ function sharedEntities(node1, node2) {
         const doc = docs.find(function (doc) {
             return doc.id === node1.id;
         });
-        
+
         const keyword = node2.id;
-        
+
         if (doc.entities.find(function (e) {
                 return e.name === keyword;
             })) {
@@ -411,7 +414,7 @@ function linker(nodes) {
 
 // When the entities weight updated, update the mass and spring of docs.
 function updateMode() {
-    
+
     // update mass:
     docs.forEach(function (d) {
         d.mass = d.entities.reduce(function (acc, e) {
