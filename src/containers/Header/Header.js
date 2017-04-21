@@ -4,13 +4,6 @@
 
 // Header: CrowdSPIRE ICON and controller
 import React, {Component, PropTypes} from 'react';
-// import React from 'react';
-import IconMenu from 'material-ui/IconMenu';
-import IconButton from 'material-ui/IconButton';
-import FontIcon from 'material-ui/FontIcon';
-import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
-import MenuItem from 'material-ui/MenuItem';
-import DropDownMenu from 'material-ui/DropDownMenu';
 import RaisedButton from 'material-ui/RaisedButton';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
@@ -29,6 +22,7 @@ export default class Header extends React.Component {
     
     static propTypes = {
         changeMovementMode: PropTypes.func.isRequired,
+        requireLayoutUpdate: PropTypes.func.isRequired,
     };
     
     constructor(props) {
@@ -45,7 +39,9 @@ export default class Header extends React.Component {
                 </ToolbarGroup>
                 
                 <ToolbarGroup>
-                    <RadioButtonGroup name="shipSpeed" defaultSelected="exploratory" onChange={(event, value)=>{this.props.changeMovementMode(value);}}>
+                    <RadioButtonGroup name="shipSpeed" defaultSelected="exploratory" onChange={(event, value) => {
+                        this.props.changeMovementMode(value);
+                    }}>
                         <RadioButton
                             // value="not_light"
                             value="exploratory"
@@ -58,10 +54,12 @@ export default class Header extends React.Component {
                             style={styles.radioButton}
                         />
                     </RadioButtonGroup>
-                    <RaisedButton label="Update Layout"/>
+                    <RaisedButton label="Update Layout" onClick={()=>{
+                        this.props.requireLayoutUpdate();
+                    }}/>
                     <ToolbarSeparator />
                     <RaisedButton
-                        href="https://github.com/callemall/material-ui"
+                        href="https://github.com/yalibian/CrowdSPIRE"
                         target="_blank"
                         secondary={true}
                         label="GITHUB"

@@ -17,6 +17,7 @@ function mapStateToProps(state) {
         nodes: state.model.nodes,
         links: state.model.links,
         movementMode: state.model.movementMode,
+        interaction: state.model.interaction,
     };
 }
 
@@ -33,10 +34,12 @@ export default class Workspace extends Component {
         annotateDocument: PropTypes.func.isRequired,
         pinDocument: PropTypes.func.isRequired,
         changeMovementMode: PropTypes.func.isRequired,
+        requireLayoutUpdate: PropTypes.func.isRequired,
         
         nodes: React.PropTypes.array,
         links: React.PropTypes.array,
         movementMode: PropTypes.string.isRequired,
+        interaction: PropTypes.string,
     };
     
     constructor(props) {
@@ -47,6 +50,7 @@ export default class Workspace extends Component {
         this.annotateDocument = this.annotateDocument.bind(this);
         this.pinDocument = this.pinDocument.bind(this);
         this.changeMovementMode = this.changeMovementMode.bind(this);
+        this.requireLayoutUpdate = this.requireLayoutUpdate.bind(this);
     }
     
     searchTerms(keywords) {
@@ -69,8 +73,12 @@ export default class Workspace extends Component {
         this.props.pinDocument(doc);
     }
     
-    changeMovementMode(mode){
+    changeMovementMode(mode) {
         this.props.changeMovementMode(mode);
+    }
+    
+    requireLayoutUpdate(nodes){
+        this.props.requireLayoutUpdate(nodes);
     }
     
     render() {
@@ -108,8 +116,8 @@ export default class Workspace extends Component {
             <div id="main" style={mainStyle}>
                 <div id="workspace"
                      style={workspaceStyle}>
-                    <Header changeMovementMode={this.changeMovementMode}/>
-                    <Visualization movementMode={this.props.movementMode}/>
+                    <Header changeMovementMode={this.changeMovementMode} requireLayoutUpdate={this.requireLayoutUpdate}/>
+                    <Visualization movementMode={this.props.movementMode} interaction={this.props.interaction}/>
                 </div>
                 {/*<Controller/>*/}
             </div>

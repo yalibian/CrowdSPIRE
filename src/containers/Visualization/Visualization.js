@@ -2,8 +2,6 @@
  * Created by Yali on 3/4/17.
  */
 
-// import * as d3 from "d3";
-// import * as d3 from "d3";
 import {rectOverlap, d3, Model} from '../../utilities'
 import React, {PropTypes, Component} from 'react';
 import {bindActionCreators} from 'redux';
@@ -13,11 +11,27 @@ import './vis.styl';
 import minusImage from '../../assets/images/minus.png';
 import closeImage from '../../assets/images/close.png';
 
+import {
+    INIT_VIS,
+    SEARCH_TERMS,
+    HIGHLIGHT_TEXT,
+    MOVE_DOCUMENT,
+    OPEN_DOCUMENT,
+    OVERLAP_DOCUMENTS,
+    CLUSTER_DOCUMENTS,
+    ANNOTATE_DOCUMENT,
+    PIN_DOCUMENT,
+    MOVEMENT_MODE,
+    UPDATE_LAYOUT,
+} from '../../actions/actions';
+
+
 
 function mapStateToProps(state) {
     return {
         nodes: state.model.nodes,
-        links: state.model.links
+        links: state.model.links,
+        needUpdateLayout: state.model.needUpdateLayout,
     };
 }
 
@@ -67,7 +81,7 @@ let simulation = d3.forceSimulation()
     .force("collide", forceCollide)
     .on("tick", ticked);
 
-let nodes, links, movementMode;
+let nodes, links, movementMode, interaction;
 let node, link, linkG;
 let WIDTH, HEIGHT;
 let clickedDoc = null;
@@ -79,6 +93,7 @@ class Visualization extends Component {
         nodes: PropTypes.array,
         links: PropTypes.array,
         movementMode: PropTypes.string.isRequired,
+        interaction: PropTypes.string,
         
         openDocument: PropTypes.func,
         overlapDocuments: PropTypes.func,
@@ -97,27 +112,25 @@ class Visualization extends Component {
         // this.pinDocument = this.pinDocument.bind(this);
     }
     
-    // highlightText(text) {
-    //     this.props.highlightText(text);
-    // }
-    //
-    //
-    // overlapDocuments(docList) {
-    //     this.props.overlapDocuments(docList);
-    // }
-    //
-    // clusterDocuments(docs) {
-    //     this.props.clusterDocuments(docs);
-    // }
-    //
-    // annotateDocument(text, doc) {
-    //     this.props.annotateDocument(text, doc);
-    // }
-    //
-    // pinDocument(doc) {
-    //     this.props.pinDocument(doc);
-    // }
-    //
+    highlightText(text) {
+        this.props.highlightText(text);
+    }
+    
+    overlapDocuments(docList) {
+        this.props.overlapDocuments(docList);
+    }
+    
+    clusterDocuments(docs) {
+        this.props.clusterDocuments(docs);
+    }
+    
+    annotateDocument(text, doc) {
+        this.props.annotateDocument(text, doc);
+    }
+    
+    pinDocument(doc) {
+        this.props.pinDocument(doc);
+    }
     
     
     // Init the whole force directed graph visualization based on d3.js and (data: nodes, links).
@@ -142,7 +155,6 @@ class Visualization extends Component {
             .links(links)
             .strength(function (link) {
                 return link.strength;
-                // return link.similarity;
             });
         
         linkG = svg.append('g');
@@ -153,6 +165,7 @@ class Visualization extends Component {
         };
         
         let onNodeDoubleClicked = function (d) {
+            console.log('onNodeDoubleClicked');
             nodeDoubleClicked(d, openDocument);
         };
         
@@ -169,7 +182,6 @@ class Visualization extends Component {
                 .on("start", nodeDragStarted)
                 .on("drag", nodeDragged)
                 .on("end", onNodeDragEnded));
-        // .on("end", nodeDragEnded));
         
         // label
         node.append("text")
@@ -208,55 +220,6 @@ class Visualization extends Component {
             .attr('class', 'IconRect');
         
         svg.on('mousedown', unfixNodes);
-        
-        
-        // function nodeDragEnded(d) {
-        //
-        //     if (d.visualDetailLevel == 'Document') {
-        //
-        //         let hasOverlap = false;
-        //         let overlappedDocId = null;
-        //         let rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
-        //         node.selectAll('rect')
-        //             .attr('border', function (dd) {
-        //                 if (dd.visualDetailLevel != 'Document' || dd.id == d.id) {
-        //                     return '';
-        //                 } else {
-        //                     let rectB = {
-        //                         x: dd.x - dd.width / 2,
-        //                         y: dd.y - dd.height / 2,
-        //                         width: dd.width,
-        //                         height: dd.height
-        //                     };
-        //                     if (rectOverlap(rectA, rectB)) {
-        //                         hasOverlap = true;
-        //                         overlappedDocId = dd.id;
-        //                         return '1px solid black';
-        //                     } else {
-        //                         return '';
-        //                     }
-        //                 }
-        //             });
-        //
-        //
-        //         if (hasOverlap) {
-        //             overlapDocuments([overlappedDocId, d.id]);
-        //             // model.documentOverlapping(overlappedDocId, d.id);
-        //         }
-        //     }
-        //
-        //     if (!d3.event.active) {
-        //         simulation.alphaTarget(0);
-        //     }
-        //     // forceCollide.initialize(simulation.nodes());
-        //
-        //     // Update and restart the simulation.
-        //     simulation.nodes(nodes);
-        //     simulation.force("link").links(links);
-        //     simulation.alpha(0.3).restart();
-        // }
-        
-        
     }
     
     
@@ -264,11 +227,21 @@ class Visualization extends Component {
     // The whole update has beend recored on nodes and links
     // We just need to update the binded data on links and nodes.
     componentDidUpdate() {
+        
         console.log('Update VIS');
         nodes = this.props.nodes;
         links = this.props.links;
         movementMode = this.props.movementMode;
-        console.log(movementMode);
+        interaction = this.props.interaction;
+        
+        // If current movement mode is 'expressive', just need to consider whether we need to update layout.
+        if(movementMode === 'expressive'){
+            if(interaction === UPDATE_LAYOUT){
+                updateLayout();
+            }
+            return;
+        }
+        
         let overlapDocuments = this.props.overlapDocuments;
         let openDocument = this.props.openDocument;
         
@@ -279,7 +252,6 @@ class Visualization extends Component {
         let onNodeDoubleClicked = function (d) {
             nodeDoubleClicked(d, openDocument);
         };
-        
         
         // Enter
         let newAddedNodes = svg.selectAll('.node').data(nodes)
@@ -320,7 +292,7 @@ class Visualization extends Component {
                 return d.height;
             })
             .attr("fill", function (d) {
-                if (d.type == 'KEYWORD') {
+                if (d.type === 'KEYWORD') {
                     return 'red';
                 }
                 return 'steelblue';
@@ -337,11 +309,11 @@ class Visualization extends Component {
         // Update
         newAddedNodes = svg.selectAll('.node').data(nodes);
         let docNodes = newAddedNodes.filter(function (d) {
-            return d.type == 'DOCUMENT';
+            return d.type === 'DOCUMENT';
         });
         
         let iconNodes = newAddedNodes.filter(function (d) {
-            return d.type != 'DOCUMENT';
+            return d.type !== 'DOCUMENT';
         });
         
         
@@ -372,7 +344,7 @@ class Visualization extends Component {
                 return d.height;
             })
             .attr("fill", function (d) {
-                if (d.type == 'KEYWORD') {
+                if (d.type === 'KEYWORD') {
                     return 'red';
                 }
                 return 'steelblue';
@@ -384,14 +356,14 @@ class Visualization extends Component {
                 return IconR;
             })
             .attr('class', function (d) {
-                if (d.type == 'KEYWORD') {
+                if (d.type === 'KEYWORD') {
                     return 'EntityRect'
                 }
                 return 'IconRect'
             })
             .style('stroke-width', function () {
                 return 0;
-        });
+            });
         
         docNodes.select('rect')
             .attr('width', function (d) {
@@ -413,7 +385,7 @@ class Visualization extends Component {
                 return d.height;
             })
             .attr("fill", function (d) {
-                if (d.type == 'KEYWORD') {
+                if (d.type === 'KEYWORD') {
                     return 'red';
                 }
                 return 'steelblue';
@@ -505,69 +477,27 @@ class Visualization extends Component {
                 return d.content;
             });
         
+        svg.selectAll('.node')
+            .data(nodes)
+            .exit()
+            .remove();
         
-        // update the contents, when node has type 'DOCUMENT'
-        // svg.selectAll('.node').data(nodes).select('rect')
-        //     .attr("width", function (d) {
-        //         if (d.type == 'DOCUMENT') {
-        //             console.log(d.id);
-        //             let c = 90;
-        //             let a = 69;
-        //             let goldenRatio = 1.618;
-        //             return d.width = (a + Math.sqrt(a * a + 4 * goldenRatio * c * d.content.length)) / (2 * goldenRatio);
-        //         }
-        //
-        //         d.radius = IconSide / Math.sqrt(2.00);
-        //         d.width = IconSide;
-        //         return IconSide;
-        //
-        //     })
-        //     .attr("height", function (d) {
-        //         if (d.type == 'DOCUMENT') {
-        //             return d.height = 1.61803398875 * d.width;
-        //
-        //         }
-        //
-        //         d.height = IconSide;
-        //         return IconSide;
-        //     })
-        //     .attr("x", function (d) {
-        //         // console.log(d.id);
-        //         // d.fx = d.width;
-        //         return d.width;
-        //     })
-        //     .attr("y", function (d) {
-        //         // d.fy = d.height;
-        //         return d.height;
-        //     })
-        //     .attr("fill", function (d) {
-        //         if (d.type == 'KEYWORD') {
-        //             return 'red';
-        //         }
-        //         return 'steelblue';
-        //     })
-        //     .attr('rx', function (d) {
-        //         return IconR;
-        //     })
-        //     .attr('ry', function (d) {
-        //         return IconR;
-        //     })
-        //     .attr('class', function (d) {
-        //         if (d.type == 'KEYWORD') {
-        //             return 'EntityRect'
-        //         }
-        //         return 'IconRect'
-        //     });
-        //
-        
-        svg.selectAll('.node').data(nodes).exit().remove();
-        
-        // Update and restart the simulation.
-        simulation.nodes(nodes);
-        simulation.force("link").links(links);
-        simulation.alpha(0.3).restart();
-        
-        
+        console.log(movementMode);
+        if (movementMode === 'expressive') {
+            console.log("movementMode === expressive");
+            svg.selectAll('.node')
+                .attr("fx", function (d) {
+                    return d.x;
+                })
+                .attr('fy', function (d) {
+                    return d.y;
+                });
+        } else {
+            // Update and restart the simulation.
+            simulation.nodes(nodes);
+            simulation.force("link").links(links);
+            simulation.alpha(0.3).restart();
+        }
     }
     
     
@@ -582,10 +512,27 @@ class Visualization extends Component {
 
 export default Visualization;
 
+function expressive() {
+
+}
+
+
+// Find the most related layout based on dragged nodes.
+function updateLayout() {
+    // try to move everything here.
+    console.log("Next Step: Update Layout based on Updated Nodes and links");
+    updateLayoutExpressively()
+}
+
+// Update layout because
+function updateLayoutExpressively() {
+
+
+}
 
 function nodeClicked(d) {
     
-    if (clickedDoc != d.id) {
+    if (clickedDoc !== d.id) {
         unfixNodes();
         d.fx = d.x;
         d.fy = d.y;
@@ -618,7 +565,7 @@ function ticked() {
     
     
     // When a node is selected(highlighted), related nodes/links should highlighted to.
-    if (clickedDoc != null) {
+    if (clickedDoc !== null) {
         
         // Show labels on each related link
         link.selectAll('text')
@@ -665,14 +612,14 @@ function ticked() {
 
 function nodeDoubleClicked(d, openDocument) {
     
-    if (d.visualDetailLevel != 'Document') {
+    if (d.visualDetailLevel !== 'Document') {
         openDocument(d.id);
         d.visualDetailLevel = "Document";
         d.fx = d.x;
         d.fy = d.y;
         maximizeNode(d);
     }
-    if (clickedDoc != d.id) {
+    if (clickedDoc !== d.id) {
         unfixNodes();
         
         d.fx = d.x;
@@ -683,17 +630,18 @@ function nodeDoubleClicked(d, openDocument) {
 }
 
 function nodeDragStarted(d) {
-    d3.select(this).moveToFront();
+    console.log("Node Drag Start");
     
-    if (d.visualDetailLevel == 'Document') {
+    d3.select(this).moveToFront();
+    if (d.visualDetailLevel === 'Document') {
     
     }
     
-    if (!d3.event.active) {
+    if (!d3.event.active && (movementMode === 'exploratory')) {
         simulation.alphaTarget(0.3).restart();
     }
     
-    if (clickedDoc != d.id) {
+    if (clickedDoc !== d.id) {
         unfixNodes();
         d.fx = d.x;
         d.fy = d.y;
@@ -704,10 +652,22 @@ function nodeDragStarted(d) {
 
 // During node drag.
 function nodeDragged(d) {
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
     
-    if (d.visualDetailLevel == 'Document') {
+    if (movementMode === 'expressive') {
+        d3.select(this)
+            .attr("transform", function (d) {
+                // border constriction
+                d.x = d3.event.x;
+                d.y = d3.event.y;
+                d.x = Math.max(d.width / 2, Math.min(WIDTH - d.width / 2, d.x));
+                d.y = Math.max(d.height / 2, Math.min(HEIGHT - d.height / 2, d.y));
+                
+                // Update the group position: which include the basic rectangle and Foreign object. (Drag Object too...)
+                return "translate(" + d.x + "," + d.y + ")";
+            });
+    }
+    
+    if (d.visualDetailLevel === 'Document') {
         
         // flag to record if this node has overlap with other document level node
         let hasOverlap = false;
@@ -716,7 +676,7 @@ function nodeDragged(d) {
         node.selectAll('rect')
             .style('stroke', 'yellow')
             .style('stroke-width', function (dd) {
-                if (dd.visualDetailLevel != 'Document' || dd.id == d.id) {
+                if (dd.visualDetailLevel !== 'Document' || dd.id === d.id) {
                     return 0;
                 } else {
                     let rectB = {
@@ -751,14 +711,14 @@ function nodeDragged(d) {
 // the end of node drag.
 function nodeDragEnded(d, overlapDocuments) {
     
-    if (d.visualDetailLevel == 'Document') {
+    if (d.visualDetailLevel === 'Document') {
         
         let hasOverlap = false;
         let overlappedDocId = null;
         let rectA = {x: d.x - d.width / 2, y: d.y - d.height / 2, width: d.width, height: d.height};
         node.selectAll('rect')
             .attr('border', function (dd) {
-                if (dd.visualDetailLevel != 'Document' || dd.id == d.id) {
+                if (dd.visualDetailLevel !== 'Document' || dd.id === d.id) {
                     return '';
                 } else {
                     let rectB = {
@@ -784,15 +744,17 @@ function nodeDragEnded(d, overlapDocuments) {
         }
     }
     
-    if (!d3.event.active) {
+    if (!d3.event.active && (movementMode === 'exploratory')) {
         simulation.alphaTarget(0);
     }
     // forceCollide.initialize(simulation.nodes());
     
     // Update and restart the simulation.
-    simulation.nodes(nodes);
-    simulation.force("link").links(links);
-    simulation.alpha(0.3).restart();
+    if (movementMode === 'exploratory') {
+        simulation.nodes(nodes);
+        simulation.force("link").links(links);
+        simulation.alpha(0.3).restart();
+    }
 }
 
 // Document-Level Node -> Icon-Level Node:
@@ -803,7 +765,7 @@ function minimizeNode(d) {
     d3.event.preventDefault();
     
     let selectedNode = node.filter(function (dd) {
-        return dd.id == d.id;
+        return dd.id === d.id;
     });
     
     selectedNode.select('rect')
@@ -861,20 +823,18 @@ function minimizeNode(d) {
 function closeNode(d) {
     // Remove node from docs.nodes and links from crescent.links
     nodes = nodes.filter(function (dd) {
-        return d.id != dd.id;
+        return d.id !== dd.id;
     });
     
     links = links.filter(function (dd) {
-        return d.id != dd.target.id && d.id != dd.source.id;
+        return d.id !== dd.target.id && d.id !== dd.source.id;
     });
     
     let selectedNode = node.filter(function (dd) {
-        return dd.id == d.id;
+        return dd.id === d.id;
     });
     
-    
     // Update notes and links again
-    
     // unfixNodes();
     svg.selectAll(".link").remove();
     selectedNode.remove();
@@ -883,7 +843,6 @@ function closeNode(d) {
     simulation.nodes(nodes);
     simulation.force("link").links(links);
     simulation.alpha(0.3).restart();
-    
 }
 
 // Icon-Level Node -> Document-Level Node:
@@ -892,9 +851,8 @@ function maximizeNode(selectedDoc) {
     
     // Improve efficiency using node.filter (May be better)
     let docLevelNode = node.filter(function (d) {
-        return d.id == selectedDoc.id;
+        return d.id === selectedDoc.id;
     });
-    
     
     docLevelNode.select('rect')
         .attr("width", function (d) {
@@ -1046,26 +1004,26 @@ function updateLinks() {
 }
 
 function linkFilter(d) {
-    return ((d.source.id == clickedDoc) || (d.target.id == clickedDoc)) && (d.source.id != d.target.id) && (d.strength > 0.003);
+    return ((d.source.id === clickedDoc) || (d.target.id === clickedDoc)) && (d.source.id !== d.target.id) && (d.strength > 0.003);
     // return ((d.source.id == clickedDoc) || (d.target.id == clickedDoc)) && (d.source.id != d.target.id) && (d.similarity > 0.01);
 }
 
 function unfixNodes() {
     
-    if (!d3.event.active) {
+    if (!d3.event.active && movementMode === 'exploratory') {
         simulation.alpha(0.3).restart();
     }
     
     // svg.selectAll(".link").remove();
     nodes.forEach(function (d) {
-        if (d.visualDetailLevel != 'Document') {
+        if (d.visualDetailLevel !== 'Document' && movementMode === 'exploratory') {
             d.fx = null;
             d.fy = null;
         }
     });
     
     clickedDoc = null;
-    if (link != null) {
+    if (link !== null) {
         link.remove();
     }
 }

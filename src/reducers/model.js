@@ -9,6 +9,7 @@ import {preprocess} from './preprocess';
 import * as ATL from '../data/AtlanticStorm.json';
 
 import {
+    INIT_VIS,
     SEARCH_TERMS,
     HIGHLIGHT_TEXT,
     MOVE_DOCUMENT,
@@ -18,7 +19,9 @@ import {
     ANNOTATE_DOCUMENT,
     PIN_DOCUMENT,
     MOVEMENT_MODE,
+    UPDATE_LAYOUT,
 } from '../actions/actions';
+
 
 
 const DOC = "DOCUMENT";
@@ -52,6 +55,7 @@ const InitialState = Record({
     isFetching: false,
     nodes: nodes,
     links: links,
+    interaction: INIT_VIS,
     movementMode: movementMode,
 });
 
@@ -77,7 +81,7 @@ export default function model(state = initialState, action) {
                             return key === e.name;
                         });
                     })) {
-    
+                    
                     let node = {id: d.id, type: ICON, content: d.text};
                     node.mass = d.entities.reduce(function (acc, e) {
                         return acc + entities[e.name].weight * e.value;
@@ -88,7 +92,7 @@ export default function model(state = initialState, action) {
             });
             
             keywords.forEach(function (word) {
-    
+                
                 let node = {id: word, type: KEYWORD};
                 if (entities.hasOwnProperty(word)) {
                     node.mass = entities[word].weight;
@@ -116,7 +120,7 @@ export default function model(state = initialState, action) {
             });
         }
         case MOVEMENT_MODE: {
-            return state.withMutations((ctx) =>{
+            return state.withMutations((ctx) => {
                 ctx.set('movementMode', action.mode);
             })
         }
@@ -136,11 +140,11 @@ export default function model(state = initialState, action) {
                     n.type = DOC;
                 }
             });
-    
+            
             let sharedEntities = docs.find(function (d) {
                 return d.id === docId;
             }).entities;
-    
+            
             let decK = 0.0; // count how many entities updated
             let count = sharedEntities.length; // count how many entities updated
             sharedEntities.forEach(function (e) {
@@ -194,7 +198,7 @@ export default function model(state = initialState, action) {
             let doc2 = docs.find(function (d) {
                 return d.id === docId2;
             });
-    
+            
             let sharedEntities = [];
             let count = 0; // count how many entities updated
             let decK = 0.0; // count how many entities updated
@@ -222,8 +226,8 @@ export default function model(state = initialState, action) {
                     e.weight = Math.max(0.00, e.weight);
                 }
             }
-    
-    
+            
+            
             let filteredDocs = docs.filter(function (d) {
                 let hasSharedEntities = false;
                 d.entities.forEach(function (e) {
@@ -249,11 +253,11 @@ export default function model(state = initialState, action) {
                     node.mass = d.entities.reduce(function (acc, e) {
                         return acc + entities[e.name].weight * e.value;
                     }, 0);
-    
+                    
                     nodes.push(node);
                 }
             });
-    
+            
             links = linker(nodes);
             
             return state.withMutations((ctx) => {
@@ -278,6 +282,14 @@ export default function model(state = initialState, action) {
             });
         }
         
+        case UPDATE_LAYOUT:{
+            let needUpdateLayout = true;
+            return state.withMutations((ctx) => {
+                ctx.set('nodes', nodes)
+                    .set('links', links)
+                    .set('interaction', UPDATE_LAYOUT);
+            });
+        }
         
         case PIN_DOCUMENT: {
             
@@ -306,7 +318,7 @@ function nodeSimilarity(node1, node2) {
         const doc2 = docs.find(function (doc) {
             return doc.id === node2.id;
         });
-    
+        
         return cosineSimilarity(doc1, doc2, entities);
     } else if (node1.type === KEYWORD && node2.type === KEYWORD) {
         // No example right now.
