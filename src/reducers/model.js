@@ -61,6 +61,12 @@ const InitialState = Record({
 });
 
 
+// Record moved documents, through document id, and current moved position(x, y).
+// We only stored the moved to position, which means we calculate their relationships based on their relative positions.
+// If they are in the same group or not.
+let movedDocuments=[];
+
+
 // Transform data into nodes and links, the nodes includes (keywords and docs, links include their links between nodes.)
 const initialState = new InitialState;
 export default function model(state = initialState, action) {
@@ -129,11 +135,13 @@ export default function model(state = initialState, action) {
         case MOVE_DOCUMENT: {
             let doc = action.doc;
             console.log(doc);
+            movedDocuments.push(doc);
 
-            return state.withMutations((ctx) => {
-                ctx.set('nodes', nodes)
-                    .set('links', links);
-            });
+            return state;
+            // return state.withMutations((ctx) => {
+            //     ctx.set('nodes', nodes)
+            //         .set('links', links);
+            // });
         }
 
         case OPEN_DOCUMENT: {
@@ -287,7 +295,9 @@ export default function model(state = initialState, action) {
         }
 
         case UPDATE_LAYOUT:{
-            
+            console.log('Update Layout based on movedDocuments');
+            console.log(movedDocuments);
+
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
                     .set('links', links)
@@ -295,7 +305,7 @@ export default function model(state = initialState, action) {
             });
         }
         case RESET_LAYOUT:{
-        
+
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
                     .set('links', links)
