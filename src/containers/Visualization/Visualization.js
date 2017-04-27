@@ -76,7 +76,7 @@ let simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function (d) {
         return d.id;
     }))
-    .force("charge", d3.forceManyBody().strength(-64))
+    .force("charge", d3.forceManyBody().strength(-100))
     .force("collide", forceCollide);
 // .on("tick", ticked);
 
@@ -175,7 +175,7 @@ class Visualization extends Component {
         simulation.force("link")
             .links(links)
             .strength(function (link) {
-                return link.strength;
+                return link.strength/50;
             });
         
         linkG = svg.append('g');

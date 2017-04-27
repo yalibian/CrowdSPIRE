@@ -6,7 +6,8 @@
 import {Record} from 'immutable';
 import {softSimilarity, cosineSimilarity} from '../utilities';
 import {preprocess} from './preprocess';
-import * as ATL from '../data/AtlanticStorm.json';
+import * as ATL from '../data/AtlanticStorm/AtlanticStorm.json';
+import * as dist from '../data/AtlanticStorm/dist.json';
 
 import {
     INIT_VIS,
@@ -37,6 +38,7 @@ let movementMode = 'exploratory';
 
 // docs, entities --> nodes, links: used to control force directed graph
 let {docs, entities} = preprocess(ATL); // real docs
+// console.log(dist);
 
 let nodes = [];
 docs.forEach(function (d) {
@@ -50,7 +52,8 @@ docs.forEach(function (d) {
 });
 
 // Calculate links based on updated nodes
-let links = linker(nodes);
+let links = linker(dist.dist);
+// let links = linker(nodes);
 
 const InitialState = Record({
     isFetching: false,
@@ -414,8 +417,17 @@ function sharedEntities(node1, node2) {
 }
 
 // Generate links based on input nodes
-function linker(nodes) {
+function linker(dist) {
     let links = [];
+    console.log(dist);
+    console.log(dist.length);
+    for (let i = 0; i< dist.length; i++){
+        let link = {source: dist[i].source, target: dist[i].target, strength: 1-dist[i].dist};
+        links.push(link);
+    }
+    console.log(links);
+    return links;
+    
     let len = nodes.length;
     for (let i = 0; i < len; i++) {
         for (let j = i + 1; j < len; j++) {
