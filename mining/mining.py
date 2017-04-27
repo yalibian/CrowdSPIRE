@@ -1,4 +1,5 @@
 import time
+import json
 import numpy as np
 import matplotlib.pyplot as plt
 import nltk
@@ -6,11 +7,11 @@ import re
 import xml.etree.ElementTree as ElementTree
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.preprocessing import normalize
 from sklearn import cluster, mixture
 from sklearn.neighbors import kneighbors_graph
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, normalize
 from sklearn.manifold import MDS
+import pandas as pd
 
 
 # return titles
@@ -18,16 +19,18 @@ def getDocs(path):
     titles = []
     texts = []
     parser = ElementTree.XMLParser(encoding="utf-8")
-    # parser.parser
     tree = ElementTree.parse(path, parser=parser)
-    # tree = ET.fromstring(xmlstring, parser=parser)
     root = tree.getroot()
     for child in root:
+        text = ''
+        title = ''
         for sub in child:
             if sub.tag == 'docID':
-                titles.append(sub.text)
-            if sub.tag == 'docText':
-                texts.append(sub.text)
+                title = sub.text
+            if sub.tag not in ['docText', 'docID', 'docSource', 'docDate']:
+                text = text + ' ' + sub.text
+        titles.append(title)
+        texts.append(text)
     return titles, texts
 
 
@@ -40,6 +43,7 @@ def tokenize(text):
         if re.search('[a-zA-Z]', token):
             filtered_tokens.append(token)
     return filtered_tokens
+
 
 file = ['Crescent', 'Manpad', 'AtlanticStorm', 'InfovisPapers', 'VAST2007', 'VAST2014']
 titles1, docs1 = getDocs('./data/Crescent.jig')
@@ -60,7 +64,6 @@ X6 = tfidf_vectorizer.fit_transform(docs6)
 
 terms = tfidf_vectorizer.get_feature_names()
 
-
 # Machine Learning Clusters
 clustering_names = [
     'MiniBatchKMeans', 'MeanShift',
@@ -75,14 +78,26 @@ plt.subplots_adjust(left=.02, right=.98, bottom=.001, top=.96, wspace=.05,
                     hspace=.01)
 
 # datasets = [X1, X2, X3, X4, X5, X6]
-datasets = [X1, X2, X3, X4]
-# datasets = [X3]
+# datasets = [X1, X2, X3]
+clusterNum = 7
+datasets = [X3]
 plot_num = 1
 for i_dataset, dataset in enumerate(datasets):
     print('----------------------------')
     print('DataSet: ' + file[i_dataset])
     # Cosine similarity
     dist = 1 - cosine_similarity(dataset)
+    JSON = []
+    for i, ti in enumerate(titles3):
+        for j, tj in enumerate(titles3):
+            if i != j:
+                JSON.append({'source': ti, 'target': tj, 'dist': dist[i,j]})
+
+    with open('dist.json', 'w') as outfile:
+        json.dump(JSON, outfile)
+
+    # print(distJSON)
+
     # dist = normalize(dist, norm='max')
     mds = MDS(n_components=2, dissimilarity="precomputed", random_state=1)
     pos = mds.fit_transform(dist)
@@ -91,32 +106,33 @@ for i_dataset, dataset in enumerate(datasets):
     X = dataset.toarray()
     X = StandardScaler().fit_transform(X)
 
-    bandwidth = cluster.estimate_bandwidth(X, quantile=0.3)
+    # create clustering estimators
+    two_means = cluster.MiniBatchKMeans(n_clusters=clusterNum)
+
+    bandwidth = cluster.estimate_bandwidth(X, quantile=0.2)
+    ms = cluster.MeanShift(bandwidth=bandwidth, bin_seeding=False)
+
+    spectral = cluster.SpectralClustering(n_clusters=clusterNum,
+                                          eigen_solver='arpack',
+                                          affinity="nearest_neighbors")
 
     # connectivity matrix for structured Ward
     connectivity = kneighbors_graph(X, n_neighbors=10, include_self=False)
     # make connectivity symmetric
     connectivity = 0.5 * (connectivity + connectivity.T)
-
-    # create clustering estimators
-    ms = cluster.MeanShift(bandwidth=bandwidth, bin_seeding=True)
-    two_means = cluster.MiniBatchKMeans(n_clusters=3)
-    ward = cluster.AgglomerativeClustering(n_clusters=3, linkage='ward',
+    ward = cluster.AgglomerativeClustering(n_clusters=clusterNum, linkage='ward',
                                            connectivity=connectivity)
-    spectral = cluster.SpectralClustering(n_clusters=3,
-                                          eigen_solver='arpack',
-                                          affinity="nearest_neighbors")
-    dbscan = cluster.DBSCAN(eps=.3)
-    affinity_propagation = cluster.AffinityPropagation(damping=.9,
-                                                       preference=-200)
 
     average_linkage = cluster.AgglomerativeClustering(
-        linkage="average", affinity="cityblock", n_clusters=3,
+        linkage="average", affinity="cityblock", n_clusters=clusterNum,
         connectivity=connectivity)
 
-    birch = cluster.Birch(n_clusters=3)
+    dbscan = cluster.DBSCAN(eps=.1)
+
+    birch = cluster.Birch(n_clusters=clusterNum)
+
     gmm = mixture.GaussianMixture(
-        n_components=3, covariance_type='full')
+        n_components=clusterNum, covariance_type='full')
 
     clustering_algorithms = [
         two_means, ms, spectral, ward, average_linkage,
@@ -132,6 +148,13 @@ for i_dataset, dataset in enumerate(datasets):
         else:
             y_pred = algorithm.predict(X)
 
+        JSON = []
+        for i, t in enumerate(titles3):
+            JSON.append({'id': t, 'label': np.int16(y_pred[i]).item()})
+
+        print(JSON)
+        with open(name + '.json', 'w') as outfile:
+            json.dump(JSON, outfile)
         # plot
         plt.subplot(len(datasets), len(clustering_algorithms), plot_num)
         if i_dataset == 0:
