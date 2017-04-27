@@ -7,9 +7,10 @@ import xml.etree.ElementTree as ElementTree
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import normalize
-from sklearn import cluster, datasets
+from sklearn import cluster, mixture
 from sklearn.neighbors import kneighbors_graph
 from sklearn.preprocessing import StandardScaler
+from sklearn.manifold import MDS
 
 
 # return titles
@@ -40,19 +41,13 @@ def tokenize(text):
             filtered_tokens.append(token)
     return filtered_tokens
 
-
-titles, docs1 = getDocs('./data/Manpad.jig')
-print(len(docs1))
-titles, docs2 = getDocs('./data/Crescent.jig')
-print(len(docs2))
-titles, docs3 = getDocs('./data/AtlanticStorm.jig')
-print(len(docs3))
-titles, docs4 = getDocs('./data/InfovisPapers.jig')
-print(len(docs4))
-titles, docs5 = getDocs('./data/VAST2007.jig')
-print(len(docs5))
-titles, docs6 = getDocs('./data/VAST2014.jig')
-print(len(docs6))
+file = ['Crescent', 'Manpad', 'AtlanticStorm', 'InfovisPapers', 'VAST2007', 'VAST2014']
+titles1, docs1 = getDocs('./data/Crescent.jig')
+titles2, docs2 = getDocs('./data/Manpad.jig')
+titles3, docs3 = getDocs('./data/AtlanticStorm.jig')
+titles4, docs4 = getDocs('./data/InfovisPapers.jig')
+titles5, docs5 = getDocs('./data/VAST2007.jig')
+titles6, docs6 = getDocs('./data/VAST2014.jig')
 
 tfidf_vectorizer = TfidfVectorizer(stop_words='english', use_idf=True,
                                    tokenizer=tokenize, analyzer='word')
@@ -66,32 +61,37 @@ X6 = tfidf_vectorizer.fit_transform(docs6)
 terms = tfidf_vectorizer.get_feature_names()
 
 
-# Cosine similarity
-# print('Cosine similarity')
-# mining = 1 - cosine_similarity(X)
-# mining = normalize(mining, norm='max')
-
-
 # Machine Learning Clusters
 clustering_names = [
-    'MiniBatchKMeans', 'AffinityPropagation', 'MeanShift',
+    'MiniBatchKMeans', 'MeanShift',
     'SpectralClustering', 'Ward', 'AgglomerativeClustering',
-    'DBSCAN', 'Birch']
+    'DBSCAN', 'Birch', 'GaussianMixture']
 
 colors = np.array([x for x in 'bgrcmykbgrcmykbgrcmykbgrcmyk'])
 colors = np.hstack([colors] * 20)
 
-datasets = [X1, X2, X3, X4, X5, X6]
-for i_dataset, dataset in enumerate(datasets):
-    # estimate bandwidth for mean shift
-    print('----------------------------')
-    X = dataset.toarray()
+plt.figure(figsize=(len(clustering_names) * 2 + 3, 9.5))
+plt.subplots_adjust(left=.02, right=.98, bottom=.001, top=.96, wspace=.05,
+                    hspace=.01)
 
+# datasets = [X1, X2, X3, X4, X5, X6]
+datasets = [X1, X2, X3, X4]
+# datasets = [X3]
+plot_num = 1
+for i_dataset, dataset in enumerate(datasets):
+    print('----------------------------')
+    print('DataSet: ' + file[i_dataset])
+    # Cosine similarity
+    dist = 1 - cosine_similarity(dataset)
+    # dist = normalize(dist, norm='max')
+    mds = MDS(n_components=2, dissimilarity="precomputed", random_state=1)
+    pos = mds.fit_transform(dist)
+    x, y = pos[:, 0], pos[:, 1]
+
+    X = dataset.toarray()
     X = StandardScaler().fit_transform(X)
 
     bandwidth = cluster.estimate_bandwidth(X, quantile=0.3)
-
-    print(bandwidth)
 
     # connectivity matrix for structured Ward
     connectivity = kneighbors_graph(X, n_neighbors=10, include_self=False)
@@ -100,26 +100,28 @@ for i_dataset, dataset in enumerate(datasets):
 
     # create clustering estimators
     ms = cluster.MeanShift(bandwidth=bandwidth, bin_seeding=True)
-    two_means = cluster.MiniBatchKMeans(n_clusters=7)
-    ward = cluster.AgglomerativeClustering(n_clusters=7, linkage='ward',
+    two_means = cluster.MiniBatchKMeans(n_clusters=3)
+    ward = cluster.AgglomerativeClustering(n_clusters=3, linkage='ward',
                                            connectivity=connectivity)
-    spectral = cluster.SpectralClustering(n_clusters=7,
+    spectral = cluster.SpectralClustering(n_clusters=3,
                                           eigen_solver='arpack',
                                           affinity="nearest_neighbors")
-    dbscan = cluster.DBSCAN(eps=.2)
+    dbscan = cluster.DBSCAN(eps=.3)
     affinity_propagation = cluster.AffinityPropagation(damping=.9,
                                                        preference=-200)
 
     average_linkage = cluster.AgglomerativeClustering(
-        linkage="average", affinity="cityblock", n_clusters=7,
+        linkage="average", affinity="cityblock", n_clusters=3,
         connectivity=connectivity)
 
-    birch = cluster.Birch(n_clusters=7)
-    clustering_algorithms = [
-        two_means, affinity_propagation, ms, spectral, ward, average_linkage,
-        dbscan, birch]
+    birch = cluster.Birch(n_clusters=3)
+    gmm = mixture.GaussianMixture(
+        n_components=3, covariance_type='full')
 
-    plot_num = 1
+    clustering_algorithms = [
+        two_means, ms, spectral, ward, average_linkage,
+        dbscan, birch, gmm]
+
     for name, algorithm in zip(clustering_names, clustering_algorithms):
         # predict cluster memberships
         t0 = time.time()
@@ -130,18 +132,12 @@ for i_dataset, dataset in enumerate(datasets):
         else:
             y_pred = algorithm.predict(X)
 
-        print(y_pred)
-
         # plot
-        plt.subplot(4, len(clustering_algorithms), plot_num)
+        plt.subplot(len(datasets), len(clustering_algorithms), plot_num)
         if i_dataset == 0:
-            plt.title(name, size=18)
-        plt.scatter(X[:, 0], X[:, 1], color=colors[y_pred].tolist(), s=10)
+            plt.title(name, size=10)
+        plt.scatter(x, y, color=colors[y_pred].tolist(), s=10)
 
-        if hasattr(algorithm, 'cluster_centers_'):
-            centers = algorithm.cluster_centers_
-            center_colors = colors[:len(centers)]
-            plt.scatter(centers[:, 0], centers[:, 1], s=100, c=center_colors)
         plt.xlim(-2, 2)
         plt.ylim(-2, 2)
         plt.xticks(())
@@ -150,4 +146,5 @@ for i_dataset, dataset in enumerate(datasets):
                  transform=plt.gca().transAxes, size=15,
                  horizontalalignment='right')
         plot_num += 1
+        print('Algorithm: ' + name + '  Time: ' + '%.2fs' % (t1 - t0))
 plt.show()
