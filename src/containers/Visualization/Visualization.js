@@ -76,7 +76,7 @@ let simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function (d) {
         return d.id;
     }))
-    .force("charge", d3.forceManyBody().strength(-100))
+    .force("charge", d3.forceManyBody().strength(-60))
     .force("collide", forceCollide);
 // .on("tick", ticked);
 
@@ -175,13 +175,13 @@ class Visualization extends Component {
         simulation.force("link")
             .links(links)
             .strength(function (link) {
-                return link.strength/50;
+                return link.strength / 50;
             });
         
         linkG = svg.append('g');
         link = null;
         let nodeDragEnded = this.nodeDragEnded;
-    
+        
         
         let onNodeDragEnded = function (d) {
             nodeDragEnded(d, overlapDocuments);
@@ -191,18 +191,21 @@ class Visualization extends Component {
             console.log('onNodeDoubleClicked');
             this.nodeDoubleClicked(d, openDocument);
         };
-    
+        
         let doubleClicked = this.nodeDoubleClicked;
         let dragStarted = this.nodeDragStarted;
         let dragged = this.nodeDragged;
+        let dragEnded = this.nodeDragEnded;
         let drag = d3.drag()
-            .on("start", function(d){
+            .on("start", function (d) {
                 dragStarted(d, this);
             })
             .on("drag", function (d) {
                 dragged(d, this);
             })
-            .on("end", onNodeDragEnded);
+            .on("end", function (d) {
+                dragEnded(d, this);
+            });
         
         node = svg.selectAll(".node")
             .data(nodes)
@@ -216,7 +219,7 @@ class Visualization extends Component {
                 doubleClicked(d, this);
             })
             .call(drag);
-       
+        
         // label
         node.append("text")
             .attr("dx", 12)
@@ -653,6 +656,25 @@ class Visualization extends Component {
         
         }
         
+        if (movementMode === 'expressive') {
+            
+            // d3.select(that)
+            //     .select('text')
+            //     .style('fill', '#1DE9B6');
+            
+            d3.select(that)
+                .select('rect')
+                .style('fill', '#1DE9B6');
+            
+            d3.select(that)
+                .append('circle')
+                .attr('r', 60)
+                .attr('fill', 'transparent')
+                .attr('cx', 0)
+                .attr('cy', 0)
+                .attr("stroke", "#1DE9B6");
+        }
+        
         if (!d3.event.active && (movementMode === 'exploratory')) {
             simulation.alphaTarget(0.3).restart();
         }
@@ -671,6 +693,8 @@ class Visualization extends Component {
     nodeDragged(d, that) {
         
         if (movementMode === 'expressive') {
+            
+            let dragPoint = {};
             d3.select(that)
                 .attr("transform", function (d) {
                     // border constriction
@@ -679,9 +703,30 @@ class Visualization extends Component {
                     d.x = Math.max(d.width / 2, Math.min(WIDTH - d.width / 2, d.x));
                     d.y = Math.max(d.height / 2, Math.min(HEIGHT - d.height / 2, d.y));
                     
+                    dragPoint.x = d.x;
+                    dragPoint.y = d.y;
                     // Update the group position: which include the basic rectangle and Foreign object. (Drag Object too...)
                     return "translate(" + d.x + "," + d.y + ")";
                 });
+            
+            
+            
+            // If the outside circle of selected node include other nodes, we should highlight those nodes
+            node.filter(function (d) {
+            })
+                .select('rect')
+                .style('fill', '#1DE9B6');
+            
+            node.select('rect')
+                .style('fill', function(d){
+                        if(Math.sqrt((dragPoint.x - d.x) * (dragPoint.x - d.x) + (dragPoint.y - d.y) * (dragPoint.y - d.y)) < 60){
+                            return '#1DE9B6';
+                        } else {
+                            return 'steelblue';
+                        }
+                })
+            
+            
         } else {
             d.fx = d3.event.x;
             d.fy = d3.event.y;
@@ -729,11 +774,31 @@ class Visualization extends Component {
     }
     
     // the end of node drag.
-    nodeDragEnded(d, overlapDocuments) {
+    nodeDragEnded(d, that) {
         
         if (movementMode === 'expressive') {
-            let doc = {id: d.id, x: d.x, y: d.y};
-            this.moveDocument(doc);
+            
+            // Remove the outside circle
+            d3.select(that)
+                .select('circle')
+                .remove();
+    
+            
+            // let doc = {id: d.id, x: d.x, y: d.y};
+            console.log(d);
+            let dragPoint = {x: d.x, y: d.y, id: d.id};
+            let cluster =[];
+            cluster.push(d.id);
+            node.each(function (d) {
+                if(Math.sqrt((dragPoint.x - d.x) * (dragPoint.x - d.x) + (dragPoint.y - d.y) * (dragPoint.y - d.y)) < 60){
+                    console.log(d.id);
+                    if(dragPoint.id !== d.id){
+                        cluster.push(d.id);
+                    }
+                }
+            });
+            // moves a cluster to the action
+            this.moveDocument(cluster);
         }
         
         if (d.visualDetailLevel === 'Document') {
@@ -1029,7 +1094,8 @@ class Visualization extends Component {
     }
     
     linkFilter(d) {
-        return ((d.source.id === clickedDoc) || (d.target.id === clickedDoc)) && (d.source.id !== d.target.id) && (d.strength > 0.003);
+        // return ((d.source.id === clickedDoc) || (d.target.id === clickedDoc)) && (d.source.id !== d.target.id) && (d.strength > 0.003);
+        return ((d.source.id === clickedDoc) || (d.target.id === clickedDoc)) && (d.source.id !== d.target.id) && (d.strength > 0.05);
         // return ((d.source.id == clickedDoc) || (d.target.id == clickedDoc)) && (d.source.id != d.target.id) && (d.similarity > 0.01);
     }
     

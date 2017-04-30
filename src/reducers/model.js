@@ -136,9 +136,9 @@ export default function model(state = initialState, action) {
         }
 
         case MOVE_DOCUMENT: {
-            let doc = action.doc;
-            console.log(doc);
-            movedDocuments.push(doc);
+            let cluster = action.cluster;
+            console.log(cluster);
+            // Do something based on machine learning methods.
 
             return state;
             // return state.withMutations((ctx) => {

@@ -29,9 +29,9 @@ export function highlightText(text) {
 }
 
 
-export function moveDocument(doc) {
+export function moveDocument(cluster) {
     return (dispatch) => {
-        dispatch({type: MOVE_DOCUMENT, doc});
+        dispatch({type: MOVE_DOCUMENT, cluster});
     };
 }
 
