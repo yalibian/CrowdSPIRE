@@ -1,0 +1,69 @@
+.highlight.Person {
+  background-color: #d9b8f1;
+}
+.highlight.Location {
+  background-color: #bdc03f;
+}
+.highlight.Organization {
+  background-color: #ffe543;
+}
+.highlight.Money {
+  background-color: #ff9b14;
+}
+.highlight.Misc {
+  background-color: #f69ac1;
+}
+.highlight.Phone {
+  background-color: #8eb4ff;
+}
+.highlight.Interesting {
+  background-color: #f1f1b8;
+}
+.highlight.Other {
+  background-color: #efe4d7;
+}
+.Date.highlight {
+  background-color: #67e1d8;
+}
+.unused {
+  background-color: #4b0082;
+}
+div#doc-panel {
+  width: 30%;
+}
+div#tool {
+  position: fixed;
+  width: 30%;
+  top: 0;
+  background-color: #fff;
+}
+em,
+button.category {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 2px;
+  box-shadow: 2px 2px 2px #888;
+}
+h3.panel-heading {
+  margin: 0px;
+}
+#clearFilter {
+  float: right;
+}
+.doc {
+  font-family: arial, helvetica, 'sans-serif';
+  font-size: 12px;
+  padding: 2px;
+  fill: #fff;
+}
+.doc p {
+  margin: 0;
+}
+p.doc-content {
+  margin-top: 8px;
+  overflow: scroll;
+}
+.doc-title {
+  font-size: 18px;
+  text-align: center;
+}
