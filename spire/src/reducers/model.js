@@ -8,6 +8,14 @@ import {softSimilarity, cosineSimilarity} from '../utilities';
 import {preprocess} from './preprocess';
 import * as ATL from '../data/AtlanticStorm/AtlanticStorm.json';
 import * as dist from '../data/AtlanticStorm/dist.json';
+import BirchCluster from '../data/AtlanticStorm/cluster/Birch.json'
+import AgglomerativeCluster from '../data/AtlanticStorm/cluster/AgglomerativeClustering.json'
+import GaussianMixture from '../data/AtlanticStorm/cluster/GaussianMixture.json'
+import MeanShift from '../data/AtlanticStorm/cluster/MeanShift.json'
+import MiniBatchKMeans from '../data/AtlanticStorm/cluster/MiniBatchKMeans.json'
+import SpectralCluster from '../data/AtlanticStorm/cluster/SpectralClustering.json'
+import WardCluster from '../data/AtlanticStorm/cluster/Ward.json'
+
 
 import {
     INIT_VIS,
@@ -24,7 +32,13 @@ import {
     RESET_LAYOUT,
 } from '../actions/actions';
 
-
+let Birch = BirchCluster.Birch;
+let Agglomerative = AgglomerativeCluster.Agglomerative;
+let Gaussian = GaussianMixture.Gaussian;
+let Mean = MeanShift.MeanShift;
+let KMeans = MiniBatchKMeans.KMeans;
+let Spectral = SpectralCluster.Spectral;
+let Ward = WardCluster.Ward;
 
 const DOC = "DOCUMENT";
 const ICON = "ICON";
@@ -67,7 +81,8 @@ const InitialState = Record({
 // Record moved documents, through document id, and current moved position(x, y).
 // We only stored the moved to position, which means we calculate their relationships based on their relative positions.
 // If they are in the same group or not.
-let movedDocuments=[];
+let movedDocuments = [];
+let cluster;
 
 
 // Transform data into nodes and links, the nodes includes (keywords and docs, links include their links between nodes.)
@@ -136,15 +151,8 @@ export default function model(state = initialState, action) {
         }
 
         case MOVE_DOCUMENT: {
-            let cluster = action.cluster;
-            console.log(cluster);
-            // Do something based on machine learning methods.
-
+            cluster = action.cluster;
             return state;
-            // return state.withMutations((ctx) => {
-            //     ctx.set('nodes', nodes)
-            //         .set('links', links);
-            // });
         }
 
         case OPEN_DOCUMENT: {
@@ -297,9 +305,26 @@ export default function model(state = initialState, action) {
             });
         }
 
-        case UPDATE_LAYOUT:{
+        case UPDATE_LAYOUT: {
             console.log('Update Layout based on movedDocuments');
-            console.log(movedDocuments);
+
+            // Find the percentage of the cluster
+            // For each cluster methods: we find related documents
+            let count = [0, 0, 0, 0, 0, 0, 0];
+            for (let i in Birch) {
+                cluster.forEach(function (d) {
+                    if (d === Birch[i].id) {
+                        count[Birch[i].label]++;
+                        console.log(Birch[i].label);
+                    }
+                });
+            }
+
+            // change links
+
+
+
+
 
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
@@ -307,7 +332,7 @@ export default function model(state = initialState, action) {
                     .set('interaction', UPDATE_LAYOUT);
             });
         }
-        case RESET_LAYOUT:{
+        case RESET_LAYOUT: {
 
             return state.withMutations((ctx) => {
                 ctx.set('nodes', nodes)
@@ -421,13 +446,13 @@ function linker(dist) {
     let links = [];
     console.log(dist);
     console.log(dist.length);
-    for (let i = 0; i< dist.length; i++){
-        let link = {source: dist[i].source, target: dist[i].target, strength: 1-dist[i].dist};
+    for (let i = 0; i < dist.length; i++) {
+        let link = {source: dist[i].source, target: dist[i].target, strength: 1 - dist[i].dist};
         links.push(link);
     }
     console.log(links);
     return links;
-    
+
     let len = nodes.length;
     for (let i = 0; i < len; i++) {
         for (let j = i + 1; j < len; j++) {

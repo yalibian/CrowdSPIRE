@@ -784,14 +784,11 @@ class Visualization extends Component {
                 .remove();
     
             
-            // let doc = {id: d.id, x: d.x, y: d.y};
-            console.log(d);
             let dragPoint = {x: d.x, y: d.y, id: d.id};
             let cluster =[];
             cluster.push(d.id);
             node.each(function (d) {
                 if(Math.sqrt((dragPoint.x - d.x) * (dragPoint.x - d.x) + (dragPoint.y - d.y) * (dragPoint.y - d.y)) < 60){
-                    console.log(d.id);
                     if(dragPoint.id !== d.id){
                         cluster.push(d.id);
                     }

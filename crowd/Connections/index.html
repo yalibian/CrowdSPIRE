@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 450px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body style=" background-color: #f1f1f1;">
+
+<nav class="navbar navbar-inverse text-center">
+    <h2 style="color: white">Document Connections</h2>
+</nav>
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-8 text-left col-md-offset-2">
+            <br>
+            <hr>
+            <h5>Step 1. Read the following 2 intelligence documents carefully about how they related to each other.</h5>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">CIA_26</div>
+                        <div class="panel-body" style="min-height: 250px; max-height: 250px;">
+                            Surveillance continues on Omar Hanif in Nassau, The Bahamas. On 4 February, 2004 Hanif took
+                            a flight from Nassau to Miami, FL. where he boarded a flight to London, arriving on 5
+                            February. He then took a connecting flight to Karachi, Pakistan, returning by the same route
+                            on 7 February. While in Karachi, Hanif stayed at a residence at 631 Nishtar Rd. This house
+                            is now under surveillance by Pakistani Intelligence.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">FBI_16</h3>
+                        </div>
+                        <div class="panel-body" style="min-height: 250px; max-height: 250px;">
+                            Update on the surveillance of Adnan Hijazi. Checks with airlines reveal that he made three
+                            trips
+                            overseas in the last three months: Madrid, Spain [1 - 5 December, 2003]; Cairo, Egypt [21 -
+                            24
+                            December, 2003]; Paris, France [ 12 - 18 January, 2004].
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form>
+                    <div class="form-group">
+                        <h5></h5>
+                        <label for="comment">Step 2. provide a summary to describe how the documents are related to each
+                            other.</label>
+                        <textarea class="form-control" rows="5" id="comment" style="resize:none;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary center-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

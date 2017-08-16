@@ -1,6 +1,6 @@
 .DS_STORE
 resource
-node_modules
+spire/node_modules
 *~
 *.pyc
 static
