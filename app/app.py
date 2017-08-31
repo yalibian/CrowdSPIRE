@@ -15,7 +15,7 @@ def root():
     return app.send_static_file('spire/index.html')
 
 
-@app.route('/crowd')
+@app.route('/crowd/')
 def crowd():
     return app.send_static_file('/crowd/index.html')
 
