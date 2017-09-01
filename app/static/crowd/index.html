@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Connection for CrowdSPIRE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+<body style=" background-color: #f1f1f1;">
+<nav class="navbar navbar-inverse text-center">
+    <!--<h3>Document Connections</h3>-->
+    <h3 style="color: white; margin-top: 6px">Document Connections</h3>
+</nav>
+
+<div id="main" class="container text-center">
+    <div id='qrow' class="row content text-center">
+        <div id="q" class="col-md-8 text-left centered">
+            <h4>Instructions</h4>
+            <h5>Thinking yourself as a FBI agent, read the following two intelligence documents that are relevant to potential terrorist attacks and tell us what your learned through a couple of questions</h5>
+
+            <div class="row" style="min-width: 960px; max-width: 960px">
+                <div class="doc col-md-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">CIA_26</h3>
+                        </div>
+                        <div class="panel-body" style="min-height: 420px; max-height: 420px;">
+                            Report Date 27 April, 2003. FBI: A photo of the man using the name Mark Davis was examined
+                            by a representative of the Canadian police in NYC. The Canadian police investigator
+                            identified the man in the photo to be Hamid Alwan, a Saudi who overstayed a travel visa and
+                            is wanted by the police in Canada. It is now known that Alwan received explosives training
+                            in the Sudan and in Afghanistan.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doc col-md-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">FBI_16</h3>
+                        </div>
+                        <div class="panel-body" style="min-height: 420px; max-height: 420px;">
+                            Report Date April 18, 2003. FBI: A routine check of security at the New York Stock Exchange
+                            [NYSE] reveals some anomalies in background checks of several persons who now hold vendor's
+                            IDs that allow them access to the NYSE provided that they are accompanied by security
+                            guards. (i) A man named Steven Clark, employed by the City Computer Services Corp. failed,
+                            in his application for a NYSE vendor's ID, to report his arrest and conviction [12 December,
+                            2001 on a charge of assault and battery. He served six months in jail and is now out on
+                            probation. (ii) Shiela Watson, employed by the Clark & Co. Office Supplies Co., gave her
+                            current home address on her application for a vendor's ID as: 1631 Webster Ave.. The Bronx.
+                            NYC. There is no one by the name Shiela Watson at this residence. (iii) A man named Mark
+                            Davis, reported age 32 years, obtained a social security card and a New York State driver's
+                            license in 1999 using a birth certificate now believed to have been forged. He is employed
+                            by Empire State Vending Services in Manhattan and he services vending machines such as
+                            coffee, soft drink, and candy machines. He lists his home address as: 2462 Myrtle Ave. Apt.
+                            307, Queens, NYC.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+
+                <div>
+                    <h4>Internal Entity</h4>
+                    <h5>List the most important entities from the two documents that related to attacks (ranked as their importance, not less than 6) (Entities: information units like names, including person, organization and location names, and numeric expressions including time, date, money and percent expressions.) </h5>
+                    <textarea class="form-control" rows="5" id="entity" style="resize:none;"></textarea>
+                </div>
+
+
+                <div>
+                    <h4>Internal Entity</h4>
+                    <h5>List the most important entities from the two documents that related to attacks (ranked as their importance, not less than 6) (Entities: information units like names, including person, organization and location names, and numeric expressions including time, date, money and percent expressions.) </h5>
+                    <textarea class="form-control" rows="5" id="entity" style="resize:none;"></textarea>
+                </div>
+
+                 <div>
+                    <h4>External Entity</h4>
+                     <h5>List entities outside of the two documents that could help other FBI agents get more information about the attack based on your external knowledge(knowledge you get through externally sourced information) </h5>
+                    <textarea class="form-control" rows="5" id="hypo" style="resize:none;"></textarea>
+                </div>
+
+
+                <div>
+                    <h4>Summary</h4>
+                    <h5>
+                        As a FBI agent, tell us the tarriest plot in one or two sentences. (What's t)
+                    </h5>
+                    <textarea class="form-control" rows="5" id="summary" style="resize:none;"></textarea>
+                </div>
+
+
+                <br>
+                <button class="btn btn-primary center-block" onclick="submit()">Next</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
